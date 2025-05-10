@@ -1,7 +1,18 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 
 const AnimatedLogo = ({ className = '' }) => {
+  const controls = useAnimation();
+  
+  useEffect(() => {
+    // Start the animation sequence when component mounts
+    const animateLogo = async () => {
+      await controls.start('visible');
+    };
+    
+    animateLogo();
+  }, [controls]);
+
   // Animation variants
   const logoVariants = {
     hidden: { opacity: 0 },
@@ -9,6 +20,7 @@ const AnimatedLogo = ({ className = '' }) => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
+        when: "beforeChildren"
       },
     },
   };
@@ -31,7 +43,7 @@ const AnimatedLogo = ({ className = '' }) => {
         type: "spring", 
         stiffness: 400, 
         damping: 10,
-        delay: 0.3
+        delay: 0.4
       }
     },
   };
@@ -46,6 +58,8 @@ const AnimatedLogo = ({ className = '' }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="absolute -top-3 -right-2"
+      initial="hidden"
+      animate="visible"
     >
       <path
         d="M8 0C8 0 0 7.5 0 12.5C0 16.825 3.582 20 8 20C12.418 20 16 16.825 16 12.5C16 7.5 8 0 8 0Z"
@@ -59,30 +73,42 @@ const AnimatedLogo = ({ className = '' }) => {
       className={`relative ${className}`}
       variants={logoVariants}
       initial="hidden"
-      animate="visible"
+      animate={controls}
+      data-testid="animated-logo"
     >
       <div className="flex items-baseline relative">
         <motion.span 
           className="text-xl md:text-2xl font-bold"
           variants={letterVariants}
+          initial="hidden"
+          animate="visible"
         >
           C
         </motion.span>
         <motion.span 
           className="text-xl md:text-2xl font-bold"
           variants={letterVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.1 }}
         >
           F
         </motion.span>
         <motion.span 
           className="text-xl md:text-2xl font-bold"
           variants={letterVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.2 }}
         >
           G
         </motion.span>
         <motion.span 
           className="text-xl md:text-2xl font-bold text-accent-orange relative"
           variants={letterVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.3 }}
         >
           Gutters
           <Raindrop />
