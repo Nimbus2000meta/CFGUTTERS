@@ -30,7 +30,6 @@ function App() {
       <PageTransition>
         <div className="App">
           <ScrollToTop />
-          <CookieConsent />
           <WhatsAppChat />
           <Header />
           <main>
