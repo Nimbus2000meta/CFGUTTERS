@@ -15,26 +15,37 @@ import Testimonials from "./components/sections/Testimonials";
 import FAQ from "./components/sections/FAQ";
 import Contact from "./components/sections/Contact";
 import CTA from "./components/sections/CTA";
+import Process from "./components/sections/Process";
+
+// UI Components
+import PageTransition from "./components/ui/PageTransition";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-        <main>
-          <Hero />
-          <Services />
-          <About />
-          <Gallery />
-          <Testimonials />
-          <CTA />
-          <FAQ />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+      <PageTransition>
+        <div className="App">
+          <ScrollToTop />
+          <Header />
+          <main>
+            <Hero />
+            <Services />
+            <Process />
+            <About />
+            <Gallery />
+            <Testimonials />
+            <CTA />
+            <FAQ />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </PageTransition>
     </BrowserRouter>
   );
 }
+
+export default App;
 
 export default App;
