@@ -21,6 +21,7 @@ import Benefits from "./components/sections/Benefits";
 // UI Components
 import PageTransition from "./components/ui/PageTransition";
 import ScrollToTop from "./components/ui/ScrollToTop";
+import CookieConsent from "./components/ui/CookieConsent";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <PageTransition>
         <div className="App">
           <ScrollToTop />
+          <CookieConsent />
           <Header />
           <main>
             <Hero />
@@ -47,5 +49,7 @@ function App() {
     </BrowserRouter>
   );
 }
+
+export default App;
 
 export default App;
