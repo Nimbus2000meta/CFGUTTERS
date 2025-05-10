@@ -17,22 +17,16 @@ const ScrollToTop = () => {
   // Set the top of the page by scrolling to Y position 0
   const scrollToTop = (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    
-    // Using requestAnimationFrame for smoother scrolling
-    const scrollToTopAnimated = () => {
-      const position = window.pageYOffset;
-      if (position > 0) {
-        window.scrollTo(0, position - Math.max(position / 8, 20));
-        window.requestAnimationFrame(scrollToTopAnimated);
-      }
-    };
-    
-    window.requestAnimationFrame(scrollToTopAnimated);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
+    toggleVisibility(); // Check initial visibility
+    
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
@@ -68,10 +62,10 @@ const ScrollToTop = () => {
   };
 
   return (
-    <AnimatePresence>
+    <>
       {isVisible && (
         <motion.button
-          className="fixed bottom-8 right-8 bg-primary-500 text-white p-4 rounded-full shadow-lg z-[9999]"
+          className="fixed bottom-8 right-8 bg-primary-500 text-white p-4 rounded-full shadow-lg"
           onClick={scrollToTop}
           variants={buttonVariants}
           initial="hidden"
@@ -80,14 +74,20 @@ const ScrollToTop = () => {
           whileHover="hover"
           whileTap="tap"
           aria-label="Scroll to top"
-          style={{ pointerEvents: 'auto' }}
+          style={{ 
+            zIndex: 9999,
+            position: 'fixed',
+            pointerEvents: 'auto'
+          }}
           data-testid="scroll-to-top-button"
         >
           <FiArrowUp className="text-xl" />
         </motion.button>
       )}
-    </AnimatePresence>
+    </>
   );
 };
+
+export default ScrollToTop;
 
 export default ScrollToTop;
