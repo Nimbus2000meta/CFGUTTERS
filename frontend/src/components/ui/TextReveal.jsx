@@ -93,7 +93,6 @@ const TextReveal = ({
 
   // For headlines, handle text content with letter animations
   if (type === 'headline') {
-    
     return (
       <motion.div
         ref={ref}
@@ -102,35 +101,18 @@ const TextReveal = ({
         initial="hidden"
         animate={controls}
       >
-        {childrenContent.map((child, index) => {
-          // If child is a string, split it into words and animate each letter
+        {React.Children.map(children, (child, index) => {
+          // If child is a string, process it for letter animation
           if (typeof child === 'string') {
-            const words = child.split(' ');
-            
-            return words.map((word, wordIndex) => {
-              const letters = word.split('');
-              
-              return (
-                <span key={`${index}-${wordIndex}`} className="inline-block mr-2" style={{ overflow: 'hidden' }}>
-                  {letters.map((letter, letterIndex) => (
-                    <motion.span
-                      key={letterIndex}
-                      variants={letterVariants}
-                      className="inline-block"
-                    >
-                      {letter}
-                    </motion.span>
-                  ))}
-                </span>
-              );
-            });
+            return processTextContent(child);
           }
-          // If child is a React element, just return it
+          
+          // If child is a React element (like styled spans), just return it
           return (
             <motion.span
               key={index}
               variants={paragraphVariants}
-              className="inline-block mr-2"
+              className="inline-block"
             >
               {child}
             </motion.span>
