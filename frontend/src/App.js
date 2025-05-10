@@ -22,7 +22,6 @@ import Benefits from "./components/sections/Benefits";
 // UI Components
 import PageTransition from "./components/ui/PageTransition";
 import ScrollToTop from "./components/ui/ScrollToTop";
-import CookieConsent from "./components/ui/CookieConsent";
 import WhatsAppChat from "./components/ui/WhatsAppChat";
 
 function App() {
