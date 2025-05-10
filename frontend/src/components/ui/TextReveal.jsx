@@ -68,8 +68,8 @@ const TextReveal = ({
 
   // For headlines, wrap each letter in a motion span
   if (type === 'headline') {
-    // Split text into words, then letters
-    const words = children.split(' ');
+    // Handle both string and React element children
+    const childrenContent = React.Children.toArray(children);
     
     return (
       <motion.div
@@ -79,21 +79,38 @@ const TextReveal = ({
         initial="hidden"
         animate={controls}
       >
-        {words.map((word, wordIndex) => {
-          const letters = word.split('');
-          
+        {childrenContent.map((child, index) => {
+          // If child is a string, split it into words and animate each letter
+          if (typeof child === 'string') {
+            const words = child.split(' ');
+            
+            return words.map((word, wordIndex) => {
+              const letters = word.split('');
+              
+              return (
+                <span key={`${index}-${wordIndex}`} className="inline-block mr-2" style={{ overflow: 'hidden' }}>
+                  {letters.map((letter, letterIndex) => (
+                    <motion.span
+                      key={letterIndex}
+                      variants={letterVariants}
+                      className="inline-block"
+                    >
+                      {letter}
+                    </motion.span>
+                  ))}
+                </span>
+              );
+            });
+          }
+          // If child is a React element, just return it
           return (
-            <span key={wordIndex} className="inline-block mr-2" style={{ overflow: 'hidden' }}>
-              {letters.map((letter, letterIndex) => (
-                <motion.span
-                  key={letterIndex}
-                  variants={letterVariants}
-                  className="inline-block"
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </span>
+            <motion.span
+              key={index}
+              variants={paragraphVariants}
+              className="inline-block mr-2"
+            >
+              {child}
+            </motion.span>
           );
         })}
       </motion.div>
