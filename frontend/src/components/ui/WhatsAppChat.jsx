@@ -41,7 +41,7 @@ const WhatsAppChat = () => {
       }
     },
     tap: { scale: 0.9 },
-    hover: { scale: 1.1 }
+    hover: { scale: 1.1, backgroundColor: '#25D366' }
   };
   
   const chatVariants = {
@@ -67,7 +67,7 @@ const WhatsAppChat = () => {
   };
   
   return (
-    <div className="fixed bottom-24 right-6 md:right-8 z-40">
+    <div className="fixed bottom-24 right-6 md:right-8 z-[1000]" data-testid="whatsapp-chat-container">
       {/* WhatsApp Button */}
       <motion.button
         className="w-16 h-16 rounded-full bg-green-500 shadow-lg flex items-center justify-center text-white"
@@ -79,6 +79,7 @@ const WhatsAppChat = () => {
         whileHover="hover"
         aria-label={isOpen ? 'Close WhatsApp chat' : 'Open WhatsApp chat'}
         data-testid="whatsapp-button"
+        style={{ pointerEvents: 'auto', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}
       >
         {isOpen ? (
           <FiX className="text-2xl" />
@@ -96,7 +97,12 @@ const WhatsAppChat = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            data-testid="whatsapp-chat"
+            data-testid="whatsapp-chat-window"
+            style={{ 
+              boxShadow: '0 10px 35px rgba(0,0,0,0.2)',
+              zIndex: 1000,
+              pointerEvents: 'auto'
+            }}
           >
             {/* Chat Header */}
             <div className="bg-green-500 text-white p-4">
@@ -138,7 +144,9 @@ const WhatsAppChat = () => {
               />
               <button 
                 type="submit"
-                className="bg-green-500 text-white rounded-full p-2 ml-2"
+                className={`rounded-full p-3 ml-2 flex items-center justify-center ${
+                  message.trim() ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-400'
+                }`}
                 disabled={!message.trim()}
               >
                 <FiSend />
