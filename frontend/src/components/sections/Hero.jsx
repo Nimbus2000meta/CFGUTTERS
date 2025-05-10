@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FiChevronRight } from 'react-icons/fi';
 import VideoBackground from './VideoBackground';
+import TextReveal from '../ui/TextReveal';
 
 const Hero = () => {
   return (
@@ -16,24 +17,20 @@ const Hero = () => {
       {/* Content Container */}
       <div className="container-custom relative z-20">
         <div className="max-w-2xl">
-          <motion.h1 
+          <TextReveal 
+            type="headline" 
             className="text-white mb-4 drop-shadow-lg"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
           >
             Transform Your Home With <span className="text-accent-orange">Premium</span> Gutter Solutions
-          </motion.h1>
+          </TextReveal>
           
-          <motion.p 
+          <TextReveal 
             className="text-white/90 text-lg md:text-xl mb-8 drop-shadow-md"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            delay={0.2}
           >
             Protect your most valuable investment from water damage with our expertly crafted gutter systems. 
             Quality installations, repairs, and maintenance by CFGutters.
-          </motion.p>
+          </TextReveal>
           
           <motion.div 
             className="flex flex-col sm:flex-row gap-4"
@@ -52,6 +49,7 @@ const Hero = () => {
                 className="btn btn-accent w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                data-testid="hero-cta-button"
               >
                 Get a Free Quote
               </motion.button>
@@ -68,6 +66,7 @@ const Hero = () => {
                 className="btn w-full sm:w-auto glass-effect text-white hover:bg-white/30 flex items-center justify-center gap-1"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                data-testid="hero-services-button"
               >
                 Our Services <FiChevronRight />
               </motion.button>
