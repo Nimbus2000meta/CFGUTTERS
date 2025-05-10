@@ -16,6 +16,7 @@ import FAQ from "./components/sections/FAQ";
 import Contact from "./components/sections/Contact";
 import CTA from "./components/sections/CTA";
 import Process from "./components/sections/Process";
+import Benefits from "./components/sections/Benefits";
 
 // UI Components
 import PageTransition from "./components/ui/PageTransition";
@@ -33,6 +34,7 @@ function App() {
             <Services />
             <Process />
             <About />
+            <Benefits />
             <Gallery />
             <Testimonials />
             <CTA />
@@ -45,5 +47,7 @@ function App() {
     </BrowserRouter>
   );
 }
+
+export default App;
 
 export default App;
