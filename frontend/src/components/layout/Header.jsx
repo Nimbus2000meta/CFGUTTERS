@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
+import AnimatedLogo from '../ui/AnimatedLogo';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,9 @@ const Header = () => {
   const navLinks = [
     { name: 'Home', to: 'home' },
     { name: 'Services', to: 'services' },
+    { name: 'Process', to: 'process' },
     { name: 'About', to: 'about' },
+    { name: 'Benefits', to: 'benefits' },
     { name: 'Gallery', to: 'gallery' },
     { name: 'Testimonials', to: 'testimonials' },
     { name: 'FAQ', to: 'faq' },
@@ -56,10 +59,8 @@ const Header = () => {
           transition={{ duration: 0.5 }}
           className="flex items-center"
         >
-          <Link to="home" spy={true} smooth={true} duration={500}>
-            <h1 className={`text-xl md:text-2xl font-bold cursor-pointer ${scrolled ? 'text-primary-600' : 'text-white'}`}>
-              CFG<span className="text-accent-orange">Gutters</span>
-            </h1>
+          <Link to="home" spy={true} smooth={true} duration={500} className="cursor-pointer">
+            <AnimatedLogo className={scrolled ? 'text-primary-600' : 'text-white'} />
           </Link>
         </motion.div>
 
@@ -103,6 +104,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           aria-label="Toggle menu"
+          data-testid="mobile-menu-button"
         >
           {isOpen ? (
             <FiX className={scrolled ? 'text-neutral-850' : 'text-white'} />
@@ -121,6 +123,7 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white"
+            data-testid="mobile-menu"
           >
             <motion.div 
               className="container-custom py-5 flex flex-col space-y-4"
@@ -138,6 +141,7 @@ const Header = () => {
                     duration={500}
                     onClick={() => setIsOpen(false)}
                     className="block py-2 text-neutral-850 font-medium transition-colors hover:text-accent-orange"
+                    data-testid={`mobile-nav-${link.name.toLowerCase()}`}
                   >
                     {link.name}
                   </Link>
@@ -147,6 +151,7 @@ const Header = () => {
                 href="tel:+15551234567" 
                 variants={itemVariants}
                 className="btn btn-primary w-full text-center flex items-center justify-center gap-2"
+                data-testid="mobile-phone-button"
               >
                 <FiPhone /> (555) 123-4567
               </motion.a>
