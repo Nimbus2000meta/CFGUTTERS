@@ -75,7 +75,7 @@ const Gallery = () => {
       src: 'https://images.unsplash.com/photo-1677945451878-de79f98149c9',
       title: 'Custom Design',
       category: 'Installation',
-      description: 'Bespoke gutter design that complements the home's architecture.'
+      description: 'Bespoke gutter design that complements the home\'s architecture.'
     }
   ];
 
