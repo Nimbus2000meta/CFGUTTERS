@@ -137,7 +137,7 @@ const Preloader = ({ onLoadingComplete }) => {
           >
             <div className="relative flex items-center justify-center">
               <div className="text-5xl font-bold font-heading">
-                CFG<span className="text-accent-orange">Gutters</span>
+                CF<span className="text-accent-orange">Gutters</span>
               </div>
               <motion.div
                 className="absolute -top-5 -right-4 text-accent-orange"
