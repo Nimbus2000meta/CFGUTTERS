@@ -99,7 +99,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-2xl"
+          className="block md:hidden text-2xl p-2"
           whileTap={{ scale: 0.9 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -107,9 +107,9 @@ const Header = () => {
           data-testid="mobile-menu-button"
         >
           {isOpen ? (
-            <FiX className={scrolled ? 'text-neutral-850' : 'text-white'} />
+            <FiX className={`text-2xl ${scrolled ? 'text-neutral-850' : 'text-white'}`} />
           ) : (
-            <FiMenu className={scrolled ? 'text-neutral-850' : 'text-white'} />
+            <FiMenu className={`text-2xl ${scrolled ? 'text-neutral-850' : 'text-white'}`} />
           )}
         </motion.button>
       </div>
