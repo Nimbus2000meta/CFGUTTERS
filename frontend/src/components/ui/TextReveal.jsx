@@ -66,10 +66,33 @@ const TextReveal = ({
     }
   };
 
-  // For headlines, wrap each letter in a motion span
+  // Helper function to process text content
+  const processTextContent = (text) => {
+    if (!text || typeof text !== 'string') return [];
+    
+    const words = text.split(' ');
+    
+    return words.map((word, wordIndex) => {
+      const letters = word.split('');
+      
+      return (
+        <span key={wordIndex} className="inline-block mr-2" style={{ overflow: 'hidden' }}>
+          {letters.map((letter, letterIndex) => (
+            <motion.span
+              key={letterIndex}
+              variants={letterVariants}
+              className="inline-block"
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </span>
+      );
+    });
+  };
+
+  // For headlines, handle text content with letter animations
   if (type === 'headline') {
-    // Handle both string and React element children
-    const childrenContent = React.Children.toArray(children);
     
     return (
       <motion.div
