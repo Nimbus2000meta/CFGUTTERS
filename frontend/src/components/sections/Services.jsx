@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle, FiTool, FiDroplet, FiHome } from 'react-icons/fi';
+import Feature3DCard from '../ui/Feature3DCard';
 
 const Services = () => {
   const services = [
@@ -66,11 +67,6 @@ const Services = () => {
         stiffness: 100,
         damping: 15
       }
-    },
-    hover: {
-      y: -10,
-      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
-      transition: { type: "spring", stiffness: 400, damping: 10 }
     }
   };
 
@@ -120,33 +116,33 @@ const Services = () => {
           {services.map((service) => (
             <motion.div
               key={service.id}
-              className="card card-hover"
               variants={cardVariants}
-              whileHover="hover"
+              className="h-full"
             >
-              <div 
-                className="h-52 overflow-hidden"
-                style={{
-                  backgroundImage: `url(${service.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
+              <Feature3DCard 
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                image={service.image}
               />
-              <div className="p-6">
-                <div className="mb-4">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-neutral-600 mb-4">{service.description}</p>
+              
+              <motion.div 
+                className="mt-6 bg-white rounded-xl p-4 shadow-soft"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <h4 className="font-semibold mb-3 text-primary-600">Key Features:</h4>
                 <ul className="space-y-2">
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-center gap-2">
-                      <FiCheckCircle className="text-secondary-500" />
+                      <FiCheckCircle className="text-secondary-500 flex-shrink-0" />
                       <span className="text-sm text-neutral-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>
