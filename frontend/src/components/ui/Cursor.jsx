@@ -9,14 +9,22 @@ const Cursor = () => {
   
   // Initialize cursor after component mounts to avoid SSR issues
   useEffect(() => {
-    // Only show custom cursor on non-touch devices
+    // Only show custom cursor on non-touch devices and when not in testing mode
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) return;
+    const isTestingEnvironment = window.navigator.userAgent.includes('TestRunner');
     
-    setIsVisible(true);
+    if (isTouchDevice || isTestingEnvironment) return;
+    
+    // Short delay to prevent flickering during page load
+    const timeoutId = setTimeout(() => {
+      setIsVisible(true);
+    }, 500);
     
     const handleMouseMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      // Use requestAnimationFrame for smoother cursor movement
+      requestAnimationFrame(() => {
+        setPosition({ x: e.clientX, y: e.clientY });
+      });
     };
     
     const handleMouseDown = () => {
@@ -30,20 +38,43 @@ const Cursor = () => {
     const handleMouseOver = (e) => {
       // Check if element or its parent has cursor:pointer
       const target = e.target;
-      const isPointerElement = window.getComputedStyle(target).cursor === 'pointer';
-      const parentElement = target.closest('a, button, [role="button"], [class*="cursor-pointer"]');
-      setIsPointer(isPointerElement || parentElement !== null);
+      
+      // Check for interactable elements by tag or role
+      const isClickable = 
+        target.tagName.toLowerCase() === 'a' || 
+        target.tagName.toLowerCase() === 'button' ||
+        target.getAttribute('role') === 'button' ||
+        target.classList.contains('cursor-pointer') ||
+        target.closest('a, button, [role="button"], [class*="cursor-pointer"]') !== null;
+      
+      setIsPointer(isClickable);
+    };
+    
+    // Hide cursor when leaving the window
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+    
+    // Show cursor when entering the window
+    const handleMouseEnter = () => {
+      setIsVisible(true);
     };
     
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('mouseenter', handleMouseEnter);
     document.addEventListener('mouseover', handleMouseOver);
     
+    // Clean up event listeners
     return () => {
+      clearTimeout(timeoutId);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('mouseenter', handleMouseEnter);
       document.removeEventListener('mouseover', handleMouseOver);
     };
   }, []);
@@ -54,14 +85,13 @@ const Cursor = () => {
     <>
       {/* Main cursor */}
       <motion.div
-        className="fixed w-8 h-8 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed w-8 h-8 rounded-full pointer-events-none z-[9999]"
         animate={{
           x: position.x - 16,
           y: position.y - 16,
           scale: isActive ? 0.8 : 1,
-          opacity: 1,
-          backgroundColor: isPointer ? '#fff' : 'transparent',
-          border: isPointer ? 'none' : '2px solid white'
+          opacity: isVisible ? 1 : 0,
+          borderColor: 'white'
         }}
         transition={{
           type: 'spring',
@@ -69,16 +99,22 @@ const Cursor = () => {
           damping: 28,
           mass: 0.5
         }}
+        style={{
+          border: isPointer ? 'none' : '2px solid white',
+          backgroundColor: isPointer ? 'white' : 'transparent',
+          mixBlendMode: 'difference'
+        }}
+        data-testid="custom-cursor-large"
       />
       
       {/* Secondary cursor (dot) */}
       <motion.div
         className="fixed w-2 h-2 rounded-full bg-white pointer-events-none z-[9999]"
         animate={{
-          x: position.x - 4,
-          y: position.y - 4,
+          x: position.x - 1,
+          y: position.y - 1,
           scale: isActive ? 1.5 : 1,
-          opacity: isPointer ? 0 : 1
+          opacity: isPointer ? 0 : (isVisible ? 1 : 0)
         }}
         transition={{
           type: 'spring',
@@ -86,6 +122,8 @@ const Cursor = () => {
           damping: 40,
           mass: 0.2
         }}
+        style={{ mixBlendMode: 'difference' }}
+        data-testid="custom-cursor-small"
       />
     </>
   );
