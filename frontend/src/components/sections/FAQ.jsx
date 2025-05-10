@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Disclosure, Transition } from '@headlessui/react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 const FAQ = () => {
+  // State to track which FAQ is open
+  const [openFAQ, setOpenFAQ] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
+
   const faqs = [
     {
       question: "How often should gutters be cleaned?",
@@ -100,33 +106,32 @@ const FAQ = () => {
               className="bg-white rounded-xl shadow-soft overflow-hidden"
               variants={itemVariants}
             >
-              <Disclosure>
-                {({ open }) => (
-                  <>
-                    <Disclosure.Button className="flex justify-between items-center w-full px-6 py-4 text-left font-medium text-neutral-800 hover:bg-primary-50 transition-colors focus:outline-none">
-                      <span>{faq.question}</span>
-                      {open ? (
-                        <FiChevronUp className="text-primary-500" />
-                      ) : (
-                        <FiChevronDown className="text-primary-500" />
-                      )}
-                    </Disclosure.Button>
-                    <Transition
-                      show={open}
-                      enter="transition duration-200 ease-out"
-                      enterFrom="transform scale-95 opacity-0"
-                      enterTo="transform scale-100 opacity-100"
-                      leave="transition duration-150 ease-out"
-                      leaveFrom="transform scale-100 opacity-100"
-                      leaveTo="transform scale-95 opacity-0"
-                    >
-                      <Disclosure.Panel className="px-6 py-4 text-neutral-600 border-t border-gray-100">
-                        {faq.answer}
-                      </Disclosure.Panel>
-                    </Transition>
-                  </>
-                )}
-              </Disclosure>
+              <div className="w-full">
+                <button 
+                  className="flex justify-between items-center w-full px-6 py-4 text-left font-medium text-neutral-800 hover:bg-primary-50 transition-colors focus:outline-none"
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={openFAQ === index}
+                  data-testid={`faq-question-${index}`}
+                >
+                  <span>{faq.question}</span>
+                  {openFAQ === index ? (
+                    <FiChevronUp className="text-primary-500" />
+                  ) : (
+                    <FiChevronDown className="text-primary-500" />
+                  )}
+                </button>
+                
+                <motion.div 
+                  className={`px-6 py-0 overflow-hidden ${openFAQ === index ? 'border-t border-gray-100' : ''}`}
+                  initial={{ height: 0 }}
+                  animate={{ height: openFAQ === index ? 'auto' : 0 }}
+                  transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+                >
+                  <div className="py-4 text-neutral-600">
+                    {faq.answer}
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
