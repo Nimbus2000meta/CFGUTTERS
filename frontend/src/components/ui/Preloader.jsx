@@ -5,17 +5,29 @@ import { FiDroplet } from 'react-icons/fi';
 const Preloader = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+  const [fontLoaded, setFontLoaded] = useState(false);
 
   useEffect(() => {
-    // Simulate loading progress
-    const timer = setInterval(() => {
-      setProgress(prev => {
-        const newProgress = prev + Math.random() * 15;
+    // Check if fonts are loaded
+    document.fonts.ready.then(() => {
+      setFontLoaded(true);
+    });
+
+    // Simulate loading progress in increments
+    let currentProgress = 0;
+    
+    // Use a more controlled increment approach
+    const simulateLoading = () => {
+      const increment = 3 + Math.random() * 10; // Random increment between 3-13%
+      
+      currentProgress += increment;
+      
+      if (currentProgress >= 100) {
+        currentProgress = 100;
+        setProgress(100);
         
-        if (newProgress >= 100) {
-          clearInterval(timer);
-          
-          // Slight delay before setting complete
+        // Wait for fonts to load before completing
+        if (fontLoaded) {
           setTimeout(() => {
             setIsComplete(true);
             
@@ -24,16 +36,21 @@ const Preloader = ({ onLoadingComplete }) => {
               if (onLoadingComplete) onLoadingComplete();
             }, 800);
           }, 500);
-          
-          return 100;
         }
+      } else {
+        setProgress(currentProgress);
         
-        return newProgress;
-      });
-    }, 200);
-
-    return () => clearInterval(timer);
-  }, [onLoadingComplete]);
+        // Slow down as we get closer to 100%
+        const nextTimeout = currentProgress > 70 ? 300 : 150;
+        setTimeout(simulateLoading, nextTimeout);
+      }
+    };
+    
+    // Start the loading simulation
+    const initialDelay = setTimeout(simulateLoading, 300);
+    
+    return () => clearTimeout(initialDelay);
+  }, [onLoadingComplete, fontLoaded]);
 
   // Animation variants
   const containerVariants = {
@@ -81,10 +98,10 @@ const Preloader = ({ onLoadingComplete }) => {
 
   const progressVariants = {
     initial: { width: "0%" },
-    animate: (progress) => ({ 
-      width: `${progress}%`,
+    animate: (customProgress) => ({ 
+      width: `${customProgress}%`,
       transition: { 
-        duration: 0.8,
+        duration: 0.3,
         ease: "easeOut"
       }
     })
@@ -109,6 +126,7 @@ const Preloader = ({ onLoadingComplete }) => {
           variants={containerVariants}
           initial="initial"
           exit="exit"
+          data-testid="preloader"
         >
           <motion.div
             className="mb-10 text-white"
@@ -118,7 +136,7 @@ const Preloader = ({ onLoadingComplete }) => {
             exit="exit"
           >
             <div className="relative flex items-center justify-center">
-              <div className="text-5xl font-bold">
+              <div className="text-5xl font-bold font-heading">
                 CFG<span className="text-accent-orange">Gutters</span>
               </div>
               <motion.div
