@@ -15,6 +15,7 @@ import Testimonials from "./components/sections/Testimonials";
 import FAQ from "./components/sections/FAQ";
 import Contact from "./components/sections/Contact";
 import CTA from "./components/sections/CTA";
+import CTAHorizontal from "./components/sections/CTAHorizontal";
 import Process from "./components/sections/Process";
 import Benefits from "./components/sections/Benefits";
 
@@ -22,6 +23,7 @@ import Benefits from "./components/sections/Benefits";
 import PageTransition from "./components/ui/PageTransition";
 import ScrollToTop from "./components/ui/ScrollToTop";
 import CookieConsent from "./components/ui/CookieConsent";
+import WhatsAppChat from "./components/ui/WhatsAppChat";
 
 function App() {
   return (
@@ -30,10 +32,12 @@ function App() {
         <div className="App">
           <ScrollToTop />
           <CookieConsent />
+          <WhatsAppChat />
           <Header />
           <main>
             <Hero />
             <Services />
+            <CTAHorizontal />
             <Process />
             <About />
             <Benefits />
@@ -49,5 +53,7 @@ function App() {
     </BrowserRouter>
   );
 }
+
+export default App;
 
 export default App;
