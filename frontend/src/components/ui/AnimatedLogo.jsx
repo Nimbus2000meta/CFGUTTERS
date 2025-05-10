@@ -101,15 +101,6 @@ const AnimatedLogo = ({ className = '' }) => {
           animate="visible"
           transition={{ delay: 0.2 }}
         >
-          G
-        </motion.span>
-        <motion.span 
-          className="text-xl md:text-2xl font-bold text-accent-orange relative"
-          variants={letterVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.3 }}
-        >
           Gutters
           <Raindrop />
         </motion.span>
