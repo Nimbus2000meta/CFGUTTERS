@@ -9,7 +9,7 @@ const Hero = () => {
       id="home"
       className="relative h-screen flex items-center overflow-hidden"
       style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1480074568708-e7b720bb3f09')",
+        backgroundImage: "url('https://images.unsplash.com/photo-1677945451878-de79f98149c9')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
