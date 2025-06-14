@@ -132,33 +132,28 @@ const Services = () => {
         </div>
 
         {/* Services Cards */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <motion.div
-              key={service.id}
-              variants={cardVariants}
-              className="h-full"
-            >
-              <Feature3DCard 
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                image={service.image}
-              />
+            <div key={service.id} className="h-full">
+              <div className="h-full bg-white rounded-2xl shadow-soft overflow-hidden">
+                <div className="h-52 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="p-6">
+                  <div className="mb-4">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                  <p className="text-neutral-600">{service.description}</p>
+                </div>
+              </div>
               
-              <motion.div 
-                className="mt-6 bg-white rounded-xl p-4 shadow-soft"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
+              <div className="mt-6 bg-white rounded-xl p-4 shadow-soft">
                 <h4 className="font-semibold mb-3 text-primary-600">Process:</h4>
                 <ul className="space-y-2">
                   {service.features.map((feature, index) => (
@@ -168,10 +163,10 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
