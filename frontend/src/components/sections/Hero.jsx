@@ -179,69 +179,11 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.5 }}
               className="relative"
             >
-              <svg
-                width="300"
-                height="300"
-                viewBox="0 0 200 200"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-white drop-shadow-2xl"
-              >
-                {/* Outer circle border */}
-                <circle 
-                  cx="100" 
-                  cy="100" 
-                  r="90" 
-                  stroke="currentColor" 
-                  strokeWidth="4" 
-                  fill="rgba(255,255,255,0.1)"
-                />
-                <circle 
-                  cx="100" 
-                  cy="100" 
-                  r="80" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  fill="transparent"
-                />
-                
-                {/* Main house/roof structure */}
-                <path 
-                  d="M40 118 L68 85 L90 85 L140 85 L160 118 L155 128 L45 128 Z" 
-                  fill="currentColor"
-                />
-                
-                {/* Roof peak triangle */}
-                <path 
-                  d="M78 85 L100 55 L122 85 L118 82 L100 63 L82 82 Z" 
-                  fill="currentColor"
-                />
-                
-                {/* Inner roof detail */}
-                <path 
-                  d="M88 85 L100 70 L112 85 L108 83 L100 75 L92 83 Z" 
-                  fill="rgba(147, 197, 253, 0.8)"
-                />
-                
-                {/* Gutter system */}
-                <rect x="40" y="118" width="120" height="6" fill="currentColor"/>
-                
-                {/* Water flow lines */}
-                <path d="M45 133 L52 133" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M57 135 L64 135" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M69 137 L76 137" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M124 135 L131 135" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M136 137 L143 137" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M148 133 L155 133" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                
-                {/* Downspout */}
-                <rect x="157" y="118" width="4" height="20" fill="currentColor"/>
-                <rect x="155" y="136" width="8" height="4" fill="currentColor"/>
-                
-                {/* CF text */}
-                <text x="100" y="155" textAnchor="middle" fill="currentColor" fontSize="18" fontWeight="bold">CF</text>
-                <text x="100" y="170" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="normal">GUTTERS</text>
-              </svg>
+              <img
+                src="/cf-gutters-logo.png"
+                alt="CF Gutters Logo"
+                className="w-80 h-80 object-contain drop-shadow-2xl"
+              />
             </motion.div>
           </div>
         </div>
