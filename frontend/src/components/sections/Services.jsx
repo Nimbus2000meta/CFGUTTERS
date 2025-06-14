@@ -65,97 +65,43 @@ const Services = () => {
     }
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { 
-        type: "spring", 
-        stiffness: 100,
-        damping: 15
-      }
-    }
-  };
-
   return (
-    <section id="services" className="section-padding bg-neutral-50">
-      <div className="container-custom">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.p 
-            className="text-primary-500 font-semibold uppercase tracking-wider mb-2"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Our Expertise
-          </motion.p>
-          <motion.h2 
-            className="mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            Expert Gutter & <span className="headline-gradient">Roof Cleaning</span>
-          </motion.h2>
-          <motion.p 
-            className="text-neutral-600"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p className="text-blue-600 font-semibold uppercase tracking-wider mb-2">Our Expertise</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Expert Gutter & <span className="text-blue-600">Roof Cleaning</span>
+          </h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
             At CF Gutters, we believe every home deserves quality care and reliable service—without breaking the bank. 
             With over 10 years of experience, we provide top-notch services that protect your home year-round.
-          </motion.p>
+          </p>
         </div>
 
-        {/* Services Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div key={service.id} className="h-full">
-              <div className="h-full bg-white rounded-2xl shadow-soft overflow-hidden">
-                <div className="h-52 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    className="w-full h-full object-cover"
-                  />
+            <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="p-6">
+                <div className="mb-4">
+                  {service.icon}
                 </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600 mb-6">{service.description}</p>
                 
-                <div className="p-6">
-                  <div className="mb-4">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-neutral-600">{service.description}</p>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-blue-600 mb-3">Process:</h4>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, index) => (
+                      <li key={index} className="flex items-center">
+                        <FiCheckCircle className="text-green-500 mr-2 flex-shrink-0" />
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-              
-              <div className="mt-6 bg-white rounded-xl p-4 shadow-soft">
-                <h4 className="font-semibold mb-3 text-primary-600">Process:</h4>
-                <ul className="space-y-2">
-                  {service.features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <FiCheckCircle className="text-secondary-500 flex-shrink-0" />
-                      <span className="text-sm text-neutral-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           ))}
