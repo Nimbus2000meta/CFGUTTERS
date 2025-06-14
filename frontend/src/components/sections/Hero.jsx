@@ -73,7 +73,7 @@ const Hero = () => {
             
             {/* Trust Badges */}
             <motion.div 
-              className="mt-12 flex flex-wrap items-center gap-6"
+              className="mt-12 grid grid-cols-2 md:flex md:flex-wrap items-center gap-4 md:gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
