@@ -2,17 +2,22 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FiChevronRight } from 'react-icons/fi';
-import VideoBackground from './VideoBackground';
 import TextReveal from '../ui/TextReveal';
 
 const Hero = () => {
   return (
     <section 
       id="home"
-      className="relative h-screen flex items-center overflow-hidden"
+      className="relative h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700"
     >
-      {/* Video Background with Fallback */}
-      <VideoBackground />
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-32 h-32 border border-white rounded-full"></div>
+        <div className="absolute top-40 right-32 w-24 h-24 border border-white rounded-full"></div>
+        <div className="absolute bottom-32 left-1/4 w-16 h-16 border border-white rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 border border-white rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white rounded-full opacity-30"></div>
+      </div>
       
       {/* Content Container */}
       <div className="container-custom relative z-20">
@@ -21,7 +26,7 @@ const Hero = () => {
             type="headline" 
             className="text-white mb-4 drop-shadow-lg"
           >
-            Professional <span className="text-accent-orange">Gutter & Roof</span> Cleaning Services
+            Professional <span className="text-secondary-300">Gutter & Roof</span> Cleaning Services
           </TextReveal>
           
           <TextReveal 
@@ -45,7 +50,7 @@ const Hero = () => {
               duration={500}
             >
               <motion.button 
-                className="btn btn-accent w-full sm:w-auto"
+                className="btn btn-secondary w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="hero-cta-button"
