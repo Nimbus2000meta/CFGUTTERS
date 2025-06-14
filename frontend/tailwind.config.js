@@ -5,16 +5,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#e6f3fb',
-          100: '#cce7f7',
-          200: '#99cfef',
-          300: '#66b7e7',
-          400: '#339fdf',
-          500: '#4A90A4', // Primary brand color - matches your desired header color
-          600: '#3a7283',
-          700: '#2b5462',
-          800: '#1c3641',
-          900: '#0d1821',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#2563eb', // Primary brand color - professional dark blue
+          600: '#1d4ed8',
+          700: '#1e40af',
+          800: '#1e3a8a',
+          900: '#1e2659',
         },
         secondary: {
           50: '#e6f7f2',
