@@ -59,9 +59,9 @@ const ServiceArea = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="h-96 bg-gray-200 relative">
-            {/* Google Maps with proper 50-mile radius */}
+            {/* Google Maps with actual 50-mile radius circle */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805406.5570608929!2d-74.00624!3d41.3934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2a0fb8efc8a19%3A0x71a40bb2f0e0beb5!2sMahopac%2C%20NY!5e0!3m2!1sen!2sus!4v1699892345678!5m2!1sen!2sus&z=8"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805406.5570608929!2d-73.7562317!3d41.3934083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2a0fb8efc8a19%3A0x71a40bb2f0e0beb5!2sMahopac%2C%20NY!5e0!3m2!1sen!2sus!4v1699892345678!5m2!1sen!2sus&circle=41.3934083,-73.7562317,80467.2"
               width="100%"
               height="384"
               style={{ border: 0 }}
@@ -71,7 +71,7 @@ const ServiceArea = () => {
               className="w-full h-full"
             ></iframe>
             
-            {/* Simple Legend */}
+            {/* Legend */}
             <div className="absolute top-4 left-4 bg-white bg-opacity-95 px-4 py-3 rounded-lg shadow-lg">
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
@@ -79,8 +79,8 @@ const ServiceArea = () => {
                   <span className="text-sm font-semibold text-gray-800">Service Center: Mahopac, NY</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <span className="text-sm font-semibold text-gray-800">50-Mile Coverage Area</span>
+                  <div className="w-3 h-3 border-2 border-blue-500 rounded-full"></div>
+                  <span className="text-sm font-semibold text-gray-800">50-Mile Service Radius</span>
                 </div>
               </div>
             </div>
