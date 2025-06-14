@@ -268,12 +268,8 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: 
-    - "Website Loading"
-    - "Gallery Section with Lightbox"
-  stuck_tasks: 
-    - "Website Loading"
-    - "Gallery Section with Lightbox"
+  current_focus: []
+  stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
