@@ -140,41 +140,25 @@ const Gallery = () => {
             <p>Debug: Gallery has {galleryImages.length} images</p>
           </div>
           
-          {galleryImages.map((image, index) => (
-            <div
-              key={image.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
-              onClick={() => openLightbox(image, index)}
-            >
-              <div className="h-64 bg-gray-200">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  onError={(e) => {
-                    console.log('Image failed to load:', image.src);
-                    e.target.style.background = '#f3f4f6';
-                    e.target.style.display = 'flex';
-                    e.target.style.alignItems = 'center';
-                    e.target.style.justifyContent = 'center';
-                    e.target.innerHTML = 'Image not available';
-                  }}
-                  onLoad={() => {
-                    console.log('Image loaded successfully:', image.src);
-                  }}
-                />
-              </div>
-              
-              {/* Simple overlay */}
-              <div className="p-4">
-                <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                  {image.category}
-                </div>
-                <p className="text-sm text-gray-700">{image.description}</p>
-              </div>
-            </div>
-          ))}
+          {/* Simple test cards */}
+          <div className="bg-blue-200 p-4 rounded h-64">
+            <p>Test Card 1</p>
+          </div>
+          <div className="bg-green-200 p-4 rounded h-64">
+            <p>Test Card 2</p>
+          </div>
+          <div className="bg-yellow-200 p-4 rounded h-64">
+            <p>Test Card 3</p>
+          </div>
+          <div className="bg-purple-200 p-4 rounded h-64">
+            <p>Test Card 4</p>
+          </div>
+          <div className="bg-pink-200 p-4 rounded h-64">
+            <p>Test Card 5</p>
+          </div>
+          <div className="bg-orange-200 p-4 rounded h-64">
+            <p>Test Card 6</p>
+          </div>
         </div>
 
         {/* CTA Section */}
