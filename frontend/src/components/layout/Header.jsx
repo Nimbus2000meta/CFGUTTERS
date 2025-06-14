@@ -45,7 +45,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center">
+          <nav className="hidden md:flex space-x-6 items-center">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -54,14 +54,14 @@ const Header = () => {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className="text-white font-medium text-sm tracking-wide cursor-pointer transition-colors hover:text-blue-300"
+                className="text-white font-medium text-sm cursor-pointer hover:text-blue-300"
               >
                 {link.name}
               </Link>
             ))}
             <a 
               href="tel:+18458793864" 
-              className="bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors flex items-center gap-2"
+              className="bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 flex items-center gap-2"
             >
               <FiPhone /> (845) 879-3864
             </a>
@@ -89,7 +89,7 @@ const Header = () => {
                   offset={-80}
                   duration={500}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 text-white font-medium transition-colors hover:text-blue-300"
+                  className="block py-2 text-white font-medium hover:text-blue-300"
                 >
                   {link.name}
                 </Link>
