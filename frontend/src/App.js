@@ -16,8 +16,6 @@ import FAQ from "./components/sections/FAQ";
 import Contact from "./components/sections/Contact";
 import CTA from "./components/sections/CTA";
 import CTAHorizontal from "./components/sections/CTAHorizontal";
-import Process from "./components/sections/Process";
-import Benefits from "./components/sections/Benefits";
 
 // UI Components
 import PageTransition from "./components/ui/PageTransition";
