@@ -93,16 +93,16 @@ const ServiceArea = () => {
                     cx="240"
                     cy="240" 
                     r="200"
-                    fill="rgba(59, 130, 246, 0.1)"
-                    stroke="rgba(59, 130, 246, 0.8)"
+                    fill="rgba(74, 144, 164, 0.1)"
+                    stroke="rgba(74, 144, 164, 0.8)"
                     strokeWidth="3"
                     strokeDasharray="8,4"
                   />
                   {/* Radius labels */}
-                  <text x="240" y="50" textAnchor="middle" fill="#1e40af" fontSize="12" fontWeight="bold">
+                  <text x="240" y="50" textAnchor="middle" fill="#4A90A4" fontSize="12" fontWeight="bold">
                     50 Miles
                   </text>
-                  <text x="240" y="430" textAnchor="middle" fill="#1e40af" fontSize="12" fontWeight="bold">
+                  <text x="240" y="430" textAnchor="middle" fill="#4A90A4" fontSize="12" fontWeight="bold">
                     Service Radius
                   </text>
                 </svg>
@@ -117,7 +117,7 @@ const ServiceArea = () => {
                   <span className="text-sm font-semibold text-gray-800">Service Center: Mahopac, NY</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 border-2 border-blue-500 border-dashed rounded-full bg-blue-500 bg-opacity-20"></div>
+                  <div className="w-3 h-3 border-2 border-primary-500 border-dashed rounded-full bg-primary-500 bg-opacity-20"></div>
                   <span className="text-sm font-semibold text-gray-800">50-Mile Service Radius</span>
                 </div>
                 <div className="text-xs text-gray-600 mt-2">
@@ -130,7 +130,7 @@ const ServiceArea = () => {
 
         {/* Service Area Text */}
         <motion.div
-          className="bg-blue-700 text-white text-center py-8 px-6 rounded-lg"
+          className="bg-primary-500 text-white text-center py-8 px-6 rounded-lg"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -158,21 +158,21 @@ const ServiceArea = () => {
           </div>
 
           {/* Coverage Details */}
-          <div className="bg-blue-800 p-6 rounded-lg max-w-3xl mx-auto">
+          <div className="bg-primary-600 p-6 rounded-lg max-w-3xl mx-auto">
             <h4 className="text-lg font-bold mb-4">Within Our 50-Mile Service Radius:</h4>
             <div className="grid md:grid-cols-2 gap-4 text-left">
               <div>
                 <h5 className="font-semibold mb-2">✓ Residential Services</h5>
-                <p className="text-blue-200 text-sm">Single-family homes, townhouses, condos</p>
+                <p className="text-primary-200 text-sm">Single-family homes, townhouses, condos</p>
               </div>
               <div>
                 <h5 className="font-semibold mb-2">✓ Commercial Properties</h5>
-                <p className="text-blue-200 text-sm">Office buildings, retail centers, warehouses</p>
+                <p className="text-primary-200 text-sm">Office buildings, retail centers, warehouses</p>
               </div>
             </div>
             
-            <div className="mt-6 pt-4 border-t border-blue-600">
-              <p className="text-blue-200">
+            <div className="mt-6 pt-4 border-t border-primary-400">
+              <p className="text-primary-200">
                 Professional gutter cleaning and roof maintenance services • Licensed & Insured • 10+ Years Experience
               </p>
             </div>

@@ -5,16 +5,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#e6f0f9',
-          100: '#cce0f3',
-          200: '#99c2e6',
-          300: '#66a3da',
-          400: '#3385cd',
-          500: '#0066c1', // Primary brand color
-          600: '#005299',
-          700: '#003d72',
-          800: '#00294c',
-          900: '#001426',
+          50: '#e6f3fb',
+          100: '#cce7f7',
+          200: '#99cfef',
+          300: '#66b7e7',
+          400: '#339fdf',
+          500: '#4A90A4', // Primary brand color - matches your desired header color
+          600: '#3a7283',
+          700: '#2b5462',
+          800: '#1c3641',
+          900: '#0d1821',
         },
         secondary: {
           50: '#e6f7f2',
@@ -34,7 +34,7 @@ module.exports = {
         },
         accent: {
           orange: '#ff6b35', // CTA highlight
-          blue: '#3da5d9', // Secondary highlight
+          blue: '#4A90A4', // Secondary highlight - matching header
         }
       },
       fontFamily: {
@@ -57,7 +57,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-overlay': 'linear-gradient(to right, rgba(0, 102, 193, 0.8), rgba(0, 175, 128, 0.8))',
+        'gradient-overlay': 'linear-gradient(to right, rgba(74, 144, 164, 0.8), rgba(0, 175, 128, 0.8))',
       },
       backdropFilter: {
         'blur-sm': 'blur(12px)',

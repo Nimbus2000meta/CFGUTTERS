@@ -7,7 +7,7 @@ const Services = () => {
       id: 'gutter-cleaning',
       title: 'Professional Gutter Cleaning',
       description: 'Clogged gutters can cause serious damage to your home. We provide expert gutter cleaning services to keep your gutters clear and functional year-round.',
-      icon: <FiDroplet className="text-4xl text-blue-600" />,
+      icon: <FiDroplet className="text-4xl text-primary-600" />,
       features: [
         'Debris Removal',
         'Downspout Flushing',
@@ -19,7 +19,7 @@ const Services = () => {
       id: 'gutter-guards',
       title: 'Gutter Guard Installation',
       description: 'Protect your gutters with high-quality gutter guards that prevent debris buildup and reduce maintenance needs.',
-      icon: <FiShield className="text-4xl text-blue-600" />,
+      icon: <FiShield className="text-4xl text-primary-600" />,
       features: [
         'High-Quality Materials',
         'Custom Fitting',
@@ -31,7 +31,7 @@ const Services = () => {
       id: 'gutter-repairs',
       title: 'Gutter & Downspout Repairs',
       description: 'Restore your gutter system functionality with our expert repair services for leaks, sagging, and damage.',
-      icon: <FiTool className="text-4xl text-blue-600" />,
+      icon: <FiTool className="text-4xl text-primary-600" />,
       features: [
         'Leak Repair',
         'Sagging Correction',
@@ -43,7 +43,7 @@ const Services = () => {
       id: 'basic-roof-cleaning',
       title: 'Basic Roof Cleaning & Moss Treatment',
       description: 'Budget-friendly solution to remove moss and debris with preventative treatment to slow regrowth.',
-      icon: <FiWind className="text-4xl text-blue-600" />,
+      icon: <FiWind className="text-4xl text-primary-600" />,
       features: [
         'Moss Removal',
         'Debris Clearing',
@@ -55,7 +55,7 @@ const Services = () => {
       id: 'soft-wash-cleaning',
       title: 'Complete Soft Wash Roof Cleaning',
       description: 'Thorough clean that restores your roof to its original condition using low-pressure soft wash system.',
-      icon: <FiDroplet className="text-4xl text-blue-600" />,
+      icon: <FiDroplet className="text-4xl text-primary-600" />,
       features: [
         'Low-Pressure System',
         'Complete Restoration',
@@ -70,9 +70,9 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-blue-600 font-semibold uppercase tracking-wider mb-2">Our Expertise</p>
+          <p className="text-primary-600 font-semibold uppercase tracking-wider mb-2">Our Expertise</p>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Expert Gutter & <span className="text-blue-600">Roof Cleaning</span>
+            Expert Gutter & <span className="text-primary-600">Roof Cleaning</span>
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             At CF Gutters, we believe every home deserves quality care and reliable service—without breaking the bank. 
@@ -92,7 +92,7 @@ const Services = () => {
                 <p className="text-gray-600 mb-6">{service.description}</p>
                 
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-blue-600 mb-3">Process:</h4>
+                  <h4 className="font-semibold text-primary-600 mb-3">Process:</h4>
                   <ul className="space-y-2">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-center">
