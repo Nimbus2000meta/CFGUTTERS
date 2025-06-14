@@ -8,20 +8,31 @@ const Footer = () => {
 
   const services = [
     'Professional Gutter Cleaning',
-    'Gutter Guard Installation',
+    'Gutter Guard Installation', 
     'Gutter & Downspout Repairs',
     'Basic Roof Cleaning & Moss Treatment',
-    'Complete Soft Wash Roof Cleaning'
+    'Complete Soft Wash Roof Cleaning',
+    'Emergency Gutter Service'
   ];
 
   const quickLinks = [
     { name: 'Home', to: 'home' },
     { name: 'About', to: 'about' },
     { name: 'Services', to: 'services' },
+    { name: 'Service Area', to: 'service-area' },
     { name: 'Gallery', to: 'gallery' },
     { name: 'Testimonials', to: 'testimonials' },
     { name: 'FAQ', to: 'faq' },
     { name: 'Contact', to: 'contact' }
+  ];
+
+  const serviceAreas = [
+    'Mahopac NY',
+    'Kent CT', 
+    'Warren CT',
+    'Westport CT',
+    'Carmel NY',
+    'Brewster NY'
   ];
 
   return (
