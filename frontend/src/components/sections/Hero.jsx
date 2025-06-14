@@ -108,7 +108,7 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Right Side - Logo Placeholder */}
+          {/* Right Side - CF Gutters Logo */}
           <div className="hidden lg:flex justify-center items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -116,16 +116,11 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.5 }}
               className="relative"
             >
-              {/* Placeholder for CF Gutters Logo */}
-              <div className="w-80 h-80 bg-white/10 backdrop-blur-sm rounded-full border-4 border-white/20 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="text-4xl font-bold mb-2">CF GUTTERS</div>
-                  <div className="text-lg opacity-75">Professional Cleaning</div>
-                  <div className="text-xs mt-4 opacity-50 max-w-xs">
-                    Replace this with your actual logo by saving your logo image as /public/cf-gutters-logo.png
-                  </div>
-                </div>
-              </div>
+              <img
+                src="/cf-gutters-logo.svg"
+                alt="CF Gutters Professional Cleaning Services"
+                className="w-80 h-80 object-contain drop-shadow-2xl"
+              />
             </motion.div>
           </div>
         </div>
