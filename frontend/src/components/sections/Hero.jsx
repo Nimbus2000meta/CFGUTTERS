@@ -8,23 +8,23 @@ const Hero = () => {
   return (
     <section 
       id="home"
-      className="relative h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 pt-20 pb-10"
     >
       
       {/* Content Container */}
-      <div className="container-custom relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container-custom relative z-20 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="">
+          <div className="order-2 lg:order-1 px-4 lg:px-0">
             <TextReveal 
               type="headline" 
-              className="text-white mb-4 drop-shadow-lg"
+              className="text-white mb-4 drop-shadow-lg text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight"
             >
               Professional Gutter & Roof Cleaning Services
             </TextReveal>
             
             <TextReveal 
-              className="text-white/90 text-lg md:text-xl mb-8 drop-shadow-md"
+              className="text-white/90 text-base sm:text-lg lg:text-xl mb-6 lg:mb-8 drop-shadow-md leading-relaxed"
               delay={0.2}
             >
               Protect Your Home with Expert Gutter Cleaning. Your roof and gutters are essential in protecting your home from water damage and structural issues. At CF Gutters we specialize in professional cleaning and maintenance services.
