@@ -43,60 +43,63 @@ const Footer = () => {
                 viewBox="0 0 200 200"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="mr-3 text-white"
+                className="mr-3"
               >
-                {/* Outer circle border */}
+                {/* Outer circle border - White */}
                 <circle 
                   cx="100" 
                   cy="100" 
                   r="95" 
-                  stroke="currentColor" 
+                  stroke="white" 
                   strokeWidth="8" 
-                  fill="white"
+                  fill="#1e40af"
                 />
                 
-                {/* Inner circle border */}
+                {/* Inner circle border - White */}
                 <circle 
                   cx="100" 
                   cy="100" 
                   r="85" 
-                  stroke="currentColor" 
+                  stroke="white" 
                   strokeWidth="2" 
-                  fill="white"
+                  fill="#1e40af"
                 />
                 
-                {/* Main house/roof structure */}
+                {/* Main house/roof structure - White */}
                 <path 
                   d="M30 110 L60 75 L90 75 L140 75 L170 110 L165 120 L35 120 Z" 
-                  fill="currentColor"
-                />
-                
-                {/* Roof peak triangle */}
-                <path 
-                  d="M70 75 L100 45 L130 75 L125 72 L100 52 L75 72 Z" 
-                  fill="currentColor"
-                />
-                
-                {/* Inner roof detail */}
-                <path 
-                  d="M80 75 L100 58 L120 75 L115 73 L100 63 L85 73 Z" 
                   fill="white"
                 />
                 
-                {/* Gutter system */}
-                <rect x="30" y="110" width="140" height="8" fill="currentColor"/>
+                {/* Roof peak triangle - White */}
+                <path 
+                  d="M70 75 L100 45 L130 75 L125 72 L100 52 L75 72 Z" 
+                  fill="white"
+                />
                 
-                {/* Water flow lines */}
-                <path d="M35 125 L50 125" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M55 128 L70 128" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M75 131 L90 131" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M110 128 L125 128" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M130 131 L145 131" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M150 125 L165 125" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+                {/* Inner roof detail - Light Blue */}
+                <path 
+                  d="M80 75 L100 58 L120 75 L115 73 L100 63 L85 73 Z" 
+                  fill="#93c5fd"
+                />
                 
-                {/* Downspout */}
-                <rect x="167" y="110" width="6" height="25" fill="currentColor"/>
-                <rect x="165" y="133" width="10" height="4" fill="currentColor"/>
+                {/* Gutter system - White */}
+                <rect x="30" y="110" width="140" height="8" fill="white"/>
+                
+                {/* Water flow lines - White */}
+                <path d="M35 125 L50 125" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M55 128 L70 128" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M75 131 L90 131" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M110 128 L125 128" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M130 131 L145 131" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M150 125 L165 125" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                
+                {/* Downspout - White */}
+                <rect x="167" y="110" width="6" height="25" fill="white"/>
+                <rect x="165" y="133" width="10" height="4" fill="white"/>
+                
+                {/* CF text inside circle - White */}
+                <text x="100" y="155" textAnchor="middle" fill="white" fontSize="24" fontWeight="bold">CF</text>
               </svg>
               <h3 className="text-2xl font-bold">CF Gutters</h3>
             </div>
