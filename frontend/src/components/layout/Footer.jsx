@@ -130,7 +130,7 @@ const Footer = () => {
                   duration={500}
                   className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
                 >
-                  Gutter & Downspout Repairs
+                  Gutter Downspout Repairs
                 </Link>
               </li>
               <li>
@@ -190,7 +190,7 @@ const Footer = () => {
                   duration={500}
                   className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
                 >
-                  FAQs
+                  FAQ
                 </Link>
               </li>
               <li>
