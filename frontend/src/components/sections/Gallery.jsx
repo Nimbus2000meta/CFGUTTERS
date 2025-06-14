@@ -9,45 +9,45 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: 'https://images.unsplash.com/photo-1556137805-b67cc1d7d328?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Professional working on roof maintenance',
-      category: 'Roof Maintenance',
-      description: 'Professional technician performing roof and gutter maintenance'
+      src: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=600&fit=crop',
+      alt: 'Professional gutter cleaning work',
+      category: 'Gutter Cleaning',
+      description: 'Professional gutter cleaning and maintenance service'
     },
     {
       id: 2,
-      src: 'https://images.unsplash.com/photo-1593174260957-b4eba7b3820c?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Gutter cleaning action shot',
-      category: 'Gutter Cleaning',
-      description: 'Active gutter cleaning work in progress'
+      src: 'https://images.unsplash.com/photo-1504253163759-c23fccaebb55?w=800&h=600&fit=crop',
+      alt: 'Roof maintenance work',
+      category: 'Roof Maintenance',
+      description: 'Expert roof maintenance and cleaning services'
     },
     {
       id: 3,
-      src: 'https://images.unsplash.com/photo-1744044155829-610dded4cead?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Dirty gutters before cleaning',
-      category: 'Before & After',
-      description: 'Gutters needing professional cleaning service'
+      src: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop',
+      alt: 'Professional construction work',
+      category: 'Professional Service',
+      description: 'Professional construction and maintenance work'
     },
     {
       id: 4,
-      src: 'https://images.unsplash.com/photo-1633759593085-1eaeb724fc88?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Professional roof maintenance work',
-      category: 'Professional Service',
-      description: 'Expert roof maintenance and gutter care'
+      src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop',
+      alt: 'Home exterior maintenance',
+      category: 'Home Maintenance',
+      description: 'Complete home exterior maintenance services'
     },
     {
       id: 5,
-      src: 'https://images.unsplash.com/photo-1726589004565-bedfba94d3a2?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Professional roof cleaning work',
-      category: 'Roof Cleaning',
-      description: 'Professional roof cleaning and maintenance service'
+      src: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
+      alt: 'Professional cleaning service',
+      category: 'Cleaning Services',
+      description: 'Professional home cleaning and maintenance'
     },
     {
       id: 6,
-      src: 'https://images.pexels.com/photos/20113440/pexels-photo-20113440.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Gutter system close-up',
-      category: 'Gutter Systems',
-      description: 'Close-up view of professional gutter installation'
+      src: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop',
+      alt: 'Quality workmanship',
+      category: 'Quality Work',
+      description: 'High-quality professional workmanship and service'
     }
   ];
 
