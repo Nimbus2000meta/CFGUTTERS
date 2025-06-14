@@ -152,39 +152,39 @@ const Gallery = () => {
             </div>
           ) : (
             galleryImages.map((image, index) => (
-            <motion.div
+            <div
               key={image.id}
-              className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
               onClick={() => openLightbox(image, index)}
-              whileHover={{ scale: 1.02 }}
             >
-              <div className="overflow-hidden h-64">
+              <div className="h-64 bg-gray-200">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                   onError={(e) => {
                     console.log('Image failed to load:', image.src);
-                    e.target.style.display = 'none';
+                    e.target.style.background = '#f3f4f6';
+                    e.target.style.display = 'flex';
+                    e.target.style.alignItems = 'center';
+                    e.target.style.justifyContent = 'center';
+                    e.target.innerHTML = 'Image not available';
+                  }}
+                  onLoad={() => {
+                    console.log('Image loaded successfully:', image.src);
                   }}
                 />
               </div>
               
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                  <div className="inline-block bg-primary-500 text-xs px-2 py-1 rounded-full mb-2">
-                    {image.category}
-                  </div>
-                  <p className="text-sm font-medium">{image.description}</p>
+              {/* Simple overlay */}
+              <div className="p-4">
+                <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                  {image.category}
                 </div>
+                <p className="text-sm text-gray-700">{image.description}</p>
               </div>
-            </motion.div>
+            </div>
             ))
           )}
         </motion.div>
