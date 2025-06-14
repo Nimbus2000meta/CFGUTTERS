@@ -14,8 +14,8 @@ const Footer = () => {
         <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '32px'}}>
           
           {/* Company Info - Logo and Details */}
-          <div style={{gridColumn: '1 / -1'}} className="md:col-span-1 text-center md:text-left">
-            <div style={{marginBottom: '16px'}} className="flex flex-col items-center md:items-start">
+          <div style={{gridColumn: '1 / -1'}} className="md:col-span-1 text-center">
+            <div style={{marginBottom: '16px'}} className="flex flex-col items-center">
               {/* Logo Image - Replace src with your logo image URL */}
               <img 
                 src="/logo.png" 
@@ -64,8 +64,8 @@ const Footer = () => {
               </svg>
             </div>
             
-            {/* Social Media Links - Mobile Friendly */}
-            <div className="flex justify-center md:justify-start flex-wrap gap-4 mb-4">
+            {/* Social Media Links - Centered */}
+            <div className="flex justify-center flex-wrap gap-4 mb-4">
               <a
                 href="https://www.facebook.com/profile.php?id=61567485513010"
                 target="_blank"
@@ -98,9 +98,10 @@ const Footer = () => {
               </a>
             </div>
             
-            <div style={{fontSize: '14px', color: '#cbd5e1'}} className="text-center md:text-left">
+            {/* Copyright and Location - Centered */}
+            <div style={{fontSize: '14px', color: '#cbd5e1'}} className="text-center">
               <p style={{marginBottom: '8px'}}>Copyright {currentYear} © All rights Reserved. CF Gutters</p>
-              <div style={{display: 'flex', alignItems: 'center', gap: '8px'}} className="justify-center md:justify-start">
+              <div style={{display: 'flex', alignItems: 'center', gap: '8px'}} className="justify-center">
                 <FiMapPin style={{color: '#00af80'}} />
                 <span>Mahopac NY to Westport CT</span>
               </div>
