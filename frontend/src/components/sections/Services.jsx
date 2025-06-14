@@ -1,7 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FiCheckCircle, FiTool, FiDroplet, FiShield, FiWind } from 'react-icons/fi';
-import Feature3DCard from '../ui/Feature3DCard';
 
 const Services = () => {
   const services = [
