@@ -133,103 +133,27 @@ const Gallery = () => {
           </motion.p>
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid - Simple Test */}
+        <div className="bg-red-200 p-8 text-center mb-8">
+          <h3 className="text-2xl font-bold">GALLERY TEST AREA</h3>
+          <p>If you can see this red box, the gallery section is working</p>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=1"
-                alt="Professional gutter cleaning work"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Gutter Cleaning
-              </div>
-              <p className="text-sm text-gray-700">Professional gutter cleaning and debris removal</p>
-            </div>
+          <div style={{backgroundColor: 'blue', height: '200px', color: 'white', padding: '20px'}}>
+            <h3>Card 1</h3>
+            <p>Simple test card</p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=2"
-                alt="Gutter maintenance service"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Maintenance
-              </div>
-              <p className="text-sm text-gray-700">Expert gutter maintenance and repair work</p>
-            </div>
+          <div style={{backgroundColor: 'green', height: '200px', color: 'white', padding: '20px'}}>
+            <h3>Card 2</h3>
+            <p>Simple test card</p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=3"
-                alt="Professional roof cleaning"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Roof Cleaning
-              </div>
-              <p className="text-sm text-gray-700">Professional roof cleaning and moss treatment</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=4"
-                alt="Gutter guard installation"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Gutter Guards
-              </div>
-              <p className="text-sm text-gray-700">High-quality gutter guard installation service</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=5"
-                alt="Complete gutter system cleaning"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Complete Service
-              </div>
-              <p className="text-sm text-gray-700">Comprehensive gutter system cleaning and maintenance</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=6"
-                alt="Professional gutter repair"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Repairs
-              </div>
-              <p className="text-sm text-gray-700">Expert gutter repair and restoration services</p>
-            </div>
+          <div style={{backgroundColor: 'orange', height: '200px', color: 'white', padding: '20px'}}>
+            <h3>Card 3</h3>
+            <p>Simple test card</p>
           </div>
 
         </div>
