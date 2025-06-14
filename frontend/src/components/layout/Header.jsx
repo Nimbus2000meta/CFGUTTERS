@@ -5,7 +5,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-primary-500 shadow-lg">
+    <header className="fixed top-0 w-full z-50 bg-primary-900 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
