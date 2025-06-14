@@ -41,6 +41,15 @@ const Header = () => {
             <a href="#contact" className="text-white hover:text-blue-300 cursor-pointer font-medium">Contact</a>
           </nav>
 
+          {/* Phone Number */}
+          <a 
+            href="tel:+18458793864" 
+            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
+          >
+            <FiPhone size={16} />
+            (845) 879-3864
+          </a>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
