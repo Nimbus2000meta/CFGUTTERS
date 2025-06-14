@@ -119,23 +119,6 @@ const Hero = () => {
                 <p className="text-white/90">Expert gutter cleaning & maintenance</p>
               </div>
             </div>
-            
-            {/* Floating Elements */}
-            <motion.div 
-              className="absolute -top-4 -right-4 bg-secondary-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              10+ Years
-            </motion.div>
-            
-            <motion.div 
-              className="absolute -bottom-4 -left-4 bg-green-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-            >
-              Licensed & Insured
-            </motion.div>
           </motion.div>
         </div>
       </div>
