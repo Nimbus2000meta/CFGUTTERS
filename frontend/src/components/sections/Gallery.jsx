@@ -9,42 +9,42 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bf5d0b2d927f30cbd78f3b.jpeg',
+      src: 'https://picsum.photos/800/600?random=1',
       alt: 'Professional gutter cleaning work',
       category: 'Gutter Cleaning',
       description: 'Professional gutter cleaning and debris removal'
     },
     {
       id: 2,
-      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0ad4d1ae850b95f7331e9.png',
+      src: 'https://picsum.photos/800/600?random=2',
       alt: 'Gutter maintenance service',
       category: 'Maintenance',
       description: 'Expert gutter maintenance and repair work'
     },
     {
       id: 3,
-      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdd31ec9dc3f2.png',
+      src: 'https://picsum.photos/800/600?random=3',
       alt: 'Professional roof cleaning',
       category: 'Roof Cleaning',
       description: 'Professional roof cleaning and moss treatment'
     },
     {
       id: 4,
-      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdddf649dc3f3.png',
+      src: 'https://picsum.photos/800/600?random=4',
       alt: 'Gutter guard installation',
       category: 'Gutter Guards',
       description: 'High-quality gutter guard installation service'
     },
     {
       id: 5,
-      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bdffbcf5a96f29ddd02b19.png',
+      src: 'https://picsum.photos/800/600?random=5',
       alt: 'Complete gutter system cleaning',
       category: 'Complete Service',
       description: 'Comprehensive gutter system cleaning and maintenance'
     },
     {
       id: 6,
-      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67be017f963eccdde021734b.png',
+      src: 'https://picsum.photos/800/600?random=6',
       alt: 'Professional gutter repair',
       category: 'Repairs',
       description: 'Expert gutter repair and restoration services'
