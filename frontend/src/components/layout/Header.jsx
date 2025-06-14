@@ -31,27 +31,14 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.to}
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                className="text-white hover:text-blue-300 cursor-pointer font-medium"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <a 
-              href="tel:+18458793864" 
-              className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
-            >
-              <FiPhone size={16} />
-              (845) 879-3864
-            </a>
+          <nav className="flex items-center space-x-6">
+            <a href="#home" className="text-white hover:text-blue-300 cursor-pointer font-medium">Home</a>
+            <a href="#services" className="text-white hover:text-blue-300 cursor-pointer font-medium">Services</a>
+            <a href="#about" className="text-white hover:text-blue-300 cursor-pointer font-medium">About</a>
+            <a href="#gallery" className="text-white hover:text-blue-300 cursor-pointer font-medium">Gallery</a>
+            <a href="#testimonials" className="text-white hover:text-blue-300 cursor-pointer font-medium">Testimonials</a>
+            <a href="#faq" className="text-white hover:text-blue-300 cursor-pointer font-medium">FAQ</a>
+            <a href="#contact" className="text-white hover:text-blue-300 cursor-pointer font-medium">Contact</a>
           </nav>
 
           {/* Mobile Menu Button */}
