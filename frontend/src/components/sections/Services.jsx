@@ -7,8 +7,7 @@ const Services = () => {
       id: 'gutter-cleaning',
       title: 'Professional Gutter Cleaning',
       description: 'Clogged gutters can cause serious damage to your home. We provide expert gutter cleaning services to keep your gutters clear and functional year-round.',
-      icon: <FiDroplet className="text-4xl text-primary-500" />,
-      image: 'https://images.unsplash.com/photo-1553169507-38833977274b',
+      icon: <FiDroplet className="text-4xl text-blue-600" />,
       features: [
         'Debris Removal',
         'Downspout Flushing',
@@ -20,8 +19,7 @@ const Services = () => {
       id: 'gutter-guards',
       title: 'Gutter Guard Installation',
       description: 'Protect your gutters with high-quality gutter guards that prevent debris buildup and reduce maintenance needs.',
-      icon: <FiShield className="text-4xl text-primary-500" />,
-      image: 'https://images.unsplash.com/photo-1583839013375-67ede5f4a0c6',
+      icon: <FiShield className="text-4xl text-blue-600" />,
       features: [
         'High-Quality Materials',
         'Custom Fitting',
@@ -32,9 +30,8 @@ const Services = () => {
     {
       id: 'gutter-repairs',
       title: 'Gutter & Downspout Repairs',
-      description: 'Restore your gutter system\'s functionality with our expert repair services for leaks, sagging, and damage.',
-      icon: <FiTool className="text-4xl text-primary-500" />,
-      image: 'https://images.pexels.com/photos/945615/pexels-photo-945615.jpeg',
+      description: 'Restore your gutter system functionality with our expert repair services for leaks, sagging, and damage.',
+      icon: <FiTool className="text-4xl text-blue-600" />,
       features: [
         'Leak Repair',
         'Sagging Correction',
@@ -46,8 +43,7 @@ const Services = () => {
       id: 'basic-roof-cleaning',
       title: 'Basic Roof Cleaning & Moss Treatment',
       description: 'Budget-friendly solution to remove moss and debris with preventative treatment to slow regrowth.',
-      icon: <FiWind className="text-4xl text-primary-500" />,
-      image: 'https://images.unsplash.com/photo-1699154581577-ce92c7a86638',
+      icon: <FiWind className="text-4xl text-blue-600" />,
       features: [
         'Moss Removal',
         'Debris Clearing',
@@ -59,8 +55,7 @@ const Services = () => {
       id: 'soft-wash-cleaning',
       title: 'Complete Soft Wash Roof Cleaning',
       description: 'Thorough clean that restores your roof to its original condition using low-pressure soft wash system.',
-      icon: <FiDroplet className="text-4xl text-primary-500" />,
-      image: 'https://images.unsplash.com/photo-1608747912555-466ac58ad9e8',
+      icon: <FiDroplet className="text-4xl text-blue-600" />,
       features: [
         'Low-Pressure System',
         'Complete Restoration',
