@@ -1,54 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiMapPin, FiPhone, FiMail, FiClock } from 'react-icons/fi';
-import ContactForm from './ContactForm';
+import { FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
 
 const Contact = () => {
-  const contactDetails = [
-    {
-      icon: <FiMapPin />,
-      title: 'Address',
-      details: ['123 Gutter Lane', 'Cityville, ST 12345']
-    },
-    {
-      icon: <FiPhone />,
-      title: 'Phone',
-      details: ['(555) 123-4567', 'Mon-Fri, 8am-6pm']
-    },
-    {
-      icon: <FiMail />,
-      title: 'Email',
-      details: ['info@cfgutters.com', 'support@cfgutters.com']
-    },
-    {
-      icon: <FiClock />,
-      title: 'Hours',
-      details: ['Monday-Friday: 8am-6pm', 'Saturday: 9am-2pm']
-    }
-  ];
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 50 }
-    }
-  };
-
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding bg-neutral-50">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -68,7 +24,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Contact <span className="headline-gradient">Us Today</span>
+            Request a <span className="headline-gradient">Free Quote</span> Today!
           </motion.h2>
           <motion.p 
             className="text-neutral-600"
@@ -77,82 +33,161 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Ready to protect your home with quality gutters? Reach out to us for a free consultation
-            and estimate. We're here to help with all your gutter needs.
+            Fill out our online contact form or give us a call to request a free, no-obligation 
+            estimate for any of our services. We'll respond promptly to discuss your needs.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Contact Details */}
-          <motion.div 
-            className="lg:col-span-2"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {contactDetails.map((detail, index) => (
-                <motion.div 
-                  key={index} 
-                  className="bg-primary-50 rounded-xl p-6"
-                  variants={itemVariants}
-                >
-                  <div className="bg-white rounded-full w-12 h-12 flex items-center justify-center mb-4 text-primary-500 shadow-soft">
-                    {detail.icon}
+            <div className="bg-white p-8 rounded-xl shadow-soft">
+              <h3 className="text-2xl font-bold text-primary-700 mb-6">Get In Touch</h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <FiPhone className="text-primary-600 text-xl" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{detail.title}</h3>
-                  {detail.details.map((line, i) => (
-                    <p key={i} className="text-neutral-600">{line}</p>
-                  ))}
-                </motion.div>
-              ))}
+                  <div>
+                    <p className="text-sm text-neutral-500">Call Now</p>
+                    <a 
+                      href="tel:+18458793864" 
+                      className="text-lg font-semibold text-primary-700 hover:text-primary-800 transition-colors"
+                    >
+                      (845) 879-3864
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <FiMail className="text-primary-600 text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-neutral-500">Email Us</p>
+                    <a 
+                      href="mailto:cfgutters02@gmail.com" 
+                      className="text-lg font-semibold text-primary-700 hover:text-primary-800 transition-colors"
+                    >
+                      cfgutters02@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <FiMapPin className="text-primary-600 text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-neutral-500">Service Area</p>
+                    <p className="text-lg font-semibold text-primary-700">
+                      Mahopac NY to Westport CT
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <FiClock className="text-primary-600 text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-neutral-500">Business Hours</p>
+                    <p className="text-lg font-semibold text-primary-700">
+                      Monday-Saturday 8 AM to 6 PM
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
+            {/* Emergency Contact */}
             <motion.div
-              className="mt-8 bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-xl p-6 shadow-soft"
+              className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 rounded-xl text-white"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.4 }}
             >
-              <h3 className="font-semibold text-xl mb-3">Emergency Service</h3>
-              <p className="mb-4">
-                Experiencing an urgent gutter issue? We offer emergency repairs to prevent water damage to your home.
+              <h4 className="font-semibold mb-2">Need Urgent Service?</h4>
+              <p className="text-sm mb-4">
+                We offer emergency gutter cleaning and repair services for urgent situations.
               </p>
               <a 
-                href="tel:+15551234567" 
-                className="btn bg-white text-primary-600 hover:bg-neutral-50"
+                href="tel:+18458793864"
+                className="inline-flex items-center space-x-2 bg-white text-primary-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
-                Call Now
+                <FiPhone />
+                <span>Call Now</span>
               </a>
             </motion.div>
           </motion.div>
 
-          {/* Contact Form */}
-          <motion.div 
-            className="lg:col-span-3 bg-white rounded-xl shadow-soft p-8"
+          {/* Contact Form - Typeform Placeholder */}
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <ContactForm />
+            <div className="bg-white p-8 rounded-xl shadow-soft">
+              <h3 className="text-2xl font-bold text-primary-700 mb-6">Request Your Quote</h3>
+              
+              {/* Typeform Placeholder */}
+              <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-8 rounded-lg text-center border-2 border-dashed border-primary-200">
+                <div className="text-primary-600 mb-4">
+                  <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-primary-700 mb-3">Typeform Integration</h4>
+                <p className="text-primary-600 mb-6">
+                  Your custom Typeform will be embedded here. This provides a professional, interactive 
+                  contact form experience for your customers.
+                </p>
+                <div className="space-y-3 text-left">
+                  <p className="text-sm text-primary-600">
+                    <strong>To Complete Integration:</strong>
+                  </p>
+                  <ol className="text-sm text-primary-600 space-y-1 list-decimal list-inside">
+                    <li>Create your Typeform at typeform.com</li>
+                    <li>Copy your Form ID</li>
+                    <li>Replace this placeholder with the embedded form</li>
+                  </ol>
+                </div>
+              </div>
+
+              {/* Temporary Contact Info */}
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <p className="text-center text-neutral-600 mb-4">
+                  In the meantime, contact us directly:
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="tel:+18458793864"
+                    className="btn btn-primary flex items-center justify-center gap-2"
+                  >
+                    <FiPhone />
+                    Call (845) 879-3864
+                  </a>
+                  <a 
+                    href="mailto:cfgutters02@gmail.com"
+                    className="btn btn-outline flex items-center justify-center gap-2"
+                  >
+                    <FiMail />
+                    Email Us
+                  </a>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
-      </div>
-      
-      {/* Map */}
-      <div className="mt-16 rounded-xl overflow-hidden h-96 shadow-soft max-w-6xl mx-auto">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDA0JzI3LjIiTiA3NMKwMDAnMDguMSJX!5e0!3m2!1sen!2sus!4v1620160360026!5m2!1sen!2sus" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen="" 
-          loading="lazy"
-          title="CFGutters Location"
-        ></iframe>
       </div>
     </section>
   );

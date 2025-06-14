@@ -1,64 +1,51 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiPlus, FiMinus } from 'react-icons/fi';
 
 const FAQ = () => {
-  // State to track which FAQ is open
-  const [openFAQ, setOpenFAQ] = useState(null);
-
-  const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
-  };
+  const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
     {
-      question: "How often should gutters be cleaned?",
-      answer: "For most homes, we recommend cleaning gutters at least twice a year—once in the spring and once in the fall. However, if your home is surrounded by trees, you may need more frequent cleaning, potentially up to four times a year."
+      question: "How often should I have my gutters cleaned?",
+      answer: "We recommend having your gutters cleaned at least twice a year - once in late spring and once in early fall. However, if you have many trees near your home, you may need more frequent cleaning."
     },
     {
-      question: "What type of gutters do you recommend?",
-      answer: "We typically recommend seamless aluminum gutters for most homes due to their durability, cost-effectiveness, and minimal maintenance requirements. However, the best option depends on your specific home, climate, and aesthetic preferences. We're happy to discuss options during a consultation."
+      question: "What's the difference between Basic and Complete Soft Wash roof cleaning?",
+      answer: "Basic Roof Cleaning involves gently brushing off moss and debris, followed by a moss-preventative treatment. Complete Soft Wash uses a low-pressure system with specialized cleaning solutions to remove all moss, algae, and stains, providing a more thorough restoration."
     },
     {
-      question: "Do you install gutter guards and are they worth it?",
-      answer: "Yes, we install various types of gutter guards. They can be highly effective at preventing debris build-up, reducing the frequency of cleaning needed, and extending the life of your gutters. While they represent an additional investment upfront, most homeowners find they pay for themselves through reduced maintenance costs and avoided water damage."
+      question: "Do you offer gutter guard installation?",
+      answer: "Yes! We install high-quality gutter guards that help prevent debris buildup and reduce the frequency of gutter cleaning. Our guards are custom-fitted to your home's specific gutter system."
     },
     {
-      question: "How long does gutter installation take?",
-      answer: "For an average-sized home, a complete gutter installation typically takes 1-2 days. Larger homes or more complex installations may take longer. We'll provide a specific timeframe during your estimate."
+      question: "Are you licensed and insured?",
+      answer: "Absolutely. CF Gutters is fully licensed and insured for your peace of mind. We carry comprehensive liability insurance and workers' compensation coverage."
     },
     {
-      question: "What are the signs that my gutters need to be replaced?",
-      answer: "Signs that indicate your gutters may need replacement include visible cracks or splits, sagging or pulling away from the house, water damage or water marks underneath gutters, mildew or pools of water around your foundation, peeling paint or rust spots, and gutters that are constantly clogging despite regular cleaning."
+      question: "What areas do you serve?",
+      answer: "We serve homes and businesses throughout the region from Mahopac NY to Westport CT and everywhere in between. Contact us to confirm service availability in your specific area."
     },
     {
-      question: "Do you offer warranties on your installations?",
-      answer: "Yes, we stand behind our work with a 10-year warranty on workmanship for new installations. Additionally, the gutter materials themselves typically come with manufacturers' warranties ranging from 20-50 years depending on the product."
+      question: "Do you provide free estimates?",
+      answer: "Yes! We provide free, no-obligation estimates for all our services. Simply call us at (845) 879-3864 or fill out our contact form to schedule your free estimate."
+    },
+    {
+      question: "What makes CF Gutters different from other companies?",
+      answer: "We combine over 10 years of experience with budget-friendly rates, eco-friendly cleaning solutions, and exceptional customer service. We're licensed, insured, and committed to quality workmanship on every project."
+    },
+    {
+      question: "Can you repair damaged gutters?",
+      answer: "Yes, we provide comprehensive gutter repair services including leak repair, sagging correction, downspout reattachment, and other necessary fixes to restore your gutter system's functionality."
     }
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 50 }
-    }
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section id="faq" className="section-padding bg-neutral-50">
+    <section id="faq" className="section-padding bg-white">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -69,7 +56,7 @@ const FAQ = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Frequently Asked Questions
+            FAQ
           </motion.p>
           <motion.h2 
             className="mb-4"
@@ -78,7 +65,7 @@ const FAQ = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Common <span className="headline-gradient">Questions</span>
+            Frequently Asked <span className="headline-gradient">Questions</span>
           </motion.h2>
           <motion.p 
             className="text-neutral-600"
@@ -87,72 +74,89 @@ const FAQ = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Find answers to commonly asked questions about our gutter services.
-            If you don't see your question here, feel free to contact us.
+            Find answers to common questions about our gutter cleaning and maintenance services.
           </motion.p>
         </div>
 
-        {/* FAQ Accordion */}
-        <motion.div 
-          className="max-w-3xl mx-auto space-y-4"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
+        {/* FAQ Items */}
+        <div className="max-w-4xl mx-auto">
           {faqs.map((faq, index) => (
-            <motion.div 
-              key={index} 
-              className="bg-white rounded-xl shadow-soft overflow-hidden"
-              variants={itemVariants}
+            <motion.div
+              key={index}
+              className="mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="w-full">
-                <button 
-                  className="flex justify-between items-center w-full px-6 py-4 text-left font-medium text-neutral-800 hover:bg-primary-50 transition-colors focus:outline-none"
+              <div className="bg-neutral-50 rounded-xl overflow-hidden">
+                <button
                   onClick={() => toggleFAQ(index)}
-                  aria-expanded={openFAQ === index}
-                  data-testid={`faq-question-${index}`}
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-neutral-100 transition-colors"
                 >
-                  <span>{faq.question}</span>
-                  {openFAQ === index ? (
-                    <FiChevronUp className="text-primary-500" />
-                  ) : (
-                    <FiChevronDown className="text-primary-500" />
-                  )}
+                  <h3 className="font-semibold text-neutral-850 pr-4">
+                    {faq.question}
+                  </h3>
+                  <div className="flex-shrink-0">
+                    {openIndex === index ? (
+                      <FiMinus className="text-primary-500 text-xl" />
+                    ) : (
+                      <FiPlus className="text-primary-500 text-xl" />
+                    )}
+                  </div>
                 </button>
                 
-                <motion.div 
-                  className={`px-6 py-0 overflow-hidden ${openFAQ === index ? 'border-t border-gray-100' : ''}`}
-                  initial={{ height: 0 }}
-                  animate={{ height: openFAQ === index ? 'auto' : 0 }}
-                  transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
-                >
-                  <div className="py-4 text-neutral-600">
-                    {faq.answer}
-                  </div>
-                </motion.div>
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-4">
+                        <p className="text-neutral-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* CTA */}
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
+        {/* CTA Section */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <p className="text-neutral-600 mb-6">
-            Still have questions? We're here to help!
-          </p>
-          <a 
-            href="tel:+15551234567" 
-            className="btn btn-primary mx-auto"
-          >
-            Call Us Today
-          </a>
+          <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-8 rounded-2xl text-white">
+            <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
+            <p className="mb-6 text-primary-100">
+              Our friendly team is here to help! Contact us today for personalized answers 
+              and a free consultation about your gutter cleaning needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:+18458793864"
+                className="btn bg-white text-primary-600 hover:bg-gray-100 flex items-center justify-center gap-2"
+              >
+                Call (845) 879-3864
+              </a>
+              <a
+                href="mailto:cfgutters02@gmail.com"
+                className="btn btn-outline-white flex items-center justify-center gap-2"
+              >
+                Email Us
+              </a>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
