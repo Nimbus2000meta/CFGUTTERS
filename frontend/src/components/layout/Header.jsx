@@ -24,6 +24,7 @@ const Header = () => {
             <a href="#home" className="hover:text-blue-300">Home</a>
             <a href="#services" className="hover:text-blue-300">Services</a>
             <a href="#about" className="hover:text-blue-300">About</a>
+            <a href="#service-area" className="hover:text-blue-300">Service Area</a>
             <a href="#gallery" className="hover:text-blue-300">Gallery</a>
             <a href="#testimonials" className="hover:text-blue-300">Testimonials</a>
             <a href="#faq" className="hover:text-blue-300">FAQ</a>
