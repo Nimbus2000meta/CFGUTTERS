@@ -15,13 +15,28 @@
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    cursor: default !important;
   }
   
-  /* Force hide any custom cursor elements */
+  /* Aggressively hide any custom cursor elements */
   [data-testid="custom-cursor-large"],
-  [data-testid="custom-cursor-small"] {
+  [data-testid="custom-cursor-small"],
+  [class*="cursor"],
+  .fixed.w-8.h-8.rounded-full,
+  .fixed.w-2.h-2.rounded-full {
     display: none !important;
     visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Force standard cursor on all elements */
+  * {
+    cursor: inherit !important;
+  }
+  
+  a, button, [role="button"] {
+    cursor: pointer !important;
   }
   
   h1, h2, h3, h4, h5, h6 {
