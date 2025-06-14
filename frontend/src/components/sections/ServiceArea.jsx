@@ -3,14 +3,6 @@ import { motion } from 'framer-motion';
 import { FiMapPin, FiCheckCircle } from 'react-icons/fi';
 
 const ServiceArea = () => {
-  const services = [
-    'Gutter Cleaning',
-    'Gutter Guard Installations', 
-    'Gutter & Downspout Repairs',
-    'Basic Roof Cleaning & Moss Treatment',
-    'Complete Soft Wash Roof Cleaning'
-  ];
-
   const serviceAreas = [
     'Mahopac NY',
     'Kent CT', 
