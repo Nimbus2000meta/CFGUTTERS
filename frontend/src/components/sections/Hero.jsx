@@ -18,69 +18,6 @@ const Hero = () => {
         <div className="absolute bottom-20 right-20 w-40 h-40 border border-white rounded-full"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white rounded-full opacity-30"></div>
       </div>
-
-      {/* Large Logo Background Element */}
-      <div className="absolute right-10 top-1/2 transform -translate-y-1/2 opacity-10">
-        <svg
-          width="400"
-          height="400"
-          viewBox="0 0 200 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-white"
-        >
-          {/* Outer circle border */}
-          <circle 
-            cx="100" 
-            cy="100" 
-            r="90" 
-            stroke="currentColor" 
-            strokeWidth="3" 
-            fill="none"
-          />
-          <circle 
-            cx="100" 
-            cy="100" 
-            r="80" 
-            stroke="currentColor" 
-            strokeWidth="1" 
-            fill="none"
-          />
-          
-          {/* Main house/roof structure */}
-          <path 
-            d="M40 118 L68 85 L90 85 L140 85 L160 118 L155 128 L45 128 Z" 
-            fill="currentColor"
-          />
-          
-          {/* Roof peak triangle */}
-          <path 
-            d="M78 85 L100 55 L122 85 L118 82 L100 63 L82 82 Z" 
-            fill="currentColor"
-          />
-          
-          {/* Inner roof detail */}
-          <path 
-            d="M88 85 L100 70 L112 85 L108 83 L100 75 L92 83 Z" 
-            fill="rgba(255,255,255,0.3)"
-          />
-          
-          {/* Gutter system */}
-          <rect x="40" y="118" width="120" height="5" fill="currentColor"/>
-          
-          {/* Water flow lines */}
-          <path d="M45 133 L52 133" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M57 135 L64 135" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M69 137 L76 137" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M124 135 L131 135" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M136 137 L143 137" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M148 133 L155 133" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          
-          {/* Downspout */}
-          <rect x="157" y="118" width="3" height="18" fill="currentColor"/>
-          <rect x="155" y="134" width="7" height="3" fill="currentColor"/>
-        </svg>
-      </div>
       
       {/* Content Container */}
       <div className="container-custom relative z-20">
