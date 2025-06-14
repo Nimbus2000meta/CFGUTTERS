@@ -134,24 +134,13 @@ const Gallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, staggerChildren: 0.1 }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Debug: Show if galleryImages has content */}
           <div className="col-span-full text-center py-4 bg-red-100 mb-4">
             <p>Debug: Gallery has {galleryImages.length} images</p>
           </div>
           
-          {galleryImages.length === 0 ? (
-            <div className="col-span-full text-center py-12">
-              <p className="text-gray-500">No gallery images available</p>
-            </div>
-          ) : (
-            galleryImages.map((image, index) => (
+          {galleryImages.map((image, index) => (
             <div
               key={image.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
@@ -185,9 +174,8 @@ const Gallery = () => {
                 <p className="text-sm text-gray-700">{image.description}</p>
               </div>
             </div>
-            ))
-          )}
-        </motion.div>
+          ))}
+        </div>
 
         {/* CTA Section */}
         <motion.div
