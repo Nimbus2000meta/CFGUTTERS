@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
+import CFGuttersLogoSVG from '../ui/CFGuttersLogoSVG';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
