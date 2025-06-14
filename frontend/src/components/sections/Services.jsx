@@ -1,47 +1,73 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiCheckCircle, FiTool, FiDroplet, FiHome } from 'react-icons/fi';
+import { FiCheckCircle, FiTool, FiDroplet, FiShield, FiWind } from 'react-icons/fi';
 import Feature3DCard from '../ui/Feature3DCard';
 
 const Services = () => {
   const services = [
     {
-      id: 'installation',
-      title: 'Gutter Installation',
-      description: 'Premium gutter systems customized to your home\'s architecture and needs.',
-      icon: <FiHome className="text-4xl text-primary-500" />,
-      image: 'https://images.unsplash.com/photo-1677945451878-de79f98149c9',
-      features: [
-        'Seamless aluminum gutters',
-        'Custom colors and styles',
-        'Professional installation',
-        '10-year warranty'
-      ]
-    },
-    {
-      id: 'repair',
-      title: 'Gutter Repair',
-      description: 'Restore your gutter system\'s functionality with our expert repair services.',
-      icon: <FiTool className="text-4xl text-primary-500" />,
-      image: 'https://images.unsplash.com/photo-1574359411659-15573a27fd0c',
-      features: [
-        'Leak repair',
-        'Sagging correction',
-        'Downspout reattachment',
-        'Seamless fixes'
-      ]
-    },
-    {
-      id: 'cleaning',
-      title: 'Gutter Cleaning',
-      description: 'Regular maintenance to keep your gutters flowing freely and prevent damage.',
+      id: 'gutter-cleaning',
+      title: 'Professional Gutter Cleaning',
+      description: 'Clogged gutters can cause serious damage to your home. We provide expert gutter cleaning services to keep your gutters clear and functional year-round.',
       icon: <FiDroplet className="text-4xl text-primary-500" />,
-      image: 'https://images.unsplash.com/photo-1556137805-b67cc1d7d328',
+      image: 'https://images.unsplash.com/photo-1553169507-38833977274b',
       features: [
-        'Complete debris removal',
-        'Downspout flushing',
-        'Inspection report',
-        'Seasonal maintenance plans'
+        'Debris Removal',
+        'Downspout Flushing',
+        'Gutter Inspection',
+        'Professional Equipment'
+      ]
+    },
+    {
+      id: 'gutter-guards',
+      title: 'Gutter Guard Installation',
+      description: 'Protect your gutters with high-quality gutter guards that prevent debris buildup and reduce maintenance needs.',
+      icon: <FiShield className="text-4xl text-primary-500" />,
+      image: 'https://images.unsplash.com/photo-1583839013375-67ede5f4a0c6',
+      features: [
+        'High-Quality Materials',
+        'Custom Fitting',
+        'Long-Term Protection',
+        'Reduced Maintenance'
+      ]
+    },
+    {
+      id: 'gutter-repairs',
+      title: 'Gutter & Downspout Repairs',
+      description: 'Restore your gutter system\'s functionality with our expert repair services for leaks, sagging, and damage.',
+      icon: <FiTool className="text-4xl text-primary-500" />,
+      image: 'https://images.pexels.com/photos/945615/pexels-photo-945615.jpeg',
+      features: [
+        'Leak Repair',
+        'Sagging Correction',
+        'Downspout Reattachment',
+        'Seamless Fixes'
+      ]
+    },
+    {
+      id: 'basic-roof-cleaning',
+      title: 'Basic Roof Cleaning & Moss Treatment',
+      description: 'Budget-friendly solution to remove moss and debris with preventative treatment to slow regrowth.',
+      icon: <FiWind className="text-4xl text-primary-500" />,
+      image: 'https://images.unsplash.com/photo-1699154581577-ce92c7a86638',
+      features: [
+        'Moss Removal',
+        'Debris Clearing',
+        'Preventative Treatment',
+        'Affordable Option'
+      ]
+    },
+    {
+      id: 'soft-wash-cleaning',
+      title: 'Complete Soft Wash Roof Cleaning',
+      description: 'Thorough clean that restores your roof to its original condition using low-pressure soft wash system.',
+      icon: <FiDroplet className="text-4xl text-primary-500" />,
+      image: 'https://images.unsplash.com/photo-1608747912555-466ac58ad9e8',
+      features: [
+        'Low-Pressure System',
+        'Complete Restoration',
+        'Specialized Solutions',
+        'Long-Lasting Results'
       ]
     }
   ];
@@ -91,7 +117,7 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Premium Gutter <span className="headline-gradient">Services</span>
+            Expert Gutter & <span className="headline-gradient">Roof Cleaning</span>
           </motion.h2>
           <motion.p 
             className="text-neutral-600"
@@ -100,8 +126,8 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            We offer comprehensive gutter solutions to protect your home from water damage.
-            Our professional team ensures quality workmanship on every project.
+            At CF Gutters, we believe every home deserves quality care and reliable service—without breaking the bank. 
+            With over 10 years of experience, we provide top-notch services that protect your home year-round.
           </motion.p>
         </div>
 
@@ -133,7 +159,7 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h4 className="font-semibold mb-3 text-primary-600">Key Features:</h4>
+                <h4 className="font-semibold mb-3 text-primary-600">Process:</h4>
                 <ul className="space-y-2">
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-center gap-2">

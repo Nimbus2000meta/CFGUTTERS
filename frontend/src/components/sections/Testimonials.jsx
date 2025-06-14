@@ -1,79 +1,94 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiStar } from 'react-icons/fi';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiChevronLeft, FiChevronRight, FiStar } from 'react-icons/fi';
 
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const testimonials = [
     {
       id: 1,
-      name: 'Michael Thompson',
-      location: 'Cityville, ST',
-      content: 'The team at CFGutters did an exceptional job replacing our old gutters. They were professional, efficient, and the quality of workmanship exceeded my expectations.',
+      name: "Lisa Ferriello",
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/32.jpg'
+      date: "September 7, 2024",
+      text: "I recently had my gutters cleaned... Highly recommend.",
+      title: "Highly Recommend"
     },
     {
       id: 2,
-      name: 'Jennifer Wilson',
-      location: 'Townsburg, ST',
-      content: 'I highly recommend CFGutters for their excellent service. They arrived on time, completed the job quickly, and left my property clean. The new gutters look great and function perfectly.',
+      name: "Maria Waltz",
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/44.jpg'
+      date: "September 4, 2024",
+      text: "Connor did a fantastic job cleaning my gutters!!",
+      title: "Best Gutter Man!"
     },
     {
       id: 3,
-      name: 'Robert Davis',
-      location: 'Villageton, ST',
-      content: 'After a bad storm damaged our gutters, CFGutters came out quickly to assess and repair the damage. Their pricing was fair and the repairs have held up well through several storms since.',
-      rating: 4,
-      image: 'https://randomuser.me/api/portraits/men/62.jpg'
+      name: "Ann Smith",
+      rating: 5,
+      date: "September 3, 2024",
+      text: "All around good experience. Appreciated the good customer service.",
+      title: "Satisfied Customer"
     },
     {
       id: 4,
-      name: 'Sarah Martinez',
-      location: 'Hamletville, ST',
-      content: 'The CFGutters team installed gutter guards on my home and I couldn\'t be happier. No more climbing ladders to clean out leaves and debris! Their team was courteous and professional.',
+      name: "Jessie Oakley",
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/28.jpg'
+      date: "September 2, 2024",
+      text: "Great prices and amazing work done will definitely use again!",
+      title: "Amazing Work"
+    },
+    {
+      id: 5,
+      name: "Ben Amos",
+      rating: 5,
+      date: "September 2, 2024",
+      text: "Con gave us a quick quote which was very reasonable.",
+      title: "Great Price and Great Work"
+    },
+    {
+      id: 6,
+      name: "St. Ives",
+      rating: 5,
+      date: "September 2, 2024",
+      text: "Very pleased with the work carried out by Gutter Clean.",
+      title: "Peterborough"
     }
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 50 }
-    },
-    hover: {
-      y: -10,
-      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
-      transition: { type: "spring", stiffness: 400, damping: 10 }
-    }
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
   };
 
-  const renderStars = (rating) => {
-    return Array(5).fill(0).map((_, index) => (
-      <FiStar 
-        key={index} 
-        className={`${index < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
-      />
-    ));
-  };
+  // Auto-advance slides
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const StarRating = ({ rating }) => (
+    <div className="flex space-x-1 mb-4">
+      {[...Array(5)].map((_, i) => (
+        <FiStar
+          key={i}
+          className={`w-5 h-5 ${
+            i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
+          }`}
+        />
+      ))}
+    </div>
+  );
 
   return (
-    <section id="testimonials" className="section-padding bg-white">
+    <section id="testimonials" className="section-padding bg-gradient-to-br from-primary-50 to-secondary-50">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -84,7 +99,7 @@ const Testimonials = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Client Testimonials
+            Testimonials
           </motion.p>
           <motion.h2 
             className="mb-4"
@@ -93,7 +108,7 @@ const Testimonials = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            What Our <span className="headline-gradient">Clients Say</span>
+            What Our <span className="headline-gradient">Customers Say</span>
           </motion.h2>
           <motion.p 
             className="text-neutral-600"
@@ -102,68 +117,91 @@ const Testimonials = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Don't just take our word for it. Hear what our satisfied customers have to say about our gutter services.
+            Don't just take our word for it. Read what our satisfied customers have to say about our services.
           </motion.p>
         </div>
 
-        {/* Testimonials Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {testimonials.map((testimonial) => (
-            <motion.div
-              key={testimonial.id}
-              className="bg-white rounded-2xl shadow-soft p-6 border border-gray-100"
-              variants={itemVariants}
-              whileHover="hover"
-            >
-              <div className="flex items-center mb-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-primary-100"
-                />
-                <div>
-                  <h3 className="font-semibold text-lg">{testimonial.name}</h3>
-                  <p className="text-neutral-500 text-sm">{testimonial.location}</p>
-                  <div className="flex mt-1">
-                    {renderStars(testimonial.rating)}
-                  </div>
+        {/* Testimonials Slider */}
+        <div className="relative max-w-4xl mx-auto">
+          <div className="overflow-hidden rounded-2xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                className="bg-white p-8 md:p-12 shadow-soft rounded-2xl text-center"
+              >
+                <StarRating rating={testimonials[currentIndex].rating} />
+                <h3 className="text-xl font-semibold text-primary-700 mb-4">
+                  {testimonials[currentIndex].title}
+                </h3>
+                <p className="text-neutral-600 text-lg mb-6 leading-relaxed">
+                  "{testimonials[currentIndex].text}"
+                </p>
+                <div className="flex flex-col items-center">
+                  <p className="font-semibold text-neutral-850">
+                    - {testimonials[currentIndex].name}
+                  </p>
+                  <p className="text-sm text-neutral-500">
+                    {testimonials[currentIndex].date}
+                  </p>
                 </div>
-              </div>
-              <p className="text-neutral-600 italic">"{testimonial.content}"</p>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
-        {/* Stats */}
-        <motion.div 
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
-          initial={{ opacity: 0, y: 30 }}
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary-600 hover:bg-primary-50 transition-colors z-10"
+            aria-label="Previous testimonial"
+          >
+            <FiChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary-600 hover:bg-primary-50 transition-colors z-10"
+            aria-label="Next testimonial"
+          >
+            <FiChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center space-x-2 mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentIndex ? 'bg-primary-500' : 'bg-primary-200'
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <div className="bg-primary-50 rounded-2xl p-6">
-            <h3 className="text-4xl font-bold text-primary-600 mb-2">1000+</h3>
-            <p className="text-neutral-600">Projects Completed</p>
-          </div>
-          <div className="bg-primary-50 rounded-2xl p-6">
-            <h3 className="text-4xl font-bold text-primary-600 mb-2">15+</h3>
-            <p className="text-neutral-600">Years Experience</p>
-          </div>
-          <div className="bg-primary-50 rounded-2xl p-6">
-            <h3 className="text-4xl font-bold text-primary-600 mb-2">98%</h3>
-            <p className="text-neutral-600">Satisfaction Rate</p>
-          </div>
-          <div className="bg-primary-50 rounded-2xl p-6">
-            <h3 className="text-4xl font-bold text-primary-600 mb-2">24/7</h3>
-            <p className="text-neutral-600">Customer Support</p>
-          </div>
+          <p className="text-neutral-600 mb-6">
+            Ready to experience the CF Gutters difference?
+          </p>
+          <motion.a
+            href="tel:+18458793864"
+            className="btn btn-primary"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Call Now: (845) 879-3864
+          </motion.a>
         </motion.div>
       </div>
     </section>

@@ -20,9 +20,7 @@ const Header = () => {
   const navLinks = [
     { name: 'Home', to: 'home' },
     { name: 'Services', to: 'services' },
-    { name: 'Process', to: 'process' },
     { name: 'About', to: 'about' },
-    { name: 'Benefits', to: 'benefits' },
     { name: 'Gallery', to: 'gallery' },
     { name: 'Testimonials', to: 'testimonials' },
     { name: 'FAQ', to: 'faq' },
@@ -60,7 +58,9 @@ const Header = () => {
           className="flex items-center"
         >
           <Link to="home" spy={true} smooth={true} duration={500} className="cursor-pointer">
-            <AnimatedLogo className={scrolled ? 'text-primary-600' : 'text-white'} />
+            <div className={`text-2xl font-bold ${scrolled ? 'text-primary-600' : 'text-white'}`}>
+              CF Gutters
+            </div>
           </Link>
         </motion.div>
 
@@ -88,11 +88,11 @@ const Header = () => {
             </motion.div>
           ))}
           <motion.a 
-            href="tel:+15551234567" 
+            href="tel:+18458793864" 
             variants={itemVariants}
             className="btn btn-primary flex items-center gap-2"
           >
-            <FiPhone /> (555) 123-4567
+            <FiPhone /> (845) 879-3864
           </motion.a>
         </motion.nav>
 
@@ -148,12 +148,12 @@ const Header = () => {
                 </motion.div>
               ))}
               <motion.a 
-                href="tel:+15551234567" 
+                href="tel:+18458793864" 
                 variants={itemVariants}
                 className="btn btn-primary w-full text-center flex items-center justify-center gap-2"
                 data-testid="mobile-phone-button"
               >
-                <FiPhone /> (555) 123-4567
+                <FiPhone /> (845) 879-3864
               </motion.a>
             </motion.div>
           </motion.div>

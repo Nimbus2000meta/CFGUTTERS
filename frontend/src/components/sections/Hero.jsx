@@ -21,15 +21,14 @@ const Hero = () => {
             type="headline" 
             className="text-white mb-4 drop-shadow-lg"
           >
-            Transform Your Home With <span className="text-accent-orange">Premium</span> Gutter Solutions
+            Professional <span className="text-accent-orange">Gutter & Roof</span> Cleaning Services
           </TextReveal>
           
           <TextReveal 
             className="text-white/90 text-lg md:text-xl mb-8 drop-shadow-md"
             delay={0.2}
           >
-            Protect your most valuable investment from water damage with our expertly crafted gutter systems. 
-            Quality installations, repairs, and maintenance by CFGutters.
+            Protect Your Home with Expert Gutter Cleaning. Your roof and gutters are essential in protecting your home from water damage and structural issues. At CF Gutters we specialize in professional cleaning and maintenance services.
           </TextReveal>
           
           <motion.div 
@@ -51,7 +50,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 data-testid="hero-cta-button"
               >
-                Get a Free Quote
+                Request a Quote
               </motion.button>
             </Link>
             
@@ -84,20 +83,20 @@ const Hero = () => {
               <svg className="w-6 h-6 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="text-white text-sm">4.9/5 Rating (500+ Reviews)</span>
+              <span className="text-white text-sm">Licensed & Insured</span>
             </div>
             <div className="bg-white/10 backdrop-blur-sm py-2 px-4 rounded-lg flex items-center">
               <svg className="w-6 h-6 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span className="text-white text-sm">15+ Years Experience</span>
+              <span className="text-white text-sm">10+ Years Experience</span>
             </div>
             <div className="bg-white/10 backdrop-blur-sm py-2 px-4 rounded-lg flex items-center">
               <svg className="w-6 h-6 text-blue-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                 <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
               </svg>
-              <span className="text-white text-sm">Free Estimates</span>
+              <span className="text-white text-sm">Budget-Friendly Rates</span>
             </div>
           </motion.div>
         </div>
