@@ -135,33 +135,103 @@ const Gallery = () => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Full gallery with all images */}
-          {galleryImages.map((image, index) => (
-            <div 
-              key={image.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
-              onClick={() => openLightbox(image, index)}
-            >
-              <div className="h-64 bg-gray-200 flex items-center justify-center">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentNode.innerHTML = '<div class="text-gray-500 text-center p-4">Image Loading...</div>';
-                  }}
-                  onLoad={() => console.log('Gallery image loaded:', image.category)}
-                />
-              </div>
-              <div className="p-4">
-                <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                  {image.category}
-                </div>
-                <p className="text-sm text-gray-700">{image.description}</p>
-              </div>
+          
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 bg-gray-200 flex items-center justify-center">
+              <img
+                src="https://picsum.photos/800/600?random=1"
+                alt="Professional gutter cleaning work"
+                className="w-full h-full object-cover"
+              />
             </div>
-          ))}
+            <div className="p-4">
+              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                Gutter Cleaning
+              </div>
+              <p className="text-sm text-gray-700">Professional gutter cleaning and debris removal</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 bg-gray-200 flex items-center justify-center">
+              <img
+                src="https://picsum.photos/800/600?random=2"
+                alt="Gutter maintenance service"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                Maintenance
+              </div>
+              <p className="text-sm text-gray-700">Expert gutter maintenance and repair work</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 bg-gray-200 flex items-center justify-center">
+              <img
+                src="https://picsum.photos/800/600?random=3"
+                alt="Professional roof cleaning"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                Roof Cleaning
+              </div>
+              <p className="text-sm text-gray-700">Professional roof cleaning and moss treatment</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 bg-gray-200 flex items-center justify-center">
+              <img
+                src="https://picsum.photos/800/600?random=4"
+                alt="Gutter guard installation"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                Gutter Guards
+              </div>
+              <p className="text-sm text-gray-700">High-quality gutter guard installation service</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 bg-gray-200 flex items-center justify-center">
+              <img
+                src="https://picsum.photos/800/600?random=5"
+                alt="Complete gutter system cleaning"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                Complete Service
+              </div>
+              <p className="text-sm text-gray-700">Comprehensive gutter system cleaning and maintenance</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 bg-gray-200 flex items-center justify-center">
+              <img
+                src="https://picsum.photos/800/600?random=6"
+                alt="Professional gutter repair"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                Repairs
+              </div>
+              <p className="text-sm text-gray-700">Expert gutter repair and restoration services</p>
+            </div>
+          </div>
+
         </div>
 
         {/* CTA Section */}
