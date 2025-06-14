@@ -33,7 +33,7 @@ const ServiceArea = () => {
 
 
 
-        {/* Map Section with Custom 50-Mile Radius Overlay */}
+        {/* Map Section with Static 50-Mile Radius Overlay */}
         <motion.div
           className="bg-white rounded-lg overflow-hidden shadow-lg mb-8"
           initial={{ opacity: 0, y: 30 }}
@@ -54,18 +54,36 @@ const ServiceArea = () => {
               className="w-full h-full"
             ></iframe>
             
-            {/* 50-Mile Radius Overlay - Positioned over map */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            {/* Static 50-Mile Radius Overlay - Non-Interactive */}
+            <div 
+              className="absolute inset-0 flex items-center justify-center"
+              style={{
+                pointerEvents: 'none',
+                userSelect: 'none',
+                touchAction: 'none'
+              }}
+            >
               <div className="relative">
-                {/* Center point - Mahopac */}
-                <div className="w-3 h-3 bg-red-500 rounded-full border-2 border-white shadow-lg relative z-20"></div>
+                {/* Center point - Mahopac - Static */}
+                <div 
+                  className="w-3 h-3 bg-red-500 rounded-full border-2 border-white shadow-lg relative z-20"
+                  style={{
+                    pointerEvents: 'none',
+                    userSelect: 'none'
+                  }}
+                ></div>
                 
-                {/* 50-mile radius circle - Scaled to match map zoom */}
+                {/* Static 50-mile radius circle - Non-Interactive */}
                 <svg 
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" 
                   width="480" 
                   height="480"
                   viewBox="0 0 480 480"
+                  style={{
+                    pointerEvents: 'none',
+                    userSelect: 'none',
+                    touchAction: 'none'
+                  }}
                 >
                   <circle
                     cx="240"
@@ -75,20 +93,52 @@ const ServiceArea = () => {
                     stroke="rgba(30, 58, 138, 0.8)"
                     strokeWidth="3"
                     strokeDasharray="8,4"
+                    style={{
+                      pointerEvents: 'none',
+                      userSelect: 'none'
+                    }}
                   />
-                  {/* Radius labels */}
-                  <text x="240" y="50" textAnchor="middle" fill="#1e3a8a" fontSize="12" fontWeight="bold">
+                  {/* Static radius labels */}
+                  <text 
+                    x="240" 
+                    y="50" 
+                    textAnchor="middle" 
+                    fill="#1e3a8a" 
+                    fontSize="12" 
+                    fontWeight="bold"
+                    style={{
+                      pointerEvents: 'none',
+                      userSelect: 'none'
+                    }}
+                  >
                     50 Miles
                   </text>
-                  <text x="240" y="430" textAnchor="middle" fill="#1e3a8a" fontSize="12" fontWeight="bold">
+                  <text 
+                    x="240" 
+                    y="430" 
+                    textAnchor="middle" 
+                    fill="#1e3a8a" 
+                    fontSize="12" 
+                    fontWeight="bold"
+                    style={{
+                      pointerEvents: 'none',
+                      userSelect: 'none'
+                    }}
+                  >
                     Service Radius
                   </text>
                 </svg>
               </div>
             </div>
             
-            {/* Service Area Information Overlay */}
-            <div className="absolute top-4 left-4 bg-white bg-opacity-95 px-4 py-3 rounded-lg shadow-lg max-w-xs">
+            {/* Static Service Area Information Overlay */}
+            <div 
+              className="absolute top-4 left-4 bg-white bg-opacity-95 px-4 py-3 rounded-lg shadow-lg max-w-xs"
+              style={{
+                pointerEvents: 'none',
+                userSelect: 'none'
+              }}
+            >
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -99,7 +149,7 @@ const ServiceArea = () => {
                   <span className="text-sm font-semibold text-gray-800">50-Mile Service Radius</span>
                 </div>
                 <div className="text-xs text-gray-600 mt-2">
-                  Covers Mahopac NY, Kent CT, Warren CT, Westport CT and surrounding areas
+                  Fixed service area - Covers Mahopac NY, Kent CT, Warren CT, Westport CT and surrounding areas
                 </div>
               </div>
             </div>
