@@ -30,7 +30,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center bg-red-500">
             <Link to="home" spy={true} smooth={true} duration={500} className="cursor-pointer">
               <div className="flex items-center text-white">
                 <div className="mr-3 w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center">
