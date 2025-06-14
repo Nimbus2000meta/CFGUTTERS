@@ -93,16 +93,16 @@ const ServiceArea = () => {
                     cx="240"
                     cy="240" 
                     r="200"
-                    fill="rgba(74, 144, 164, 0.1)"
-                    stroke="rgba(74, 144, 164, 0.8)"
+                    fill="rgba(37, 99, 235, 0.1)"
+                    stroke="rgba(37, 99, 235, 0.8)"
                     strokeWidth="3"
                     strokeDasharray="8,4"
                   />
                   {/* Radius labels */}
-                  <text x="240" y="50" textAnchor="middle" fill="#4A90A4" fontSize="12" fontWeight="bold">
+                  <text x="240" y="50" textAnchor="middle" fill="#2563eb" fontSize="12" fontWeight="bold">
                     50 Miles
                   </text>
-                  <text x="240" y="430" textAnchor="middle" fill="#4A90A4" fontSize="12" fontWeight="bold">
+                  <text x="240" y="430" textAnchor="middle" fill="#2563eb" fontSize="12" fontWeight="bold">
                     Service Radius
                   </text>
                 </svg>
