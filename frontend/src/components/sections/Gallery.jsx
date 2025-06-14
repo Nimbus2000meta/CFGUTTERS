@@ -175,8 +175,8 @@ const Gallery = () => {
                   <p className="text-sm font-medium">{image.description}</p>
                 </div>
               </div>
-            </motion.div>
-          ))}
+            ))
+          )}
         </motion.div>
 
         {/* CTA Section */}
