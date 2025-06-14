@@ -161,11 +161,11 @@ frontend:
 
   - task: "FAQ Expandable Items"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/sections/FAQ.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
@@ -173,6 +173,9 @@ frontend:
       - working: "NA"
         agent: "testing"
         comment: "Unable to test the FAQ expandable items as the section could not be located in the rendered page. The website appears to be stuck in a loading state."
+      - working: true
+        agent: "testing"
+        comment: "FAQ expandable items are now visible and functioning correctly. Clicking on FAQ items toggles their expanded/collapsed state."
 
   - task: "Contact Section"
     implemented: true
