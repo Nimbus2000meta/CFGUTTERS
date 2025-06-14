@@ -9,45 +9,45 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=600&fit=crop',
+      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bf5d0b2d927f30cbd78f3b.jpeg',
       alt: 'Professional gutter cleaning work',
       category: 'Gutter Cleaning',
-      description: 'Professional gutter cleaning and maintenance service'
+      description: 'Professional gutter cleaning and debris removal'
     },
     {
       id: 2,
-      src: 'https://images.unsplash.com/photo-1504253163759-c23fccaebb55?w=800&h=600&fit=crop',
-      alt: 'Roof maintenance work',
-      category: 'Roof Maintenance',
-      description: 'Expert roof maintenance and cleaning services'
+      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0ad4d1ae850b95f7331e9.png',
+      alt: 'Gutter maintenance service',
+      category: 'Maintenance',
+      description: 'Expert gutter maintenance and repair work'
     },
     {
       id: 3,
-      src: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop',
-      alt: 'Professional construction work',
-      category: 'Professional Service',
-      description: 'Professional construction and maintenance work'
+      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdd31ec9dc3f2.png',
+      alt: 'Professional roof cleaning',
+      category: 'Roof Cleaning',
+      description: 'Professional roof cleaning and moss treatment'
     },
     {
       id: 4,
-      src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop',
-      alt: 'Home exterior maintenance',
-      category: 'Home Maintenance',
-      description: 'Complete home exterior maintenance services'
+      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdddf649dc3f3.png',
+      alt: 'Gutter guard installation',
+      category: 'Gutter Guards',
+      description: 'High-quality gutter guard installation service'
     },
     {
       id: 5,
-      src: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
-      alt: 'Professional cleaning service',
-      category: 'Cleaning Services',
-      description: 'Professional home cleaning and maintenance'
+      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bdffbcf5a96f29ddd02b19.png',
+      alt: 'Complete gutter system cleaning',
+      category: 'Complete Service',
+      description: 'Comprehensive gutter system cleaning and maintenance'
     },
     {
       id: 6,
-      src: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop',
-      alt: 'Quality workmanship',
-      category: 'Quality Work',
-      description: 'High-quality professional workmanship and service'
+      src: 'https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67be017f963eccdde021734b.png',
+      alt: 'Professional gutter repair',
+      category: 'Repairs',
+      description: 'Expert gutter repair and restoration services'
     }
   ];
 
