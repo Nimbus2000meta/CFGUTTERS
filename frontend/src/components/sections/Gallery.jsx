@@ -140,7 +140,7 @@ const Gallery = () => {
           {galleryImages.map((image, index) => (
             <motion.div
               key={image.id}
-              className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 cursor-pointer"
+              className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -148,11 +148,16 @@ const Gallery = () => {
               onClick={() => openLightbox(image, index)}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="aspect-w-4 aspect-h-3 overflow-hidden">
+              <div className="overflow-hidden h-64">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  onError={(e) => {
+                    console.log('Image failed to load:', image.src);
+                    e.target.style.display = 'none';
+                  }}
                 />
               </div>
               
