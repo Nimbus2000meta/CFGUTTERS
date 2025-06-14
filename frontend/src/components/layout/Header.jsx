@@ -40,8 +40,8 @@ const Header = () => {
           <div className="flex items-center space-x-6 text-white">
             <a href="#home" className="hover:text-primary-200">Home</a>
             <a href="#services" className="hover:text-primary-200">Services</a>
-            <a href="#about" className="hover:text-primary-200">About</a>
             <a href="#service-area" className="hover:text-primary-200">Service Area</a>
+            <a href="#about" className="hover:text-primary-200">About</a>
             <a href="#gallery" className="hover:text-primary-200">Gallery</a>
             <a href="#testimonials" className="hover:text-primary-200">Testimonials</a>
             <a href="#faq" className="hover:text-primary-200">FAQ</a>
