@@ -11,24 +11,18 @@ const Footer = () => {
     <footer className="bg-primary-900 text-white">
       {/* Main Footer Content */}
       <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: '32px'}}>
           
           {/* Company Info - Logo and Details */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-1"
-          >
-            <div className="mb-4">
+          <div>
+            <div style={{marginBottom: '16px'}}>
               <svg
                 width="80"
                 height="80"
                 viewBox="0 0 200 200"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="mb-3"
+                style={{marginBottom: '12px'}}
               >
                 <circle cx="100" cy="100" r="95" stroke="white" strokeWidth="8" fill="#1e40af"/>
                 <circle cx="100" cy="100" r="85" stroke="white" strokeWidth="2" fill="#1e40af"/>
@@ -49,271 +43,251 @@ const Footer = () => {
             </div>
             
             {/* Social Media Links - Horizontal */}
-            <div className="flex items-center space-x-6 mb-4">
+            <div style={{display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '16px'}}>
               <a
                 href="https://www.facebook.com/profile.php?id=61567485513010"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-primary-200 hover:text-white transition-colors"
+                style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', textDecoration: 'none'}}
               >
-                <FiFacebook className="text-lg" />
-                <span className="text-sm">Facebook</span>
+                <FiFacebook style={{fontSize: '18px'}} />
+                <span style={{fontSize: '14px'}}>Facebook</span>
               </a>
               <a
                 href="https://www.instagram.com/cfgutters"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-primary-200 hover:text-white transition-colors"
+                style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', textDecoration: 'none'}}
               >
-                <FaInstagram className="text-lg" />
-                <span className="text-sm">Instagram</span>
+                <FaInstagram style={{fontSize: '18px'}} />
+                <span style={{fontSize: '14px'}}>Instagram</span>
               </a>
               <a
                 href="https://www.tiktok.com/@cfgutters"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-primary-200 hover:text-white transition-colors"
+                style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', textDecoration: 'none'}}
               >
-                <FaTiktok className="text-lg" />
-                <span className="text-sm">TikTok</span>
+                <FaTiktok style={{fontSize: '18px'}} />
+                <span style={{fontSize: '14px'}}>TikTok</span>
               </a>
             </div>
             
-            <div className="text-sm text-primary-200">
-              <p className="mb-2">Copyright {currentYear} © All rights Reserved. CF Gutters</p>
-              <div className="flex items-center space-x-2">
-                <FiMapPin className="text-secondary-400" />
+            <div style={{fontSize: '14px', color: '#cbd5e1'}}>
+              <p style={{marginBottom: '8px'}}>Copyright {currentYear} © All rights Reserved. CF Gutters</p>
+              <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+                <FiMapPin style={{color: '#00af80'}} />
                 <span>Mahopac NY to Westport CT</span>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <h4 className="text-xl font-bold mb-4">Services</h4>
-            <ul className="space-y-2">
-              <li>
+          <div>
+            <h4 style={{fontSize: '20px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}}>Services</h4>
+            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="services"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Gutter Cleaning
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="services"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Gutter Guard Installation
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="services"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Gutter Downspout Repairs
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="services"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Roof Cleaning & Moss Treatment
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="services"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Soft Wash Roof Cleaning
                 </Link>
               </li>
             </ul>
-          </motion.div>
+          </div>
 
           {/* Get Started */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h4 className="text-xl font-bold mb-4">Get Started</h4>
-            <ul className="space-y-2">
-              <li>
+          <div>
+            <h4 style={{fontSize: '20px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}}>Get Started</h4>
+            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="home"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Home
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="faq"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   FAQ
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="testimonials"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Testimonials
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <a
                   href="mailto:cfgutters02@gmail.com"
-                  className="text-primary-200 hover:text-white transition-colors text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}}
                 >
                   Email
                 </a>
               </li>
             </ul>
-          </motion.div>
+          </div>
 
           {/* About */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <h4 className="text-xl font-bold mb-4">About</h4>
-            <ul className="space-y-2">
-              <li>
+          <div>
+            <h4 style={{fontSize: '20px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}}>About</h4>
+            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="about"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   About us
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="contact"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Contact us
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="service-area"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Service Areas
                 </Link>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="gallery"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Gallery
                 </Link>
               </li>
             </ul>
-          </motion.div>
+          </div>
 
           {/* Our Policy */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <h4 className="text-xl font-bold mb-4">Our Policy</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-primary-200 hover:text-white transition-colors text-sm">
+          <div>
+            <h4 style={{fontSize: '20px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}}>Our Policy</h4>
+            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
+              <li style={{marginBottom: '8px'}}>
+                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}}>
                   Terms of Service
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-primary-200 hover:text-white transition-colors text-sm">
+              <li style={{marginBottom: '8px'}}>
+                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}}>
                   Refund Policy
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-primary-200 hover:text-white transition-colors text-sm">
+              <li style={{marginBottom: '8px'}}>
+                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}}>
                   Privacy Policy
                 </a>
               </li>
-              <li>
+              <li style={{marginBottom: '8px'}}>
                 <Link
                   to="contact"
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm"
+                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
                 >
                   Get Started
                 </Link>
               </li>
             </ul>
-          </motion.div>
+          </div>
         </div>
       </div>
     </footer>
