@@ -135,20 +135,23 @@ const Gallery = () => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Debug info */}
-          <div className="col-span-full text-center py-4 bg-blue-100 mb-4">
-            <p>Debug: Array length = {galleryImages.length}</p>
-            <p>Trying to render gallery...</p>
-          </div>
-          
-          {/* Test with just one mapped item first */}
-          {galleryImages.slice(0, 1).map(image => (
-            <div key={image.id} className="bg-white rounded-xl shadow-lg overflow-hidden">
+          {/* Full gallery with all images */}
+          {galleryImages.map((image, index) => (
+            <div 
+              key={image.id}
+              className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+              onClick={() => openLightbox(image, index)}
+            >
               <div className="h-64 bg-gray-200 flex items-center justify-center">
                 <img
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentNode.innerHTML = '<div class="text-gray-500 text-center p-4">Image Loading...</div>';
+                  }}
+                  onLoad={() => console.log('Gallery image loaded:', image.category)}
                 />
               </div>
               <div className="p-4">
@@ -159,39 +162,6 @@ const Gallery = () => {
               </div>
             </div>
           ))}
-          
-          {/* Manual cards that we know work */}
-          <div className="bg-green-200 rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=10"
-                alt="Manual test image"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Manual Card
-              </div>
-              <p className="text-sm text-gray-700">This is a manual card that should work</p>
-            </div>
-          </div>
-
-          <div className="bg-yellow-200 rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=11"
-                alt="Manual test image 2"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Manual Card 2
-              </div>
-              <p className="text-sm text-gray-700">This is another manual card</p>
-            </div>
-          </div>
         </div>
 
         {/* CTA Section */}
