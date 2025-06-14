@@ -44,22 +44,22 @@ const Header = () => {
 
   const CFGuttersLogo = ({ className = "" }) => (
     <div className={`flex items-center ${className}`}>
-      {/* CF Gutters Logo SVG - Fixed with proper colors */}
+      {/* CF Gutters Logo SVG - Smaller size to fit header */}
       <svg
-        width="50"
-        height="50"
+        width="40"
+        height="40"
         viewBox="0 0 200 200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="mr-3"
+        className="mr-3 flex-shrink-0"
       >
         {/* Outer circle border - Blue */}
         <circle 
           cx="100" 
           cy="100" 
-          r="95" 
+          r="90" 
           stroke="#1e40af" 
-          strokeWidth="8" 
+          strokeWidth="6" 
           fill="white"
         />
         
@@ -67,50 +67,50 @@ const Header = () => {
         <circle 
           cx="100" 
           cy="100" 
-          r="85" 
+          r="82" 
           stroke="#1e40af" 
-          strokeWidth="2" 
+          strokeWidth="1" 
           fill="white"
         />
         
         {/* Main house/roof structure - Blue */}
         <path 
-          d="M30 110 L60 75 L90 75 L140 75 L170 110 L165 120 L35 120 Z" 
+          d="M35 115 L65 80 L90 80 L140 80 L165 115 L160 125 L40 125 Z" 
           fill="#1e40af"
         />
         
         {/* Roof peak triangle - Blue */}
         <path 
-          d="M70 75 L100 45 L130 75 L125 72 L100 52 L75 72 Z" 
+          d="M75 80 L100 50 L125 80 L120 77 L100 58 L80 77 Z" 
           fill="#1e40af"
         />
         
         {/* Inner roof detail - Light Blue */}
         <path 
-          d="M80 75 L100 58 L120 75 L115 73 L100 63 L85 73 Z" 
+          d="M85 80 L100 65 L115 80 L110 78 L100 70 L90 78 Z" 
           fill="#93c5fd"
         />
         
         {/* Gutter system - Blue */}
-        <rect x="30" y="110" width="140" height="8" fill="#1e40af"/>
+        <rect x="35" y="115" width="130" height="6" fill="#1e40af"/>
         
         {/* Water flow lines - Blue */}
-        <path d="M35 125 L50 125" stroke="#1e40af" strokeWidth="3" strokeLinecap="round"/>
-        <path d="M55 128 L70 128" stroke="#1e40af" strokeWidth="3" strokeLinecap="round"/>
-        <path d="M75 131 L90 131" stroke="#1e40af" strokeWidth="3" strokeLinecap="round"/>
-        <path d="M110 128 L125 128" stroke="#1e40af" strokeWidth="3" strokeLinecap="round"/>
-        <path d="M130 131 L145 131" stroke="#1e40af" strokeWidth="3" strokeLinecap="round"/>
-        <path d="M150 125 L165 125" stroke="#1e40af" strokeWidth="3" strokeLinecap="round"/>
+        <path d="M40 130 L50 130" stroke="#1e40af" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M55 132 L65 132" stroke="#1e40af" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M70 134 L80 134" stroke="#1e40af" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M120 132 L130 132" stroke="#1e40af" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M135 134 L145 134" stroke="#1e40af" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M150 130 L160 130" stroke="#1e40af" strokeWidth="2" strokeLinecap="round"/>
         
         {/* Downspout - Blue */}
-        <rect x="167" y="110" width="6" height="25" fill="#1e40af"/>
-        <rect x="165" y="133" width="10" height="4" fill="#1e40af"/>
+        <rect x="162" y="115" width="4" height="20" fill="#1e40af"/>
+        <rect x="160" y="133" width="8" height="3" fill="#1e40af"/>
         
         {/* CF text inside circle */}
-        <text x="100" y="155" textAnchor="middle" fill="#1e40af" fontSize="24" fontWeight="bold">CF</text>
+        <text x="100" y="155" textAnchor="middle" fill="#1e40af" fontSize="18" fontWeight="bold">CF</text>
       </svg>
       <div className="flex flex-col">
-        <span className="text-xl md:text-2xl font-bold">CF GUTTERS</span>
+        <span className="text-lg md:text-xl font-bold">CF GUTTERS</span>
         <span className="text-xs text-current opacity-75">Professional Cleaning</span>
       </div>
     </div>
