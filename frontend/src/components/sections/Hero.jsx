@@ -21,9 +21,9 @@ const Hero = () => {
       
       {/* Content Container */}
       <div className="container-custom relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-2xl">
           {/* Left Content */}
-          <div className="max-w-2xl">
+          <div className="">
             <TextReveal 
               type="headline" 
               className="text-white mb-4 drop-shadow-lg"
@@ -105,22 +105,6 @@ const Hero = () => {
                 </svg>
                 <span className="text-white text-sm">Budget-Friendly Rates</span>
               </div>
-            </motion.div>
-          </div>
-
-          {/* Right Side - CF Gutters Logo */}
-          <div className="hidden lg:flex justify-center items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="relative"
-            >
-              <img
-                src="/cf-gutters-logo.svg"
-                alt="CF Gutters Professional Cleaning Services"
-                className="w-80 h-80 object-contain drop-shadow-2xl"
-              />
             </motion.div>
           </div>
         </div>
