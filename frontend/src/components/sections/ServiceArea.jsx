@@ -19,7 +19,7 @@ const ServiceArea = () => {
   ];
 
   return (
-    <section id="service-area" className="py-20 bg-blue-900">
+    <section id="service-area" className="py-20 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4">
         
         {/* Section Header */}
@@ -30,22 +30,27 @@ const ServiceArea = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Our Service Area</h2>
-          <p className="text-blue-200 text-xl">50-Mile Radius Coverage</p>
+          <p className="text-primary-500 font-semibold uppercase tracking-wider mb-2">
+            Our Coverage
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-850 mb-4">
+            Service <span className="text-primary-600">Area Coverage</span>
+          </h2>
+          <p className="text-neutral-600 text-xl">50-Mile Radius from Mahopac, NY</p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid gap-4 mb-12">
+        <div className="grid gap-6 mb-12 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-blue-700 text-white text-center py-4 px-6 rounded-lg font-semibold text-lg hover:bg-blue-600 transition-colors"
+              className="bg-white text-center py-6 px-6 rounded-lg shadow-soft border border-primary-100 hover:shadow-lg transition-all"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {service}
+              <h3 className="font-semibold text-lg text-primary-700">{service}</h3>
             </motion.div>
           ))}
         </div>
