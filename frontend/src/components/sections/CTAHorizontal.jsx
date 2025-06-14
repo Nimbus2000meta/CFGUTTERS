@@ -36,7 +36,7 @@ const CTAHorizontal = () => {
             </motion.a>
             <motion.a
               href="mailto:cfgutters02@gmail.com"
-              className="btn btn-outline-white font-semibold px-6 py-3 flex items-center gap-2"
+              className="btn bg-white text-primary-600 hover:bg-gray-100 font-semibold px-6 py-3 flex items-center gap-2 border-2 border-white"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
