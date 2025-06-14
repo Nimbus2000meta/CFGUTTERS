@@ -1,19 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { name: 'Home', to: 'home' },
@@ -26,26 +16,22 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-blue-900 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div className="flex items-center bg-red-500">
-            <Link to="home" spy={true} smooth={true} duration={500} className="cursor-pointer">
-              <div className="flex items-center text-white">
-                <div className="mr-3 w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center">
-                  <div className="text-blue-600 font-bold text-xs">CF</div>
-                </div>
-                <div>
-                  <div className="text-xl font-bold">CF GUTTERS</div>
-                  <div className="text-xs opacity-75">Professional Cleaning</div>
-                </div>
-              </div>
-            </Link>
+    <header className="fixed top-0 w-full z-50 bg-blue-900 shadow-lg">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo Section */}
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-white rounded-full border-2 border-blue-600 flex items-center justify-center">
+              <span className="text-blue-600 font-bold text-xs">CF</span>
+            </div>
+            <div className="text-white">
+              <div className="font-bold text-lg">CF GUTTERS</div>
+              <div className="text-xs opacity-75">Professional Cleaning</div>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6 items-center">
+          <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -54,32 +40,33 @@ const Header = () => {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className="text-white font-medium text-sm cursor-pointer hover:text-blue-300"
+                className="text-white hover:text-blue-300 cursor-pointer font-medium"
               >
                 {link.name}
               </Link>
             ))}
             <a 
               href="tel:+18458793864" 
-              className="bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 flex items-center gap-2"
+              className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
             >
-              <FiPhone /> (845) 879-3864
+              <FiPhone size={16} />
+              (845) 879-3864
             </a>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="block md:hidden text-white text-2xl p-2"
+            className="md:hidden text-white p-2"
           >
-            {isOpen ? <FiX /> : <FiMenu />}
+            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-blue-800 py-4">
-            <div className="flex flex-col space-y-4">
+          <div className="md:hidden bg-blue-800">
+            <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -89,16 +76,17 @@ const Header = () => {
                   offset={-80}
                   duration={500}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 text-white font-medium hover:text-blue-300"
+                  className="block text-white hover:text-blue-300 py-2 cursor-pointer"
                 >
                   {link.name}
                 </Link>
               ))}
               <a 
                 href="tel:+18458793864" 
-                className="bg-green-500 text-white px-4 py-2 rounded-lg font-semibold text-center flex items-center justify-center gap-2"
+                className="block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-center"
               >
-                <FiPhone /> (845) 879-3864
+                <FiPhone className="inline mr-2" />
+                (845) 879-3864
               </a>
             </div>
           </div>
