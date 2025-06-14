@@ -1,19 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navLinks = [
-    { name: 'Home', to: 'home' },
-    { name: 'Services', to: 'services' },
-    { name: 'About', to: 'about' },
-    { name: 'Gallery', to: 'gallery' },
-    { name: 'Testimonials', to: 'testimonials' },
-    { name: 'FAQ', to: 'faq' },
-    { name: 'Contact', to: 'contact' },
-  ];
 
   return (
     <header className="fixed top-0 w-full z-50 bg-blue-900 shadow-lg">
@@ -30,16 +19,16 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="flex items-center space-x-6">
-            <a href="#home" className="text-white hover:text-blue-300 cursor-pointer font-medium">Home</a>
-            <a href="#services" className="text-white hover:text-blue-300 cursor-pointer font-medium">Services</a>
-            <a href="#about" className="text-white hover:text-blue-300 cursor-pointer font-medium">About</a>
-            <a href="#gallery" className="text-white hover:text-blue-300 cursor-pointer font-medium">Gallery</a>
-            <a href="#testimonials" className="text-white hover:text-blue-300 cursor-pointer font-medium">Testimonials</a>
-            <a href="#faq" className="text-white hover:text-blue-300 cursor-pointer font-medium">FAQ</a>
-            <a href="#contact" className="text-white hover:text-blue-300 cursor-pointer font-medium">Contact</a>
-          </nav>
+          {/* Navigation Menu - Always visible */}
+          <div className="flex items-center space-x-6 text-white">
+            <a href="#home" className="hover:text-blue-300">Home</a>
+            <a href="#services" className="hover:text-blue-300">Services</a>
+            <a href="#about" className="hover:text-blue-300">About</a>
+            <a href="#gallery" className="hover:text-blue-300">Gallery</a>
+            <a href="#testimonials" className="hover:text-blue-300">Testimonials</a>
+            <a href="#faq" className="hover:text-blue-300">FAQ</a>
+            <a href="#contact" className="hover:text-blue-300">Contact</a>
+          </div>
 
           {/* Phone Number */}
           <a 
@@ -49,44 +38,7 @@ const Header = () => {
             <FiPhone size={16} />
             (845) 879-3864
           </a>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2"
-          >
-            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden bg-blue-800">
-            <div className="px-4 py-4 space-y-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.to}
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-white hover:text-blue-300 py-2 cursor-pointer"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <a 
-                href="tel:+18458793864" 
-                className="block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-center"
-              >
-                <FiPhone className="inline mr-2" />
-                (845) 879-3864
-              </a>
-            </div>
-          </div>
-        )}
       </div>
     </header>
   );
