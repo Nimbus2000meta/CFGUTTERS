@@ -118,36 +118,36 @@ const About = () => {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
 
-            {/* Additional Features */}
-            <div className="mt-16">
-              <motion.div
-                className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 rounded-xl text-white"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-              >
-                <h4 className="font-semibold mb-4">Our Commitment</h4>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <FiCheckCircle className="text-white" />
-                    <span className="text-sm">Budget-Friendly Rates</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <FiCheckCircle className="text-white" />
-                    <span className="text-sm">Eco-Friendly Cleaning Solutions</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <FiCheckCircle className="text-white" />
-                    <span className="text-sm">Prompt Service</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <FiCheckCircle className="text-white" />
-                    <span className="text-sm">Quality Workmanship</span>
-                  </div>
-                </div>
-              </motion.div>
+        {/* Our Commitment Section - Moved Outside Grid */}
+        <div className="mt-16">
+          <motion.div
+            className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 rounded-xl text-white max-w-md mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <h4 className="font-semibold mb-4">Our Commitment</h4>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <FiCheckCircle className="text-white" />
+                <span className="text-sm">Budget-Friendly Rates</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <FiCheckCircle className="text-white" />
+                <span className="text-sm">Eco-Friendly Cleaning Solutions</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <FiCheckCircle className="text-white" />
+                <span className="text-sm">Prompt Service</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <FiCheckCircle className="text-white" />
+                <span className="text-sm">Quality Workmanship</span>
+              </div>
             </div>
           </motion.div>
         </div>
