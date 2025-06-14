@@ -265,3 +265,5 @@ agent_communication:
     message: "Updated testing for CORS middleware. After adjusting the test to include proper CORS headers in the OPTIONS request, the CORS middleware is working correctly. All backend components are now verified to be working properly."
   - agent: "testing"
     message: "Starting frontend testing for the CF Gutters website. Will test all key components including Header, Hero, Services, Gallery, Testimonials, FAQ, Contact sections, as well as responsive design and interactive elements."
+  - agent: "testing"
+    message: "Frontend testing completed with mixed results. The website appears to be stuck in a loading state, preventing full testing of all components. The header, hero section, and services section are visible and working correctly. The gallery section is visible but the lightbox functionality is not working properly. The mobile responsive design is working well with a functional mobile menu. However, many sections (Testimonials, FAQ, Contact, Footer) could not be tested as they are not visible due to the loading issue."
