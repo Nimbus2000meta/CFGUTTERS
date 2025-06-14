@@ -248,18 +248,12 @@ metadata:
 
 test_plan:
   current_focus: 
-    - "Header with Navigation"
-    - "Hero Section"
-    - "Services Section"
+    - "Website Loading"
     - "Gallery Section with Lightbox"
-    - "Testimonials Slider"
-    - "FAQ Expandable Items"
-    - "Contact Section"
-    - "Footer"
-    - "WhatsApp Chat Widget"
-    - "Responsive Design"
-  stuck_tasks: []
-  test_all: true
+  stuck_tasks: 
+    - "Website Loading"
+    - "Gallery Section with Lightbox"
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
