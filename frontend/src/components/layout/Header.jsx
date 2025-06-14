@@ -44,25 +44,36 @@ const Header = () => {
 
   const CFGuttersLogo = ({ className = "" }) => (
     <div className={`flex items-center ${className}`}>
+      {/* CF Gutters Logo SVG based on the provided image */}
       <svg
-        width="40"
-        height="40"
-        viewBox="0 0 200 200"
+        width="50"
+        height="50"
+        viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="mr-3"
       >
-        <circle cx="100" cy="100" r="95" stroke="currentColor" strokeWidth="10" fill="white"/>
-        <circle cx="100" cy="100" r="85" stroke="currentColor" strokeWidth="2" fill="white"/>
+        {/* Outer circle */}
+        <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="3" fill="white"/>
+        <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" fill="white"/>
         
-        {/* Gutter shape */}
-        <path d="M40 120 L80 80 L80 70 L120 70 L160 120 L140 130 L60 130 Z" fill="currentColor"/>
-        <path d="M80 70 L80 60 L100 50 L120 60 L120 70" fill="currentColor"/>
+        {/* House shape with roof */}
+        <path d="M20 60 L35 40 L50 25 L65 40 L80 60 L75 65 L25 65 Z" fill="currentColor"/>
         
-        {/* Water lines */}
-        <path d="M45 135 L75 135" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-        <path d="M85 140 L110 140" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-        <path d="M120 145 L145 145" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+        {/* Roof peak */}
+        <path d="M40 40 L50 25 L60 40 L55 38 L50 30 L45 38 Z" fill="white"/>
+        
+        {/* Gutter representation */}
+        <path d="M20 60 L80 60 L78 65 L22 65 Z" fill="currentColor"/>
+        
+        {/* Water flow lines */}
+        <path d="M22 70 L30 70" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M35 72 L43 72" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M48 74 L56 74" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M60 70 L68 70" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        
+        {/* Downspout */}
+        <rect x="77" y="60" width="4" height="15" fill="currentColor"/>
       </svg>
       <div className="flex flex-col">
         <span className="text-xl md:text-2xl font-bold">CF GUTTERS</span>
