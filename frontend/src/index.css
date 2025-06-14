@@ -17,6 +17,13 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  /* Force hide any custom cursor elements */
+  [data-testid="custom-cursor-large"],
+  [data-testid="custom-cursor-small"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-semibold leading-tight;
   }
