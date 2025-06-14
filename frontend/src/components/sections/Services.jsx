@@ -62,6 +62,18 @@ const Services = () => {
         'Specialized Solutions',
         'Long-Lasting Results'
       ]
+    },
+    {
+      id: 'emergency-service',
+      title: 'Emergency Gutter Service',
+      description: 'Fast response emergency repairs and cleaning services when you need immediate attention for storm damage or urgent issues.',
+      icon: <FiTool className="text-4xl text-primary-600" />,
+      features: [
+        'Fast Response',
+        'Storm Damage Repair',
+        'Emergency Cleaning',
+        'Same-Day Service'
+      ]
     }
   ];
 
