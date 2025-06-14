@@ -258,7 +258,7 @@ const Gallery = () => {
               </a>
               <a
                 href="mailto:cfgutters02@gmail.com"
-                className="btn btn-outline-primary"
+                className="btn bg-white text-primary-600 hover:bg-gray-100 border-2 border-white"
               >
                 Email Us
               </a>
