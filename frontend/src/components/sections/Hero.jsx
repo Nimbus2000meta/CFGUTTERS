@@ -28,7 +28,7 @@ const Hero = () => {
               type="headline" 
               className="text-white mb-4 drop-shadow-lg"
             >
-              Professional <span className="text-secondary-300">Gutter & Roof</span> Cleaning Services
+              Professional <span className="text-white">Gutter & Roof</span> Cleaning Services
             </TextReveal>
             
             <TextReveal 
