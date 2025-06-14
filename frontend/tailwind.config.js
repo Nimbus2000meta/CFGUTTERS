@@ -57,7 +57,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-overlay': 'linear-gradient(to right, rgba(74, 144, 164, 0.8), rgba(0, 175, 128, 0.8))',
+        'gradient-overlay': 'linear-gradient(to right, rgba(37, 99, 235, 0.8), rgba(0, 175, 128, 0.8))',
       },
       backdropFilter: {
         'blur-sm': 'blur(12px)',
