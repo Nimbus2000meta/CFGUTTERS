@@ -11,23 +11,24 @@ const Footer = () => {
     <footer className="bg-primary-900 text-white">
       {/* Main Footer Content */}
       <div className="container-custom py-12">
-        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: '32px'}}>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '32px'}}>
           
           {/* Company Info - Logo and Details */}
-          <div>
-            <div style={{marginBottom: '16px'}}>
+          <div style={{gridColumn: '1 / -1'}} className="md:col-span-1 text-center md:text-left">
+            <div style={{marginBottom: '16px'}} className="flex flex-col items-center md:items-start">
               {/* Logo Image - Replace src with your logo image URL */}
               <img 
                 src="/logo.png" 
                 alt="CF Gutters Logo"
                 style={{
-                  width: '80px', 
-                  height: '80px', 
+                  width: '60px', 
+                  height: '60px', 
                   borderRadius: '50%', 
                   objectFit: 'cover', 
                   border: '2px solid white',
                   marginBottom: '12px'
                 }}
+                className="md:w-20 md:h-20"
                 onError={(e) => {
                   // Fallback to default SVG logo if image fails to load
                   e.target.style.display = 'none';
@@ -37,12 +38,13 @@ const Footer = () => {
               
               {/* Fallback SVG Logo - Shows if image fails to load */}
               <svg
-                width="80"
-                height="80"
+                width="60"
+                height="60"
                 viewBox="0 0 200 200"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 style={{marginBottom: '12px', display: 'none'}}
+                className="md:w-20 md:h-20"
               >
                 <circle cx="100" cy="100" r="95" stroke="white" strokeWidth="8" fill="#1e40af"/>
                 <circle cx="100" cy="100" r="85" stroke="white" strokeWidth="2" fill="#1e40af"/>
@@ -62,13 +64,14 @@ const Footer = () => {
               </svg>
             </div>
             
-            {/* Social Media Links - Horizontal */}
-            <div style={{display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '16px'}}>
+            {/* Social Media Links - Mobile Friendly */}
+            <div className="flex justify-center md:justify-start flex-wrap gap-4 mb-4">
               <a
                 href="https://www.facebook.com/profile.php?id=61567485513010"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', textDecoration: 'none'}}
+                className="hover:text-white transition-colors"
               >
                 <FiFacebook style={{fontSize: '18px'}} />
                 <span style={{fontSize: '14px'}}>Facebook</span>
@@ -78,6 +81,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', textDecoration: 'none'}}
+                className="hover:text-white transition-colors"
               >
                 <FaInstagram style={{fontSize: '18px'}} />
                 <span style={{fontSize: '14px'}}>Instagram</span>
@@ -87,15 +91,16 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', textDecoration: 'none'}}
+                className="hover:text-white transition-colors"
               >
                 <FaTiktok style={{fontSize: '18px'}} />
                 <span style={{fontSize: '14px'}}>TikTok</span>
               </a>
             </div>
             
-            <div style={{fontSize: '14px', color: '#cbd5e1'}}>
+            <div style={{fontSize: '14px', color: '#cbd5e1'}} className="text-center md:text-left">
               <p style={{marginBottom: '8px'}}>Copyright {currentYear} © All rights Reserved. CF Gutters</p>
-              <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+              <div style={{display: 'flex', alignItems: 'center', gap: '8px'}} className="justify-center md:justify-start">
                 <FiMapPin style={{color: '#00af80'}} />
                 <span>Mahopac NY to Westport CT</span>
               </div>
@@ -103,8 +108,8 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 style={{fontSize: '20px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}}>Services</h4>
+          <div className="text-center md:text-left">
+            <h4 style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}} className="md:text-xl">Services</h4>
             <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
               <li style={{marginBottom: '8px'}}>
                 <Link
@@ -114,6 +119,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Gutter Cleaning
                 </Link>
@@ -126,6 +132,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Gutter Guard Installation
                 </Link>
@@ -138,6 +145,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Gutter Downspout Repairs
                 </Link>
@@ -150,6 +158,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Roof Cleaning & Moss Treatment
                 </Link>
@@ -162,6 +171,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Soft Wash Roof Cleaning
                 </Link>
@@ -170,8 +180,8 @@ const Footer = () => {
           </div>
 
           {/* Get Started */}
-          <div>
-            <h4 style={{fontSize: '20px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}}>Get Started</h4>
+          <div className="text-center md:text-left">
+            <h4 style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}} className="md:text-xl">Get Started</h4>
             <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
               <li style={{marginBottom: '8px'}}>
                 <Link
@@ -181,6 +191,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Home
                 </Link>
@@ -193,6 +204,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   FAQ
                 </Link>
@@ -205,6 +217,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Testimonials
                 </Link>
@@ -213,6 +226,7 @@ const Footer = () => {
                 <a
                   href="mailto:cfgutters02@gmail.com"
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}}
+                  className="hover:text-white transition-colors"
                 >
                   Email
                 </a>
@@ -221,8 +235,8 @@ const Footer = () => {
           </div>
 
           {/* About */}
-          <div>
-            <h4 style={{fontSize: '20px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}}>About</h4>
+          <div className="text-center md:text-left">
+            <h4 style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}} className="md:text-xl">About</h4>
             <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
               <li style={{marginBottom: '8px'}}>
                 <Link
@@ -232,6 +246,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   About us
                 </Link>
@@ -244,6 +259,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Contact us
                 </Link>
@@ -256,6 +272,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Service Areas
                 </Link>
@@ -268,6 +285,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Gallery
                 </Link>
@@ -276,21 +294,21 @@ const Footer = () => {
           </div>
 
           {/* Our Policy */}
-          <div>
-            <h4 style={{fontSize: '20px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}}>Our Policy</h4>
+          <div className="text-center md:text-left">
+            <h4 style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}} className="md:text-xl">Our Policy</h4>
             <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
               <li style={{marginBottom: '8px'}}>
-                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}}>
+                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}} className="hover:text-white transition-colors">
                   Terms of Service
                 </a>
               </li>
               <li style={{marginBottom: '8px'}}>
-                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}}>
+                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}} className="hover:text-white transition-colors">
                   Refund Policy
                 </a>
               </li>
               <li style={{marginBottom: '8px'}}>
-                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}}>
+                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}} className="hover:text-white transition-colors">
                   Privacy Policy
                 </a>
               </li>
@@ -302,6 +320,7 @@ const Footer = () => {
                   offset={-80}
                   duration={500}
                   style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
+                  className="hover:text-white transition-colors"
                 >
                   Get Started
                 </Link>
