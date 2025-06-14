@@ -108,21 +108,21 @@ const Hero = () => {
           
           {/* Right Content - Professional Gutter Cleaning Image */}
           <motion.div 
-            className="relative"
+            className="relative order-1 lg:order-2"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl mx-4 lg:mx-0">
               <img 
                 src="https://images.pexels.com/photos/31762405/pexels-photo-31762405.jpeg?auto=compress&cs=tinysrgb&w=800" 
                 alt="Professional gutter cleaning and maintenance services"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-64 sm:h-80 lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/50 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <h3 className="text-xl font-bold mb-2">Professional Service</h3>
-                <p className="text-white/90">Expert gutter cleaning & maintenance</p>
+              <div className="absolute bottom-4 lg:bottom-6 left-4 lg:left-6 text-white">
+                <h3 className="text-lg lg:text-xl font-bold mb-2">Professional Service</h3>
+                <p className="text-white/90 text-sm lg:text-base">Expert gutter cleaning & maintenance</p>
               </div>
             </div>
           </motion.div>
