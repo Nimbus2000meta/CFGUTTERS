@@ -36,9 +36,7 @@ function App() {
             <Hero />
             <Services />
             <CTAHorizontal />
-            <Process />
             <About />
-            <Benefits />
             <Gallery />
             <Testimonials />
             <CTA />
