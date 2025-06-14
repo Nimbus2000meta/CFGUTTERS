@@ -50,7 +50,7 @@ const ServiceArea = () => {
           ))}
         </div>
 
-        {/* Map Section */}
+        {/* Map Section with Custom 50-Mile Radius Overlay */}
         <motion.div
           className="bg-white rounded-lg overflow-hidden shadow-lg mb-8"
           initial={{ opacity: 0, y: 30 }}
@@ -58,8 +58,8 @@ const ServiceArea = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="h-96 bg-gray-200 relative">
-            {/* Clean Google Maps centered on service area */}
+          <div className="h-96 bg-gray-200 relative overflow-hidden">
+            {/* Google Maps */}
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805406.5570608929!2d-73.7562317!3d41.3934083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2a0fb8efc8a19%3A0x71a40bb2f0e0beb5!2sMahopac%2C%20NY!5e0!3m2!1sen!2sus!4v1699892345678!5m2!1sen!2sus"
               width="100%"
@@ -71,6 +71,39 @@ const ServiceArea = () => {
               className="w-full h-full"
             ></iframe>
             
+            {/* 50-Mile Radius Overlay - Positioned over map */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="relative">
+                {/* Center point - Mahopac */}
+                <div className="w-3 h-3 bg-red-500 rounded-full border-2 border-white shadow-lg relative z-20"></div>
+                
+                {/* 50-mile radius circle - Scaled to match map zoom */}
+                <svg 
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" 
+                  width="480" 
+                  height="480"
+                  viewBox="0 0 480 480"
+                >
+                  <circle
+                    cx="240"
+                    cy="240" 
+                    r="200"
+                    fill="rgba(59, 130, 246, 0.1)"
+                    stroke="rgba(59, 130, 246, 0.8)"
+                    strokeWidth="3"
+                    strokeDasharray="8,4"
+                  />
+                  {/* Radius labels */}
+                  <text x="240" y="50" textAnchor="middle" fill="#1e40af" fontSize="12" fontWeight="bold">
+                    50 Miles
+                  </text>
+                  <text x="240" y="430" textAnchor="middle" fill="#1e40af" fontSize="12" fontWeight="bold">
+                    Service Radius
+                  </text>
+                </svg>
+              </div>
+            </div>
+            
             {/* Service Area Information Overlay */}
             <div className="absolute top-4 left-4 bg-white bg-opacity-95 px-4 py-3 rounded-lg shadow-lg max-w-xs">
               <div className="space-y-2">
@@ -79,11 +112,11 @@ const ServiceArea = () => {
                   <span className="text-sm font-semibold text-gray-800">Service Center: Mahopac, NY</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <span className="text-sm font-semibold text-gray-800">50-Mile Service Coverage</span>
+                  <div className="w-3 h-3 border-2 border-blue-500 border-dashed rounded-full bg-blue-500 bg-opacity-20"></div>
+                  <span className="text-sm font-semibold text-gray-800">50-Mile Service Radius</span>
                 </div>
                 <div className="text-xs text-gray-600 mt-2">
-                  Zoom out to see full coverage area including Kent CT, Warren CT, and Westport CT
+                  Covers Mahopac NY, Kent CT, Warren CT, Westport CT and surrounding areas
                 </div>
               </div>
             </div>
