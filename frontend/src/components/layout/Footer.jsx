@@ -2,199 +2,364 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FiPhone, FiMail, FiMapPin, FiClock, FiFacebook } from 'react-icons/fi';
+import { FaInstagram, FaTiktok } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const services = [
-    'Professional Gutter Cleaning',
-    'Gutter Guard Installation', 
-    'Gutter & Downspout Repairs',
-    'Roof Cleaning & Moss Treatment',
-    'Emergency Gutter Service'
-  ];
-
-  const quickLinks = [
-    { name: 'Home', to: 'home' },
-    { name: 'About', to: 'about' },
-    { name: 'Services', to: 'services' },
-    { name: 'Gallery', to: 'gallery' },
-    { name: 'Contact', to: 'contact' }
-  ];
 
   return (
     <footer className="bg-primary-900 text-white">
       {/* Main Footer Content */}
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           
-          {/* Company Info */}
+          {/* Company Info - Logo and Details */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="lg:col-span-1"
           >
-            <div className="mb-6 flex items-center">
+            <div className="mb-6">
               <svg
-                width="40"
-                height="40"
+                width="120"
+                height="120"
                 viewBox="0 0 200 200"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="mr-3"
+                className="mb-4"
               >
-                <circle cx="100" cy="100" r="95" stroke="white" strokeWidth="8" fill="#1e40af"/>
-                <circle cx="100" cy="100" r="85" stroke="white" strokeWidth="2" fill="#1e40af"/>
-                <path d="M30 110 L60 75 L90 75 L140 75 L170 110 L165 120 L35 120 Z" fill="white"/>
-                <path d="M70 75 L100 45 L130 75 L125 72 L100 52 L75 72 Z" fill="white"/>
-                <path d="M80 75 L100 58 L120 75 L115 73 L100 63 L85 73 Z" fill="#93c5fd"/>
+                {/* Outer circle border - White */}
+                <circle 
+                  cx="100" 
+                  cy="100" 
+                  r="95" 
+                  stroke="white" 
+                  strokeWidth="8" 
+                  fill="#1e40af"
+                />
+                
+                {/* Inner circle border - White */}
+                <circle 
+                  cx="100" 
+                  cy="100" 
+                  r="85" 
+                  stroke="white" 
+                  strokeWidth="2" 
+                  fill="#1e40af"
+                />
+                
+                {/* Main house/roof structure - White */}
+                <path 
+                  d="M30 110 L60 75 L90 75 L140 75 L170 110 L165 120 L35 120 Z" 
+                  fill="white"
+                />
+                
+                {/* Roof peak triangle - White */}
+                <path 
+                  d="M70 75 L100 45 L130 75 L125 72 L100 52 L75 72 Z" 
+                  fill="white"
+                />
+                
+                {/* Inner roof detail - Light Blue */}
+                <path 
+                  d="M80 75 L100 58 L120 75 L115 73 L100 63 L85 73 Z" 
+                  fill="#93c5fd"
+                />
+                
+                {/* Gutter system - White */}
                 <rect x="30" y="110" width="140" height="8" fill="white"/>
+                
+                {/* Water flow lines - White */}
                 <path d="M35 125 L50 125" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M55 128 L70 128" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M75 131 L90 131" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M110 128 L125 128" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M130 131 L145 131" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M150 125 L165 125" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                
+                {/* Downspout - White */}
                 <rect x="167" y="110" width="6" height="25" fill="white"/>
                 <rect x="165" y="133" width="10" height="4" fill="white"/>
-                <text x="100" y="155" textAnchor="middle" fill="white" fontSize="24" fontWeight="bold">CF</text>
+                
+                {/* CF GUTTERS text */}
+                <text x="100" y="155" textAnchor="middle" fill="white" fontSize="18" fontWeight="bold">CF GUTTERS</text>
               </svg>
-              <h3 className="text-2xl font-bold">CF Gutters</h3>
             </div>
             
-            <p className="text-primary-200 mb-6">
-              Professional gutter and roof cleaning services with over 10 years of experience. 
-              Licensed, insured, and serving Mahopac NY to Westport CT.
-            </p>
+            {/* Social Media Links */}
+            <div className="flex items-center space-x-4 mb-6">
+              <a
+                href="https://www.facebook.com/profile.php?id=61567485513010"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-primary-200 hover:text-white transition-colors"
+              >
+                <FiFacebook className="text-xl" />
+                <span>Facebook</span>
+              </a>
+            </div>
             
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <FiPhone className="text-secondary-400" />
-                <a href="tel:+18458793864" className="hover:text-secondary-400 transition-colors">
-                  (845) 879-3864
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FiMail className="text-secondary-400" />
-                <a href="mailto:cfgutters02@gmail.com" className="hover:text-secondary-400 transition-colors">
-                  cfgutters02@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FiClock className="text-secondary-400" />
-                <span>Monday-Saturday 8 AM to 6 PM</span>
+            <div className="flex items-center space-x-4 mb-6">
+              <a
+                href="https://www.instagram.com/cfgutters"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-primary-200 hover:text-white transition-colors"
+              >
+                <FaInstagram className="text-xl" />
+                <span>Instagram</span>
+              </a>
+            </div>
+            
+            <div className="flex items-center space-x-4 mb-6">
+              <a
+                href="https://www.tiktok.com/@cfgutters"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-primary-200 hover:text-white transition-colors"
+              >
+                <FaTiktok className="text-xl" />
+                <span>TikTok</span>
+              </a>
+            </div>
+            
+            <div className="text-sm text-primary-200">
+              <p className="mb-2">Copyright {currentYear} © All rights Reserved. CF Gutters</p>
+              <div className="flex items-center space-x-2">
+                <FiMapPin className="text-secondary-400" />
+                <span>Mahopac NY to Westport CT</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Services & Quick Links */}
+          {/* Services */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h4 className="text-lg font-semibold mb-6">Our Services</h4>
-            <ul className="space-y-3 mb-8">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <Link
-                    to="services"
-                    spy={true}
-                    smooth={true}
-                    offset={-80}
-                    duration={500}
-                    className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm block"
-                  >
-                    {service}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.to}
-                    spy={true}
-                    smooth={true}
-                    offset={-80}
-                    duration={500}
-                    className="text-primary-200 hover:text-white transition-colors cursor-pointer text-sm block"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="text-xl font-bold mb-6">Services</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Gutter Cleaning
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Gutter Guard Installation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Gutter & Downspout Repairs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Roof Cleaning & Moss Treatment
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Soft Wash Roof Cleaning
+                </Link>
+              </li>
             </ul>
           </motion.div>
 
-          {/* Contact CTA */}
+          {/* Get Started */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="text-lg font-semibold mb-6">Get Started</h4>
-            <p className="text-primary-200 text-sm mb-6">
-              Ready for professional gutter cleaning? Contact us today for a free quote!
-            </p>
-            
-            <div className="space-y-4 mb-8">
-              <a
-                href="tel:+18458793864"
-                className="btn btn-secondary w-full flex items-center justify-center gap-2"
-              >
-                <FiPhone />
-                Call Now
-              </a>
-              <a
-                href="mailto:cfgutters02@gmail.com"
-                className="btn btn-outline-white w-full flex items-center justify-center gap-2"
-              >
-                <FiMail />
-                Email Us
-              </a>
-            </div>
-            
-            <div className="pt-6 border-t border-primary-800">
-              <h5 className="font-semibold mb-3">Follow Us</h5>
-              <a
-                href="https://www.facebook.com/profile.php?id=61567485513010"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 bg-primary-800 rounded-lg hover:bg-secondary-500 transition-colors"
-              >
-                <FiFacebook />
-              </a>
-            </div>
+            <h4 className="text-xl font-bold mb-6">Get Started</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="faq"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  FAQs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="testimonials"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="mailto:cfgutters02@gmail.com"
+                  className="text-primary-200 hover:text-white transition-colors"
+                >
+                  Email
+                </a>
+              </li>
+            </ul>
           </motion.div>
-        </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-primary-800">
-        <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-primary-200 text-sm">
-              Copyright {currentYear} © All rights Reserved. CF Gutters
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-primary-200 hover:text-white transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-primary-200 hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-primary-200 hover:text-white transition-colors">
-                Sitemap
-              </a>
-            </div>
-          </div>
+          {/* About */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <h4 className="text-xl font-bold mb-6">About</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Contact us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="service-area"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Service Areas
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="gallery"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Gallery
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Our Policy */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <h4 className="text-xl font-bold mb-6">Our Policy</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#" className="text-primary-200 hover:text-white transition-colors">
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-primary-200 hover:text-white transition-colors">
+                  Refund Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-primary-200 hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-primary-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  Get Started
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
         </div>
       </div>
     </footer>
