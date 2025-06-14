@@ -37,8 +37,14 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-4">CF Gutters</h3>
+            <div className="mb-6 flex items-center">
+              <CFGuttersLogoSVG 
+                width={40} 
+                height={40} 
+                className="mr-3 text-white" 
+              />
+              <h3 className="text-2xl font-bold">CF Gutters</h3>
+            </div>
               <p className="text-primary-200 mb-4">
                 Professional gutter and roof cleaning services. With over 10 years of experience, 
                 we provide top-notch services that protect your home year-round.
