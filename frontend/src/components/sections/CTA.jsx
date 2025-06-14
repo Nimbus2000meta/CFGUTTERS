@@ -81,7 +81,7 @@ const CTA = () => {
             </motion.a>
             <motion.a
               href="mailto:cfgutters02@gmail.com"
-              className="btn btn-outline-white font-semibold px-8 py-4 text-lg flex items-center justify-center gap-3"
+              className="btn bg-white text-primary-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg flex items-center justify-center gap-3 border-2 border-white"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
