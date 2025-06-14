@@ -36,6 +36,7 @@ function App() {
             <Services />
             <CTAHorizontal />
             <About />
+            <ServiceArea />
             <Gallery />
             <Testimonials />
             <CTA />
