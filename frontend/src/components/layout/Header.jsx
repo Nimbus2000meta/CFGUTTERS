@@ -119,7 +119,7 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-primary-900 shadow-soft py-3' : 'bg-primary-900/95 backdrop-blur-sm py-5'
+        scrolled ? 'bg-primary-900 shadow-soft py-2' : 'bg-primary-900/95 backdrop-blur-sm py-3'
       }`}
     >
       <div className="container-custom flex justify-between items-center">
