@@ -205,9 +205,19 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus: 
+    - "Header with Navigation"
+    - "Hero Section"
+    - "Services Section"
+    - "Gallery Section with Lightbox"
+    - "Testimonials Slider"
+    - "FAQ Expandable Items"
+    - "Contact Section"
+    - "Footer"
+    - "WhatsApp Chat Widget"
+    - "Responsive Design"
   stuck_tasks: []
-  test_all: false
+  test_all: true
   test_priority: "high_first"
 
 agent_communication:
