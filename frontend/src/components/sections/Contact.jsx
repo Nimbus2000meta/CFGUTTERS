@@ -178,7 +178,7 @@ const Contact = () => {
                   </a>
                   <a 
                     href="mailto:cfgutters02@gmail.com"
-                    className="btn btn-outline flex items-center justify-center gap-2"
+                    className="btn bg-white text-primary-600 hover:bg-gray-100 border-2 border-white flex items-center justify-center gap-2"
                   >
                     <FiMail />
                     Email Us
