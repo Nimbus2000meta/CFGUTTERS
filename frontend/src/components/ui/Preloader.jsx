@@ -5,20 +5,14 @@ import { FiDroplet } from 'react-icons/fi';
 const Preloader = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
-  const [fontLoaded, setFontLoaded] = useState(false);
 
   useEffect(() => {
-    // Check if fonts are loaded
-    document.fonts.ready.then(() => {
-      setFontLoaded(true);
-    });
-
     // Simulate loading progress in increments
     let currentProgress = 0;
     
     // Use a more controlled increment approach
     const simulateLoading = () => {
-      const increment = 3 + Math.random() * 10; // Random increment between 3-13%
+      const increment = 8 + Math.random() * 12; // Random increment between 8-20%
       
       currentProgress += increment;
       
@@ -26,31 +20,29 @@ const Preloader = ({ onLoadingComplete }) => {
         currentProgress = 100;
         setProgress(100);
         
-        // Wait for fonts to load before completing
-        if (fontLoaded) {
+        // Complete loading after reaching 100%
+        setTimeout(() => {
+          setIsComplete(true);
+          
+          // Call the callback after animation completes
           setTimeout(() => {
-            setIsComplete(true);
-            
-            // Call the callback after animation completes
-            setTimeout(() => {
-              if (onLoadingComplete) onLoadingComplete();
-            }, 800);
-          }, 500);
-        }
+            if (onLoadingComplete) onLoadingComplete();
+          }, 800);
+        }, 300);
       } else {
         setProgress(currentProgress);
         
-        // Slow down as we get closer to 100%
-        const nextTimeout = currentProgress > 70 ? 300 : 150;
+        // Speed up loading
+        const nextTimeout = currentProgress > 70 ? 200 : 100;
         setTimeout(simulateLoading, nextTimeout);
       }
     };
     
     // Start the loading simulation
-    const initialDelay = setTimeout(simulateLoading, 300);
+    const initialDelay = setTimeout(simulateLoading, 200);
     
     return () => clearTimeout(initialDelay);
-  }, [onLoadingComplete, fontLoaded]);
+  }, [onLoadingComplete]);
 
   // Animation variants
   const containerVariants = {
@@ -136,11 +128,11 @@ const Preloader = ({ onLoadingComplete }) => {
             exit="exit"
           >
             <div className="relative flex items-center justify-center">
-              <div className="text-5xl font-bold font-heading">
-                CF<span className="text-accent-orange">Gutters</span>
+              <div className="text-5xl font-bold">
+                CF<span className="text-secondary-300">Gutters</span>
               </div>
               <motion.div
-                className="absolute -top-5 -right-4 text-accent-orange"
+                className="absolute -top-5 -right-4 text-secondary-300"
                 animate={{
                   y: [0, -10, 0],
                   opacity: [0.7, 1, 0.7],

@@ -54,10 +54,14 @@ const Gallery = () => {
   const openLightbox = (image, index) => {
     setSelectedImage(image);
     setCurrentIndex(index);
+    // Prevent body scroll when lightbox is open
+    document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
+    // Restore body scroll
+    document.body.style.overflow = 'unset';
   };
 
   const nextImage = () => {
@@ -71,6 +75,24 @@ const Gallery = () => {
     setCurrentIndex(prevIndex);
     setSelectedImage(galleryImages[prevIndex]);
   };
+
+  // Handle keyboard navigation
+  React.useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (!selectedImage) return;
+      
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        prevImage();
+      } else if (e.key === 'ArrowRight') {
+        nextImage();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [selectedImage, currentIndex]);
 
   return (
     <section id="gallery" className="section-padding bg-neutral-50">
@@ -124,6 +146,7 @@ const Gallery = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => openLightbox(image, index)}
+              whileHover={{ scale: 1.02 }}
             >
               <div className="aspect-w-4 aspect-h-3 overflow-hidden">
                 <img
@@ -183,7 +206,7 @@ const Gallery = () => {
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -206,20 +229,29 @@ const Gallery = () => {
               <button
                 onClick={closeLightbox}
                 className="absolute top-4 right-4 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors"
+                aria-label="Close lightbox"
               >
                 <FiX />
               </button>
               
               {/* Navigation Buttons */}
               <button
-                onClick={prevImage}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors"
+                aria-label="Previous image"
               >
                 <FiChevronLeft />
               </button>
               <button
-                onClick={nextImage}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors"
+                aria-label="Next image"
               >
                 <FiChevronRight />
               </button>
@@ -230,6 +262,9 @@ const Gallery = () => {
                   {selectedImage.category}
                 </div>
                 <p className="text-sm">{selectedImage.description}</p>
+                <div className="text-xs text-white/70 mt-2">
+                  {currentIndex + 1} of {galleryImages.length}
+                </div>
               </div>
             </motion.div>
           </motion.div>
