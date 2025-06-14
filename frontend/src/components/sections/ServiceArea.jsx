@@ -39,21 +39,7 @@ const ServiceArea = () => {
           <p className="text-neutral-600 text-xl">50-Mile Radius from Mahopac, NY</p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid gap-6 mb-12 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="bg-white text-center py-6 px-6 rounded-lg shadow-soft border border-primary-100 hover:shadow-lg transition-all"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <h3 className="font-semibold text-lg text-primary-700">{service}</h3>
-            </motion.div>
-          ))}
-        </div>
+
 
         {/* Map Section with Custom 50-Mile Radius Overlay */}
         <motion.div
