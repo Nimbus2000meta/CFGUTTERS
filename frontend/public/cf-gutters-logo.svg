@@ -1,30 +1,30 @@
-<!-- CF Gutters Logo Placeholder - Replace with actual logo -->
+<!-- CF Gutters Logo - Accurate Recreation -->
 <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
-  <!-- Outer circle border -->
-  <circle cx="250" cy="250" r="240" stroke="#1e2a78" stroke-width="20" fill="white"/>
-  <circle cx="250" cy="250" r="220" stroke="#1e2a78" stroke-width="8" fill="white"/>
+  <!-- Outer circle borders -->
+  <circle cx="250" cy="250" r="235" stroke="#2c3e82" stroke-width="15" fill="white"/>
+  <circle cx="250" cy="250" r="215" stroke="#2c3e82" stroke-width="6" fill="white"/>
   
-  <!-- House/roof structure -->
-  <path d="M100 280 L180 200 L220 200 L320 200 L400 280 L380 320 L120 320 Z" fill="#1e2a78"/>
+  <!-- Main house/roof structure -->
+  <path d="M120 220 L180 160 L250 160 L320 160 L380 220 L380 280 L360 280 L120 280 Z" fill="#2c3e82"/>
   
-  <!-- Roof peak -->
-  <path d="M160 200 L250 120 L340 200 L320 190 L250 140 L180 190 Z" fill="#1e2a78"/>
+  <!-- Roof peak triangle -->
+  <path d="M180 160 L250 100 L320 160 L300 150 L250 120 L200 150 Z" fill="#2c3e82"/>
   
-  <!-- Light blue roof detail -->
-  <path d="M200 200 L250 160 L300 200 L280 190 L250 170 L220 190 Z" fill="#87ceeb"/>
+  <!-- Inner roof triangle (light blue) -->
+  <path d="M200 160 L250 130 L300 160 L280 155 L250 140 L220 155 Z" fill="#87ceeb"/>
   
-  <!-- Gutter system -->
-  <rect x="100" y="280" width="300" height="20" fill="#1e2a78"/>
+  <!-- Gutter system extending right -->
+  <rect x="360" y="220" width="80" height="20" fill="#2c3e82"/>
   
-  <!-- Gutter lines representation -->
-  <rect x="100" y="300" width="60" height="8" fill="#1e2a78"/>
-  <rect x="170" y="305" width="60" height="8" fill="#1e2a78"/>
-  <rect x="240" y="300" width="60" height="8" fill="#1e2a78"/>
-  <rect x="310" y="305" width="60" height="8" fill="#1e2a78"/>
+  <!-- Gutter lines/channels -->
+  <rect x="360" y="245" width="15" height="4" fill="#2c3e82"/>
+  <rect x="380" y="250" width="15" height="4" fill="#2c3e82"/>
+  <rect x="400" y="245" width="15" height="4" fill="#2c3e82"/>
+  <rect x="420" y="250" width="15" height="4" fill="#2c3e82"/>
   
-  <!-- Downspout -->
-  <rect x="390" y="280" width="12" height="60" fill="#1e2a78"/>
+  <!-- Downspout/vertical element -->
+  <rect x="430" y="240" width="8" height="25" fill="#2c3e82"/>
   
   <!-- CF GUTTERS text -->
-  <text x="250" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="black">CF GUTTERS</text>
+  <text x="250" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="black">CF GUTTERS</text>
 </svg>
