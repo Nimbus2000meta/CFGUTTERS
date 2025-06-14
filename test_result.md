@@ -227,3 +227,5 @@ agent_communication:
     message: "Backend API testing completed. Most endpoints are working correctly, but there's an issue with the CORS middleware. The server is not properly handling OPTIONS preflight requests, which could cause issues with cross-origin requests from the frontend. The MongoDB connection and all API endpoints (GET /, POST /status, GET /status) are functioning correctly."
   - agent: "testing"
     message: "Updated testing for CORS middleware. After adjusting the test to include proper CORS headers in the OPTIONS request, the CORS middleware is working correctly. All backend components are now verified to be working properly."
+  - agent: "testing"
+    message: "Starting frontend testing for the CF Gutters website. Will test all key components including Header, Hero, Services, Gallery, Testimonials, FAQ, Contact sections, as well as responsive design and interactive elements."
