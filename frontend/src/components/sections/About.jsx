@@ -121,7 +121,7 @@ const About = () => {
 
             {/* Additional Features */}
             <motion.div
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 rounded-xl text-white"
+              className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 rounded-xl text-white mt-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
