@@ -59,23 +59,47 @@ const ServiceArea = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="h-96 bg-gray-200 relative">
-            {/* Google Maps with Custom Markers and Radius */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402174.33143044785!2d-73.50821165937501!3d41.393408298346205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2a0fb8efc8a19%3A0x71a40bb2f0e0beb5!2sMahopac%2C%20NY!5e0!3m2!1sen!2sus!4v1699892345678!5m2!1sen!2sus"
-              width="100%"
-              height="384"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-            ></iframe>
-            
-            {/* Radius Indicator Overlay */}
-            <div className="absolute top-4 left-4 bg-white bg-opacity-90 px-3 py-2 rounded-lg shadow-lg">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 border-2 border-blue-600 rounded-full"></div>
-                <span className="text-sm font-semibold text-blue-900">50-Mile Service Radius</span>
+            {/* Google Maps with Custom Radius Circle */}
+            <div className="w-full h-full relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805406.5570608929!2d-74.00624!3d41.3934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2a0fb8efc8a19%3A0x71a40bb2f0e0beb5!2sMahopac%2C%20NY!5e0!3m2!1sen!2sus!4v1699892345678!5m2!1sen!2sus"
+                width="100%"
+                height="384"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
+              
+              {/* Custom Radius Circle Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="relative">
+                  {/* Center point (Mahopac) */}
+                  <div className="w-4 h-4 bg-red-500 rounded-full border-2 border-white shadow-lg relative z-20"></div>
+                  
+                  {/* 50-mile radius circle */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border-4 border-blue-500 border-dashed rounded-full opacity-70 bg-blue-500 bg-opacity-10"></div>
+                  
+                  {/* Radius Labels */}
+                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">
+                    50 Mile Radius
+                  </div>
+                </div>
+              </div>
+              
+              {/* Legend */}
+              <div className="absolute top-4 left-4 bg-white bg-opacity-95 px-4 py-3 rounded-lg shadow-lg">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="text-sm font-semibold text-gray-800">Mahopac, NY (Center)</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 border-2 border-blue-500 border-dashed rounded-full bg-blue-500 bg-opacity-20"></div>
+                    <span className="text-sm font-semibold text-gray-800">50-Mile Service Area</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
