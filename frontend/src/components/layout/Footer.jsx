@@ -16,13 +16,33 @@ const Footer = () => {
           {/* Company Info - Logo and Details */}
           <div>
             <div style={{marginBottom: '16px'}}>
+              {/* Logo Image - Replace src with your logo image URL */}
+              <img 
+                src="/logo.png" 
+                alt="CF Gutters Logo"
+                style={{
+                  width: '80px', 
+                  height: '80px', 
+                  borderRadius: '50%', 
+                  objectFit: 'cover', 
+                  border: '2px solid white',
+                  marginBottom: '12px'
+                }}
+                onError={(e) => {
+                  // Fallback to default SVG logo if image fails to load
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+              
+              {/* Fallback SVG Logo - Shows if image fails to load */}
               <svg
                 width="80"
                 height="80"
                 viewBox="0 0 200 200"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{marginBottom: '12px'}}
+                style={{marginBottom: '12px', display: 'none'}}
               >
                 <circle cx="100" cy="100" r="95" stroke="white" strokeWidth="8" fill="#1e40af"/>
                 <circle cx="100" cy="100" r="85" stroke="white" strokeWidth="2" fill="#1e40af"/>
