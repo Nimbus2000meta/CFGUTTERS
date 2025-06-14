@@ -137,7 +137,12 @@ const Gallery = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, staggerChildren: 0.1 }}
         >
-          {galleryImages.map((image, index) => (
+          {galleryImages.length === 0 ? (
+            <div className="col-span-full text-center py-12">
+              <p className="text-gray-500">No gallery images available</p>
+            </div>
+          ) : (
+            galleryImages.map((image, index) => (
             <motion.div
               key={image.id}
               className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
