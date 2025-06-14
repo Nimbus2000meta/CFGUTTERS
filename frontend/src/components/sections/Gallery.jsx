@@ -133,27 +133,103 @@ const Gallery = () => {
           </motion.p>
         </div>
 
-        {/* Gallery Grid - Simple Test */}
-        <div className="bg-red-200 p-8 text-center mb-8">
-          <h3 className="text-2xl font-bold">GALLERY TEST AREA</h3>
-          <p>If you can see this red box, the gallery section is working</p>
-        </div>
-        
+        {/* Gallery Grid - Working Version */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          <div style={{backgroundColor: 'blue', height: '200px', color: 'white', padding: '20px'}}>
-            <h3>Card 1</h3>
-            <p>Simple test card</p>
+          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
+            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <img
+                src="https://picsum.photos/400/250?random=1"
+                alt="Professional gutter cleaning"
+                style={{width: '100%', height: '100%', objectFit: 'cover'}}
+              />
+            </div>
+            <div style={{padding: '16px'}}>
+              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
+                Gutter Cleaning
+              </div>
+              <p style={{fontSize: '14px', color: '#4b5563'}}>Professional gutter cleaning and debris removal</p>
+            </div>
           </div>
 
-          <div style={{backgroundColor: 'green', height: '200px', color: 'white', padding: '20px'}}>
-            <h3>Card 2</h3>
-            <p>Simple test card</p>
+          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
+            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <img
+                src="https://picsum.photos/400/250?random=2"
+                alt="Gutter maintenance service"
+                style={{width: '100%', height: '100%', objectFit: 'cover'}}
+              />
+            </div>
+            <div style={{padding: '16px'}}>
+              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
+                Maintenance
+              </div>
+              <p style={{fontSize: '14px', color: '#4b5563'}}>Expert gutter maintenance and repair work</p>
+            </div>
           </div>
 
-          <div style={{backgroundColor: 'orange', height: '200px', color: 'white', padding: '20px'}}>
-            <h3>Card 3</h3>
-            <p>Simple test card</p>
+          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
+            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <img
+                src="https://picsum.photos/400/250?random=3"
+                alt="Professional roof cleaning"
+                style={{width: '100%', height: '100%', objectFit: 'cover'}}
+              />
+            </div>
+            <div style={{padding: '16px'}}>
+              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
+                Roof Cleaning
+              </div>
+              <p style={{fontSize: '14px', color: '#4b5563'}}>Professional roof cleaning and moss treatment</p>
+            </div>
+          </div>
+
+          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
+            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <img
+                src="https://picsum.photos/400/250?random=4"
+                alt="Gutter guard installation"
+                style={{width: '100%', height: '100%', objectFit: 'cover'}}
+              />
+            </div>
+            <div style={{padding: '16px'}}>
+              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
+                Gutter Guards
+              </div>
+              <p style={{fontSize: '14px', color: '#4b5563'}}>High-quality gutter guard installation service</p>
+            </div>
+          </div>
+
+          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
+            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <img
+                src="https://picsum.photos/400/250?random=5"
+                alt="Complete gutter system cleaning"
+                style={{width: '100%', height: '100%', objectFit: 'cover'}}
+              />
+            </div>
+            <div style={{padding: '16px'}}>
+              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
+                Complete Service
+              </div>
+              <p style={{fontSize: '14px', color: '#4b5563'}}>Comprehensive gutter system cleaning and maintenance</p>
+            </div>
+          </div>
+
+          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
+            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <img
+                src="https://picsum.photos/400/250?random=6"
+                alt="Professional gutter repair"
+                style={{width: '100%', height: '100%', objectFit: 'cover'}}
+              />
+            </div>
+            <div style={{padding: '16px'}}>
+              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
+                Repairs
+              </div>
+              <p style={{fontSize: '14px', color: '#4b5563'}}>Expert gutter repair and restoration services</p>
+            </div>
           </div>
 
         </div>
