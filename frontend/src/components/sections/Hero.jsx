@@ -13,7 +13,7 @@ const Hero = () => {
       
       {/* Content Container */}
       <div className="container-custom relative z-20">
-        <div className="max-w-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="">
             <TextReveal 
@@ -99,6 +99,44 @@ const Hero = () => {
               </div>
             </motion.div>
           </div>
+          
+          {/* Right Content - Professional Gutter Cleaning Image */}
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.pexels.com/photos/31762405/pexels-photo-31762405.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                alt="Professional gutter cleaning and maintenance services"
+                className="w-full h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/50 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white">
+                <h3 className="text-xl font-bold mb-2">Professional Service</h3>
+                <p className="text-white/90">Expert gutter cleaning & maintenance</p>
+              </div>
+            </div>
+            
+            {/* Floating Elements */}
+            <motion.div 
+              className="absolute -top-4 -right-4 bg-secondary-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              10+ Years
+            </motion.div>
+            
+            <motion.div 
+              className="absolute -bottom-4 -left-4 bg-green-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+            >
+              Licensed & Insured
+            </motion.div>
+          </motion.div>
         </div>
       </div>
       
