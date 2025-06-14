@@ -135,75 +135,34 @@ const Gallery = () => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Debug info */}
-          <div className="col-span-full text-center py-4 bg-red-100 mb-4">
-            <p>Debug: Gallery has {galleryImages.length} images</p>
-            <p>First image src: {galleryImages[0]?.src}</p>
-          </div>
-          
-          {/* Manual gallery items to test */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=1"
-                alt="Test image 1"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentNode.innerHTML = '<div class="text-gray-500 text-center p-4">Image failed to load</div>';
-                }}
-                onLoad={() => console.log('Image 1 loaded successfully')}
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Test Category
+          {galleryImages.map((image, index) => {
+            return (
+              <div 
+                key={image.id}
+                className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                onClick={() => openLightbox(image, index)}
+              >
+                <div className="h-64 bg-gray-200 flex items-center justify-center">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentNode.innerHTML = '<div class="text-gray-500 text-center p-4">Image failed to load</div>';
+                    }}
+                    onLoad={() => console.log('Image loaded:', image.category)}
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                    {image.category}
+                  </div>
+                  <p className="text-sm text-gray-700">{image.description}</p>
+                </div>
               </div>
-              <p className="text-sm text-gray-700">Test description</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=2"
-                alt="Test image 2"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentNode.innerHTML = '<div class="text-gray-500 text-center p-4">Image failed to load</div>';
-                }}
-                onLoad={() => console.log('Image 2 loaded successfully')}
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Test Category 2
-              </div>
-              <p className="text-sm text-gray-700">Test description 2</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <img
-                src="https://picsum.photos/800/600?random=3"
-                alt="Test image 3"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentNode.innerHTML = '<div class="text-gray-500 text-center p-4">Image failed to load</div>';
-                }}
-                onLoad={() => console.log('Image 3 loaded successfully')}
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Test Category 3
-              </div>
-              <p className="text-sm text-gray-700">Test description 3</p>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
         {/* CTA Section */}
