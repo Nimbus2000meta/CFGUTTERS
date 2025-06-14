@@ -26,7 +26,7 @@ const Footer = () => {
     <footer className="bg-primary-900 text-white">
       {/* Main Footer Content */}
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           
           {/* Company Info */}
           <motion.div
@@ -34,7 +34,6 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-1"
           >
             <div className="mb-6 flex items-center">
               <svg
@@ -45,68 +44,30 @@ const Footer = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 className="mr-3"
               >
-                {/* Outer circle border - White */}
-                <circle 
-                  cx="100" 
-                  cy="100" 
-                  r="95" 
-                  stroke="white" 
-                  strokeWidth="8" 
-                  fill="#1e40af"
-                />
-                
-                {/* Inner circle border - White */}
-                <circle 
-                  cx="100" 
-                  cy="100" 
-                  r="85" 
-                  stroke="white" 
-                  strokeWidth="2" 
-                  fill="#1e40af"
-                />
-                
-                {/* Main house/roof structure - White */}
-                <path 
-                  d="M30 110 L60 75 L90 75 L140 75 L170 110 L165 120 L35 120 Z" 
-                  fill="white"
-                />
-                
-                {/* Roof peak triangle - White */}
-                <path 
-                  d="M70 75 L100 45 L130 75 L125 72 L100 52 L75 72 Z" 
-                  fill="white"
-                />
-                
-                {/* Inner roof detail - Light Blue */}
-                <path 
-                  d="M80 75 L100 58 L120 75 L115 73 L100 63 L85 73 Z" 
-                  fill="#93c5fd"
-                />
-                
-                {/* Gutter system - White */}
+                <circle cx="100" cy="100" r="95" stroke="white" strokeWidth="8" fill="#1e40af"/>
+                <circle cx="100" cy="100" r="85" stroke="white" strokeWidth="2" fill="#1e40af"/>
+                <path d="M30 110 L60 75 L90 75 L140 75 L170 110 L165 120 L35 120 Z" fill="white"/>
+                <path d="M70 75 L100 45 L130 75 L125 72 L100 52 L75 72 Z" fill="white"/>
+                <path d="M80 75 L100 58 L120 75 L115 73 L100 63 L85 73 Z" fill="#93c5fd"/>
                 <rect x="30" y="110" width="140" height="8" fill="white"/>
-                
-                {/* Water flow lines - White */}
                 <path d="M35 125 L50 125" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M55 128 L70 128" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M75 131 L90 131" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M110 128 L125 128" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M130 131 L145 131" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                 <path d="M150 125 L165 125" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                
-                {/* Downspout - White */}
                 <rect x="167" y="110" width="6" height="25" fill="white"/>
                 <rect x="165" y="133" width="10" height="4" fill="white"/>
-                
-                {/* CF text inside circle - White */}
                 <text x="100" y="155" textAnchor="middle" fill="white" fontSize="24" fontWeight="bold">CF</text>
               </svg>
               <h3 className="text-2xl font-bold">CF Gutters</h3>
             </div>
+            
             <p className="text-primary-200 mb-6">
               Professional gutter and roof cleaning services with over 10 years of experience. 
-              Licensed, insured, and committed to protecting your home year-round.
+              Licensed, insured, and serving Mahopac NY to Westport CT.
             </p>
+            
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <FiPhone className="text-secondary-400" />
@@ -121,17 +82,13 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <FiMapPin className="text-secondary-400" />
-                <span>Mahopac NY to Westport CT</span>
-              </div>
-              <div className="flex items-center space-x-3">
                 <FiClock className="text-secondary-400" />
                 <span>Monday-Saturday 8 AM to 6 PM</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Services */}
+          {/* Services & Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -139,7 +96,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h4 className="text-lg font-semibold mb-6">Our Services</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-8">
               {services.map((service, index) => (
                 <li key={index}>
                   <Link
@@ -155,17 +112,9 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </motion.div>
 
-          {/* Quick Links & Service Areas */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-3 mb-8">
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <Link
@@ -181,15 +130,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-
-            <h4 className="text-lg font-semibold mb-4">Service Areas</h4>
-            <ul className="space-y-2">
-              {serviceAreas.map((area, index) => (
-                <li key={index} className="text-primary-200 text-sm">
-                  {area}
-                </li>
-              ))}
-            </ul>
           </motion.div>
 
           {/* Contact CTA */}
@@ -197,13 +137,14 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h4 className="text-lg font-semibold mb-6">Get Started</h4>
-            <div className="space-y-4">
-              <p className="text-primary-200 text-sm mb-4">
-                Ready for professional gutter cleaning? Contact us today for a free quote!
-              </p>
+            <p className="text-primary-200 text-sm mb-6">
+              Ready for professional gutter cleaning? Contact us today for a free quote!
+            </p>
+            
+            <div className="space-y-4 mb-8">
               <a
                 href="tel:+18458793864"
                 className="btn btn-secondary w-full flex items-center justify-center gap-2"
@@ -218,18 +159,18 @@ const Footer = () => {
                 <FiMail />
                 Email Us
               </a>
-              
-              <div className="mt-6 pt-6 border-t border-primary-800">
-                <h5 className="font-semibold mb-3">Follow Us</h5>
-                <a
-                  href="https://www.facebook.com/profile.php?id=61567485513010"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 bg-primary-800 rounded-lg hover:bg-secondary-500 transition-colors"
-                >
-                  <FiFacebook />
-                </a>
-              </div>
+            </div>
+            
+            <div className="pt-6 border-t border-primary-800">
+              <h5 className="font-semibold mb-3">Follow Us</h5>
+              <a
+                href="https://www.facebook.com/profile.php?id=61567485513010"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 bg-primary-800 rounded-lg hover:bg-secondary-500 transition-colors"
+              >
+                <FiFacebook />
+              </a>
             </div>
           </motion.div>
         </div>
