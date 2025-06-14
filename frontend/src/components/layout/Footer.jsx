@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FiPhone, FiMail, FiMapPin, FiClock, FiFacebook } from 'react-icons/fi';
-import CFGuttersLogoSVG from '../ui/CFGuttersLogoSVG';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
