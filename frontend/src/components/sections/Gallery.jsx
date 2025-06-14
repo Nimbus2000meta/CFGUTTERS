@@ -135,30 +135,32 @@ const Gallery = () => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Debug: Show if galleryImages has content */}
-          <div className="col-span-full text-center py-4 bg-red-100 mb-4">
-            <p>Debug: Gallery has {galleryImages.length} images</p>
-          </div>
-          
-          {/* Simple test cards */}
-          <div className="bg-blue-200 p-4 rounded h-64">
-            <p>Test Card 1</p>
-          </div>
-          <div className="bg-green-200 p-4 rounded h-64">
-            <p>Test Card 2</p>
-          </div>
-          <div className="bg-yellow-200 p-4 rounded h-64">
-            <p>Test Card 3</p>
-          </div>
-          <div className="bg-purple-200 p-4 rounded h-64">
-            <p>Test Card 4</p>
-          </div>
-          <div className="bg-pink-200 p-4 rounded h-64">
-            <p>Test Card 5</p>
-          </div>
-          <div className="bg-orange-200 p-4 rounded h-64">
-            <p>Test Card 6</p>
-          </div>
+          {galleryImages.map((image, index) => (
+            <div
+              key={image.id}
+              className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+              onClick={() => openLightbox(image, index)}
+            >
+              <div className="h-64 bg-gray-200 flex items-center justify-center">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentNode.innerHTML = '<div class="text-gray-500 text-center">Image Loading...</div>';
+                  }}
+                />
+              </div>
+              
+              <div className="p-4">
+                <div className="inline-block bg-primary-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                  {image.category}
+                </div>
+                <p className="text-sm text-gray-700">{image.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* CTA Section */}
