@@ -51,6 +51,10 @@ const Gallery = () => {
     }
   ];
 
+  // Debug: Log gallery images
+  console.log('Gallery images:', galleryImages);
+  console.log('Gallery images length:', galleryImages.length);
+
   const openLightbox = (image, index) => {
     setSelectedImage(image);
     setCurrentIndex(index);
