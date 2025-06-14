@@ -34,7 +34,7 @@ module.exports = {
         },
         accent: {
           orange: '#ff6b35', // CTA highlight
-          blue: '#4A90A4', // Secondary highlight - matching header
+          blue: '#2563eb', // Secondary highlight - matching header
         }
       },
       fontFamily: {
