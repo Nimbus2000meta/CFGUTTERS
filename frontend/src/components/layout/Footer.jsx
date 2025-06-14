@@ -49,8 +49,6 @@ const Footer = () => {
                 Professional gutter and roof cleaning services. With over 10 years of experience, 
                 we provide top-notch services that protect your home year-round.
               </p>
-            </div>
-            
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <FiPhone className="text-secondary-400" />
