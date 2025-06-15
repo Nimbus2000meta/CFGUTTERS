@@ -18,7 +18,7 @@ const Hero = () => {
           <div className="order-2 lg:order-1 px-4 lg:px-0">
             <TextReveal 
               type="headline" 
-              className="text-white mb-4 drop-shadow-lg text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight"
+              className="text-white mb-6 drop-shadow-lg text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight sm:leading-tight lg:leading-tight xl:leading-tight"
             >
               Professional Gutter & Roof Cleaning Services
             </TextReveal>
