@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Company Info - Logo and Details */}
           <div style={{gridColumn: '1 / -1'}} className="md:col-span-1 text-center">
             <div style={{marginBottom: '16px'}} className="flex flex-col items-center">
-              {/* Logo Image - Replace src with your logo image URL */}
+              {/* Logo Image - Using your custom logo */}
               <img 
                 src="/images3/cf-gutters-logo.jpg" 
                 alt="CF Gutters Logo"
@@ -29,39 +29,7 @@ const Footer = () => {
                   marginBottom: '12px'
                 }}
                 className="md:w-20 md:h-20"
-                onError={(e) => {
-                  // Fallback to default SVG logo if image fails to load
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
               />
-              
-              {/* Fallback SVG Logo - Shows if image fails to load */}
-              <svg
-                width="60"
-                height="60"
-                viewBox="0 0 200 200"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{marginBottom: '12px', display: 'none'}}
-                className="md:w-20 md:h-20"
-              >
-                <circle cx="100" cy="100" r="95" stroke="white" strokeWidth="8" fill="#1e40af"/>
-                <circle cx="100" cy="100" r="85" stroke="white" strokeWidth="2" fill="#1e40af"/>
-                <path d="M30 110 L60 75 L90 75 L140 75 L170 110 L165 120 L35 120 Z" fill="white"/>
-                <path d="M70 75 L100 45 L130 75 L125 72 L100 52 L75 72 Z" fill="white"/>
-                <path d="M80 75 L100 58 L120 75 L115 73 L100 63 L85 73 Z" fill="#93c5fd"/>
-                <rect x="30" y="110" width="140" height="8" fill="white"/>
-                <path d="M35 125 L50 125" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M55 128 L70 128" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M75 131 L90 131" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M110 128 L125 128" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M130 131 L145 131" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M150 125 L165 125" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                <rect x="167" y="110" width="6" height="25" fill="white"/>
-                <rect x="165" y="133" width="10" height="4" fill="white"/>
-                <text x="100" y="155" textAnchor="middle" fill="white" fontSize="18" fontWeight="bold">CF GUTTERS</text>
-              </svg>
             </div>
             
             {/* Social Media Links - Centered */}

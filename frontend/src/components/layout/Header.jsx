@@ -11,25 +11,12 @@ const Header = () => {
           
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
-            {/* Logo Image - Replace src with your logo image URL */}
+            {/* Logo Image - Using your custom logo */}
             <img 
               src="/images3/cf-gutters-logo.jpg" 
               alt="CF Gutters Logo"
               className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border-2 border-white"
-              onError={(e) => {
-                // Fallback to default logo if image fails to load
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
-              }}
             />
-            
-            {/* Fallback Logo - Shows if image fails to load */}
-            <div 
-              className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full border-2 border-primary-600 flex items-center justify-center"
-              style={{display: 'none'}}
-            >
-              <span className="text-primary-600 font-bold text-xs">CF</span>
-            </div>
             
             <div className="text-white">
               <div className="font-bold text-sm md:text-lg">CF GUTTERS</div>
