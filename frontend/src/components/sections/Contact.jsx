@@ -129,7 +129,7 @@ const Contact = () => {
             </motion.div>
           </motion.div>
 
-          {/* Contact Form - Typeform Placeholder */}
+          {/* Contact Form - Typeform Integration */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -139,34 +139,22 @@ const Contact = () => {
             <div className="bg-white p-8 rounded-xl shadow-soft">
               <h3 className="text-2xl font-bold text-primary-700 mb-6">Request Your Quote</h3>
               
-              {/* Typeform Placeholder */}
-              <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-8 rounded-lg text-center border-2 border-dashed border-primary-200">
-                <div className="text-primary-600 mb-4">
-                  <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-semibold text-primary-700 mb-3">Typeform Integration</h4>
-                <p className="text-primary-600 mb-6">
-                  Your custom Typeform will be embedded here. This provides a professional, interactive 
-                  contact form experience for your customers.
-                </p>
-                <div className="space-y-3 text-left">
-                  <p className="text-sm text-primary-600">
-                    <strong>To Complete Integration:</strong>
-                  </p>
-                  <ol className="text-sm text-primary-600 space-y-1 list-decimal list-inside">
-                    <li>Create your Typeform at typeform.com</li>
-                    <li>Copy your Form ID</li>
-                    <li>Replace this placeholder with the embedded form</li>
-                  </ol>
-                </div>
+              {/* Typeform Embedded Form */}
+              <div className="typeform-container">
+                <div 
+                  data-tf-live="01JXRYWP53VYMNNWCKAR1SZFGV"
+                  data-tf-width="100%"
+                  data-tf-height="600"
+                  data-tf-disable-footer
+                  data-tf-hide-headers
+                  data-tf-opacity="100"
+                ></div>
               </div>
 
-              {/* Temporary Contact Info */}
+              {/* Alternative Contact Methods */}
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <p className="text-center text-neutral-600 mb-4">
-                  In the meantime, contact us directly:
+                  Prefer to contact us directly?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
