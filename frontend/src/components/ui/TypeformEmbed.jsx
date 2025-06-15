@@ -25,7 +25,7 @@ const TypeformEmbed = () => {
   return (
     <div className="typeform-container">
       {isLoading && (
-        <div className="flex items-center justify-center h-[600px] bg-gray-50 rounded-lg">
+        <div className="flex items-center justify-center h-[500px] bg-gray-50 rounded-lg">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading contact form...</p>
@@ -34,7 +34,7 @@ const TypeformEmbed = () => {
       )}
       
       {hasError ? (
-        <div className="flex items-center justify-center h-[600px] bg-gray-50 rounded-lg">
+        <div className="flex items-center justify-center h-[500px] bg-gray-50 rounded-lg">
           <div className="text-center">
             <h4 className="text-lg font-semibold text-gray-700 mb-4">
               Contact Form
@@ -55,13 +55,13 @@ const TypeformEmbed = () => {
         <iframe 
           src="https://form.typeform.com/to/rV7BmHiw?typeform-medium=embed-snippet"
           width="100%" 
-          height="600" 
+          height="500" 
           frameBorder="0"
           style={{
             borderRadius: '8px',
             border: 'none',
             width: '100%',
-            height: '600px',
+            height: '500px',
             display: isLoading ? 'none' : 'block'
           }}
           title="Contact Form - CF Gutters"
