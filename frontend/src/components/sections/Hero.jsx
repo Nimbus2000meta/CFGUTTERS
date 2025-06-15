@@ -15,10 +15,11 @@ const Hero = () => {
       <div className="container-custom relative z-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="order-2 lg:order-1 px-4 lg:px-0">
+          <div className="order-2 lg:order-1 px-4 lg:px-0 py-4">
             <TextReveal 
               type="headline" 
               className="text-white mb-6 drop-shadow-lg text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight sm:leading-tight lg:leading-tight xl:leading-tight"
+              style={{ minHeight: '120px' }}
             >
               Professional Gutter & Roof Cleaning Services
             </TextReveal>
