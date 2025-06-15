@@ -1,18 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 
 const TypeformEmbed = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const containerRef = useRef(null);
 
-  const handleIframeLoad = () => {
-    setIsLoading(false);
-  };
+  // Check if the component is in viewport before loading the iframe
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !isLoaded) {
+          // Small delay to ensure no auto-scroll occurs
+          setTimeout(() => {
+            setShowForm(true);
+            setIsLoaded(true);
+          }, 100);
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-  const handleIframeError = () => {
-    setIsLoading(false);
-    setHasError(true);
-  };
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [isLoaded]);
 
   const openTypeformPopup = () => {
     window.open(
@@ -22,33 +41,37 @@ const TypeformEmbed = () => {
     );
   };
 
+  const loadFormManually = () => {
+    setShowForm(true);
+    setIsLoaded(true);
+  };
+
   return (
-    <div className="typeform-container">
-      {isLoading && (
-        <div className="flex items-center justify-center h-[500px] bg-gray-50 rounded-lg">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading contact form...</p>
-          </div>
-        </div>
-      )}
-      
-      {hasError ? (
+    <div ref={containerRef} className="typeform-container">
+      {!showForm ? (
         <div className="flex items-center justify-center h-[500px] bg-gray-50 rounded-lg">
           <div className="text-center">
             <h4 className="text-lg font-semibold text-gray-700 mb-4">
               Contact Form
             </h4>
             <p className="text-gray-600 mb-6">
-              Click the button below to open our contact form in a new window.
+              Click to load our interactive contact form, or open it in a new tab.
             </p>
-            <button
-              onClick={openTypeformPopup}
-              className="btn btn-primary flex items-center justify-center gap-2 mx-auto"
-            >
-              <FiExternalLink />
-              Open Contact Form
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={loadFormManually}
+                className="btn btn-primary flex items-center justify-center gap-2"
+              >
+                Load Contact Form
+              </button>
+              <button
+                onClick={openTypeformPopup}
+                className="btn bg-white text-primary-600 hover:bg-gray-100 border-2 border-primary-600 flex items-center justify-center gap-2"
+              >
+                <FiExternalLink />
+                Open in New Tab
+              </button>
+            </div>
           </div>
         </div>
       ) : (
@@ -61,13 +84,11 @@ const TypeformEmbed = () => {
             borderRadius: '8px',
             border: 'none',
             width: '100%',
-            height: '500px',
-            display: isLoading ? 'none' : 'block'
+            height: '500px'
           }}
           title="Contact Form - CF Gutters"
           allowFullScreen
-          onLoad={handleIframeLoad}
-          onError={handleIframeError}
+          scrolling="no"
         />
       )}
     </div>
