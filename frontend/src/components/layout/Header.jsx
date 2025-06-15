@@ -13,7 +13,7 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             {/* Logo Image - Replace src with your logo image URL */}
             <img 
-              src="/images/cf-gutters-logo.jpg" 
+              src="/images3/cf-gutters-logo.jpg" 
               alt="CF Gutters Logo"
               className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border-2 border-white"
               onError={(e) => {
