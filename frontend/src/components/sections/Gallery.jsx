@@ -51,9 +51,7 @@ const Gallery = () => {
     }
   ];
 
-  // Debug: Log gallery images
-  console.log('Gallery images:', galleryImages);
-  console.log('Gallery images length:', galleryImages.length);
+  // Gallery images are loaded from your custom images folder
 
   const openLightbox = (image, index) => {
     setSelectedImage(image);
