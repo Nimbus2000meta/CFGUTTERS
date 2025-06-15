@@ -158,7 +158,7 @@ const Contact = () => {
                   <ol className="text-sm text-primary-600 space-y-1 list-decimal list-inside">
                     <li>Create your Typeform at typeform.com</li>
                     <li>Copy your Form ID</li>
-                    <li><div data-tf-live="01JXRYWP53VYMNNWCKAR1SZFGV"></div><script src="//embed.typeform.com/next/embed.js"></script></li>
+                    <li>Replace this placeholder with the embedded form</li>
                   </ol>
                 </div>
               </div>
@@ -177,7 +177,7 @@ const Contact = () => {
                     Call (845) 879-3864
                   </a>
                   <a 
-                    href="mailto:louis@cfgutters.com"
+                    href="mailto:cfgutters02@gmail.com"
                     className="btn bg-white text-primary-600 hover:bg-gray-100 border-2 border-white flex items-center justify-center gap-2"
                   >
                     <FiMail />
