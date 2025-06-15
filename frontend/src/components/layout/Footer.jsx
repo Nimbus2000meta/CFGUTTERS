@@ -18,7 +18,7 @@ const Footer = () => {
             <div style={{marginBottom: '16px'}} className="flex flex-col items-center">
               {/* Logo Image - Replace src with your logo image URL */}
               <img 
-                src="/images3/cf-gutters-logo.jpg" 
+                src="/images/cf-gutters-logo.jpg" 
                 alt="CF Gutters Logo"
                 style={{
                   width: '60px', 
