@@ -76,7 +76,7 @@ const TextReveal = ({
       const letters = word.split('');
       
       return (
-        <span key={wordIndex} className="inline-block mr-2" style={{ overflow: 'hidden' }}>
+        <span key={wordIndex} className="inline-block mr-2" style={{ overflow: 'visible' }}>
           {letters.map((letter, letterIndex) => (
             <motion.span
               key={letterIndex}
