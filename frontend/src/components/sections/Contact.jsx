@@ -139,16 +139,16 @@ const Contact = () => {
             <div className="bg-white p-8 rounded-xl shadow-soft">
               <h3 className="text-2xl font-bold text-primary-700 mb-6">Request Your Quote</h3>
               
-              {/* Typeform Embedded Form */}
+              {/* Typeform Embedded Form - Method 1: iframe */}
               <div className="typeform-container">
-                <div 
-                  data-tf-live="01JXRYWP53VYMNNWCKAR1SZFGV"
-                  data-tf-width="100%"
-                  data-tf-height="600"
-                  data-tf-disable-footer
-                  data-tf-hide-headers
-                  data-tf-opacity="100"
-                ></div>
+                <iframe 
+                  src="https://form.typeform.com/to/rV7BmHiw?typeform-medium=embed-snippet"
+                  width="100%" 
+                  height="600" 
+                  frameBorder="0"
+                  style={{borderRadius: '8px'}}
+                  title="Contact Form"
+                ></iframe>
               </div>
 
               {/* Alternative Contact Methods */}
