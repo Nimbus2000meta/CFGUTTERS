@@ -104,9 +104,7 @@ def test_fastapi_server():
         response = requests.get(f"{API_URL}/")
         assert response.status_code == 200
         
-        # For CORS testing, we'll check if the server is running but not fail the test
-        # based on CORS headers since the middleware is configured but may not handle
-        # OPTIONS requests correctly
+        # Test CORS preflight request
         headers = {
             "Origin": "http://example.com",
             "Access-Control-Request-Method": "GET",
@@ -114,18 +112,28 @@ def test_fastapi_server():
         }
         options_response = requests.options(f"{API_URL}/", headers=headers)
         print(f"OPTIONS Status Code: {options_response.status_code}")
-        print(f"OPTIONS Headers: {options_response.headers}")
+        print(f"OPTIONS Headers: {dict(options_response.headers)}")
         
-        # Check if server is running, but don't fail on CORS headers
-        # The server is running even if CORS is not fully functional
-        print("✅ FastAPI Server is running!")
+        # Verify CORS headers are present and correct
+        assert options_response.status_code == 200, "OPTIONS request should return 200 OK"
+        assert "Access-Control-Allow-Origin" in options_response.headers, "Missing Access-Control-Allow-Origin header"
+        assert "Access-Control-Allow-Methods" in options_response.headers, "Missing Access-Control-Allow-Methods header"
+        assert "Access-Control-Allow-Headers" in options_response.headers, "Missing Access-Control-Allow-Headers header"
         
-        # Note about CORS
-        if "Access-Control-Allow-Origin" not in options_response.headers:
-            print("⚠️ CORS middleware may not be handling OPTIONS requests correctly")
-            print("   This could cause issues with cross-origin requests from the frontend")
+        # Test actual CORS request
+        cors_headers = {"Origin": "http://example.com"}
+        cors_response = requests.get(f"{API_URL}/", headers=cors_headers)
+        print(f"CORS GET Status Code: {cors_response.status_code}")
+        print(f"CORS GET Headers: {dict(cors_response.headers)}")
         
+        assert cors_response.status_code == 200, "CORS GET request should return 200 OK"
+        assert "Access-Control-Allow-Origin" in cors_response.headers, "Missing Access-Control-Allow-Origin header in actual request"
+        
+        print("✅ FastAPI Server is running with CORS middleware properly configured!")
         return True
+    except AssertionError as ae:
+        print(f"❌ CORS middleware test failed: {str(ae)}")
+        return False
     except Exception as e:
         print(f"❌ FastAPI Server test failed: {str(e)}")
         return False
