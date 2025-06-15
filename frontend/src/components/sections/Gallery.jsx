@@ -187,7 +187,7 @@ const Gallery = () => {
           <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
             <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <img
-                src='/images/gallery4.jpg'
+                src='/images/gallery4.png'
                 alt="Gutter guard installation"
                 style={{width: '100%', height: '100%', objectFit: 'cover'}}
               />
@@ -203,7 +203,7 @@ const Gallery = () => {
           <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
             <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <img
-                src='/images/gallery5.jpg'
+                src='/images/gallery5.png'
                 alt="Complete gutter system cleaning"
                 style={{width: '100%', height: '100%', objectFit: 'cover'}}
               />
@@ -219,7 +219,7 @@ const Gallery = () => {
           <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
             <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <img
-                src='/images/gallery6.jpg'
+                src='/images/gallery6.png'
                 alt="Professional gutter repair"
                 style={{width: '100%', height: '100%', objectFit: 'cover'}}
               />
