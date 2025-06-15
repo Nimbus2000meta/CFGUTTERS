@@ -9,42 +9,42 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: process.env.PUBLIC_URL + '/images/gallery1.jpg',
+      src: "/images/gallery1.jpg",
       alt: 'Professional gutter cleaning work',
       category: 'Gutter Cleaning',
       description: 'Professional gutter cleaning and debris removal'
     },
     {
       id: 2,
-      src: process.env.PUBLIC_URL + '/images/gallery2.jpg',
+      src: "/images/gallery2.jpg",
       alt: 'Gutter maintenance service',
       category: 'Maintenance',
       description: 'Expert gutter maintenance and repair work'
     },
     {
       id: 3,
-      src: process.env.PUBLIC_URL + '/images/gallery3.jpg',
+      src: "/images/gallery3.jpg",
       alt: 'Professional roof cleaning',
       category: 'Roof Cleaning',
       description: 'Professional roof cleaning and moss treatment'
     },
     {
       id: 4,
-      src: process.env.PUBLIC_URL + '/images/gallery4.png',
+      src: "/images/gallery4.png",
       alt: 'Gutter guard installation',
       category: 'Gutter Guards',
       description: 'High-quality gutter guard installation service'
     },
     {
       id: 5,
-      src: process.env.PUBLIC_URL + '/images/gallery5.png',
+      src: "/images/gallery5.png",
       alt: 'Complete gutter system cleaning',
       category: 'Complete Service',
       description: 'Comprehensive gutter system cleaning and maintenance'
     },
     {
       id: 6,
-      src: process.env.PUBLIC_URL + '/images/gallery6.png',
+      src: "/images/gallery6.png",
       alt: 'Professional gutter repair',
       category: 'Repairs',
       description: 'Expert gutter repair and restoration services'
@@ -155,7 +155,7 @@ const Gallery = () => {
           <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
             <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <img
-                src={process.env.PUBLIC_URL + '/images/gallery2.jpg'}
+                src="/images/gallery2.jpg"
                 alt="Gutter maintenance service"
                 style={{width: '100%', height: '100%', objectFit: 'cover'}}
               />
