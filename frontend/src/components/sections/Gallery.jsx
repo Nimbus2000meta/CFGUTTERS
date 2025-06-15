@@ -139,7 +139,7 @@ const Gallery = () => {
           <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
             <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <img
-                src={process.env.PUBLIC_URL + '/images/gallery1.jpg'}
+                src="/images/gallery1.jpg"
                 alt="Professional gutter cleaning"
                 style={{width: '100%', height: '100%', objectFit: 'cover'}}
               />
