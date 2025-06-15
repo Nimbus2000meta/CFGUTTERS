@@ -90,6 +90,20 @@ def test_mongodb_connection():
         if not get_success:
             raise Exception("Failed to retrieve status checks, MongoDB connection might be failing")
         
+        # Test connection stability with multiple consecutive requests
+        print("\n=== Testing MongoDB Connection Stability ===")
+        for i in range(3):
+            print(f"Stability test iteration {i+1}/3")
+            # Create another status check
+            create_success, another_client_name = test_create_status_check()
+            if not create_success:
+                raise Exception(f"Failed to create status check on iteration {i+1}, MongoDB connection might be unstable")
+            
+            # Verify it was saved
+            get_success = test_get_status_checks(expected_client_name=another_client_name)
+            if not get_success:
+                raise Exception(f"Failed to retrieve status checks on iteration {i+1}, MongoDB connection might be unstable")
+        
         print("✅ MongoDB connection test passed!")
         return True
     except Exception as e:
