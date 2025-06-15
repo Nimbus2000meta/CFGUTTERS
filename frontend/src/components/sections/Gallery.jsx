@@ -9,42 +9,42 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: 'https://picsum.photos/800/600?random=1',
+      src: '/images/gallery1.jpg',
       alt: 'Professional gutter cleaning work',
       category: 'Gutter Cleaning',
       description: 'Professional gutter cleaning and debris removal'
     },
     {
       id: 2,
-      src: 'https://picsum.photos/800/600?random=2',
+      src: '/images/gallery2.jpg',
       alt: 'Gutter maintenance service',
       category: 'Maintenance',
       description: 'Expert gutter maintenance and repair work'
     },
     {
       id: 3,
-      src: 'https://picsum.photos/800/600?random=3',
+      src: '/images/gallery3.jpg',
       alt: 'Professional roof cleaning',
       category: 'Roof Cleaning',
       description: 'Professional roof cleaning and moss treatment'
     },
     {
       id: 4,
-      src: 'https://picsum.photos/800/600?random=4',
+      src: '/images/gallery4.png',
       alt: 'Gutter guard installation',
       category: 'Gutter Guards',
       description: 'High-quality gutter guard installation service'
     },
     {
       id: 5,
-      src: 'https://picsum.photos/800/600?random=5',
+      src: '/images/gallery5.png',
       alt: 'Complete gutter system cleaning',
       category: 'Complete Service',
       description: 'Comprehensive gutter system cleaning and maintenance'
     },
     {
       id: 6,
-      src: 'https://picsum.photos/800/600?random=6',
+      src: '/images/gallery6.png',
       alt: 'Professional gutter repair',
       category: 'Repairs',
       description: 'Expert gutter repair and restoration services'
