@@ -9,16 +9,6 @@ main {
   flex: 1;
 }
 
-/* Ensure page always starts at top */
-html, body {
-  scroll-behavior: smooth;
-}
-
-/* Disable scroll restoration for better control */
-html {
-  overflow-x: hidden;
-}
-
 /* Typeform Styling */
 .typeform-container {
   min-height: 500px;
