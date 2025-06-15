@@ -24,17 +24,6 @@ import ScrollToTop from "./components/ui/ScrollToTop";
 import WhatsAppChat from "./components/ui/WhatsAppChat";
 
 function App() {
-  // Ensure page always starts at top on load/refresh
-  useEffect(() => {
-    // Disable automatic scroll restoration
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-    
-    // Force scroll to top on page load
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <BrowserRouter>
       <PageTransition>
