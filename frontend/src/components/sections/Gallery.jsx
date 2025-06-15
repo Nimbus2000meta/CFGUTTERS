@@ -135,11 +135,11 @@ const Gallery = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
-            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <div style={{height: '280px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <img
                 src="/images/gallery1.jpg"
-                alt="Professional gutter cleaning"
-                style={{width: '100%', height: '100%', objectFit: 'cover'}}
+                alt="Professional gutter cleaning - Full house view"
+                style={{width: '100%', height: '100%', objectFit: 'contain'}}
               />
             </div>
             <div style={{padding: '16px'}}>
