@@ -115,7 +115,7 @@ const Hero = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl mx-4 lg:mx-0">
               <img 
-                src="/images/house-ladder.png" 
+                src="/images2/house-ladder.png" 
                 alt="Professional gutter cleaning and maintenance services"
                 className="w-full h-64 sm:h-80 lg:h-[500px] object-cover"
               />
