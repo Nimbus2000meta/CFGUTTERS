@@ -140,25 +140,8 @@ const Contact = () => {
             <div className="bg-white p-8 rounded-xl shadow-soft">
               <h3 className="text-2xl font-bold text-primary-700 mb-6">Request Your Quote</h3>
               
-              {/* Typeform Embedded Form - Temporarily Disabled for Testing */}
-              <div className="typeform-container">
-                <div className="flex items-center justify-center h-[500px] bg-gray-50 rounded-lg">
-                  <div className="text-center">
-                    <h4 className="text-lg font-semibold text-gray-700 mb-4">
-                      Contact Form (Temporarily Disabled)
-                    </h4>
-                    <p className="text-gray-600 mb-6">
-                      Testing to resolve auto-scroll issue. Please use the contact methods below.
-                    </p>
-                    <button
-                      onClick={() => window.open('https://form.typeform.com/to/rV7BmHiw', '_blank')}
-                      className="btn btn-primary flex items-center justify-center gap-2 mx-auto"
-                    >
-                      Open Contact Form in New Tab
-                    </button>
-                  </div>
-                </div>
-              </div>
+              {/* Typeform Embedded Form - Lazy Loading to Prevent Auto-Scroll */}
+              <TypeformEmbed />
 
               {/* Alternative Contact Methods - Added more spacing */}
               <div className="mt-12 pt-8 border-t border-gray-200">
