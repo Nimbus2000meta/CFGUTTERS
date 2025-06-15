@@ -143,12 +143,12 @@ const Contact = () => {
               {/* Typeform Embedded Form */}
               <TypeformEmbed />
 
-              {/* Alternative Contact Methods */}
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <p className="text-center text-neutral-600 mb-4">
+              {/* Alternative Contact Methods - Added more spacing */}
+              <div className="mt-12 pt-8 border-t border-gray-200">
+                <p className="text-center text-neutral-600 mb-6">
                   Prefer to contact us directly?
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
                     href="tel:+18458793864"
                     className="btn btn-primary flex items-center justify-center gap-2"
