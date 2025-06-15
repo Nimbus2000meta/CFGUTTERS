@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
+import TypeformEmbed from '../ui/TypeformEmbed';
 
 const Contact = () => {
   return (
