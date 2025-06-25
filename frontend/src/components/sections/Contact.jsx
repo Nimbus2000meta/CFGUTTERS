@@ -25,7 +25,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Request a <span className="headline-gradient">Free Quote</span> Today!
+            Request Your <span className="headline-gradient">Free Quote</span> Now!
           </motion.h2>
           <motion.p 
             className="text-neutral-600"
@@ -34,8 +34,8 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Fill out our online contact form or give us a call to request a free, no-obligation 
-            estimate for any of our services. We'll respond promptly to discuss your needs.
+            Fill out our detailed form below to receive a personalized, no-obligation 
+            estimate for your gutter cleaning needs. We'll respond within 24 hours with your custom quote.
           </motion.p>
         </div>
 
