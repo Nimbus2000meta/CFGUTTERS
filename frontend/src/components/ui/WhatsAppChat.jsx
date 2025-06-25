@@ -6,8 +6,8 @@ const WhatsAppChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   
-  // WhatsApp phone number - replace with your own business number
-  const phoneNumber = '15551234567';
+  // WhatsApp phone number - CF Gutters business number
+  const phoneNumber = '8458793864';
   
   const toggleChat = () => {
     setIsOpen(!isOpen);
