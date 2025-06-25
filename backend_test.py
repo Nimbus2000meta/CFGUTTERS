@@ -118,15 +118,15 @@ def test_fastapi_server():
         response = requests.get(f"{API_URL}/")
         assert response.status_code == 200
         
-        # Test CORS preflight request
+        # Test CORS preflight request for GET
         headers = {
             "Origin": "http://example.com",
             "Access-Control-Request-Method": "GET",
             "Access-Control-Request-Headers": "Content-Type"
         }
         options_response = requests.options(f"{API_URL}/", headers=headers)
-        print(f"OPTIONS Status Code: {options_response.status_code}")
-        print(f"OPTIONS Headers: {dict(options_response.headers)}")
+        print(f"OPTIONS GET Status Code: {options_response.status_code}")
+        print(f"OPTIONS GET Headers: {dict(options_response.headers)}")
         
         # Verify CORS headers are present and correct
         assert options_response.status_code == 200, "OPTIONS request should return 200 OK"
@@ -134,7 +134,23 @@ def test_fastapi_server():
         assert "Access-Control-Allow-Methods" in options_response.headers, "Missing Access-Control-Allow-Methods header"
         assert "Access-Control-Allow-Headers" in options_response.headers, "Missing Access-Control-Allow-Headers header"
         
-        # Test actual CORS request
+        # Test CORS preflight request for POST
+        headers = {
+            "Origin": "http://example.com",
+            "Access-Control-Request-Method": "POST",
+            "Access-Control-Request-Headers": "Content-Type, Authorization"
+        }
+        options_response = requests.options(f"{API_URL}/status", headers=headers)
+        print(f"OPTIONS POST Status Code: {options_response.status_code}")
+        print(f"OPTIONS POST Headers: {dict(options_response.headers)}")
+        
+        # Verify CORS headers for POST
+        assert options_response.status_code == 200, "OPTIONS request for POST should return 200 OK"
+        assert "Access-Control-Allow-Origin" in options_response.headers, "Missing Access-Control-Allow-Origin header"
+        assert "Access-Control-Allow-Methods" in options_response.headers, "Missing Access-Control-Allow-Methods header"
+        assert "Access-Control-Allow-Headers" in options_response.headers, "Missing Access-Control-Allow-Headers header"
+        
+        # Test actual CORS request with GET
         cors_headers = {"Origin": "http://example.com"}
         cors_response = requests.get(f"{API_URL}/", headers=cors_headers)
         print(f"CORS GET Status Code: {cors_response.status_code}")
@@ -142,6 +158,16 @@ def test_fastapi_server():
         
         assert cors_response.status_code == 200, "CORS GET request should return 200 OK"
         assert "Access-Control-Allow-Origin" in cors_response.headers, "Missing Access-Control-Allow-Origin header in actual request"
+        
+        # Test actual CORS request with POST
+        cors_headers = {"Origin": "http://example.com", "Content-Type": "application/json"}
+        payload = {"client_name": f"cors_test_{int(time.time())}"}
+        cors_response = requests.post(f"{API_URL}/status", headers=cors_headers, json=payload)
+        print(f"CORS POST Status Code: {cors_response.status_code}")
+        print(f"CORS POST Headers: {dict(cors_response.headers)}")
+        
+        assert cors_response.status_code == 200, "CORS POST request should return 200 OK"
+        assert "Access-Control-Allow-Origin" in cors_response.headers, "Missing Access-Control-Allow-Origin header in POST request"
         
         print("✅ FastAPI Server is running with CORS middleware properly configured!")
         return True
