@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FiExternalLink } from 'react-icons/fi';
+import { FiExternalLink, FiMaximize2 } from 'react-icons/fi';
 
 const TypeformEmbed = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef(null);
 
   // Check if the component is in viewport before loading the iframe
@@ -37,7 +38,7 @@ const TypeformEmbed = () => {
     window.open(
       'https://form.typeform.com/to/rV7BmHiw', 
       'typeform', 
-      'width=800,height=600,scrollbars=yes,resizable=yes'
+      'width=1000,height=800,scrollbars=yes,resizable=yes'
     );
   };
 
@@ -46,23 +47,32 @@ const TypeformEmbed = () => {
     setIsLoaded(true);
   };
 
+  const toggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
+  };
+
   return (
     <div ref={containerRef} className="typeform-container">
       {!showForm ? (
-        <div className="flex items-center justify-center h-[500px] bg-gray-50 rounded-lg">
+        <div className="flex items-center justify-center h-[600px] bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg border-2 border-primary-200">
           <div className="text-center">
-            <h4 className="text-lg font-semibold text-gray-700 mb-4">
-              Contact Form
+            <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h4 className="text-xl font-bold text-primary-700 mb-2">
+              Get Your Free Quote
             </h4>
-            <p className="text-gray-600 mb-6">
-              Click to load our interactive contact form, or open it in a new tab.
+            <p className="text-primary-600 mb-6 max-w-md mx-auto">
+              Fill out our detailed form to receive a personalized quote for your gutter cleaning needs. The form is interactive and easy to complete.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={loadFormManually}
                 className="btn btn-primary flex items-center justify-center gap-2"
               >
-                Load Contact Form
+                Load Quote Form
               </button>
               <button
                 onClick={openTypeformPopup}
@@ -75,21 +85,59 @@ const TypeformEmbed = () => {
           </div>
         </div>
       ) : (
-        <iframe 
-          src="https://form.typeform.com/to/rV7BmHiw?typeform-medium=embed-snippet"
-          width="100%" 
-          height="500" 
-          frameBorder="0"
-          style={{
-            borderRadius: '8px',
-            border: 'none',
-            width: '100%',
-            height: '500px'
-          }}
-          title="Contact Form - CF Gutters"
-          allowFullScreen
-          scrolling="no"
-        />
+        <div className={`relative ${isFullscreen ? 'fixed inset-0 z-50 bg-white' : ''}`}>
+          {/* Form Controls */}
+          <div className="flex justify-between items-center mb-4 p-2 bg-primary-50 rounded-t-lg">
+            <h4 className="font-semibold text-primary-700">Free Quote Request Form</h4>
+            <div className="flex gap-2">
+              <button
+                onClick={toggleFullscreen}
+                className="p-2 text-primary-600 hover:bg-primary-100 rounded-lg transition-colors"
+                title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+              >
+                <FiMaximize2 />
+              </button>
+              <button
+                onClick={openTypeformPopup}
+                className="p-2 text-primary-600 hover:bg-primary-100 rounded-lg transition-colors"
+                title="Open in New Tab"
+              >
+                <FiExternalLink />
+              </button>
+            </div>
+          </div>
+
+          {/* Form Iframe */}
+          <iframe 
+            src="https://form.typeform.com/to/rV7BmHiw?typeform-medium=embed-snippet"
+            width="100%" 
+            height={isFullscreen ? "calc(100vh - 80px)" : "700px"}
+            frameBorder="0"
+            style={{
+              borderRadius: isFullscreen ? '0' : '8px',
+              border: 'none',
+              width: '100%',
+              height: isFullscreen ? 'calc(100vh - 80px)' : '700px',
+              minHeight: '600px'
+            }}
+            title="Contact Form - CF Gutters"
+            allowFullScreen
+            scrolling="yes"
+            allow="camera; microphone; autoplay; encrypted-media;"
+          />
+
+          {/* Fullscreen Close Button */}
+          {isFullscreen && (
+            <button
+              onClick={toggleFullscreen}
+              className="fixed top-4 right-4 z-60 bg-primary-600 text-white p-3 rounded-full hover:bg-primary-700 transition-colors shadow-lg"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+        </div>
       )}
     </div>
   );
