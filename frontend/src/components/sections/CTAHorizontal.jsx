@@ -34,14 +34,19 @@ const CTAHorizontal = () => {
               <FiPhone />
               Call (845) 879-3864
             </motion.a>
-            <motion.a
-              href="mailto:cfgutters02@gmail.com"
+            <motion.button
+              onClick={() => {
+                document.getElementById('contact').scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
               className="btn bg-white text-primary-600 hover:bg-gray-100 font-semibold px-6 py-3 flex items-center gap-2 border-2 border-white"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Free Quote <FiArrowRight />
-            </motion.a>
+            </motion.button>
           </div>
         </motion.div>
       </div>
