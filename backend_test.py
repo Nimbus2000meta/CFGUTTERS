@@ -48,6 +48,16 @@ def test_create_status_check():
         assert response.json()["client_name"] == client_name
         assert "timestamp" in response.json()
         
+        # Test error handling with invalid payload
+        print("\n=== Testing POST /api/status with invalid payload ===")
+        invalid_payload = {}  # Missing required client_name
+        error_response = requests.post(f"{API_URL}/status", json=invalid_payload)
+        print(f"Invalid Payload Status Code: {error_response.status_code}")
+        print(f"Invalid Payload Response: {error_response.json() if error_response.status_code < 500 else 'Server Error'}")
+        
+        # Should return 422 Unprocessable Entity for validation error
+        assert error_response.status_code == 422, "Invalid payload should return 422 Unprocessable Entity"
+        
         print("✅ POST /api/status endpoint test passed!")
         return True, client_name
     except Exception as e:
