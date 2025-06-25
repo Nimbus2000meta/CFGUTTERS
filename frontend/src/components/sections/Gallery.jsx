@@ -139,7 +139,7 @@ const Gallery = () => {
               <img
                 src="/images/gallery1.jpg"
                 alt="Professional gutter cleaning - Full house view"
-                style={{width: '100%', height: '100%', objectFit: 'cover'}}
+                style={{width: '100%', height: '100%', objectFit: 'contain'}}
               />
             </div>
             <div style={{padding: '16px'}}>
