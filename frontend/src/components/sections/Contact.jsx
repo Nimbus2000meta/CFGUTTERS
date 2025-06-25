@@ -138,9 +138,12 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="bg-white p-8 rounded-xl shadow-soft">
-              <h3 className="text-2xl font-bold text-primary-700 mb-6">Request Your Quote</h3>
+              <div className="text-center mb-6">
+                <h3 className="text-3xl font-bold text-primary-700 mb-2">Get Your Free Quote</h3>
+                <p className="text-primary-600">Complete the form below for a detailed estimate</p>
+              </div>
               
-              {/* Typeform Embedded Form - Lazy Loading to Prevent Auto-Scroll */}
+              {/* Typeform Embedded Form - Enhanced Layout */}
               <TypeformEmbed />
 
               {/* Alternative Contact Methods - Added more spacing */}
