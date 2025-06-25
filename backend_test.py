@@ -104,7 +104,35 @@ def test_mongodb_connection():
             if not get_success:
                 raise Exception(f"Failed to retrieve status checks on iteration {i+1}, MongoDB connection might be unstable")
         
-        print("✅ MongoDB connection test passed!")
+        # Test concurrent requests to check connection handling
+        print("\n=== Testing MongoDB Connection Concurrency ===")
+        import concurrent.futures
+        
+        def create_and_verify():
+            success, name = test_create_status_check()
+            if not success:
+                return False, "Failed to create status check in concurrent test"
+            
+            # Small delay to ensure record is saved
+            time.sleep(0.1)
+            
+            verify_success = test_get_status_checks(expected_client_name=name)
+            if not verify_success:
+                return False, "Failed to verify status check in concurrent test"
+            return True, name
+        
+        # Run 5 concurrent requests
+        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+            futures = [executor.submit(create_and_verify) for _ in range(5)]
+            results = [future.result() for future in concurrent.futures.as_completed(futures)]
+        
+        # Check all concurrent requests succeeded
+        all_concurrent_success = all(result[0] for result in results)
+        if not all_concurrent_success:
+            error_messages = [result[1] for result in results if not result[0]]
+            raise Exception(f"Concurrent MongoDB operations failed: {', '.join(error_messages)}")
+        
+        print("✅ MongoDB connection test passed with concurrent operations!")
         return True
     except Exception as e:
         print(f"❌ MongoDB connection test failed: {str(e)}")
