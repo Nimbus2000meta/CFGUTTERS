@@ -70,23 +70,30 @@ const CTA = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
+            <motion.button
+              onClick={() => {
+                document.getElementById('contact').scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+              className="btn bg-white text-primary-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg flex items-center justify-center gap-3"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Get Free Quote
+            </motion.button>
             <motion.a
               href="tel:+18458793864"
-              className="btn bg-white text-primary-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg flex items-center justify-center gap-3"
+              className="btn bg-white text-primary-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg flex items-center justify-center gap-3 border-2 border-white"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <FiPhone className="text-xl" />
               Call Now: (845) 879-3864
-            </motion.a>
-            <motion.a
-              href="mailto:cfgutters02@gmail.com"
-              className="btn bg-white text-primary-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg flex items-center justify-center gap-3 border-2 border-white"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FiMail className="text-xl" />
-              Email Us
             </motion.a>
           </motion.div>
 
