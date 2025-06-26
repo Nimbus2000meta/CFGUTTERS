@@ -131,105 +131,34 @@ const Gallery = () => {
           </motion.p>
         </div>
 
-        {/* Gallery Grid - Working Version */}
+        {/* Gallery Grid - Dynamic Version */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
-          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
-            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <img
-                src="/images/gallery1.jpg"
-                alt="Professional gutter cleaning - Full house view"
-                style={{width: '100%', height: '100%', objectFit: 'contain'}}
-              />
-            </div>
-            <div style={{padding: '16px'}}>
-              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
-                Gutter Cleaning
+          {galleryImages.map((image, index) => (
+            <motion.div
+              key={image.id}
+              className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              onClick={() => openLightbox(image, index)}
+            >
+              <div className="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                <img
+                  src={`${image.src}?v=${Date.now()}`}
+                  alt={image.alt}
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                />
               </div>
-              <p style={{fontSize: '14px', color: '#4b5563'}}>Professional gutter cleaning and debris removal</p>
-            </div>
-          </div>
-
-          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
-            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <img
-                src="/images/gallery2.jpg"
-                alt="Gutter maintenance service"
-                style={{width: '100%', height: '100%', objectFit: 'cover'}}
-              />
-            </div>
-            <div style={{padding: '16px'}}>
-              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
-                Maintenance
+              <div className="p-4">
+                <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mb-2">
+                  {image.category}
+                </div>
+                <p className="text-sm text-gray-600">{image.description}</p>
               </div>
-              <p style={{fontSize: '14px', color: '#4b5563'}}>Expert gutter maintenance and repair work</p>
-            </div>
-          </div>
-
-          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
-            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <img
-                src="/images/gallery3.png"
-                alt="Professional roof cleaning"
-                style={{width: '100%', height: '100%', objectFit: 'contain'}}
-              />
-            </div>
-            <div style={{padding: '16px'}}>
-              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
-                Roof Cleaning
-              </div>
-              <p style={{fontSize: '14px', color: '#4b5563'}}>Professional roof cleaning and moss treatment</p>
-            </div>
-          </div>
-
-          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
-            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <img
-                src="/images/gallery4.png"
-                alt="Gutter guard installation"
-                style={{width: '100%', height: '100%', objectFit: 'cover'}}
-              />
-            </div>
-            <div style={{padding: '16px'}}>
-              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
-                Gutter Guards
-              </div>
-              <p style={{fontSize: '14px', color: '#4b5563'}}>High-quality gutter guard installation service</p>
-            </div>
-          </div>
-
-          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
-            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <img
-                src="/images/gallery5.png"
-                alt="Complete gutter system cleaning"
-                style={{width: '100%', height: '100%', objectFit: 'cover'}}
-              />
-            </div>
-            <div style={{padding: '16px'}}>
-              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
-                Complete Service
-              </div>
-              <p style={{fontSize: '14px', color: '#4b5563'}}>Comprehensive gutter system cleaning and maintenance</p>
-            </div>
-          </div>
-
-          <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
-            <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <img
-                src="/images/gallery6.png"
-                alt="Professional gutter repair"
-                style={{width: '100%', height: '100%', objectFit: 'cover'}}
-              />
-            </div>
-            <div style={{padding: '16px'}}>
-              <div style={{backgroundColor: '#1e3a8a', color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '12px', display: 'inline-block', marginBottom: '8px'}}>
-                Repairs
-              </div>
-              <p style={{fontSize: '14px', color: '#4b5563'}}>Expert gutter repair and restoration services</p>
-            </div>
-          </div>
-
+            </motion.div>
+          ))}
         </div>
 
         {/* CTA Section */}
