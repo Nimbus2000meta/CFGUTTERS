@@ -148,7 +148,7 @@ const Gallery = () => {
             >
               <div className="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
                 <img
-                  src={`${image.src}?v=${Date.now()}`}
+                  src={`${image.src}?v=${cacheVersion}`}
                   alt={image.alt}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   loading="lazy"
