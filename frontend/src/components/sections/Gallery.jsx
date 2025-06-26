@@ -6,8 +6,8 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Cache busting version - update this to force image reload
-  const cacheVersion = Date.now();
+  // Cache busting version - static timestamp to avoid re-renders
+  const cacheVersion = '1750971500000';
 
   const galleryImages = [
     {
