@@ -23,7 +23,7 @@ const Gallery = () => {
     },
     {
       id: 3,
-      src: "/images/gallery3.jpg",
+      src: "/images/gallery3.png",
       alt: 'Professional roof cleaning',
       category: 'Roof Cleaning',
       description: 'Professional roof cleaning and moss treatment'
@@ -169,7 +169,7 @@ const Gallery = () => {
           <div style={{backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', overflow: 'hidden'}}>
             <div style={{height: '250px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <img
-                src="/images/gallery3.jpg"
+                src="/images/gallery3.png"
                 alt="Professional roof cleaning"
                 style={{width: '100%', height: '100%', objectFit: 'cover'}}
               />
