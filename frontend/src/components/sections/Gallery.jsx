@@ -45,7 +45,7 @@ const Gallery = () => {
     {
       id: 6,
       src: "/images/gallery6.png",
-      alt: 'Professional gutter repair',
+      alt: 'Professional gutter cleaning',
       category: 'Gutter Cleaning',
       description: 'Professional gutter cleaning and Debris removal'
     }
