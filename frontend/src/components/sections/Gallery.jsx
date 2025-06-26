@@ -302,7 +302,7 @@ const Gallery = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={`${selectedImage.src}?v=${cacheVersion}`}
+                src={`${selectedImage.src}?v=1750971500000`}
                 alt={selectedImage.alt}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
