@@ -171,7 +171,7 @@ const Gallery = () => {
               <img
                 src="/images/gallery3.png"
                 alt="Professional roof cleaning"
-                style={{width: '100%', height: '100%', objectFit: 'cover'}}
+                style={{width: '100%', height: '100%', objectFit: 'contain'}}
               />
             </div>
             <div style={{padding: '16px'}}>
