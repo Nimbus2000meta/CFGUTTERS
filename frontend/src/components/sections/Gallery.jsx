@@ -212,7 +212,7 @@ const Gallery = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={selectedImage.src}
+                src={`${selectedImage.src}?v=${Date.now()}`}
                 alt={selectedImage.alt}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
