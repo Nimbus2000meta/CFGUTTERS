@@ -5,6 +5,9 @@ import { FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  // Cache busting version - update this to force image reload
+  const cacheVersion = Date.now();
 
   const galleryImages = [
     {
