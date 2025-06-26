@@ -140,6 +140,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "Gallery lightbox functionality is now working correctly. Clicking on gallery images opens the lightbox modal. The lightbox has working navigation arrows, a close button, and displays image information correctly."
+      - working: true
+        agent: "testing"
+        comment: "Verified that gallery data consistency is correct: gallery1.jpg shows 'Repairs' category and 'Expert gutter repair and restoration services' description, gallery3.png shows 'Roof Cleaning' category and 'Professional roof cleaning and moss treatment' description, and gallery6.png shows 'Gutter Cleaning' category and 'Professional gutter cleaning and Debris removal' description. All images have cache-busting parameters (?v=timestamp). Lightbox functionality works correctly with proper navigation and image information display. The gallery is responsive on both desktop and mobile viewports."
 
   - task: "Testimonials Slider"
     implemented: true
