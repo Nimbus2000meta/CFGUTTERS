@@ -10,9 +10,9 @@ const Gallery = () => {
     {
       id: 1,
       src: "/images/gallery1.jpg",
-      alt: 'Professional gutter cleaning work',
-      category: 'Gutter Cleaning',
-      description: 'Professional gutter cleaning and debris removal'
+      alt: 'Professional gutter repair',
+      category: 'Repairs',
+      description: 'Expert gutter repair and restoration services'
     },
     {
       id: 2,
@@ -46,8 +46,8 @@ const Gallery = () => {
       id: 6,
       src: "/images/gallery6.png",
       alt: 'Professional gutter repair',
-      category: 'Repairs',
-      description: 'Expert gutter repair and restoration services'
+      category: 'Gutter Cleaning',
+      description: 'Professional gutter cleaning and Debris removal'
     }
   ];
 
