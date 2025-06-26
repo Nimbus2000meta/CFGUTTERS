@@ -134,9 +134,12 @@ const Gallery = () => {
           </motion.p>
         </div>
 
-        {/* Gallery Grid - Simplified Version for Debugging */}
+        {/* Gallery Grid - Static Version with Click Handlers */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+          <div 
+            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
+            onClick={() => openLightbox(galleryImages[0], 0)}
+          >
             <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
                 src="/images/gallery1.jpg?v=1750971500000"
@@ -152,7 +155,10 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+          <div 
+            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
+            onClick={() => openLightbox(galleryImages[1], 1)}
+          >
             <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
                 src="/images/gallery2.jpg?v=1750971500000"
@@ -168,7 +174,10 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+          <div 
+            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
+            onClick={() => openLightbox(galleryImages[2], 2)}
+          >
             <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
                 src="/images/gallery3.png?v=1750971500000"
@@ -184,7 +193,10 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+          <div 
+            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
+            onClick={() => openLightbox(galleryImages[3], 3)}
+          >
             <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
                 src="/images/gallery4.png?v=1750971500000"
@@ -200,7 +212,10 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+          <div 
+            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
+            onClick={() => openLightbox(galleryImages[4], 4)}
+          >
             <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
                 src="/images/gallery5.png?v=1750971500000"
@@ -216,7 +231,10 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+          <div 
+            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
+            onClick={() => openLightbox(galleryImages[5], 5)}
+          >
             <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
                 src="/images/gallery6.png?v=1750971500000"
