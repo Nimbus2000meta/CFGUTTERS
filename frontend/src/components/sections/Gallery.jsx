@@ -70,7 +70,7 @@ const Gallery = () => {
               <img
                 src="/images/gallery101.png?v=1750971500000"
                 alt="Gutter guard installation"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="p-4">
