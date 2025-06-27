@@ -134,18 +134,11 @@ const Gallery = () => {
           </motion.p>
         </div>
 
-        {/* Gallery Grid - Static Version with Click Handlers */}
+        {/* Gallery Grid - Test Version */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div 
-            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
-            onClick={() => openLightbox(galleryImages[0], 0)}
-          >
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery1.jpg?v=1750971500000"
-                alt="Professional gutter repair"
-                className="w-full h-full object-cover"
-              />
+          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+            <div className="h-64 bg-red-200 flex items-center justify-center">
+              <p className="text-xl font-bold">Gallery Test 1</p>
             </div>
             <div className="p-4">
               <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mb-2">
@@ -155,16 +148,9 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div 
-            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
-            onClick={() => openLightbox(galleryImages[1], 1)}
-          >
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery2.jpg?v=1750971500000"
-                alt="Gutter maintenance service"
-                className="w-full h-full object-cover"
-              />
+          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+            <div className="h-64 bg-blue-200 flex items-center justify-center">
+              <p className="text-xl font-bold">Gallery Test 2</p>
             </div>
             <div className="p-4">
               <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mb-2">
@@ -174,79 +160,15 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div 
-            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
-            onClick={() => openLightbox(galleryImages[2], 2)}
-          >
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery3.png?v=1750971500000"
-                alt="Professional roof cleaning"
-                className="w-full h-full object-cover"
-              />
+          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+            <div className="h-64 bg-green-200 flex items-center justify-center">
+              <p className="text-xl font-bold">Gallery Test 3</p>
             </div>
             <div className="p-4">
               <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mb-2">
                 Roof Cleaning
               </div>
               <p className="text-sm text-gray-600">Professional roof cleaning and moss treatment</p>
-            </div>
-          </div>
-
-          <div 
-            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
-            onClick={() => openLightbox(galleryImages[3], 3)}
-          >
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery4.png?v=1750971500000"
-                alt="Gutter guard installation"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Gutter Guards
-              </div>
-              <p className="text-sm text-gray-600">High-quality gutter guard installation service</p>
-            </div>
-          </div>
-
-          <div 
-            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
-            onClick={() => openLightbox(galleryImages[4], 4)}
-          >
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery5.png?v=1750971500000"
-                alt="Complete gutter system cleaning"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Complete Service
-              </div>
-              <p className="text-sm text-gray-600">Comprehensive gutter system cleaning and maintenance</p>
-            </div>
-          </div>
-
-          <div 
-            className="bg-white rounded-xl shadow-soft overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
-            onClick={() => openLightbox(galleryImages[5], 5)}
-          >
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery6.png?v=1750971500000"
-                alt="Professional gutter cleaning"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Gutter Cleaning
-              </div>
-              <p className="text-sm text-gray-600">Professional gutter cleaning and Debris removal</p>
             </div>
           </div>
         </div>
