@@ -101,7 +101,7 @@ const Gallery = () => {
             <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
                 src="/images/gallery6.png?v=1750971500000"
-                alt="Professional gutter cleaning"
+                alt="Professional Gutter Cleaning"
                 className="w-full h-full object-cover"
               />
             </div>
