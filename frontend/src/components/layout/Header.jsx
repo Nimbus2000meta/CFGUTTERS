@@ -20,7 +20,7 @@ const Header = () => {
             
             <div className="text-white">
               <div className="font-bold text-sm md:text-lg">CF GUTTERS</div>
-              <div className="text-xs opacity-75 hidden md:block">Professional Cleaning</div>
+              <div className="text-xs opacity-75 hidden md:block">Professional Gutter & Roof Cleaning Services</div>
             </div>
           </div>
 
