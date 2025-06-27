@@ -68,7 +68,7 @@ const Gallery = () => {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
-                src="/images/gallery2.jpg?v=1750971500000"
+                src="/images/gallery101.png?v=1750971500000"
                 alt="Gutter guard installation"
                 className="w-full h-full object-cover"
               />
