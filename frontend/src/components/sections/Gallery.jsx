@@ -38,7 +38,7 @@ const Gallery = () => {
               <img
                 src="/images/gallery4.png?v=1750971500000"
                 alt="Gutter maintenance service"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="p-4">
@@ -86,7 +86,7 @@ const Gallery = () => {
               <img
                 src="/images/gallery5.png?v=1750971500000"
                 alt="Complete gutter system cleaning"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="p-4">
@@ -102,7 +102,7 @@ const Gallery = () => {
               <img
                 src="/images/gallery6.png?v=1750971500000"
                 alt="Professional Gutter Cleaning"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="p-4">
