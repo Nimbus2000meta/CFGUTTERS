@@ -34,9 +34,9 @@ const Gallery = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-100">
+            <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
-                src="/images/gallery2.jpg"
+                src="/images/gallery2.jpg?v=1750971500000"
                 alt="Gutter maintenance service"
                 className="w-full h-full object-cover"
               />
@@ -62,6 +62,54 @@ const Gallery = () => {
                 Roof Cleaning
               </div>
               <p className="text-sm text-gray-600">Professional roof cleaning and moss treatment</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="h-64 bg-gray-100 flex items-center justify-center">
+              <img
+                src="/images/gallery4.png?v=1750971500000"
+                alt="Gutter guard installation"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
+                Gutter Guards
+              </div>
+              <p className="text-sm text-gray-600">High-quality gutter guard installation service</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="h-64 bg-gray-100 flex items-center justify-center">
+              <img
+                src="/images/gallery5.png?v=1750971500000"
+                alt="Complete gutter system cleaning"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
+                Complete Service
+              </div>
+              <p className="text-sm text-gray-600">Comprehensive gutter system cleaning and maintenance</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="h-64 bg-gray-100 flex items-center justify-center">
+              <img
+                src="/images/gallery6.png?v=1750971500000"
+                alt="Professional gutter cleaning"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
+                Gutter Cleaning
+              </div>
+              <p className="text-sm text-gray-600">Professional gutter cleaning and Debris removal</p>
             </div>
           </div>
 
