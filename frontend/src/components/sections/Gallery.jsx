@@ -50,11 +50,11 @@ const Gallery = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-100">
+            <div className="h-64 bg-gray-100 flex items-center justify-center">
               <img
-                src="/images/gallery3.png"
+                src="/images/gallery3.png?v=1750971500000"
                 alt="Professional roof cleaning"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="p-4">
