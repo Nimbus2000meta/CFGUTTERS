@@ -10,7 +10,8 @@ const Gallery = () => {
             Our Work
           </p>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Gallery Working - Step by Step
+            See the Difference – Step by Step
+Explore our gallery to see real before-and-after transformations. From expert gutter repairs to precision roof cleaning, we take pride in delivering quality that speaks for itself.
           </h2>
         </div>
 
