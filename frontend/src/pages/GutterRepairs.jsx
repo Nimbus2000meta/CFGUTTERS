@@ -27,7 +27,7 @@ const GutterRepairs = () => {
           {/* Left - Image */}
           <div className="rounded-xl overflow-hidden shadow-xl">
             <img 
-              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdddf649dc3f3.png" 
+              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c2203243b925c332b11bdf.png" 
               alt="Gutter and Downspout Repairs"
               className="w-full h-96 object-cover"
             />
