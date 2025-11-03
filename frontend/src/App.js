@@ -13,6 +13,10 @@ import GutterGuards from "./pages/GutterGuards";
 import GutterRepairs from "./pages/GutterRepairs";
 import BasicRoofCleaning from "./pages/BasicRoofCleaning";
 import SoftWashCleaning from "./pages/SoftWashCleaning";
+import TermsOfService from "./pages/TermsOfService";
+import RefundPolicy from "./pages/RefundPolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ContactUs from "./pages/ContactUs";
 
 // UI Components
 import PageTransition from "./components/ui/PageTransition";
