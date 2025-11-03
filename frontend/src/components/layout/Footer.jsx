@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiFacebook } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -11,29 +12,29 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#gutter-cleaning" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/Gutter-Cleaning" className="text-gray-400 hover:text-white transition-colors">
                   Gutter Cleaning
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#gutter-guards" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/Gutter-Guard-Installation" className="text-gray-400 hover:text-white transition-colors">
                   Gutter Guard Installation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#gutter-repairs" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/Gutter-Downspout-Repairs" className="text-gray-400 hover:text-white transition-colors">
                   Gutter & Downspout Repairs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#basic-roof-cleaning" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/Roof-Cleaning-Moss-Treatment" className="text-gray-400 hover:text-white transition-colors">
                   Roof Cleaning & Moss Treatment
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#soft-wash-cleaning" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/Soft-Wash-Roof-Cleaning" className="text-gray-400 hover:text-white transition-colors">
                   Soft Wash Roof Cleaning
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -43,9 +44,9 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Get Started</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/" className="text-gray-400 hover:text-white transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#faq" className="text-gray-400 hover:text-white transition-colors">
