@@ -128,22 +128,22 @@ const Header = () => {
           {isOpen && (
             <div className="lg:hidden bg-white border-t border-gray-200 py-4">
               <div className="space-y-1">
-                <a 
-                  href="#home" 
+                <Link 
+                  to="/" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Home
-                </a>
+                </Link>
                 <a 
-                  href="#about" 
+                  href="/#about" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   About
                 </a>
                 <a 
-                  href="#contact" 
+                  href="/#contact" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
@@ -162,35 +162,35 @@ const Header = () => {
                   {servicesOpen && (
                     <div className="pl-4">
                       {services.map((service, index) => (
-                        <a
+                        <Link
                           key={index}
-                          href={service.href}
+                          to={service.href}
                           className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded"
                           onClick={() => setIsOpen(false)}
                         >
                           {service.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
                 </div>
 
                 <a 
-                  href="#gallery" 
+                  href="/#gallery" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Gallery
                 </a>
                 <a 
-                  href="#faq" 
+                  href="/#faq" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   FAQs
                 </a>
                 <a 
-                  href="#testimonials" 
+                  href="/#testimonials" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
