@@ -39,6 +39,10 @@ function App() {
               <Route path="/Gutter-Downspout-Repairs" element={<GutterRepairs />} />
               <Route path="/Roof-Cleaning-Moss-Treatment" element={<BasicRoofCleaning />} />
               <Route path="/Soft-Wash-Roof-Cleaning" element={<SoftWashCleaning />} />
+              <Route path="/Terms-of-Service" element={<TermsOfService />} />
+              <Route path="/Refund-Policy" element={<RefundPolicy />} />
+              <Route path="/Privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/contact-us" element={<ContactUs />} />
             </Routes>
           </main>
           <Footer />
