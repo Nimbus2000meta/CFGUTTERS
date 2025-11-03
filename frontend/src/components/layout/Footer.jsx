@@ -1,300 +1,144 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
-import { FiPhone, FiMail, FiMapPin, FiClock, FiFacebook } from 'react-icons/fi';
-import { FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FiFacebook } from 'react-icons/fi';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-primary-900 text-white">
-      {/* Main Footer Content */}
-      <div className="container-custom py-12">
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '32px'}}>
-          
-          {/* Company Info - Logo and Details */}
-          <div style={{gridColumn: '1 / -1'}} className="md:col-span-1 text-center">
-            <div style={{marginBottom: '16px'}} className="flex flex-col items-center">
-              {/* Logo Image - Using your custom logo */}
-              <img 
-                src="/images3/cf-gutters-logo.jpg" 
-                alt="CF Gutters Logo"
-                style={{
-                  width: '60px', 
-                  height: '60px', 
-                  borderRadius: '50%', 
-                  objectFit: 'cover', 
-                  border: '2px solid white',
-                  marginBottom: '12px'
-                }}
-                className="md:w-20 md:h-20"
-              />
-            </div>
-            
-            {/* Social Media Links - Centered */}
-            <div className="flex justify-center flex-wrap gap-4 mb-4">
-              <a
-                href="https://www.facebook.com/profile.php?id=61567485513010"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', textDecoration: 'none'}}
-                className="hover:text-white transition-colors"
-              >
-                <FiFacebook style={{fontSize: '18px'}} />
-                <span style={{fontSize: '14px'}}>Facebook</span>
-              </a>
-              <a
-                href="https://www.instagram.com/cfgutters"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', textDecoration: 'none'}}
-                className="hover:text-white transition-colors"
-              >
-                <FaInstagram style={{fontSize: '18px'}} />
-                <span style={{fontSize: '14px'}}>Instagram</span>
-              </a>
-              <a
-                href="https://www.tiktok.com/@cfgutters"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', textDecoration: 'none'}}
-                className="hover:text-white transition-colors"
-              >
-                <FaTiktok style={{fontSize: '18px'}} />
-                <span style={{fontSize: '14px'}}>TikTok</span>
-              </a>
-            </div>
-            
-            {/* Copyright and Location - Centered */}
-            <div style={{fontSize: '14px', color: '#cbd5e1'}} className="text-center">
-              <p style={{marginBottom: '8px'}}>Copyright {currentYear} © All rights Reserved. CF Gutters</p>
-              <div style={{display: 'flex', alignItems: 'center', gap: '8px'}} className="justify-center">
-                <FiMapPin style={{color: '#00af80'}} />
-                <span>Mahopac NY to Westport CT</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Services */}
-          <div className="text-center md:text-left">
-            <h4 style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}} className="md:text-xl">Services</h4>
-            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Services Column */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Services</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#gutter-cleaning" className="text-gray-400 hover:text-white transition-colors">
                   Gutter Cleaning
-                </Link>
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+              <li>
+                <a href="#gutter-guards" className="text-gray-400 hover:text-white transition-colors">
                   Gutter Guard Installation
-                </Link>
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
-                  Gutter Downspout Repairs
-                </Link>
+              <li>
+                <a href="#gutter-repairs" className="text-gray-400 hover:text-white transition-colors">
+                  Gutter & Downspout Repairs
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+              <li>
+                <a href="#basic-roof-cleaning" className="text-gray-400 hover:text-white transition-colors">
                   Roof Cleaning & Moss Treatment
-                </Link>
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+              <li>
+                <a href="#soft-wash-cleaning" className="text-gray-400 hover:text-white transition-colors">
                   Soft Wash Roof Cleaning
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Get Started */}
-          <div className="text-center md:text-left">
-            <h4 style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}} className="md:text-xl">Get Started</h4>
-            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="home"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+          {/* Get Started Column */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Get Started</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#home" className="text-gray-400 hover:text-white transition-colors">
                   Home
-                </Link>
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="faq"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
-                  FAQ
-                </Link>
+              <li>
+                <a href="#faq" className="text-gray-400 hover:text-white transition-colors">
+                  FAQs
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="testimonials"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+              <li>
+                <a href="#testimonials" className="text-gray-400 hover:text-white transition-colors">
                   Testimonials
-                </Link>
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <a
-                  href="mailto:cfgutters02@gmail.com"
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}}
-                  className="hover:text-white transition-colors"
-                >
+              <li>
+                <a href="mailto:cfgutters02@gmail.com" className="text-gray-400 hover:text-white transition-colors">
                   Email
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* About */}
-          <div className="text-center md:text-left">
-            <h4 style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}} className="md:text-xl">About</h4>
-            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+          {/* About Column */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">About</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#about" className="text-gray-400 hover:text-white transition-colors">
                   About us
-                </Link>
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+              <li>
+                <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
                   Contact us
-                </Link>
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="service-area"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+              <li>
+                <a href="#service-area" className="text-gray-400 hover:text-white transition-colors">
                   Service Areas
-                </Link>
+                </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="gallery"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
+              <li>
+                <a href="#gallery" className="text-gray-400 hover:text-white transition-colors">
                   Gallery
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Our Policy */}
-          <div className="text-center md:text-left">
-            <h4 style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', color: 'white'}} className="md:text-xl">Our Policy</h4>
-            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
-              <li style={{marginBottom: '8px'}}>
-                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}} className="hover:text-white transition-colors">
+          {/* Our Policy Column */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Our Policy</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   Terms of Service
                 </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}} className="hover:text-white transition-colors">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   Refund Policy
                 </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <a href="#" style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none'}} className="hover:text-white transition-colors">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   Privacy Policy
                 </a>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  style={{color: '#cbd5e1', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}}
-                  className="hover:text-white transition-colors"
-                >
-                  Get Started
-                </Link>
-              </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 mb-2">
+                <strong>Mahopac NY to Westport CT</strong>
+              </p>
+              <p className="text-gray-500 text-sm">
+                Copyright 2024 © All rights Reserved. CF Gutters
+              </p>
+            </div>
+
+            {/* Social Media */}
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61567485513010" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition-colors"
+                aria-label="Facebook"
+              >
+                <FiFacebook size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
