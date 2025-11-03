@@ -11,16 +11,18 @@ const ServiceArea = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Map Placeholder */}
+          {/* Map */}
           <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg">
-            <div className="aspect-w-16 aspect-h-12 bg-gray-300 flex items-center justify-center">
-              <div className="text-center p-8">
-                <svg className="w-16 h-16 mx-auto mb-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
-                </svg>
-                <p className="text-gray-600 font-semibold">Mahopac, NY and surrounding areas</p>
-              </div>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-73.66868089999999!3d41.3850639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2b0a21757958d%3A0xc7efd83f0deefeef!2sMahopac%2C%20NY%2010541!5e0!3m2!1sen!2sus!4v1699000000000!5m2!1sen!2sus"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Service Area Map"
+            ></iframe>
           </div>
 
           {/* Contact Information */}
