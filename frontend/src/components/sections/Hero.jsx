@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section 
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-20 pb-10"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-32 pb-10"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -17,31 +17,7 @@ const Hero = () => {
 
       {/* Content Container */}
       <div className="container mx-auto px-4 relative z-10">
-        {/* Top Contact Bar */}
-        <motion.div 
-          className="max-w-6xl mx-auto mb-8 flex flex-wrap justify-center gap-6 text-white"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="flex items-center gap-2">
-            <span className="font-semibold">📞 +1 (845) 879-3864</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span>✉️ cfgutters02@gmail.com</span>
-          </div>
-        </motion.div>
-
-        <div className="max-w-4xl mx-auto text-center mb-12">
-          <motion.p
-            className="text-primary-400 font-semibold mb-4 text-lg"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Mahopac NY to Westport CT
-          </motion.p>
-
+        <div className="max-w-4xl mx-auto text-center">
           <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
@@ -78,17 +54,6 @@ const Hero = () => {
             </a>
           </motion.div>
         </div>
-
-        {/* Business Hours */}
-        <motion.div
-          className="max-w-2xl mx-auto text-center text-white"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
-        >
-          <p className="text-lg font-semibold mb-2">Business Hours:</p>
-          <p className="text-gray-300">Monday-Saturday 8 AM to 6 PM</p>
-        </motion.div>
       </div>
     </section>
   );
