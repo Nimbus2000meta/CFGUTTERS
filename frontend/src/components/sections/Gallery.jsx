@@ -1,118 +1,55 @@
 import React from 'react';
 
 const Gallery = () => {
+  // Gallery images - using placeholders, replace with actual images
+  const galleryImages = [
+    { id: 1, before: '/images2/house-ladder.png', after: '/images2/house-ladder.png', alt: 'Gutter cleaning before and after' },
+    { id: 2, before: '/images2/house-ladder.png', after: '/images2/house-ladder.png', alt: 'Roof cleaning before and after' },
+    { id: 3, before: '/images2/house-ladder.png', after: '/images2/house-ladder.png', alt: 'Moss treatment before and after' },
+    { id: 4, before: '/images2/house-ladder.png', after: '/images2/house-ladder.png', alt: 'Gutter guard installation' },
+  ];
+
   return (
-    <section id="gallery" className="section-padding bg-neutral-50">
-      <div className="container-custom">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-primary-500 font-semibold uppercase tracking-wider mb-2">
-            Our Work
-          </p>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            See the Difference – Step by Step
+    <section id="gallery" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our <span className="text-primary-600">Feature Works</span>
           </h2>
+          <p className="text-xl text-gray-700">
+            From <strong>Clogged Gutters</strong> & Mossy Roofs to Clean & Spotless
+          </p>
         </div>
 
-        {/* Simple Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery1.jpg?v=1750971500000"
-                alt="Professional gutter repair"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Repairs
+        {/* Gallery Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {galleryImages.map((image) => (
+            <div key={image.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+              <div className="relative aspect-square">
+                <img 
+                  src={image.before}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                />
+                <img 
+                  src={image.after}
+                  alt={`${image.alt} - after`}
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
-              <p className="text-sm text-gray-600">Expert gutter repair and restoration services</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery4.png?v=1750971500000"
-                alt="Gutter maintenance service"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Maintenance
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <p className="text-white text-sm font-semibold">Hover to see transformation</p>
               </div>
-              <p className="text-sm text-gray-600">Expert gutter maintenance and repair work</p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery3.png?v=1750971500000"
-                alt="Professional roof cleaning"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Roof Cleaning
-              </div>
-              <p className="text-sm text-gray-600">Professional roof cleaning and moss treatment</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery101.png?v=1750971500000"
-                alt="Gutter guard installation"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Gutter Guards
-              </div>
-              <p className="text-sm text-gray-600">High-quality gutter guard installation service</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery5.png?v=1750971500000"
-                alt="Complete gutter system cleaning"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Complete Service
-              </div>
-              <p className="text-sm text-gray-600">Comprehensive gutter system cleaning and maintenance</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="h-64 bg-gray-100 flex items-center justify-center">
-              <img
-                src="/images/gallery6.png?v=1750971500000"
-                alt="Professional Gutter Cleaning"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="p-4">
-              <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                Gutter Cleaning
-              </div>
-              <p className="text-sm text-gray-600">Professional gutter cleaning and Debris removal</p>
-            </div>
-          </div>
-
+        {/* Additional Gallery Note */}
+        <div className="text-center mt-12">
+          <p className="text-gray-600">
+            View more of our work on our social media channels
+          </p>
         </div>
       </div>
     </section>
