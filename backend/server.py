@@ -36,6 +36,20 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+class ContactFormSubmission(BaseModel):
+    fullName: str
+    phone: str
+    email: EmailStr
+    appointmentDate: str
+    streetAddress: str
+    city: Optional[str] = ""
+    state: Optional[str] = ""
+    serviceNeeded: Optional[str] = ""
+    hasSolarPanels: bool = False
+    hasGutterGuards: bool = False
+    propertyType: str = "Residential"
+    additionalConcerns: Optional[str] = ""
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
