@@ -191,7 +191,7 @@ const Services = () => {
             <div>
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="/images2/house-ladder.png" 
+                  src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bdffbcf5a96f29ddd02b19.png" 
                   alt="Basic Roof Cleaning"
                   className="w-full h-96 object-cover"
                 />
