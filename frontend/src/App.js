@@ -30,11 +30,11 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/gutter-cleaning" element={<GutterCleaning />} />
-              <Route path="/gutter-guards" element={<GutterGuards />} />
-              <Route path="/gutter-repairs" element={<GutterRepairs />} />
-              <Route path="/basic-roof-cleaning" element={<BasicRoofCleaning />} />
-              <Route path="/soft-wash-cleaning" element={<SoftWashCleaning />} />
+              <Route path="/Gutter-Cleaning" element={<GutterCleaning />} />
+              <Route path="/Gutter-Guard-Installation" element={<GutterGuards />} />
+              <Route path="/Gutter-Downspout-Repairs" element={<GutterRepairs />} />
+              <Route path="/Roof-Cleaning-Moss-Treatment" element={<BasicRoofCleaning />} />
+              <Route path="/Soft-Wash-Roof-Cleaning" element={<SoftWashCleaning />} />
             </Routes>
           </main>
           <Footer />
