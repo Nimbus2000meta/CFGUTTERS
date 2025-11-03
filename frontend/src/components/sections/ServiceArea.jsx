@@ -1,214 +1,94 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FiMapPin, FiCheckCircle } from 'react-icons/fi';
 
 const ServiceArea = () => {
-  const serviceAreas = [
-    'Mahopac NY',
-    'Kent CT', 
-    'Warren CT',
-    'Westport CT'
-  ];
-
   return (
-    <section id="service-area" className="py-20 bg-neutral-50">
+    <section id="service-area" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        
-        {/* Section Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="text-primary-500 font-semibold uppercase tracking-wider mb-2">
-            Our Coverage
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-850 mb-4">
-            Service <span className="text-primary-600">Area Coverage</span>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Serving homes and businesses throughout <span className="text-primary-600">Mahopac NY, Kent CT, Warren CT, Westport CT</span>, and everywhere in between!
           </h2>
-          <p className="text-neutral-600 text-xl">50-Mile Radius from Mahopac, NY</p>
-        </motion.div>
+        </div>
 
-
-
-        {/* Map Section with Static 50-Mile Radius Overlay */}
-        <motion.div
-          className="bg-white rounded-lg overflow-hidden shadow-lg mb-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="h-96 bg-gray-200 relative overflow-hidden">
-            {/* Google Maps - Fixed on Mahopac, NY */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805406.5570608929!2d-73.7562317!3d41.3934083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2a0fb8efc8a19%3A0x71a40bb2f0e0beb5!2sMahopac%2C%20NY!5e0!3m2!1sen!2sus!4v1699892345678!5m2!1sen!2sus"
-              width="100%"
-              height="384"
-              style={{ 
-                border: 0,
-                pointerEvents: 'none'
-              }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-            ></iframe>
-            
-            {/* Static 50-Mile Radius Overlay - Non-Interactive */}
-            <div 
-              className="absolute inset-0 flex items-center justify-center"
-              style={{
-                pointerEvents: 'none',
-                userSelect: 'none',
-                touchAction: 'none'
-              }}
-            >
-              <div className="relative">
-                {/* Center point - Mahopac - Static */}
-                <div 
-                  className="w-3 h-3 bg-red-500 rounded-full border-2 border-white shadow-lg relative z-20"
-                  style={{
-                    pointerEvents: 'none',
-                    userSelect: 'none'
-                  }}
-                ></div>
-                
-                {/* Static 50-mile radius circle - Non-Interactive */}
-                <svg 
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" 
-                  width="480" 
-                  height="480"
-                  viewBox="0 0 480 480"
-                  style={{
-                    pointerEvents: 'none',
-                    userSelect: 'none',
-                    touchAction: 'none'
-                  }}
-                >
-                  <circle
-                    cx="240"
-                    cy="240" 
-                    r="200"
-                    fill="rgba(30, 58, 138, 0.1)"
-                    stroke="rgba(30, 58, 138, 0.8)"
-                    strokeWidth="3"
-                    strokeDasharray="8,4"
-                    style={{
-                      pointerEvents: 'none',
-                      userSelect: 'none'
-                    }}
-                  />
-                  {/* Static radius labels */}
-                  <text 
-                    x="240" 
-                    y="50" 
-                    textAnchor="middle" 
-                    fill="#1e3a8a" 
-                    fontSize="12" 
-                    fontWeight="bold"
-                    style={{
-                      pointerEvents: 'none',
-                      userSelect: 'none'
-                    }}
-                  >
-                    50 Miles
-                  </text>
-                  <text 
-                    x="240" 
-                    y="430" 
-                    textAnchor="middle" 
-                    fill="#1e3a8a" 
-                    fontSize="12" 
-                    fontWeight="bold"
-                    style={{
-                      pointerEvents: 'none',
-                      userSelect: 'none'
-                    }}
-                  >
-                    Service Radius
-                  </text>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Map Placeholder */}
+          <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg">
+            <div className="aspect-w-16 aspect-h-12 bg-gray-300 flex items-center justify-center">
+              <div className="text-center p-8">
+                <svg className="w-16 h-16 mx-auto mb-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                 </svg>
+                <p className="text-gray-600 font-semibold">Mahopac, NY and surrounding areas</p>
               </div>
             </div>
-            
-            {/* Static Service Area Information Overlay */}
-            <div 
-              className="absolute top-4 left-4 bg-white bg-opacity-95 px-4 py-3 rounded-lg shadow-lg max-w-xs"
-              style={{
-                pointerEvents: 'none',
-                userSelect: 'none'
-              }}
-            >
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-sm font-semibold text-gray-800">Service Center: Mahopac, NY</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 border-2 border-primary-500 border-dashed rounded-full bg-primary-500 bg-opacity-20"></div>
-                  <span className="text-sm font-semibold text-gray-800">50-Mile Service Radius</span>
-                </div>
-                <div className="text-xs text-gray-600 mt-2">
-                  Fixed service area - Covers Mahopac NY, Kent CT, Warren CT, Westport CT and surrounding areas
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Service Area Text */}
-        <motion.div
-          className="bg-primary-500 text-white text-center py-8 px-6 rounded-lg"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <div className="flex items-center justify-center mb-6">
-            <FiMapPin className="text-3xl mr-3" />
-            <h3 className="text-2xl font-bold">Coverage Area</h3>
-          </div>
-          
-          <p className="text-xl mb-6">
-            Serving homes and businesses throughout <br />
-            <strong>Mahopac NY, Kent CT, Warren CT, Westport CT,</strong> <br />
-            and everywhere in between!
-          </p>
-
-          {/* Service Areas List */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-6">
-            {serviceAreas.map((area, index) => (
-              <div key={index} className="flex items-center justify-center space-x-2">
-                <FiCheckCircle className="text-green-400" />
-                <span className="font-semibold">{area}</span>
-              </div>
-            ))}
           </div>
 
-          {/* Coverage Details */}
-          <div className="bg-primary-600 p-6 rounded-lg max-w-3xl mx-auto">
-            <h4 className="text-lg font-bold mb-4">Within Our 50-Mile Service Radius:</h4>
-            <div className="grid md:grid-cols-2 gap-4 text-left">
-              <div>
-                <h5 className="font-semibold mb-2">✓ Residential Services</h5>
-                <p className="text-primary-200 text-sm">Single-family homes, townhouses, condos</p>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-2">✓ Commercial Properties</h5>
-                <p className="text-primary-200 text-sm">Office buildings, retail centers, warehouses</p>
-              </div>
+          {/* Contact Information */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Contact Information</h3>
             </div>
-            
-            <div className="mt-6 pt-4 border-t border-primary-400">
-              <p className="text-primary-200">
-                Professional gutter cleaning and roof maintenance services • Licensed & Insured • 10+ Years Experience
-              </p>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600 mb-1">Phone</p>
+                  <a href="tel:+18458793864" className="text-lg font-semibold text-primary-600 hover:text-primary-700">
+                    +1 (845) 879-3864
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600 mb-1">Email</p>
+                  <a href="mailto:cfgutters02@gmail.com" className="text-lg font-semibold text-secondary-600 hover:text-secondary-700">
+                    cfgutters02@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600 mb-1">Service Area</p>
+                  <p className="text-lg font-semibold text-gray-900">
+                    Mahopac NY to Westport CT
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600 mb-1">Business Hours</p>
+                  <p className="text-lg font-semibold text-gray-900">
+                    Monday-Saturday<br />8 AM to 6 PM
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
