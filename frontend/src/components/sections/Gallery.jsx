@@ -1,12 +1,16 @@
 import React from 'react';
 
 const Gallery = () => {
-  // Gallery images - using placeholders, replace with actual images
+  // Gallery images - using actual images from repository
   const galleryImages = [
-    { id: 1, before: '/images2/house-ladder.png', after: '/images2/house-ladder.png', alt: 'Gutter cleaning before and after' },
-    { id: 2, before: '/images2/house-ladder.png', after: '/images2/house-ladder.png', alt: 'Roof cleaning before and after' },
-    { id: 3, before: '/images2/house-ladder.png', after: '/images2/house-ladder.png', alt: 'Moss treatment before and after' },
-    { id: 4, before: '/images2/house-ladder.png', after: '/images2/house-ladder.png', alt: 'Gutter guard installation' },
+    { id: 1, src: '/images/gallery1.jpg', alt: 'Gutter cleaning work 1' },
+    { id: 2, src: '/images/gallery2.jpg', alt: 'Gutter cleaning work 2' },
+    { id: 3, src: '/images/gallery3.png', alt: 'Gutter cleaning work 3' },
+    { id: 4, src: '/images/gallery4.png', alt: 'Gutter cleaning work 4' },
+    { id: 5, src: '/images/gallery5.png', alt: 'Gutter cleaning work 5' },
+    { id: 6, src: '/images/gallery6.png', alt: 'Gutter cleaning work 6' },
+    { id: 7, src: '/images/gallery10.jpg', alt: 'Gutter cleaning work 7' },
+    { id: 8, src: '/images/gallery13.jpg', alt: 'Gutter cleaning work 8' },
   ];
 
   return (
