@@ -30,7 +30,9 @@ const RefundPolicy = () => {
               </p>
               <ul className="list-disc list-inside space-y-2">
                 <li>Services were not performed as agreed</li>
-                <li>Quality of work does not meet professional standards</n                <li>Services were cancelled by CF Gutters</n                <li>Weather conditions prevented service completion and rescheduling is not possible</li>
+                <li>Quality of work does not meet professional standards</li>
+                <li>Services were cancelled by CF Gutters</li>
+                <li>Weather conditions prevented service completion and rescheduling is not possible</li>
               </ul>
             </section>
 
