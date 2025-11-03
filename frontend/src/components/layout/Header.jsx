@@ -135,7 +135,10 @@ const Header = () => {
                 <Link 
                   to="/" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   Home
                 </Link>
