@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiCheck, FiAlertCircle } from 'react-icons/fi';
+import { FiCheck, FiAlertCircle, FiUser, FiPhone, FiMail, FiCalendar, FiMapPin, FiEdit } from 'react-icons/fi';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
