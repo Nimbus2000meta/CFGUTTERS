@@ -1,175 +1,260 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
-import TypeformEmbed from '../ui/TypeformEmbed';
+import React, { useState } from 'react';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phone: '',
+    email: '',
+    appointmentDate: '',
+    streetAddress: '',
+    city: '',
+    state: '',
+    serviceNeeded: '',
+    hasSolarPanels: false,
+    hasGutterGuards: false,
+    propertyType: 'Residential',
+    additionalConcerns: ''
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log('Form submitted:', formData);
+    alert('Thank you for your request! We will contact you shortly.');
+  };
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
   return (
-    <section id="contact" className="section-padding bg-neutral-50">
-      <div className="container-custom">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.p 
-            className="text-primary-500 font-semibold uppercase tracking-wider mb-2"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Get In Touch
-          </motion.p>
-          <motion.h2 
-            className="mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            Request Your <span className="headline-gradient">Free Quote</span> Now!
-          </motion.h2>
-          <motion.p 
-            className="text-neutral-600"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Fill out our detailed form below to receive a personalized, no-obligation 
-            estimate for your gutter cleaning needs. We'll respond within 24 hours with your custom quote.
-          </motion.p>
+    <section id="contact" className="py-20 bg-gray-50">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Request a <span className="text-primary-600">Free Quote</span> Today!
+          </h2>
+          <p className="text-lg text-gray-700 mb-6">
+            Fill out our online contact form or give us a call to request a free, no-obligation estimate for any of our services. We'll respond promptly to discuss your needs and provide a transparent quote.
+          </p>
+          <div className="space-y-2">
+            <p className="text-xl font-bold text-gray-900">
+              Call Now: <a href="tel:+18458793864" className="text-primary-600 hover:text-primary-700">845-879-3864</a>
+            </p>
+            <p className="text-lg text-gray-700">
+              Email Us: <a href="mailto:cfgutters02@gmail.com" className="text-secondary-600 hover:text-secondary-700">cfgutters02@gmail.com</a>
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            <div className="bg-white p-8 rounded-xl shadow-soft">
-              <h3 className="text-2xl font-bold text-primary-700 mb-6">Get In Touch</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <FiPhone className="text-primary-600 text-xl" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-neutral-500">Call Now</p>
-                    <a 
-                      href="tel:+18458793864" 
-                      className="text-lg font-semibold text-primary-700 hover:text-primary-800 transition-colors"
-                    >
-                      (845) 879-3864
-                    </a>
-                  </div>
-                </div>
+        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Full Name <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="fullName"
+                  required
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder="Your full name"
+                />
+              </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <FiMail className="text-primary-600 text-xl" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-neutral-500">Email Us</p>
-                    <a 
-                      href="mailto:cfgutters02@gmail.com" 
-                      className="text-lg font-semibold text-primary-700 hover:text-primary-800 transition-colors"
-                    >
-                      cfgutters02@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <FiMapPin className="text-primary-600 text-xl" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-neutral-500">Service Area</p>
-                    <p className="text-lg font-semibold text-primary-700">
-                      Mahopac NY to Westport CT
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <FiClock className="text-primary-600 text-xl" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-neutral-500">Business Hours</p>
-                    <p className="text-lg font-semibold text-primary-700">
-                      Monday-Saturday 8 AM to 6 PM
-                    </p>
-                  </div>
-                </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Phone <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder="Your phone number"
+                />
               </div>
             </div>
 
-            {/* Emergency Contact */}
-            <motion.div
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 rounded-xl text-white"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              <h4 className="font-semibold mb-2">Need Urgent Service?</h4>
-              <p className="text-sm mb-4">
-                We offer emergency gutter cleaning and repair services for urgent situations.
-              </p>
-              <a 
-                href="tel:+18458793864"
-                className="inline-flex items-center space-x-2 bg-white text-primary-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Email <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder="Your email address"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Preferred Appointment Date <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="date"
+                  name="appointmentDate"
+                  required
+                  value={formData.appointmentDate}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Street Address <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="text"
+                name="streetAddress"
+                required
+                value={formData.streetAddress}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                placeholder="Street address"
+              />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">City</label>
+                <input
+                  type="text"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder="City"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">State</label>
+                <input
+                  type="text"
+                  name="state"
+                  value={formData.state}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder="State"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Service Needed
+              </label>
+              <select
+                name="serviceNeeded"
+                value={formData.serviceNeeded}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               >
-                <FiPhone />
-                <span>Call Now</span>
-              </a>
-            </motion.div>
-          </motion.div>
+                <option value="">Select a service</option>
+                <option value="Gutter Cleaning">Gutter Cleaning</option>
+                <option value="Gutter Guard Installations">Gutter Guard Installations</option>
+                <option value="Gutter & Downspout Repairs">Gutter & Downspout Repairs</option>
+                <option value="Basic Roof Cleaning & Moss Treatment">Basic Roof Cleaning & Moss Treatment</option>
+                <option value="Complete Soft Wash Roof Cleaning">Complete Soft Wash Roof Cleaning</option>
+              </select>
+            </div>
 
-          {/* Contact Form - Typeform Integration */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="bg-white p-8 rounded-xl shadow-soft">
-              <div className="text-center mb-6">
-                <h3 className="text-3xl font-bold text-primary-700 mb-2">Get Your Free Quote</h3>
-                <p className="text-primary-600">Complete the form below for a detailed estimate</p>
-              </div>
-              
-              {/* Typeform Embedded Form - Enhanced Layout */}
-              <TypeformEmbed />
-
-              {/* Alternative Contact Methods - Added more spacing */}
-              <div className="mt-12 pt-8 border-t border-gray-200">
-                <p className="text-center text-neutral-600 mb-6">
-                  Prefer to contact us directly?
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a 
-                    href="tel:+18458793864"
-                    className="btn btn-primary flex items-center justify-center gap-2"
-                  >
-                    <FiPhone />
-                    Call (845) 879-3864
-                  </a>
-                  <a 
-                    href="mailto:cfgutters02@gmail.com"
-                    className="btn bg-white text-primary-600 hover:bg-gray-100 border-2 border-white flex items-center justify-center gap-2"
-                  >
-                    <FiMail />
-                    Email Us
-                  </a>
-                </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-3">
+                Check all that apply
+              </label>
+              <div className="space-y-3">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="hasSolarPanels"
+                    checked={formData.hasSolarPanels}
+                    onChange={handleChange}
+                    className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                  />
+                  <span className="ml-3 text-gray-700">Have solar panels</span>
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="hasGutterGuards"
+                    checked={formData.hasGutterGuards}
+                    onChange={handleChange}
+                    className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                  />
+                  <span className="ml-3 text-gray-700">Gutter Guards Installed on Gutters</span>
+                </label>
               </div>
             </div>
-          </motion.div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-3">
+                Property Type <span className="text-red-600">*</span>
+              </label>
+              <div className="flex gap-6">
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="propertyType"
+                    value="Residential"
+                    checked={formData.propertyType === 'Residential'}
+                    onChange={handleChange}
+                    className="w-5 h-5 text-primary-600 border-gray-300 focus:ring-primary-500"
+                  />
+                  <span className="ml-3 text-gray-700">Residential</span>
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="propertyType"
+                    value="Commercial"
+                    checked={formData.propertyType === 'Commercial'}
+                    onChange={handleChange}
+                    className="w-5 h-5 text-primary-600 border-gray-300 focus:ring-primary-500"
+                  />
+                  <span className="ml-3 text-gray-700">Commercial</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Additional Concerns
+              </label>
+              <textarea
+                name="additionalConcerns"
+                value={formData.additionalConcerns}
+                onChange={handleChange}
+                rows="4"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                placeholder="Tell us about any specific concerns or requirements..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-6 rounded-lg transition-colors text-lg"
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </section>
