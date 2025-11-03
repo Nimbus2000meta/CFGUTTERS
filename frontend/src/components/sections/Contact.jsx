@@ -110,39 +110,46 @@ const Contact = () => {
   } rounded-xl focus:ring-4 focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400`;
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-5xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Request a <span className="text-primary-600">Free Quote</span> Today!
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Request a <span className="text-primary-600 bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">Free Quote</span> Today!
           </h2>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             Fill out our online contact form or give us a call to request a free, no-obligation estimate for any of our services. We'll respond promptly to discuss your needs and provide a transparent quote.
           </p>
-          <div className="space-y-2">
-            <p className="text-xl font-bold text-gray-900">
-              Call Now: <a href="tel:+18458793864" className="text-primary-600 hover:text-primary-700">845-879-3864</a>
-            </p>
-            <p className="text-lg text-gray-700">
-              Email Us: <a href="mailto:cfgutters02@gmail.com" className="text-secondary-600 hover:text-secondary-700">cfgutters02@gmail.com</a>
-            </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="tel:+18458793864" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              <FiPhone className="w-5 h-5" />
+              845-879-3864
+            </a>
+            <a href="mailto:cfgutters02@gmail.com" className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg border-2 border-gray-200">
+              <FiMail className="w-5 h-5 text-secondary-600" />
+              cfgutters02@gmail.com
+            </a>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
           {/* Status Messages */}
           {status.message && (
-            <div className={`mb-6 p-4 rounded-lg flex items-start gap-3 ${
+            <div className={`mb-8 p-5 rounded-2xl flex items-start gap-4 ${
               status.type === 'success' 
-                ? 'bg-green-50 border border-green-200 text-green-800' 
-                : 'bg-red-50 border border-red-200 text-red-800'
-            } animate-fade-in`}>
-              {status.type === 'success' ? (
-                <FiCheck className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              ) : (
-                <FiAlertCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              )}
-              <p className="font-medium">{status.message}</p>
+                ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 text-green-800' 
+                : 'bg-gradient-to-r from-red-50 to-rose-50 border-2 border-red-200 text-red-800'
+            } animate-fade-in shadow-md`}>
+              <div className={`p-2 rounded-full ${status.type === 'success' ? 'bg-green-100' : 'bg-red-100'}`}>
+                {status.type === 'success' ? (
+                  <FiCheck className="w-6 h-6" />
+                ) : (
+                  <FiAlertCircle className="w-6 h-6" />
+                )}
+              </div>
+              <div className="flex-1">
+                <p className="font-semibold text-lg">{status.type === 'success' ? 'Success!' : 'Oops!'}</p>
+                <p className="text-sm mt-1">{status.message}</p>
+              </div>
             </div>
           )}
 
