@@ -32,18 +32,13 @@ const Gallery = () => {
             <div key={image.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
               <div className="relative aspect-square">
                 <img 
-                  src={image.before}
+                  src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                />
-                <img 
-                  src={image.after}
-                  alt={`${image.alt} - after`}
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <p className="text-white text-sm font-semibold">Hover to see transformation</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <p className="text-white text-sm font-semibold">CF Gutters Work</p>
               </div>
             </div>
           ))}
