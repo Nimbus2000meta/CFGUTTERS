@@ -6,16 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
-// Section Components
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import ServiceArea from "./components/sections/ServiceArea";
-import Contact from "./components/sections/Contact";
-import Services from "./components/sections/Services";
-import Certifications from "./components/sections/Certifications";
-import Gallery from "./components/sections/Gallery";
-import Testimonials from "./components/sections/Testimonials";
-import FAQ from "./components/sections/FAQ";
+// Pages
+import Home from "./pages/Home";
+import GutterCleaning from "./pages/GutterCleaning";
+import GutterGuards from "./pages/GutterGuards";
+import GutterRepairs from "./pages/GutterRepairs";
+import BasicRoofCleaning from "./pages/BasicRoofCleaning";
+import SoftWashCleaning from "./pages/SoftWashCleaning";
 
 // UI Components
 import PageTransition from "./components/ui/PageTransition";
@@ -31,16 +28,14 @@ function App() {
           <WhatsAppChat />
           <Header />
           <main>
-            <Hero />
-            <About />
-            <ServiceArea />
-            <Contact />
-            <Services />
-            <Gallery />
-            <Certifications />
-            <Testimonials />
-            <Contact />
-            <FAQ />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/gutter-cleaning" element={<GutterCleaning />} />
+              <Route path="/gutter-guards" element={<GutterGuards />} />
+              <Route path="/gutter-repairs" element={<GutterRepairs />} />
+              <Route path="/basic-roof-cleaning" element={<BasicRoofCleaning />} />
+              <Route path="/soft-wash-cleaning" element={<SoftWashCleaning />} />
+            </Routes>
           </main>
           <Footer />
         </div>
