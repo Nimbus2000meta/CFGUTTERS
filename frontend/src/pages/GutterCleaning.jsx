@@ -27,7 +27,7 @@ const GutterCleaning = () => {
           {/* Left - Image */}
           <div className="rounded-xl overflow-hidden shadow-xl">
             <img 
-              src="/images2/house-ladder.png" 
+              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c21d28ce615755e4a9c8e8.png" 
               alt="Professional Gutter Cleaning"
               className="w-full h-96 object-cover"
             />
@@ -85,6 +85,27 @@ const GutterCleaning = () => {
           </div>
         </div>
 
+        {/* Before/After Gallery */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Our Work</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdd31ec9dc3f2.png" 
+                alt="Gutter Cleaning Before"
+                className="w-full h-80 object-cover"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdddf649dc3f3.png" 
+                alt="Gutter Cleaning After"
+                className="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="bg-primary-600 text-white p-12 rounded-2xl text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
@@ -97,8 +118,8 @@ const GutterCleaning = () => {
               Call (845) 879-3864
             </a>
             <Link 
-              to="/#contact" 
-              className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg transition-colors"
+              to="/contact-us" 
+              className="inline-block bg-white text-primary-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
             >
               Request a Quote
             </Link>
