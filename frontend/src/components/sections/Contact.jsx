@@ -103,11 +103,11 @@ const Contact = () => {
     }
   };
 
-  const inputClass = (fieldName) => `w-full px-4 py-3 border ${
+  const inputClass = (fieldName) => `w-full pl-12 pr-4 py-3.5 border-2 ${
     errors[fieldName] 
-      ? 'border-red-500 focus:ring-red-500' 
-      : 'border-gray-300 focus:ring-primary-500'
-  } rounded-lg focus:ring-2 focus:border-transparent transition-all`;
+      ? 'border-red-400 focus:border-red-500 focus:ring-red-200' 
+      : 'border-gray-200 focus:border-primary-500 focus:ring-primary-100'
+  } rounded-xl focus:ring-4 focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400`;
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
