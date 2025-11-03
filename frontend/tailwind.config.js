@@ -5,16 +5,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#1e3a8a', // Primary brand color - dark navy blue
-          600: '#1e40af',
-          700: '#1d4ed8',
-          800: '#1e2656',
-          900: '#0f172a', // Very dark navy
+          50: '#f0f4f8',
+          100: '#d9e2ec',
+          200: '#bcccdc',
+          300: '#9fb3c8',
+          400: '#829ab1',
+          500: '#2c5f8d', // Primary blue
+          600: '#234b72',
+          700: '#1a3857',
+          800: '#0f2540',
+          900: '#051627', // Very dark blue/black
         },
         secondary: {
           50: '#e6f7f2',
@@ -22,19 +22,20 @@ module.exports = {
           200: '#99dfcc',
           300: '#66cfb3',
           400: '#33bf99',
-          500: '#00af80', // Secondary accent color
+          500: '#00af80', // Teal/green accent
           600: '#008c66',
           700: '#00694d',
           800: '#004633',
           900: '#00231a',
         },
         neutral: {
-          850: '#1a1a1a', // Near black
-          50: '#f9f9f9', // Off-white
+          850: '#1a1a1a',
+          50: '#f9fafb',
         },
         accent: {
-          orange: '#ff6b35', // CTA highlight
-          blue: '#1e3a8a', // Secondary highlight - dark navy
+          orange: '#ff6b35',
+          red: '#e63946',
+          blue: '#2c5f8d',
         }
       },
       fontFamily: {
