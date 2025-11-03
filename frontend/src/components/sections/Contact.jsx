@@ -153,150 +153,226 @@ const Contact = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
+          <form onSubmit={handleSubmit} className="space-y-8" data-testid="contact-form">
+            {/* Name and Phone Row */}
             <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Full Name <span className="text-red-600">*</span>
+              <div className="space-y-2">
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  Full Name <span className="text-red-500">*</span>
                 </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <FiUser className="h-5 w-5 text-gray-400" />
+                  </div>
+                  <input
+                    type="text"
+                    name="fullName"
+                    required
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className={inputClass('fullName')}
+                    placeholder="John Doe"
+                    data-testid="full-name-input"
+                  />
+                </div>
+                {errors.fullName && (
+                  <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                    <FiAlertCircle className="w-4 h-4" />
+                    {errors.fullName}
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  Phone Number <span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <FiPhone className="h-5 w-5 text-gray-400" />
+                  </div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className={inputClass('phone')}
+                    placeholder="(555) 123-4567"
+                    data-testid="phone-input"
+                  />
+                </div>
+                {errors.phone && (
+                  <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                    <FiAlertCircle className="w-4 h-4" />
+                    {errors.phone}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Email and Date Row */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  Email Address <span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <FiMail className="h-5 w-5 text-gray-400" />
+                  </div>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={inputClass('email')}
+                    placeholder="john@example.com"
+                    data-testid="email-input"
+                  />
+                </div>
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                    <FiAlertCircle className="w-4 h-4" />
+                    {errors.email}
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  Preferred Appointment Date <span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <FiCalendar className="h-5 w-5 text-gray-400" />
+                  </div>
+                  <input
+                    type="date"
+                    name="appointmentDate"
+                    required
+                    value={formData.appointmentDate}
+                    onChange={handleChange}
+                    min={new Date().toISOString().split('T')[0]}
+                    className={inputClass('appointmentDate')}
+                    data-testid="appointment-date-input"
+                  />
+                </div>
+                {errors.appointmentDate && (
+                  <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                    <FiAlertCircle className="w-4 h-4" />
+                    {errors.appointmentDate}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t-2 border-gray-200"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-4 bg-white text-gray-500 font-semibold">Property Information</span>
+              </div>
+            </div>
+
+            {/* Street Address */}
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-gray-700 mb-2">
+                Street Address <span className="text-red-500">*</span>
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <FiMapPin className="h-5 w-5 text-gray-400" />
+                </div>
                 <input
                   type="text"
-                  name="fullName"
+                  name="streetAddress"
                   required
-                  value={formData.fullName}
+                  value={formData.streetAddress}
                   onChange={handleChange}
-                  className={inputClass('fullName')}
-                  placeholder="Your full name"
-                  data-testid="full-name-input"
+                  className={inputClass('streetAddress')}
+                  placeholder="123 Main Street"
+                  data-testid="street-address-input"
                 />
-                {errors.fullName && <p className="text-red-600 text-sm mt-1">{errors.fullName}</p>}
               </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Phone <span className="text-red-600">*</span>
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className={inputClass('phone')}
-                  placeholder="Your phone number"
-                  data-testid="phone-input"
-                />
-                {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
-              </div>
+              {errors.streetAddress && (
+                <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                  <FiAlertCircle className="w-4 h-4" />
+                  {errors.streetAddress}
+                </p>
+              )}
             </div>
 
+            {/* City and State Row */}
             <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Email <span className="text-red-600">*</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={inputClass('email')}
-                  placeholder="Your email address"
-                  data-testid="email-input"
-                />
-                {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Preferred Appointment Date <span className="text-red-600">*</span>
-                </label>
-                <input
-                  type="date"
-                  name="appointmentDate"
-                  required
-                  value={formData.appointmentDate}
-                  onChange={handleChange}
-                  min={new Date().toISOString().split('T')[0]}
-                  className={inputClass('appointmentDate')}
-                  data-testid="appointment-date-input"
-                />
-                {errors.appointmentDate && <p className="text-red-600 text-sm mt-1">{errors.appointmentDate}</p>}
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Street Address <span className="text-red-600">*</span>
-              </label>
-              <input
-                type="text"
-                name="streetAddress"
-                required
-                value={formData.streetAddress}
-                onChange={handleChange}
-                className={inputClass('streetAddress')}
-                placeholder="Street address"
-                data-testid="street-address-input"
-              />
-              {errors.streetAddress && <p className="text-red-600 text-sm mt-1">{errors.streetAddress}</p>}
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">City</label>
+              <div className="space-y-2">
+                <label className="block text-sm font-bold text-gray-700 mb-2">City</label>
                 <input
                   type="text"
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:ring-4 focus:ring-primary-100 focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
                   placeholder="City"
                   data-testid="city-input"
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">State</label>
+              <div className="space-y-2">
+                <label className="block text-sm font-bold text-gray-700 mb-2">State</label>
                 <input
                   type="text"
                   name="state"
                   value={formData.state}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:ring-4 focus:ring-primary-100 focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
                   placeholder="State"
                   data-testid="state-input"
                 />
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+            {/* Divider */}
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t-2 border-gray-200"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-4 bg-white text-gray-500 font-semibold">Service Details</span>
+              </div>
+            </div>
+
+            {/* Service Selection */}
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-gray-700 mb-2">
                 Service Needed
               </label>
               <select
                 name="serviceNeeded"
                 value={formData.serviceNeeded}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:ring-4 focus:ring-primary-100 focus:outline-none transition-all duration-200 text-gray-800 bg-white cursor-pointer"
                 data-testid="service-needed-select"
               >
-                <option value="">Select a service</option>
-                <option value="Gutter Cleaning">Gutter Cleaning</option>
-                <option value="Gutter Guard Installations">Gutter Guard Installations</option>
-                <option value="Gutter & Downspout Repairs">Gutter & Downspout Repairs</option>
-                <option value="Basic Roof Cleaning & Moss Treatment">Basic Roof Cleaning & Moss Treatment</option>
-                <option value="Complete Soft Wash Roof Cleaning">Complete Soft Wash Roof Cleaning</option>
+                <option value="">Select a service...</option>
+                <option value="Gutter Cleaning">🍂 Gutter Cleaning</option>
+                <option value="Gutter Guard Installations">🛡️ Gutter Guard Installations</option>
+                <option value="Gutter & Downspout Repairs">🔧 Gutter & Downspout Repairs</option>
+                <option value="Basic Roof Cleaning & Moss Treatment">🏠 Basic Roof Cleaning & Moss Treatment</option>
+                <option value="Complete Soft Wash Roof Cleaning">✨ Complete Soft Wash Roof Cleaning</option>
               </select>
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-3">
+            {/* Checkboxes */}
+            <div className="space-y-3 bg-gray-50 p-6 rounded-2xl border-2 border-gray-200">
+              <label className="block text-sm font-bold text-gray-700 mb-3">
                 Check all that apply
               </label>
-              <div className="space-y-3">
-                <label className="flex items-center cursor-pointer group">
+              <div className="space-y-4">
+                <label className="flex items-center cursor-pointer group bg-white p-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 transition-all duration-200">
                   <input
                     type="checkbox"
                     name="hasSolarPanels"
@@ -305,9 +381,9 @@ const Contact = () => {
                     className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500 cursor-pointer"
                     data-testid="solar-panels-checkbox"
                   />
-                  <span className="ml-3 text-gray-700 group-hover:text-gray-900 transition-colors">Have solar panels</span>
+                  <span className="ml-4 text-gray-700 font-medium group-hover:text-gray-900 transition-colors">☀️ Have solar panels</span>
                 </label>
-                <label className="flex items-center cursor-pointer group">
+                <label className="flex items-center cursor-pointer group bg-white p-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 transition-all duration-200">
                   <input
                     type="checkbox"
                     name="hasGutterGuards"
@@ -316,17 +392,18 @@ const Contact = () => {
                     className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500 cursor-pointer"
                     data-testid="gutter-guards-checkbox"
                   />
-                  <span className="ml-3 text-gray-700 group-hover:text-gray-900 transition-colors">Gutter Guards Installed on Gutters</span>
+                  <span className="ml-4 text-gray-700 font-medium group-hover:text-gray-900 transition-colors">🛡️ Gutter Guards Installed on Gutters</span>
                 </label>
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-3">
-                Property Type <span className="text-red-600">*</span>
+            {/* Property Type Radio Buttons */}
+            <div className="space-y-3">
+              <label className="block text-sm font-bold text-gray-700 mb-3">
+                Property Type <span className="text-red-500">*</span>
               </label>
-              <div className="flex gap-6">
-                <label className="flex items-center cursor-pointer group">
+              <div className="grid grid-cols-2 gap-4">
+                <label className="flex items-center cursor-pointer group bg-white p-5 rounded-xl border-2 border-gray-200 hover:border-primary-400 transition-all duration-200 has-[:checked]:border-primary-600 has-[:checked]:bg-primary-50">
                   <input
                     type="radio"
                     name="propertyType"
@@ -336,9 +413,9 @@ const Contact = () => {
                     className="w-5 h-5 text-primary-600 border-gray-300 focus:ring-primary-500 cursor-pointer"
                     data-testid="residential-radio"
                   />
-                  <span className="ml-3 text-gray-700 group-hover:text-gray-900 transition-colors">Residential</span>
+                  <span className="ml-3 text-gray-700 font-semibold group-hover:text-gray-900 transition-colors">🏡 Residential</span>
                 </label>
-                <label className="flex items-center cursor-pointer group">
+                <label className="flex items-center cursor-pointer group bg-white p-5 rounded-xl border-2 border-gray-200 hover:border-primary-400 transition-all duration-200 has-[:checked]:border-primary-600 has-[:checked]:bg-primary-50">
                   <input
                     type="radio"
                     name="propertyType"
@@ -348,44 +425,58 @@ const Contact = () => {
                     className="w-5 h-5 text-primary-600 border-gray-300 focus:ring-primary-500 cursor-pointer"
                     data-testid="commercial-radio"
                   />
-                  <span className="ml-3 text-gray-700 group-hover:text-gray-900 transition-colors">Commercial</span>
+                  <span className="ml-3 text-gray-700 font-semibold group-hover:text-gray-900 transition-colors">🏢 Commercial</span>
                 </label>
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Additional Concerns
+            {/* Additional Concerns */}
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-gray-700 mb-2">
+                Additional Concerns or Requirements
               </label>
-              <textarea
-                name="additionalConcerns"
-                value={formData.additionalConcerns}
-                onChange={handleChange}
-                rows="4"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                placeholder="Tell us about any specific concerns or requirements..."
-                data-testid="additional-concerns-textarea"
-              ></textarea>
+              <div className="relative">
+                <div className="absolute top-3 left-4 pointer-events-none">
+                  <FiEdit className="h-5 w-5 text-gray-400" />
+                </div>
+                <textarea
+                  name="additionalConcerns"
+                  value={formData.additionalConcerns}
+                  onChange={handleChange}
+                  rows="5"
+                  className="w-full pl-12 pr-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:ring-4 focus:ring-primary-100 focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400 resize-none"
+                  placeholder="Tell us about any specific concerns, requirements, or questions you have..."
+                  data-testid="additional-concerns-textarea"
+                ></textarea>
+              </div>
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 px-6 rounded-lg transition-all text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white font-bold py-5 px-8 rounded-xl transition-all duration-200 text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 active:translate-y-0 disabled:transform-none"
               data-testid="submit-button"
             >
               {isSubmitting ? (
-                <span className="flex items-center justify-center gap-2">
-                  <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                <span className="flex items-center justify-center gap-3">
+                  <svg className="animate-spin h-6 w-6" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Sending...
+                  Sending Your Request...
                 </span>
               ) : (
-                'Submit Request'
+                <span className="flex items-center justify-center gap-2">
+                  📧 Submit Free Quote Request
+                </span>
               )}
             </button>
+
+            {/* Trust Badge */}
+            <p className="text-center text-sm text-gray-500 mt-4">
+              🔒 Your information is secure and will never be shared with third parties
+            </p>
           </form>
         </div>
       </div>
