@@ -129,13 +129,30 @@ const Services = () => {
 
         {/* Gutter Guard Installation */}
         <div id="gutter-guards" className="mb-20 bg-white p-8 rounded-xl">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Gutter Guard Installation
-            </h3>
-            <p className="text-gray-700 max-w-3xl mx-auto">
-              Protect your gutters with high-quality gutter guards that prevent debris buildup and reduce maintenance needs.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                Gutter Guard Installation
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Protect your gutters with high-quality gutter guards that prevent debris buildup and reduce maintenance needs.
+              </p>
+              <a 
+                href="#contact" 
+                className="inline-block bg-secondary-600 hover:bg-secondary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+              >
+                Request a Quote
+              </a>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c8b25739ce95f028b8feca.png" 
+                  alt="Gutter Guard Installation"
+                  className="w-full h-96 object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
