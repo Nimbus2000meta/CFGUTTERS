@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { FiMenu, FiX, FiPhone, FiChevronDown, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const services = [
-    { name: 'Professional Gutter Cleaning', href: '#gutter-cleaning' },
-    { name: 'Gutter Guard Installation', href: '#gutter-guards' },
-    { name: 'Gutter and Downspout Repairs', href: '#gutter-repairs' },
-    { name: 'Roof Cleaning & Moss Treatment', href: '#basic-roof-cleaning' },
-    { name: 'Soft Wash Roof Cleaning', href: '#soft-wash-cleaning' },
+    { name: 'Professional Gutter Cleaning', href: '/gutter-cleaning' },
+    { name: 'Gutter Guard Installation', href: '/gutter-guards' },
+    { name: 'Gutter and Downspout Repairs', href: '/gutter-repairs' },
+    { name: 'Roof Cleaning & Moss Treatment', href: '/basic-roof-cleaning' },
+    { name: 'Soft Wash Roof Cleaning', href: '/soft-wash-cleaning' },
   ];
 
   return (
