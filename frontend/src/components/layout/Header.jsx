@@ -42,8 +42,6 @@ const Header = () => {
 
       {/* Main Header */}
       <div className="bg-white shadow-md">
-      {/* Main Header */}
-      <div className="bg-white shadow-md">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
           
