@@ -25,9 +25,9 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <span className="text-white">Professional</span>{' '}
-            <span className="text-primary-400">Gutter & Roof</span>{' '}
+            <span className="text-yellow-300">Gutter & Roof</span>{' '}
             <span className="text-white">Cleaning Services –</span>{' '}
-            <span className="text-primary-400">CF Gutters</span>
+            <span className="text-yellow-300">CF Gutters</span>
           </motion.h1>
 
           <motion.p
