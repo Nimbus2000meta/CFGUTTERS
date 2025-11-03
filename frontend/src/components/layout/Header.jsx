@@ -7,11 +7,11 @@ const Header = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const services = [
-    { name: 'Professional Gutter Cleaning', href: '/gutter-cleaning' },
-    { name: 'Gutter Guard Installation', href: '/gutter-guards' },
-    { name: 'Gutter and Downspout Repairs', href: '/gutter-repairs' },
-    { name: 'Roof Cleaning & Moss Treatment', href: '/basic-roof-cleaning' },
-    { name: 'Soft Wash Roof Cleaning', href: '/soft-wash-cleaning' },
+    { name: 'Professional Gutter Cleaning', href: '/Gutter-Cleaning' },
+    { name: 'Gutter Guard Installation', href: '/Gutter-Guard-Installation' },
+    { name: 'Gutter and Downspout Repairs', href: '/Gutter-Downspout-Repairs' },
+    { name: 'Roof Cleaning & Moss Treatment', href: '/Roof-Cleaning-Moss-Treatment' },
+    { name: 'Soft Wash Roof Cleaning', href: '/Soft-Wash-Roof-Cleaning' },
   ];
 
   return (
