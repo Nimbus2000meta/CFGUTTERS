@@ -60,13 +60,13 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              <Link to="/" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
                 Home
-              </a>
-              <a href="#about" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              </Link>
+              <a href="/#about" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
                 About
               </a>
-              <a href="#contact" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              <a href="/#contact" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
                 Contact
               </a>
               
@@ -84,25 +84,25 @@ const Header = () => {
                 {servicesOpen && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
                     {services.map((service, index) => (
-                      <a
+                      <Link
                         key={index}
-                        href={service.href}
+                        to={service.href}
                         className="block px-6 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors text-sm"
                       >
                         {service.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
               </div>
 
-              <a href="#gallery" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              <a href="/#gallery" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
                 Gallery
               </a>
-              <a href="#faq" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              <a href="/#faq" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
                 FAQs
               </a>
-              <a href="#testimonials" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              <a href="/#testimonials" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
                 Testimonials
               </a>
             </nav>
