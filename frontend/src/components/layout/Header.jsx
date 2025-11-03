@@ -16,23 +16,23 @@ const Header = () => {
   return (
     <header className="fixed top-0 w-full z-50">
       {/* Top Information Bar */}
-      <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 text-white py-3">
+      <div className="bg-primary-600 text-white py-3">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-6 text-sm">
-            <a href="tel:+18458793864" className="flex items-center gap-2 hover:text-primary-300 transition-colors">
-              <FiPhone className="text-red-500" size={18} />
+            <a href="tel:+18458793864" className="flex items-center gap-2 hover:text-gray-200 transition-colors">
+              <FiPhone className="text-white" size={18} />
               <span className="font-semibold">+1 (845) 879-3864</span>
             </a>
-            <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-2 hover:text-primary-300 transition-colors">
-              <FiMail className="text-blue-400" size={18} />
+            <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-2 hover:text-gray-200 transition-colors">
+              <FiMail className="text-white" size={18} />
               <span>cfgutters02@gmail.com</span>
             </a>
             <div className="flex items-center gap-2">
-              <FiMapPin className="text-green-400" size={18} />
+              <FiMapPin className="text-white" size={18} />
               <span>Mahopac NY to Westport CT</span>
             </div>
             <div className="hidden lg:flex items-center gap-2">
-              <FiClock className="text-yellow-400" size={18} />
+              <FiClock className="text-white" size={18} />
               <span className="font-semibold">Business Hours:</span>
               <span>Monday-Saturday 8 AM to 6 PM</span>
             </div>
