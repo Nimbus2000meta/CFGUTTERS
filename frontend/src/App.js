@@ -32,15 +32,15 @@ function App() {
           <Header />
           <main>
             <Hero />
-            <Services />
-            <CTAHorizontal />
             <About />
             <ServiceArea />
-            <Gallery />
-            <Testimonials />
-            <CTA />
-            <FAQ />
             <Contact />
+            <Services />
+            <Gallery />
+            <Certifications />
+            <Testimonials />
+            <Contact />
+            <FAQ />
           </main>
           <Footer />
         </div>
