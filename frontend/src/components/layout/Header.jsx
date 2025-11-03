@@ -23,7 +23,7 @@ const Header = () => {
             <img 
               src="/images3/cf-gutters-logo.jpg" 
               alt="CF Gutters Logo"
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-primary-500"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-white"
             />
             <div className="text-gray-900">
               <div className="font-bold text-lg md:text-xl">CF GUTTERS</div>
@@ -82,9 +82,8 @@ const Header = () => {
           {/* Phone CTA - Desktop */}
           <a 
             href="tel:+18458793864" 
-            className="hidden lg:flex bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold items-center gap-2 transition-colors"
+            className="hidden lg:flex bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-full font-semibold items-center gap-2 transition-colors"
           >
-            <FiPhone size={18} />
             Get Started
           </a>
 
@@ -173,11 +172,11 @@ const Header = () => {
               {/* Mobile Phone Button */}
               <a 
                 href="tel:+18458793864" 
-                className="block mx-4 mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold text-center transition-colors"
+                className="block mx-4 mt-4 bg-primary-600 hover:bg-primary-700 text-white px-4 py-3 rounded-full font-semibold text-center transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 <FiPhone className="inline mr-2" />
-                Call (845) 879-3864
+                Get Started
               </a>
             </div>
           </div>
