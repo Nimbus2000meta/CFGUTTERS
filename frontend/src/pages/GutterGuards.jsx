@@ -27,7 +27,7 @@ const GutterGuards = () => {
           {/* Left - Image */}
           <div className="rounded-xl overflow-hidden shadow-xl">
             <img 
-              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdd31ec9dc3f2.png" 
+              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c8b25739ce95f028b8feca.png" 
               alt="Gutter Guard Installation"
               className="w-full h-96 object-cover"
             />
