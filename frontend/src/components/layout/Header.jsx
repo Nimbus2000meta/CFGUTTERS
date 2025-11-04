@@ -5,6 +5,22 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState(null);
+
+  const handleMouseEnter = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+    setServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setServicesOpen(false);
+    }, 200);
+    setCloseTimeout(timeout);
+  };
 
   const services = [
     { name: 'Professional Gutter Cleaning', href: '/Gutter-Cleaning' },
