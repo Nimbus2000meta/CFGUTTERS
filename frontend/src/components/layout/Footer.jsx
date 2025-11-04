@@ -86,9 +86,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/#gallery" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/gallery" className="text-gray-400 hover:text-white transition-colors">
                   Gallery
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
