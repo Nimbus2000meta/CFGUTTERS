@@ -185,12 +185,12 @@ const Services = () => {
               <p className="text-gray-700 mb-6">
                 Restore your gutter system functionality with our expert repair services for leaks, sagging, and damage.
               </p>
-              <a 
-                href="#contact" 
+              <Link 
+                to="/contact-us" 
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
               >
                 Request a Quote
-              </a>
+              </Link>
             </div>
           </div>
         </div>
