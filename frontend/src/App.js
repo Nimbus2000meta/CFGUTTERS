@@ -17,6 +17,7 @@ import TermsOfService from "./pages/TermsOfService";
 import RefundPolicy from "./pages/RefundPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ContactUs from "./pages/ContactUs";
+import Gallery from "./pages/Gallery";
 
 // UI Components
 import PageTransition from "./components/ui/PageTransition";
