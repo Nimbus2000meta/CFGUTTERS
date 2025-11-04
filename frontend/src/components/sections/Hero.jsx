@@ -46,12 +46,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.7 }}
           >
-            <a 
-              href="#contact"
+            <Link 
+              to="/contact-us"
               className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all transform hover:scale-105 shadow-lg"
             >
               Request a Quote
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>
