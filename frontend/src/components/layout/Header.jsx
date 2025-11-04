@@ -70,9 +70,12 @@ const Header = () => {
               <a href="/#about" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
                 About
               </a>
-              <a href="/#contact" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              <Link 
+                to="/contact-us" 
+                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              >
                 Contact
-              </a>
+              </Link>
               
               {/* Services Dropdown */}
               <div 
