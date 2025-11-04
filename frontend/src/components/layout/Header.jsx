@@ -152,13 +152,13 @@ const Header = () => {
                 >
                   About
                 </a>
-                <a 
-                  href="/#contact" 
+                <Link 
+                  to="/contact-us" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Contact
-                </a>
+                </Link>
                 
                 {/* Mobile Services Dropdown */}
                 <div>
