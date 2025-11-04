@@ -96,8 +96,8 @@ const Header = () => {
               {/* Services Dropdown */}
               <div 
                 className="relative group"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 <button className="text-gray-700 hover:text-primary-600 transition-colors font-medium flex items-center gap-1">
                   Services
@@ -105,7 +105,11 @@ const Header = () => {
                 </button>
                 
                 {servicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100 z-50"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     {services.map((service, index) => (
                       <Link
                         key={index}
