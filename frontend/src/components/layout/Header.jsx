@@ -216,13 +216,13 @@ const Header = () => {
                   )}
                 </div>
 
-                <a 
-                  href="/#gallery" 
+                <Link 
+                  to="/gallery" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Gallery
-                </a>
+                </Link>
                 <a 
                   href="/#faq" 
                   className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
