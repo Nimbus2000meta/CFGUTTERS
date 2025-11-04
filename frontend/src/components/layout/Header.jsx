@@ -71,14 +71,14 @@ const Header = () => {
           <div className="flex items-center justify-between h-20">
             
             {/* Logo Section */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-4">
               <img 
                 src="/images3/cf-gutters-logo.jpg" 
                 alt="CF Gutters Logo"
-                className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-white"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-white shadow-lg"
               />
               <div className="text-gray-900">
-                <div className="font-bold text-lg md:text-xl">CF GUTTERS</div>
+                <div className="font-bold text-xl md:text-2xl">CF GUTTERS</div>
               </div>
             </div>
 
