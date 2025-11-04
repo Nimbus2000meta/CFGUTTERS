@@ -14,14 +14,13 @@ const Home = () => {
     <>
       <Hero />
       <About />
-      <ServiceArea />
-      <Contact />
       <Services />
+      <ServiceArea />
       <Gallery />
       <Certifications />
       <Testimonials />
-      <Contact />
       <FAQ />
+      <Contact />
     </>
   );
 };
