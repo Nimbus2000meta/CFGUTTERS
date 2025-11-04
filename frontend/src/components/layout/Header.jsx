@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiPhone, FiChevronDown, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
@@ -6,6 +6,14 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [closeTimeout, setCloseTimeout] = useState(null);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout);
+      }
+    };
+  }, [closeTimeout]);
 
   const handleMouseEnter = () => {
     if (closeTimeout) {
