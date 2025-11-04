@@ -131,9 +131,12 @@ const Header = () => {
                 )}
               </div>
 
-              <a href="/#gallery" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              <Link 
+                to="/gallery" 
+                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              >
                 Gallery
-              </a>
+              </Link>
               <a href="/#faq" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
                 FAQs
               </a>
