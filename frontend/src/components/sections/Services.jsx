@@ -156,7 +156,7 @@ const Services = () => {
             <div className="order-1 lg:order-2">
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c8b25739ce95f028b8feca.png" 
+                  src="https://customer-assets.emergentagent.com/job_easy-customer-form/artifacts/213p48zl_240_F_917377453_7y0wnaaGltFVwy6CPbiZVFYQY0R1jENe.jpg" 
                   alt="Gutter Guard Installation"
                   className="w-full h-96 object-cover"
                 />
