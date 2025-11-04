@@ -44,6 +44,7 @@ function App() {
               <Route path="/Refund-Policy" element={<RefundPolicy />} />
               <Route path="/Privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/gallery" element={<Gallery />} />
             </Routes>
           </main>
           <Footer />
