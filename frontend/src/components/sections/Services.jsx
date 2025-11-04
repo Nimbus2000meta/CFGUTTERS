@@ -108,12 +108,12 @@ const Services = () => {
                 </p>
               </div>
 
-              <a 
-                href="#contact" 
+              <Link 
+                to="/contact-us" 
                 className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
               >
                 Request a Quote
-              </a>
+              </Link>
             </div>
 
             <div className="order-1 lg:order-2">
@@ -241,12 +241,12 @@ const Services = () => {
                 </p>
               </div>
 
-              <a 
-                href="#contact" 
+              <Link 
+                to="/contact-us" 
                 className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
               >
                 Request a Quote
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -283,12 +283,12 @@ const Services = () => {
                 </p>
               </div>
 
-              <a 
-                href="#contact" 
+              <Link 
+                to="/contact-us" 
                 className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
               >
                 Request a Quote
-              </a>
+              </Link>
             </div>
 
             <div className="order-1 lg:order-2">
