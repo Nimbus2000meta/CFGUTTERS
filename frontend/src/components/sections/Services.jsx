@@ -147,12 +147,12 @@ const Services = () => {
               <p className="text-gray-700 mb-6">
                 Protect your gutters with high-quality gutter guards that prevent debris buildup and reduce maintenance needs.
               </p>
-              <a 
-                href="#contact" 
+              <Link 
+                to="/contact-us" 
                 className="inline-block bg-secondary-600 hover:bg-secondary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
               >
                 Request a Quote
-              </a>
+              </Link>
             </div>
             <div className="order-1 lg:order-2">
               <div className="rounded-xl overflow-hidden shadow-lg">
