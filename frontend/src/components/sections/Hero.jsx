@@ -7,16 +7,22 @@ const Hero = () => {
     <section 
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-10"
-      style={{
-        backgroundImage: 'url(/hero-roof-2.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
-        backgroundRepeat: 'no-repeat',
-        imageRendering: '-webkit-optimize-contrast'
-      }}
     >
+      {/* Background Image with Enhanced Clarity */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/hero-roof-1.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'contrast(1.1) brightness(1.05)',
+          imageRendering: '-webkit-optimize-contrast'
+        }}
+      ></div>
+      
       {/* Dark Overlay for Professional Faded Look */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/65"></div>
 
       {/* Content Container */}
       <div className="container mx-auto px-4 relative z-10">
