@@ -159,13 +159,11 @@ const Services = () => {
         <div id="gutter-repairs" className="mb-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c2203243b925c332b11bdf.png" 
-                  alt="Gutter & Downspout Repairs"
-                  className="w-full h-96 object-cover"
-                />
-              </div>
+              <img 
+                src="/images/gutter-repairs.png" 
+                alt="Gutter & Downspout Repairs"
+                className="w-full h-96 object-cover rounded-xl"
+              />
             </div>
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
