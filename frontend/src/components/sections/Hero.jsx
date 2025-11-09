@@ -6,15 +6,16 @@ const Hero = () => {
   return (
     <section 
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary-900 via-primary-700 to-primary-900 pt-32 pb-10"
+      className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-10"
+      style={{
+        backgroundImage: 'url(/hero-roof-1.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }}></div>
-      </div>
+      {/* Dark Overlay for Professional Faded Look */}
+      <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Content Container */}
       <div className="container mx-auto px-4 relative z-10">
