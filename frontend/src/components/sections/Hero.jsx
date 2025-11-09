@@ -8,14 +8,16 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-10"
       style={{
-        backgroundImage: 'url(/hero-roof-1.jpg)',
+        backgroundImage: 'url(/hero-roof-2.jpg)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'scroll',
+        imageRendering: 'crisp-edges'
       }}
     >
       {/* Dark Overlay for Professional Faded Look */}
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70"></div>
 
       {/* Content Container */}
       <div className="container mx-auto px-4 relative z-10">
