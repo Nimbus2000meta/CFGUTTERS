@@ -117,21 +117,12 @@ const Services = () => {
             </div>
 
             <div className="order-1 lg:order-2">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden shadow-lg">
-                  <img 
-                    src="https://customer-assets.emergentagent.com/job_easy-customer-form/artifacts/zqhp39lf_tmpu4h2a_zp.webp" 
-                    alt="Professional Gutter Cleaning Before"
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
-                <div className="rounded-xl overflow-hidden shadow-lg">
-                  <img 
-                    src="https://customer-assets.emergentagent.com/job_easy-customer-form/artifacts/pdp3eyxz_tmpzcrqhed_.webp" 
-                    alt="Professional Gutter Cleaning After"
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src="/images/gutter-cleaning-service.webp" 
+                  alt="Professional Gutter Cleaning Services"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
