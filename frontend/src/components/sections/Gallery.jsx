@@ -36,9 +36,16 @@ const Gallery = () => {
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
+                {image.label && (
+                  <div className="absolute top-4 left-4 bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    {image.label}
+                  </div>
+                )}
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <p className="text-white text-sm font-semibold">CF Gutters Work</p>
+                <p className="text-white text-sm font-semibold">
+                  {image.label ? `${image.label} - CF Gutters Work` : 'CF Gutters Work'}
+                </p>
               </div>
             </div>
           ))}
