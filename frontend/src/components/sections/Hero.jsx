@@ -8,19 +8,19 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-10"
     >
-      {/* Background Image with Enhanced Clarity */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          backgroundImage: 'url(/hero-roof-hq.webp)',
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          imageRendering: 'crisp-edges',
-          WebkitBackfaceVisibility: 'hidden',
-          transform: 'translateZ(0)'
-        }}
-      ></div>
+      {/* Background Image with Maximum Clarity */}
+      <div className="absolute inset-0">
+        <img 
+          src="/hero-roof-hq.webp" 
+          alt="Roof and Gutter Background"
+          className="w-full h-full object-cover"
+          style={{
+            imageRendering: 'high-quality',
+            WebkitBackfaceVisibility: 'hidden',
+            transform: 'translateZ(0)'
+          }}
+        />
+      </div>
       
       {/* Dark Overlay for Professional Faded Look */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/65"></div>
