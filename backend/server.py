@@ -80,45 +80,47 @@ async def submit_contact_form(form_data: ContactFormSubmission):
             return {"success": True, "message": "Form submitted successfully"}
         
         # Prepare email content
-        email_html = f\"\"\"
+        additional_concerns_html = f"""<div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3 style="color: #92400e; margin-top: 0;">Additional Concerns</h3>
+                <p>{form_data.additionalConcerns}</p>
+            </div>""" if form_data.additionalConcerns else ""
+        
+        email_html = f"""
         <html>
-        <body style=\"font-family: Arial, sans-serif; line-height: 1.6; color: #333;\">
-            <h2 style=\"color: #2563eb;\">New Contact Form Submission - CF Gutters</h2>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <h2 style="color: #2563eb;">New Contact Form Submission - CF Gutters</h2>
             
-            <div style=\"background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;\">
-                <h3 style=\"color: #1f2937; margin-top: 0;\">Customer Information</h3>
+            <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3 style="color: #1f2937; margin-top: 0;">Customer Information</h3>
                 <p><strong>Name:</strong> {form_data.fullName}</p>
                 <p><strong>Phone:</strong> {form_data.phone}</p>
                 <p><strong>Email:</strong> {form_data.email}</p>
                 <p><strong>Preferred Appointment Date:</strong> {form_data.appointmentDate}</p>
             </div>
             
-            <div style=\"background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;\">
-                <h3 style=\"color: #1f2937; margin-top: 0;\">Property Details</h3>
+            <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3 style="color: #1f2937; margin-top: 0;">Property Details</h3>
                 <p><strong>Street Address:</strong> {form_data.streetAddress}</p>
                 <p><strong>City:</strong> {form_data.city or 'Not provided'}</p>
                 <p><strong>State:</strong> {form_data.state or 'Not provided'}</p>
                 <p><strong>Property Type:</strong> {form_data.propertyType}</p>
             </div>
             
-            <div style=\"background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;\">
-                <h3 style=\"color: #1f2937; margin-top: 0;\">Service Details</h3>
+            <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3 style="color: #1f2937; margin-top: 0;">Service Details</h3>
                 <p><strong>Service Needed:</strong> {form_data.serviceNeeded or 'Not specified'}</p>
                 <p><strong>Has Solar Panels:</strong> {'Yes' if form_data.hasSolarPanels else 'No'}</p>
                 <p><strong>Has Gutter Guards:</strong> {'Yes' if form_data.hasGutterGuards else 'No'}</p>
             </div>
             
-            {f'''<div style=\"background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;\">
-                <h3 style=\"color: #92400e; margin-top: 0;\">Additional Concerns</h3>
-                <p>{form_data.additionalConcerns}</p>
-            </div>''' if form_data.additionalConcerns else ''}
+            {additional_concerns_html}
             
-            <p style=\"color: #6b7280; font-size: 0.875rem; margin-top: 30px;\">
+            <p style="color: #6b7280; font-size: 0.875rem; margin-top: 30px;">
                 This email was sent from the CF Gutters contact form at {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC
             </p>
         </body>
         </html>
-        \"\"\"
+        """
         
         # Send email via Resend API
         async with httpx.AsyncClient() as client:
