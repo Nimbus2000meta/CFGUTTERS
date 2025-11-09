@@ -125,22 +125,22 @@ async def submit_contact_form(form_data: ContactFormSubmission):
         # Send email via Resend API
         async with httpx.AsyncClient() as client:
             response = await client.post(
-                \"https://api.resend.com/emails\",
+                "https://api.resend.com/emails",
                 headers={
-                    \"Authorization\": f\"Bearer {resend_api_key}\",
-                    \"Content-Type\": \"application/json\",
+                    "Authorization": f"Bearer {resend_api_key}",
+                    "Content-Type": "application/json",
                 },
                 json={
-                    \"from\": \"CF Gutters <onboarding@resend.dev>\",
-                    \"to\": [\"louis@cfgutters.com\", \"connor@cfgutters.com\"],
-                    \"subject\": f\"New Quote Request from {form_data.fullName}\",
-                    \"html\": email_html,
+                    "from": "CF Gutters <onboarding@resend.dev>",
+                    "to": ["louis@cfgutters.com", "connor@cfgutters.com"],
+                    "subject": f"New Quote Request from {form_data.fullName}",
+                    "html": email_html,
                 },
             )
             
             if response.status_code != 200:
-                logger.error(f\"Resend API error: {response.text}\")
-                raise HTTPException(status_code=500, detail=\"Failed to send email\")
+                logger.error(f"Resend API error: {response.text}")
+                raise HTTPException(status_code=500, detail="Failed to send email")
         
         # Store in database for records
         form_dict = form_data.dict()
