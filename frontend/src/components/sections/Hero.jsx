@@ -13,7 +13,7 @@ const Hero = () => {
         className="absolute inset-0"
         style={{
           backgroundImage: 'url(/hero-roof-hq.webp)',
-          backgroundSize: 'cover',
+          backgroundSize: 'auto 100%',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           filter: 'contrast(1.1) brightness(1.05)',
