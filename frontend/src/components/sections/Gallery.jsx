@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Gallery = () => {
-  // Gallery images - using actual images from repository
+  // Gallery images - using actual before/after images from CF Gutters
   const galleryImages = [
-    { id: 1, src: '/images/gallery1.jpg', alt: 'Gutter cleaning work 1' },
-    { id: 2, src: '/images/gallery2.jpg', alt: 'Gutter cleaning work 2' },
+    { id: 1, src: '/images/before-after-1.webp', alt: 'Before: Clogged gutter with debris', label: 'Before' },
+    { id: 2, src: '/images/before-after-2.webp', alt: 'After: Clean gutter system', label: 'After' },
     { id: 3, src: '/images/gallery3.png', alt: 'Gutter cleaning work 3' },
     { id: 4, src: '/images/gallery4.png', alt: 'Gutter cleaning work 4' },
     { id: 5, src: '/images/gallery5.png', alt: 'Gutter cleaning work 5' },
