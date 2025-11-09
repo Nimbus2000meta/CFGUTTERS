@@ -142,8 +142,8 @@ async def submit_contact_form(form_data: ContactFormSubmission):
             )
             
             if response.status_code != 200:
-                logger.error(f"Resend API error: {response.text}")
-                raise HTTPException(status_code=500, detail="Failed to send email")
+                logger.error(f"Resend API error (status {response.status_code}): {response.text}")
+                raise HTTPException(status_code=500, detail=f"Failed to send email: {response.text}")
         
         # Store in database for records
         form_dict = form_data.dict()
