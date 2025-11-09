@@ -70,8 +70,11 @@ async def get_status_checks():
 @api_router.post("/contact")
 async def submit_contact_form(form_data: ContactFormSubmission):
     try:
+        logger.info(f"Received contact form submission from {form_data.fullName}")
+        
         # Get Resend API key from environment
         resend_api_key = os.environ.get('RESEND_API_KEY')
+        logger.info(f"RESEND_API_KEY present: {bool(resend_api_key)}")
         
         if not resend_api_key:
             # If no API key, just log and return success (fallback mode)
