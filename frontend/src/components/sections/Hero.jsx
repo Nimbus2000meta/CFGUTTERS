@@ -8,12 +8,11 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-10"
       style={{
-        backgroundImage: 'url(/hero-roof-2.jpg)',
+        backgroundImage: 'url(/hero-roof-2.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'scroll',
-        imageRendering: 'crisp-edges'
+        imageRendering: '-webkit-optimize-contrast'
       }}
     >
       {/* Dark Overlay for Professional Faded Look */}
