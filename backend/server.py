@@ -148,14 +148,14 @@ async def submit_contact_form(form_data: ContactFormSubmission):
         form_dict['submitted_at'] = datetime.utcnow()
         await db.contact_submissions.insert_one(form_dict)
         
-        logger.info(f\"Contact form submitted and email sent for {form_data.fullName}\")
-        return {\"success\": True, \"message\": \"Form submitted successfully\"}
+        logger.info(f"Contact form submitted and email sent for {form_data.fullName}")
+        return {"success": True, "message": "Form submitted successfully"}
         
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f\"Error processing contact form: {str(e)}\")
-        raise HTTPException(status_code=500, detail=\"An error occurred processing your request\")
+        logger.error(f"Error processing contact form: {str(e)}")
+        raise HTTPException(status_code=500, detail="An error occurred processing your request")
 
 # Include the router in the main app
 app.include_router(api_router)
