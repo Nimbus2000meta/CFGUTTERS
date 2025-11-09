@@ -11,7 +11,7 @@ const Hero = () => {
       {/* Background Image with Maximum Clarity */}
       <div className="absolute inset-0">
         <img 
-          src="/hero-roof-2.png" 
+          src="/hero-roof-high-res.png" 
           alt="Roof and Gutter Background"
           className="w-full h-full object-cover"
           style={{
