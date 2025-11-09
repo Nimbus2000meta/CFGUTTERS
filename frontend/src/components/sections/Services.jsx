@@ -117,13 +117,11 @@ const Services = () => {
             </div>
 
             <div className="order-1 lg:order-2">
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="/images/gutter-cleaning-service.webp" 
-                  alt="Professional Gutter Cleaning Services"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <img 
+                src="/images/gutter-cleaning-service.webp" 
+                alt="Professional Gutter Cleaning Services"
+                className="w-full h-full object-cover rounded-xl"
+              />
             </div>
           </div>
         </div>
