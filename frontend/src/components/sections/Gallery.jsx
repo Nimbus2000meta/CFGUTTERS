@@ -5,8 +5,8 @@ const Gallery = () => {
   const galleryImages = [
     { id: 1, src: '/images/before-after-1.webp', alt: 'Before: Clogged gutter with debris', label: 'Before' },
     { id: 2, src: '/images/before-after-2.webp', alt: 'After: Clean gutter system', label: 'After' },
-    { id: 3, src: '/images/gallery3.png', alt: 'Gutter cleaning work 3' },
-    { id: 4, src: '/images/gallery4.png', alt: 'Gutter cleaning work 4' },
+    { id: 3, src: '/images/before-after-3.png', alt: 'Before: Roof with moss and debris', label: 'Before' },
+    { id: 4, src: '/images/before-after-4.png', alt: 'After: Clean roof surface', label: 'After' },
     { id: 5, src: '/images/gallery5.png', alt: 'Gutter cleaning work 5' },
     { id: 6, src: '/images/gallery6.png', alt: 'Gutter cleaning work 6' },
     { id: 7, src: '/images/gallery10.jpg', alt: 'Gutter cleaning work 7' },
