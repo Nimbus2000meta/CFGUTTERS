@@ -9,8 +9,8 @@ const Gallery = () => {
     { id: 4, src: '/images/before-after-4.png', alt: 'After: Clean roof surface', label: 'After' },
     { id: 5, src: '/images/before-after-5.png', alt: 'Before: Roof with heavy moss growth', label: 'Before' },
     { id: 6, src: '/images/before-after-6.png', alt: 'After: Restored clean roof', label: 'After' },
-    { id: 7, src: '/images/gallery10.jpg', alt: 'Gutter cleaning work 7' },
-    { id: 8, src: '/images/gallery13.jpg', alt: 'Gutter cleaning work 8' },
+    { id: 7, src: '/images/before-after-7.png', alt: 'Before: Gutter with moss and growth', label: 'Before' },
+    { id: 8, src: '/images/before-after-8.png', alt: 'After: Pristine gutter system', label: 'After' },
   ];
 
   return (
