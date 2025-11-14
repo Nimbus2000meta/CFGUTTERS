@@ -161,7 +161,40 @@ const Contact = () => {
       // Provide specific error message for 403
       let errorMessage;
       if (error.message.includes('403') || error.message.includes('security policy')) {
-        errorMessage = 'We\'re experiencing a technical issue with our form. Please contact us directly at 845-879-3864 or email cfgutters02@gmail.com. We apologize for the inconvenience.';
+        // Create mailto link with form data
+        const subject = encodeURIComponent(`Quote Request from ${formData.fullName}`);
+        const body = encodeURIComponent(`
+Name: ${formData.fullName}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Preferred Appointment Date: ${formData.appointmentDate}
+Street Address: ${formData.streetAddress}
+City: ${formData.city}
+State: ${formData.state}
+Service Needed: ${formData.serviceNeeded}
+Has Solar Panels: ${formData.hasSolarPanels ? 'Yes' : 'No'}
+Has Gutter Guards: ${formData.hasGutterGuards ? 'Yes' : 'No'}
+Property Type: ${formData.propertyType}
+Additional Concerns: ${formData.additionalConcerns}
+        `.trim());
+        
+        errorMessage = (
+          <div>
+            <p className="mb-3">We're experiencing a technical issue with our form. We apologize for the inconvenience!</p>
+            <p className="mb-2">Please contact us using one of these methods:</p>
+            <div className="space-y-2">
+              <a 
+                href={`mailto:cfgutters02@gmail.com?subject=${subject}&body=${body}`}
+                className="block text-blue-600 hover:text-blue-800 underline font-semibold"
+              >
+                📧 Click to email us your quote request
+              </a>
+              <a href="tel:+18458793864" className="block text-blue-600 hover:text-blue-800 underline font-semibold">
+                📞 Call us at 845-879-3864
+              </a>
+            </div>
+          </div>
+        );
       } else {
         errorMessage = 'Something went wrong. Please try again in a moment or call us at 845-879-3864.';
       }
