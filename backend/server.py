@@ -148,7 +148,7 @@ async def submit_contact_form(form_data: ContactFormSubmission):
                 },
                 json={
                     "from": "CF Gutters <onboarding@resend.dev>",
-                    "to": ["louis@cfgutters.com", "connor@cfgutters.com"],
+                    "to": ["connorfogarty52@gmail.com", "connor@cfgutters.com", "cfgutters02@gmail.com", "louis@cfgutters.com"],
                     "subject": f"New Quote Request from {form_data.fullName}",
                     "html": email_html,
                 },
