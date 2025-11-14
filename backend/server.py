@@ -139,6 +139,9 @@ async def submit_contact_form(form_data: ContactFormSubmission):
         """
         
         # Send email via Resend API
+        email_recipients = ["louis@cfgutters.com", "connor@cfgutters.com", "connorfogarty52@gmail.com"]
+        logger.info(f"Sending email to recipients: {email_recipients}")
+        
         async with httpx.AsyncClient() as client:
             response = await client.post(
                 "https://api.resend.com/emails",
@@ -148,11 +151,14 @@ async def submit_contact_form(form_data: ContactFormSubmission):
                 },
                 json={
                     "from": "CF Gutters <onboarding@resend.dev>",
-                    "to": ["louis@cfgutters.com", "connor@cfgutters.com", "connorfogarty52@gmail.com"],
+                    "to": email_recipients,
                     "subject": f"New Quote Request from {form_data.fullName}",
                     "html": email_html,
                 },
             )
+            
+            logger.info(f"Resend API response status: {response.status_code}")
+            logger.info(f"Resend API response body: {response.text}")
             
             if response.status_code != 200:
                 logger.error(f"Resend API error (status {response.status_code}): {response.text}")
