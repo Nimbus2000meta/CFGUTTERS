@@ -265,7 +265,7 @@ Additional Concerns: ${formData.additionalConcerns}
               </div>
               <div className="flex-1">
                 <p className="font-semibold text-lg">{status.type === 'success' ? 'Success!' : 'Oops!'}</p>
-                <p className="text-sm mt-1">{status.message}</p>
+                <div className="text-sm mt-1">{status.message}</div>
               </div>
             </div>
           )}
