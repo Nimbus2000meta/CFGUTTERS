@@ -48,6 +48,9 @@ const Contact = () => {
 
     try {
       const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
+      console.log('[Form Submit] Backend URL:', backendUrl);
+      console.log('[Form Submit] Submitting data:', formData);
+      
       const response = await fetch(`${backendUrl}/api/contact`, {
         method: 'POST',
         headers: {
@@ -56,7 +59,14 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
+      console.log('[Form Submit] Response status:', response.status);
+      console.log('[Form Submit] Response ok:', response.ok);
+      
+      const responseData = await response.json();
+      console.log('[Form Submit] Response data:', responseData);
+
       if (response.ok) {
+        console.log('[Form Submit] Success!');
         setStatus({ 
           type: 'success', 
           message: '✓ Thank you! Your request has been sent. We\'ll contact you shortly!' 
@@ -78,10 +88,13 @@ const Contact = () => {
         });
         setErrors({});
       } else {
-        throw new Error('Failed to submit form');
+        console.error('[Form Submit] Response not ok:', response.status, responseData);
+        throw new Error(`Failed to submit form: ${responseData.detail || 'Unknown error'}`);
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('[Form Submit] ERROR:', error);
+      console.error('[Form Submit] Error type:', error.constructor.name);
+      console.error('[Form Submit] Error message:', error.message);
       setStatus({ 
         type: 'error', 
         message: 'Something went wrong. Please try again or call us at 845-879-3864.' 
