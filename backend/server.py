@@ -1,3 +1,16 @@
+"""
+Updated server.py for CF Gutters contact form.
+
+This version includes multiple recipients in the Resend API call so that
+in addition to louis@cfgutters.com, messages are also sent to
+connor@cfgutters.com, connorfogarty52@gmail.com, and cfgutters02@gmail.com.
+
+To use this file, replace your existing `backend/server.py` with this one
+in your repository. Make sure the RESEND_API_KEY environment variable is
+defined in your environment (e.g., .env file or deployment settings).
+
+"""
+
 from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
