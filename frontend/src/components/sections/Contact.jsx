@@ -97,15 +97,27 @@ const Contact = () => {
         setErrors({});
       } else {
         console.error('[Form Submit] Response not ok:', response.status, responseData);
+        
+        // Handle specific error codes
+        if (response.status === 403) {
+          throw new Error('Request blocked by security policy. Please try again or contact us directly.');
+        }
+        
         throw new Error(`Failed to submit form: ${responseData.detail || 'Unknown error'}`);
       }
     } catch (error) {
       console.error('[Form Submit] ERROR:', error);
       console.error('[Form Submit] Error type:', error.constructor.name);
       console.error('[Form Submit] Error message:', error.message);
+      
+      // Provide specific error message for 403
+      const errorMessage = error.message.includes('403') || error.message.includes('security policy')
+        ? 'Your request was blocked by our security system. Please call us directly at 845-879-3864 or email cfgutters02@gmail.com'
+        : 'Something went wrong. Please try again or call us at 845-879-3864.';
+      
       setStatus({ 
         type: 'error', 
-        message: 'Something went wrong. Please try again or call us at 845-879-3864.' 
+        message: errorMessage
       });
     } finally {
       setIsSubmitting(false);
