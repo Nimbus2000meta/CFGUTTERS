@@ -51,14 +51,19 @@ const Contact = () => {
       console.log('[Form Submit] Backend URL:', backendUrl);
       console.log('[Form Submit] Submitting data:', formData);
       
+      // Add a small delay to appear more human-like (helps with bot detection)
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
       const response = await fetch(`${backendUrl}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
         },
         body: JSON.stringify(formData),
         credentials: 'same-origin',
+        mode: 'cors',
       });
 
       console.log('[Form Submit] Response status:', response.status);
