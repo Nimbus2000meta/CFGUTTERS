@@ -107,6 +107,47 @@ const Contact = () => {
         
         // Handle specific error codes
         if (response.status === 403) {
+          // Retry once after a longer delay for 403 errors
+          console.log('[Form Submit] Got 403, retrying after delay...');
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          
+          const retryResponse = await fetch(`${backendUrl}/api/contact`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'X-Requested-With': 'XMLHttpRequest',
+            },
+            body: JSON.stringify(formData),
+            credentials: 'same-origin',
+            mode: 'cors',
+          });
+          
+          if (retryResponse.ok) {
+            console.log('[Form Submit] Retry successful!');
+            setStatus({ 
+              type: 'success', 
+              message: '✓ Thank you! Your request has been sent. We\'ll contact you shortly!' 
+            });
+            // Reset form
+            setFormData({
+              fullName: '',
+              phone: '',
+              email: '',
+              appointmentDate: '',
+              streetAddress: '',
+              city: '',
+              state: '',
+              serviceNeeded: '',
+              hasSolarPanels: false,
+              hasGutterGuards: false,
+              propertyType: 'Residential',
+              additionalConcerns: ''
+            });
+            setErrors({});
+            return;
+          }
+          
           throw new Error('Request blocked by security policy. Please try again or contact us directly.');
         }
         
