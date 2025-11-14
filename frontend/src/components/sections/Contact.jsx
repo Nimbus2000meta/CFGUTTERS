@@ -159,9 +159,12 @@ const Contact = () => {
       console.error('[Form Submit] Error message:', error.message);
       
       // Provide specific error message for 403
-      const errorMessage = error.message.includes('403') || error.message.includes('security policy')
-        ? 'Your request was blocked by our security system. Please call us directly at 845-879-3864 or email cfgutters02@gmail.com'
-        : 'Something went wrong. Please try again or call us at 845-879-3864.';
+      let errorMessage;
+      if (error.message.includes('403') || error.message.includes('security policy')) {
+        errorMessage = 'We\'re experiencing a technical issue with our form. Please contact us directly at 845-879-3864 or email cfgutters02@gmail.com. We apologize for the inconvenience.';
+      } else {
+        errorMessage = 'Something went wrong. Please try again in a moment or call us at 845-879-3864.';
+      }
       
       setStatus({ 
         type: 'error', 
