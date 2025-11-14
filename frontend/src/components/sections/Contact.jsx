@@ -62,8 +62,16 @@ const Contact = () => {
       console.log('[Form Submit] Response status:', response.status);
       console.log('[Form Submit] Response ok:', response.ok);
       
-      const responseData = await response.json();
-      console.log('[Form Submit] Response data:', responseData);
+      let responseData;
+      try {
+        const responseText = await response.text();
+        console.log('[Form Submit] Raw response text:', responseText);
+        responseData = responseText ? JSON.parse(responseText) : {};
+        console.log('[Form Submit] Response data:', responseData);
+      } catch (parseError) {
+        console.error('[Form Submit] Failed to parse response:', parseError);
+        responseData = {};
+      }
 
       if (response.ok) {
         console.log('[Form Submit] Success!');
