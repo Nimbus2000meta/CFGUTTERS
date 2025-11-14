@@ -74,6 +74,12 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+@api_router.post("/contact-test")
+async def test_contact_form(form_data: ContactFormSubmission):
+    """Simple test endpoint to check if form data reaches backend"""
+    logger.info(f"TEST: Received form from {form_data.fullName}")
+    return {"success": True, "message": "Test successful", "name": form_data.fullName}
+
 @api_router.post("/contact")
 async def submit_contact_form(form_data: ContactFormSubmission):
     try:
