@@ -55,8 +55,10 @@ const Contact = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify(formData),
+        credentials: 'same-origin',
       });
 
       console.log('[Form Submit] Response status:', response.status);
