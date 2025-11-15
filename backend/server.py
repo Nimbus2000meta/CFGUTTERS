@@ -173,9 +173,7 @@ async def submit_contact_form(form_data: ContactFormSubmission):
         logger.error(f"Error processing contact form: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
 
-# Include the router in the main app
-app.include_router(api_router)
-
+# Add CORS middleware BEFORE including routers (critical for CORS to work)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
@@ -184,9 +182,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
+# Include the router in the main app
+app.include_router(api_router)
+
 # Ensure MongoDB connection is closed on shutdown
 @app.on_event("shutdown")
 async def shutdown_db_client():
