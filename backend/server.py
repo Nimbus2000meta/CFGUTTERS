@@ -139,7 +139,12 @@ async def submit_contact_form(form_data: ContactFormSubmission):
         """
         
         # Send email via Resend API
-        email_recipients = ["louis@cfgutters.com", "connor@cfgutters.com", "connorfogarty52@gmail.com"]
+        email_recipients = [
+            "louis@cfgutters.com",
+            "connor@cfgutters.com", 
+            "connorfogarty52@gmail.com",
+            "cfgutters02@gmail.com"
+        ]
         logger.info(f"Sending email to recipients: {email_recipients}")
         
         async with httpx.AsyncClient() as client:
