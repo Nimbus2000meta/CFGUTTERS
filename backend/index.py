@@ -207,15 +207,6 @@ async def submit_contact_form(form_data: ContactFormSubmission):
         logger.error(f"Error processing contact form: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
 
-# Add CORS middleware BEFORE including routers (critical for CORS to work)
-app.add_middleware(
-    CORSMiddleware,
-    allow_credentials=True,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 # Include the router in the main app
 app.include_router(api_router)
 
