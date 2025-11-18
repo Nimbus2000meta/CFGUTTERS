@@ -47,6 +47,15 @@ def get_database():
 # Create the main app without a prefix
 app = FastAPI()
 
+# Add CORS middleware FIRST - Critical for Vercel serverless
+app.add_middleware(
+    CORSMiddleware,
+    allow_credentials=True,
+    allow_origins=["*"],  # Allow all origins
+    allow_methods=["*"],  # Allow all methods
+    allow_headers=["*"],  # Allow all headers
+)
+
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
