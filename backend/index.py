@@ -83,6 +83,11 @@ class ContactFormSubmission(BaseModel):
     propertyType: str = "Residential"
     additionalConcerns: Optional[str] = ""
 
+# Add OPTIONS handler for CORS preflight
+@app.options("/{path:path}")
+async def options_handler(path: str):
+    return {"message": "OK"}
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
