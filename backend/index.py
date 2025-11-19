@@ -17,6 +17,8 @@ ROOT_DIR = Path(__file__).parent
 if (ROOT_DIR / '.env').exists():
     load_dotenv(ROOT_DIR / '.env')
 
+# Deployment trigger - Updated for Vercel deployment
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
