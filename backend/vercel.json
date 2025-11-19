@@ -16,10 +16,5 @@
         "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Authorization"
       }
     }
-  ],
-  "env": {
-    "MONGO_URL": "@mongo_url",
-    "DB_NAME": "@db_name",
-    "RESEND_API_KEY": "@resend_api_key"
-  }
+  ]
 }
