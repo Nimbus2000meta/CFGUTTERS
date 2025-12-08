@@ -38,17 +38,17 @@ async def api_root():
 
 @app.post("/api/contact")
 async def submit_contact_form(request: Request):
+    email_status = {"attempted": False, "success": False, "error": None}
+    
     try:
         data = await request.json()
-        print(f"Received form from: {data.get('fullName', 'Unknown')}")
         
         # Get Resend API key
         resend_api_key = os.environ.get('RESEND_API_KEY')
-        print(f"RESEND_API_KEY present: {bool(resend_api_key)}")
         
         if resend_api_key:
+            email_status["attempted"] = True
             try:
-                print("Attempting to send email...")
                 # Prepare email content
                 additional_concerns = data.get('additionalConcerns', '')
                 additional_html = f"""<div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
