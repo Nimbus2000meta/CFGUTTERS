@@ -96,7 +96,7 @@ async def submit_contact_form(request: Request):
                 # Send email via Resend API using urllib
                 email_payload = json.dumps({
                     "from": "CF Gutters <onboarding@resend.dev>",
-                    "to": ["louis@cfgutters.com", "connor@cfgutters.com", "connorfogarty52@gmail.com", "cfgutters02@gmail.com"],
+                    "to": ["louis@cfgutters.com"],
                     "subject": f"New Quote Request from {data.get('fullName', 'Unknown')}",
                     "html": email_html
                 }).encode('utf-8')
