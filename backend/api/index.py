@@ -112,10 +112,13 @@ async def submit_contact_form(request: Request):
                 )
                 
                 with urllib.request.urlopen(req, timeout=10) as response:
+                    print(f"Email API response status: {response.status}")
                     if response.status == 200:
+                        print("Email sent successfully!")
                         return {"success": True, "message": "Form submitted successfully"}
             except Exception as email_error:
                 # Email failed but still return success
+                print(f"Email error: {str(email_error)}")
                 pass
         
         return {"success": True, "message": "Form submitted successfully"}
