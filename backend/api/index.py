@@ -112,16 +112,20 @@ async def submit_contact_form(request: Request):
                 )
                 
                 with urllib.request.urlopen(req, timeout=10) as response:
-                    print(f"Email API response status: {response.status}")
                     if response.status == 200:
-                        print("Email sent successfully!")
-                        return {"success": True, "message": "Form submitted successfully"}
+                        email_status["success"] = True
+                        return {"success": True, "message": "Form submitted successfully", "email": "sent"}
+                    else:
+                        email_status["error"] = f"HTTP {response.status}"
             except Exception as email_error:
-                # Email failed but still return success
-                print(f"Email error: {str(email_error)}")
-                pass
+                email_status["error"] = str(email_error)
         
-        return {"success": True, "message": "Form submitted successfully"}
+        # Return success even if email failed, but include email status for debugging
+        return {
+            "success": True, 
+            "message": "Form submitted successfully",
+            "email_debug": email_status
+        }
     except Exception as e:
         return {"success": False, "message": str(e)}
 
