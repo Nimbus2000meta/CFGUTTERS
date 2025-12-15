@@ -21,16 +21,17 @@ const About = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/wovmrn0q_Screenshot%202025-12-15%20at%204.13.39%E2%80%AFAM.png" 
                 alt="CF Gutters Owner"
-                className="w-48 h-48 rounded-full object-cover shadow-lg mx-auto lg:mx-0"
+                className="w-48 h-48 rounded-full object-cover shadow-lg mx-auto"
               />
             </div>
 
-            <p className="text-primary-600 font-semibold mb-4 text-lg">
+            <p className="text-primary-600 font-semibold mb-4 text-lg text-center">
               With over <strong>10 years of experience</strong> working with gutters!
             </p>
             
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
               About CF Gutters
+            </h2>
             </h2>
 
             <div className="space-y-4 text-gray-700 leading-relaxed">
