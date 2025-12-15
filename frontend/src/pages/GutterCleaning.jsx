@@ -88,19 +88,21 @@ const GutterCleaning = () => {
         {/* Before/After Gallery */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Our Work</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-xl overflow-hidden shadow-lg">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-gray-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
               <img 
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdd31ec9dc3f2.png" 
                 alt="Gutter Cleaning Before"
-                className="w-full h-80 object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg">
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-green-600 text-white text-center py-2 font-bold text-lg">AFTER</div>
               <img 
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdddf649dc3f3.png" 
                 alt="Gutter Cleaning After"
-                className="w-full h-80 object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
