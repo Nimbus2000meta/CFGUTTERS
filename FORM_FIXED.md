@@ -4,10 +4,10 @@
 User saw error: "Oops! Something went wrong. Please try again in a moment or call us at 845-879-3864."
 
 ## Root Cause
-Frontend was configured to use a **remote Vercel backend URL** (`https://vercel-forms.preview.emergentagent.com`) which had a **different API schema** than the current local backend.
+Frontend was configured to use a **remote Vercel backend URL** (`https://gutter-pro-2.preview.emergentagent.com`) which had a **different API schema** than the current local backend.
 
 ### What Happened:
-- Frontend `.env` was pointing to: `https://vercel-forms.preview.emergentagent.com`
+- Frontend `.env` was pointing to: `https://gutter-pro-2.preview.emergentagent.com`
 - This remote backend expected different required fields
 - Local backend (working perfectly) has the correct API schema
 - API schema mismatch caused form submission to fail
@@ -17,7 +17,7 @@ Frontend was configured to use a **remote Vercel backend URL** (`https://vercel-
 ### Changed: `/app/frontend/.env`
 **Before:**
 ```
-REACT_APP_BACKEND_URL=https://vercel-forms.preview.emergentagent.com
+REACT_APP_BACKEND_URL=https://gutter-pro-2.preview.emergentagent.com
 ```
 
 **After:**
