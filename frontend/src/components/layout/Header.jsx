@@ -47,7 +47,11 @@ const Header = () => {
           <div className="flex items-center justify-between h-20">
             
             {/* Logo Section */}
-            <div className="flex items-center space-x-4">
+            <Link 
+              to="/" 
+              className="flex items-center space-x-4 cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img 
                 src="/images3/cf-gutters-logo.jpg" 
                 alt="CF Gutters Logo"
@@ -56,7 +60,7 @@ const Header = () => {
               <div className="text-gray-900">
                 <div className="font-bold text-xl md:text-2xl">CF GUTTERS</div>
               </div>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
