@@ -27,7 +27,7 @@ const GutterInstallation = () => {
           {/* Left - Image */}
           <div className="rounded-xl overflow-hidden shadow-xl">
             <img 
-              src="https://images.unsplash.com/photo-1632923057155-dd35366480d0?w=800&q=80" 
+              src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/7e7rbveo_Screenshot%202025-12-15%20at%203.03.07%E2%80%AFAM.png" 
               alt="Gutter Installation"
               className="w-full h-96 object-cover"
             />
