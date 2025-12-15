@@ -23,15 +23,16 @@ const GutterGuards = () => {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-          {/* Left - Before & After Images */}
-          <div className="space-y-6">
+        {/* Before & After Comparison */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-6">Before & After</h2>
+          <div className="grid grid-cols-2 gap-4">
             <div className="rounded-xl overflow-hidden shadow-xl">
               <div className="bg-gray-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
               <img 
                 src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/i9ujmmyl_Screenshot%202025-12-15%20at%203.24.18%E2%80%AFAM.png" 
                 alt="Gutter Before - Dirty and Clogged"
-                className="w-full h-auto object-contain"
+                className="w-full h-64 md:h-80 object-cover"
               />
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl">
@@ -39,12 +40,14 @@ const GutterGuards = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/ib31xvjm_Screenshot%202025-12-15%20at%203.24.59%E2%80%AFAM.png" 
                 alt="Gutter After - Clean with Guard Installed"
-                className="w-full h-auto object-contain"
+                className="w-full h-64 md:h-80 object-cover"
               />
             </div>
           </div>
+        </div>
 
-          {/* Right - Content */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+          {/* Left - Content */}
           <div>
             <div className="bg-white p-8 rounded-xl shadow-lg mb-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Install Gutter Guards?</h2>
