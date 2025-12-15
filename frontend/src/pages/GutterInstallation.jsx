@@ -86,19 +86,19 @@ const GutterInstallation = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-secondary-600 text-white p-12 rounded-2xl text-center">
+        <div className="bg-primary-600 text-white p-12 rounded-2xl text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for New Gutters?</h2>
           <p className="text-xl mb-8">Contact us today for a free estimate on gutter installation</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="tel:+18458793864" 
-              className="inline-block bg-white text-secondary-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-primary-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
             >
               Call (845) 879-3864
             </a>
             <Link 
               to="/contact-us" 
-              className="inline-block bg-white text-secondary-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-primary-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
             >
               Request a Quote
             </Link>
