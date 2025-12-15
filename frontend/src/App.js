@@ -37,6 +37,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Gutter-Cleaning" element={<GutterCleaning />} />
+              <Route path="/Gutter-Installation" element={<GutterInstallation />} />
               <Route path="/Gutter-Guard-Installation" element={<GutterGuards />} />
               <Route path="/Gutter-Downspout-Repairs" element={<GutterRepairs />} />
               <Route path="/Roof-Cleaning-Moss-Treatment" element={<BasicRoofCleaning />} />
