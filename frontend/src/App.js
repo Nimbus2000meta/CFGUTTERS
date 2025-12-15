@@ -9,6 +9,7 @@ import Footer from "./components/layout/Footer";
 // Pages
 import Home from "./pages/Home";
 import GutterCleaning from "./pages/GutterCleaning";
+import GutterInstallation from "./pages/GutterInstallation";
 import GutterGuards from "./pages/GutterGuards";
 import GutterRepairs from "./pages/GutterRepairs";
 import BasicRoofCleaning from "./pages/BasicRoofCleaning";
