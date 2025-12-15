@@ -35,7 +35,7 @@ const About = () => {
 
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                CF Gutters began two years ago as a side business, born from the realization that many homeowners were not receiving the quality of service they deserved. What started as a small venture quickly grew into a full-time commitment to delivering top-notch gutter cleaning, gutter guard installations, and gutter and downspout repairs to our community and the surrounding areas.
+                CF Gutters began 3 years ago as a side business, born from the realization that many homeowners were not receiving the quality of service they deserved. What started as a small venture quickly grew into a full-time commitment to delivering top-notch gutter cleaning, gutter guard installations, and gutter and downspout repairs to our community and the surrounding areas.
               </p>
               
               <p>
