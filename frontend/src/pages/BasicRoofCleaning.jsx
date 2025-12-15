@@ -22,20 +22,22 @@ const BasicRoofCleaning = () => {
           </p>
         </div>
 
-        {/* Image Gallery */}
+        {/* Before/After Gallery */}
         <div className="mb-16">
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-gray-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bdffbcf5a96f29ddd02b19.png" 
-                alt="Roof Cleaning"
+                src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/fmtfpvnp_Screenshot%202025-12-15%20at%204.57.55%E2%80%AFAM.png" 
+                alt="Roof Before Cleaning"
                 className="w-full h-auto object-contain"
               />
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-green-600 text-white text-center py-2 font-bold text-lg">AFTER</div>
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67be017f963eccdde021734b.png" 
-                alt="Moss Treatment"
+                src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/mba1luqc_Screenshot%202025-12-15%20at%204.58.19%E2%80%AFAM.png" 
+                alt="Roof After Cleaning"
                 className="w-full h-auto object-contain"
               />
             </div>
