@@ -25,11 +25,11 @@ const GutterInstallation = () => {
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           {/* Left - Image */}
-          <div className="rounded-xl overflow-hidden shadow-xl">
+          <div className="rounded-xl overflow-hidden shadow-xl bg-gray-100">
             <img 
               src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/7e7rbveo_Screenshot%202025-12-15%20at%203.03.07%E2%80%AFAM.png" 
               alt="Gutter Installation"
-              className="w-full h-96 object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
 
