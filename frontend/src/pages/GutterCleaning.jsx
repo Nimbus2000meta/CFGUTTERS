@@ -25,11 +25,11 @@ const GutterCleaning = () => {
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           {/* Left - Image */}
-          <div className="rounded-xl overflow-hidden shadow-xl">
+          <div className="rounded-xl overflow-hidden shadow-xl bg-gray-100">
             <img 
               src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c8b25739ce95f028b8feca.png" 
               alt="Professional Gutter Cleaning"
-              className="w-full h-96 object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
 
