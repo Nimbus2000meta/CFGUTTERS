@@ -22,51 +22,38 @@ const BasicRoofCleaning = () => {
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-          {/* Left - Image */}
-          <div className="rounded-xl overflow-hidden shadow-xl">
-            <img 
-              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bdffbcf5a96f29ddd02b19.png" 
-              alt="Basic Roof Cleaning"
-              className="w-full h-96 object-cover"
-            />
+        {/* Before/After Gallery */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Results You Can See</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-gray-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bdffbcf5a96f29ddd02b19.png" 
+                alt="Roof Before Cleaning"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-green-600 text-white text-center py-2 font-bold text-lg">AFTER</div>
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67be017f963eccdde021734b.png" 
+                alt="Roof After Cleaning"
+                className="w-full h-auto object-contain"
+              />
+            </div>
           </div>
+        </div>
 
-          {/* Right - Content */}
+        {/* Main Content */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {/* Left - Content */}
           <div>
             <div className="bg-white p-8 rounded-xl shadow-lg mb-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Basic Roof Cleaning?</h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 If you need a simple, budget-friendly solution to remove moss and debris, our <strong>Basic Roof Cleaning & Moss Treatment</strong> is the perfect choice. This service helps maintain your roof and prevent future moss buildup.
               </p>
-            </div>
-
-            <div className="bg-green-50 p-8 rounded-xl mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Our Process:</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <FiCheckCircle className="text-green-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Moss Removal</strong>
-                    <p className="text-gray-700 mt-1">We gently brush off moss and remove debris from your roof.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <FiCheckCircle className="text-green-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Thorough Leaf-Blowing</strong>
-                    <p className="text-gray-700 mt-1">Clears your roof and gutters of all loose debris.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <FiCheckCircle className="text-green-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Moss-Preventative Treatment</strong>
-                    <p className="text-gray-700 mt-1">Apply zinc Moss Out or similar treatment to slow regrowth and keep your roof clean longer.</p>
-                  </div>
-                </li>
-              </ul>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-lg">
@@ -76,26 +63,33 @@ const BasicRoofCleaning = () => {
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Before/After Gallery */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Results You Can See</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bdffbcf5a96f29ddd02b19.png" 
-                alt="Roof Before Cleaning"
-                className="w-full h-80 object-cover"
-              />
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67be017f963eccdde021734b.png" 
-                alt="Roof After Cleaning"
-                className="w-full h-80 object-cover"
-              />
-            </div>
+          {/* Right - Process */}
+          <div className="bg-green-50 p-8 rounded-xl">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Our Process:</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <FiCheckCircle className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Moss Removal</strong>
+                  <p className="text-gray-700 mt-1">We gently brush off moss and remove debris from your roof.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <FiCheckCircle className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Thorough Leaf-Blowing</strong>
+                  <p className="text-gray-700 mt-1">Clears your roof and gutters of all loose debris.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <FiCheckCircle className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Moss-Preventative Treatment</strong>
+                  <p className="text-gray-700 mt-1">Apply zinc Moss Out or similar treatment to slow regrowth and keep your roof clean longer.</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
