@@ -24,13 +24,24 @@ const GutterGuards = () => {
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-          {/* Left - Image */}
-          <div className="rounded-xl overflow-hidden shadow-xl">
-            <img 
-              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c21d28ce615755e4a9c8e8.png" 
-              alt="Gutter Guard Installation"
-              className="w-full h-96 object-cover"
-            />
+          {/* Left - Before & After Images */}
+          <div className="space-y-6">
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-red-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/i9ujmmyl_Screenshot%202025-12-15%20at%203.24.18%E2%80%AFAM.png" 
+                alt="Gutter Before - Dirty and Clogged"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-green-600 text-white text-center py-2 font-bold text-lg">AFTER</div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/ib31xvjm_Screenshot%202025-12-15%20at%203.24.59%E2%80%AFAM.png" 
+                alt="Gutter After - Clean with Guard Installed"
+                className="w-full h-auto object-contain"
+              />
+            </div>
           </div>
 
           {/* Right - Content */}
