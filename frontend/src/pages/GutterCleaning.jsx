@@ -92,7 +92,7 @@ const GutterCleaning = () => {
             <div className="rounded-xl overflow-hidden shadow-xl">
               <div className="bg-gray-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdd31ec9dc3f2.png" 
+                src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/jtpewp7q_Screenshot%202025-12-15%20at%204.45.19%E2%80%AFAM.png" 
                 alt="Gutter Cleaning Before"
                 className="w-full h-auto object-contain"
               />
@@ -100,7 +100,7 @@ const GutterCleaning = () => {
             <div className="rounded-xl overflow-hidden shadow-xl">
               <div className="bg-green-600 text-white text-center py-2 font-bold text-lg">AFTER</div>
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c0cf6328abdddf649dc3f3.png" 
+                src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/sqqvquv4_Screenshot%202025-12-15%20at%204.45.51%E2%80%AFAM.png" 
                 alt="Gutter Cleaning After"
                 className="w-full h-auto object-contain"
               />
