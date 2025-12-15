@@ -32,7 +32,7 @@ const GutterGuards = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/i9ujmmyl_Screenshot%202025-12-15%20at%203.24.18%E2%80%AFAM.png" 
                 alt="Gutter Before - Dirty and Clogged"
-                className="w-full h-64 md:h-80 object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl">
@@ -40,7 +40,7 @@ const GutterGuards = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/ib31xvjm_Screenshot%202025-12-15%20at%203.24.59%E2%80%AFAM.png" 
                 alt="Gutter After - Clean with Guard Installed"
-                className="w-full h-64 md:h-80 object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
