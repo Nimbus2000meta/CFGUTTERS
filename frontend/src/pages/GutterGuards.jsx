@@ -46,7 +46,7 @@ const GutterGuards = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           {/* Left - Content */}
           <div>
             <div className="bg-white p-8 rounded-xl shadow-lg mb-6">
@@ -56,46 +56,47 @@ const GutterGuards = () => {
               </p>
             </div>
 
-            <div className="bg-secondary-50 p-8 rounded-xl mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Benefits:</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <FiShield className="text-green-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Reduced Maintenance</strong>
-                    <p className="text-gray-700 mt-1">Minimize the need for frequent gutter cleaning.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <FiShield className="text-green-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Prevent Clogs</strong>
-                    <p className="text-gray-700 mt-1">Keep leaves, debris, and pests out of your gutters.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <FiShield className="text-green-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Extended Gutter Life</strong>
-                    <p className="text-gray-700 mt-1">Protect your gutters from damage and corrosion.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <FiShield className="text-green-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Year-Round Protection</strong>
-                    <p className="text-gray-700 mt-1">Works in all seasons to keep gutters flowing freely.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
             <div className="bg-white p-8 rounded-xl shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Best For:</h3>
               <p className="text-gray-700">
                 Homeowners with lots of trees nearby or those who want to minimize gutter maintenance and protect their investment.
               </p>
             </div>
+          </div>
+
+          {/* Right - Benefits */}
+          <div className="bg-secondary-50 p-8 rounded-xl">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Benefits:</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <FiShield className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Reduced Maintenance</strong>
+                  <p className="text-gray-700 mt-1">Minimize the need for frequent gutter cleaning.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <FiShield className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Prevent Clogs</strong>
+                  <p className="text-gray-700 mt-1">Keep leaves, debris, and pests out of your gutters.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <FiShield className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Extended Gutter Life</strong>
+                  <p className="text-gray-700 mt-1">Protect your gutters from damage and corrosion.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <FiShield className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Year-Round Protection</strong>
+                  <p className="text-gray-700 mt-1">Works in all seasons to keep gutters flowing freely.</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
