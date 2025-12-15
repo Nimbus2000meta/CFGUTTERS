@@ -22,6 +22,26 @@ const BasicRoofCleaning = () => {
           </p>
         </div>
 
+        {/* Image Gallery */}
+        <div className="mb-16">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bdffbcf5a96f29ddd02b19.png" 
+                alt="Roof Cleaning"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67be017f963eccdde021734b.png" 
+                alt="Moss Treatment"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Main Content */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {/* Left - Content */}
