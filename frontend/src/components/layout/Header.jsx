@@ -228,6 +228,31 @@ const Header = () => {
           )}
         </div>
       </div>
+
+      {/* Information Bar */}
+      <div className="bg-primary-600 text-white py-3">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-6 text-sm">
+            <a href="tel:+18458793864" className="flex items-center gap-2 hover:text-gray-200 transition-colors">
+              <FiPhone className="text-white" size={18} />
+              <span className="font-semibold">+1 (845) 879-3864</span>
+            </a>
+            <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-2 hover:text-gray-200 transition-colors">
+              <FiMail className="text-white" size={18} />
+              <span>cfgutters02@gmail.com</span>
+            </a>
+            <div className="flex items-center gap-2">
+              <FiMapPin className="text-white" size={18} />
+              <span>Mahopac NY to Westport CT</span>
+            </div>
+            <div className="hidden lg:flex items-center gap-2">
+              <FiClock className="text-white" size={18} />
+              <span className="font-semibold">Business Hours:</span>
+              <span>Monday-Saturday 8 AM to 6 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
