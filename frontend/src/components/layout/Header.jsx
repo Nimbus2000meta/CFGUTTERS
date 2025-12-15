@@ -32,6 +32,7 @@ const Header = () => {
 
   const services = [
     { name: 'Professional Gutter Cleaning', href: '/Gutter-Cleaning' },
+    { name: 'Gutter Installation', href: '/Gutter-Installation' },
     { name: 'Gutter Guard Installation', href: '/Gutter-Guard-Installation' },
     { name: 'Gutter and Downspout Repairs', href: '/Gutter-Downspout-Repairs' },
     { name: 'Roof Cleaning & Moss Treatment', href: '/Roof-Cleaning-Moss-Treatment' },
