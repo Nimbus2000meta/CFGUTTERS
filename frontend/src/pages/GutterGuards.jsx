@@ -27,7 +27,7 @@ const GutterGuards = () => {
           {/* Left - Before & After Images */}
           <div className="space-y-6">
             <div className="rounded-xl overflow-hidden shadow-xl">
-              <div className="bg-red-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
+              <div className="bg-gray-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
               <img 
                 src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/i9ujmmyl_Screenshot%202025-12-15%20at%203.24.18%E2%80%AFAM.png" 
                 alt="Gutter Before - Dirty and Clogged"
