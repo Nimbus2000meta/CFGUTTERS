@@ -22,7 +22,7 @@ const ContactUs = () => {
         </div>
 
         {/* Contact Information Cards */}
-        <div className="grid grid-cols-3 gap-4 mb-12 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 max-w-2xl mx-auto">
           <div className="bg-white p-4 rounded-xl shadow-md text-center">
             <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-2">
               <svg className="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
@@ -35,7 +35,7 @@ const ContactUs = () => {
             </a>
           </div>
 
-          <div className="bg-white p-4 rounded-xl shadow-md text-center">
+          <div className="bg-white p-4 rounded-xl shadow-md text-center overflow-hidden">
             <div className="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-2">
               <svg className="w-5 h-5 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
@@ -43,7 +43,7 @@ const ContactUs = () => {
               </svg>
             </div>
             <h3 className="text-sm font-bold text-gray-900 mb-1">Email</h3>
-            <a href="mailto:cfgutters02@gmail.com" className="text-secondary-600 hover:text-secondary-700 text-sm font-semibold">
+            <a href="mailto:cfgutters02@gmail.com" className="text-secondary-600 hover:text-secondary-700 text-xs sm:text-sm font-semibold break-all">
               cfgutters02@gmail.com
             </a>
           </div>
