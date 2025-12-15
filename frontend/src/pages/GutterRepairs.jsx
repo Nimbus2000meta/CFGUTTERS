@@ -22,18 +22,32 @@ const GutterRepairs = () => {
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-          {/* Left - Image */}
-          <div className="rounded-xl overflow-hidden shadow-xl">
-            <img 
-              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67c2203243b925c332b11bdf.png" 
-              alt="Gutter and Downspout Repairs"
-              className="w-full h-96 object-cover"
-            />
+        {/* Before & After Comparison */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-6">Before & After</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-gray-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/46r07791_Screenshot%202025-12-15%20at%203.38.37%E2%80%AFAM.png" 
+                alt="Gutter Before Repair"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="bg-green-600 text-white text-center py-2 font-bold text-lg">AFTER</div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/2ywue9v0_Screenshot%202025-12-15%20at%203.38.51%E2%80%AFAM.png" 
+                alt="Gutter After Repair"
+                className="w-full h-auto object-contain"
+              />
+            </div>
           </div>
+        </div>
 
-          {/* Right - Content */}
+        {/* Main Content */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {/* Left - Content */}
           <div>
             <div className="bg-white p-8 rounded-xl shadow-lg mb-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Professional Gutter Repair Services</h2>
@@ -42,46 +56,47 @@ const GutterRepairs = () => {
               </p>
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-xl mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Common Repairs:</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <FiTool className="text-blue-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Leak Sealing</strong>
-                    <p className="text-gray-700 mt-1">Fix leaks and prevent water damage to your home.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <FiTool className="text-blue-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Gutter Realignment</strong>
-                    <p className="text-gray-700 mt-1">Correct sagging or misaligned gutters for proper drainage.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <FiTool className="text-blue-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Downspout Repairs</strong>
-                    <p className="text-gray-700 mt-1">Fix or replace damaged downspouts and extensions.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <FiTool className="text-blue-600 text-2xl mt-1 flex-shrink-0" />
-                  <div>
-                    <strong className="text-gray-900">Joint & Seam Repairs</strong>
-                    <p className="text-gray-700 mt-1">Secure loose connections and prevent future leaks.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
             <div className="bg-white p-8 rounded-xl shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Best For:</h3>
               <p className="text-gray-700">
                 Homeowners experiencing water overflow, sagging gutters, or visible damage to their gutter system.
               </p>
             </div>
+          </div>
+
+          {/* Right - Common Repairs */}
+          <div className="bg-blue-50 p-8 rounded-xl">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Common Repairs:</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <FiTool className="text-blue-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Leak Sealing</strong>
+                  <p className="text-gray-700 mt-1">Fix leaks and prevent water damage to your home.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <FiTool className="text-blue-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Gutter Realignment</strong>
+                  <p className="text-gray-700 mt-1">Correct sagging or misaligned gutters for proper drainage.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <FiTool className="text-blue-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Downspout Repairs</strong>
+                  <p className="text-gray-700 mt-1">Fix or replace damaged downspouts and extensions.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <FiTool className="text-blue-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <strong className="text-gray-900">Joint & Seam Repairs</strong>
+                  <p className="text-gray-700 mt-1">Secure loose connections and prevent future leaks.</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
