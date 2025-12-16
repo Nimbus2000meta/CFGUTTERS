@@ -245,7 +245,7 @@ const Header = () => {
               <FiMail className="text-white" size={18} />
               <span>cfgutters02@gmail.com</span>
             </a>
-            <a href="/#service-map" className="flex items-center gap-2 hover:text-gray-200 transition-colors cursor-pointer">
+            <a href="/#service-area" className="flex items-center gap-2 hover:text-gray-200 transition-colors cursor-pointer">
               <FiMapPin className="text-white" size={18} />
               <span>Mahopac NY to Westport CT</span>
             </a>
