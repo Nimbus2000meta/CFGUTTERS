@@ -221,16 +221,27 @@ const Services = () => {
         <div id="basic-roof-cleaning" className="mb-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Y13juaD58zAYXRBJ4Yz1/media/67bdffbcf5a96f29ddd02b19.png" 
-                  alt="Basic Roof Cleaning"
-                  className="w-full h-96 object-cover"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden shadow-xl">
+                  <div className="bg-gray-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/uwijzq40_Screenshot%202025-12-16%20at%201.55.16%E2%80%AFAM.png" 
+                    alt="Roof Before Cleaning"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-xl">
+                  <div className="bg-green-600 text-white text-center py-2 font-bold text-lg">AFTER</div>
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/a19lwmjb_Screenshot%202025-12-16%20at%201.55.28%E2%80%AFAM.png" 
+                    alt="Roof After Cleaning"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
               </div>
             </div>
 
-            <div>
+            <div className="text-center lg:text-left">
               <h3 className="text-3xl font-bold text-gray-900 mb-6">
                 Basic Roof Cleaning & Moss Treatment
               </h3>
