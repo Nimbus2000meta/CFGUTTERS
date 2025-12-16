@@ -67,7 +67,7 @@ const WhatsAppChat = () => {
   };
   
   return (
-    <div className="fixed bottom-24 left-6 md:left-8 z-[1000]" data-testid="whatsapp-chat-container">
+    <div className="fixed bottom-24 right-8 z-[1000]" data-testid="whatsapp-chat-container">
       {/* WhatsApp Button */}
       <motion.button
         className="w-16 h-16 rounded-full bg-green-500 shadow-lg flex items-center justify-center text-white"
