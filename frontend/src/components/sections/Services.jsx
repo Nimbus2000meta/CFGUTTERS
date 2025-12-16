@@ -157,6 +157,22 @@ const Services = () => {
               </Link>
             </div>
             <div className="order-1 lg:order-2">
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/klmhh4za_Screenshot%202025-12-16%20at%201.30.05%E2%80%AFAM.png" 
+                    alt="Gutter Guard Installation"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/hhw3yhhx_Screenshot%202025-12-16%20at%201.30.32%E2%80%AFAM.png" 
+                    alt="Gutter Guard Installation"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <video 
                   src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/ki49q1ee_4603568939917450955.mov"
