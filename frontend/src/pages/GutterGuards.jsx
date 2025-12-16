@@ -46,6 +46,22 @@ const GutterGuards = () => {
           </div>
         </div>
 
+        {/* Installation Video */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-6">Watch Our Installation Process</h2>
+          <div className="rounded-xl overflow-hidden shadow-lg max-w-lg mx-auto">
+            <video 
+              src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/ki49q1ee_4603568939917450955.mov"
+              className="w-full h-auto"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            />
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {/* Left - Content */}
           <div>
