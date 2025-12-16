@@ -173,11 +173,11 @@ const Services = () => {
                   />
                 </div>
               </div>
-              <div className="rounded-xl overflow-hidden shadow-lg">
+              <div className="rounded-xl overflow-hidden shadow-lg max-w-md mx-auto">
                 <video 
                   src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/ki49q1ee_4603568939917450955.mov"
                   alt="Gutter Guard Installation"
-                  className="w-full h-96 object-cover"
+                  className="w-full h-auto"
                   autoPlay
                   loop
                   muted
