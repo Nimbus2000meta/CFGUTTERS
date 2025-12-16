@@ -287,7 +287,7 @@ const Services = () => {
         {/* Soft Wash Roof Cleaning */}
         <div id="soft-wash-cleaning" className="mb-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 text-center lg:text-left">
               <h3 className="text-3xl font-bold text-gray-900 mb-6">
                 Complete Soft Wash Roof Cleaning
               </h3>
@@ -295,7 +295,7 @@ const Services = () => {
                 For a more thorough clean that restores your roof to its original condition, we recommend our <strong>Complete Soft Wash Roof Cleaning.</strong>
               </p>
 
-              <div className="bg-gray-50 p-6 rounded-lg mb-6">
+              <div className="bg-gray-50 p-6 rounded-lg mb-6 text-left">
                 <h4 className="font-bold text-lg text-gray-900 mb-4">Process:</h4>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
