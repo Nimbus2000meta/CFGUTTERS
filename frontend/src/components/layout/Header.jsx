@@ -41,42 +41,43 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full z-50">
-      {/* Main Header with Logo */}
-      <div className="bg-white shadow-md">
+      {/* Combined Header */}
+      <div className="bg-primary-600 shadow-md">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             
             {/* Logo Section */}
             <Link 
               to="/" 
-              className="flex items-center space-x-4 cursor-pointer"
+              className="flex items-center space-x-3 cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <img 
                 src="/images3/cf-gutters-logo.jpg" 
                 alt="CF Gutters Logo"
-                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-white shadow-lg"
+                className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-white shadow-lg"
               />
-              <div className="text-gray-900">
-                <div className="font-bold text-xl md:text-2xl">CF GUTTERS</div>
+              <div className="text-white">
+                <div className="font-bold text-lg md:text-xl">CF GUTTERS</div>
+                <div className="hidden md:block text-xs text-white/80">Mahopac NY to Westport CT</div>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-6">
               <Link 
                 to="/" 
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                className="text-white hover:text-gray-200 transition-colors font-medium"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 Home
               </Link>
-              <a href="/#about" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              <a href="/#about" className="text-white hover:text-gray-200 transition-colors font-medium">
                 About
               </a>
               <Link 
                 to="/contact-us" 
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                className="text-white hover:text-gray-200 transition-colors font-medium"
               >
                 Contact
               </Link>
@@ -87,7 +88,7 @@ const Header = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="text-gray-700 hover:text-primary-600 transition-colors font-medium flex items-center gap-1">
+                <button className="text-white hover:text-gray-200 transition-colors font-medium flex items-center gap-1">
                   Services
                   <FiChevronDown className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                 </button>
@@ -113,30 +114,33 @@ const Header = () => {
 
               <Link 
                 to="/gallery" 
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                className="text-white hover:text-gray-200 transition-colors font-medium"
               >
                 Gallery
               </Link>
-              <a href="/#faq" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+              <a href="/#faq" className="text-white hover:text-gray-200 transition-colors font-medium">
                 FAQs
-              </a>
-              <a href="/#testimonials" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
-                Testimonials
               </a>
             </nav>
 
-            {/* Phone CTA - Desktop */}
-            <a 
-              href="tel:+18458793864" 
-              className="hidden lg:flex bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-full font-semibold items-center gap-2 transition-colors"
-            >
-              Get Started
-            </a>
+            {/* Contact Info & CTA - Desktop */}
+            <div className="hidden lg:flex items-center space-x-4">
+              <a href="tel:+18458793864" className="flex items-center gap-2 text-white hover:text-gray-200 transition-colors">
+                <FiPhone size={16} />
+                <span className="font-semibold text-sm">(845) 879-3864</span>
+              </a>
+              <a 
+                href="tel:+18458793864" 
+                className="bg-white hover:bg-gray-100 text-primary-600 px-6 py-2 rounded-full font-semibold transition-colors text-sm"
+              >
+                Get Started
+              </a>
+            </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-gray-700 p-2"
+              className="lg:hidden text-white p-2"
             >
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
@@ -144,11 +148,11 @@ const Header = () => {
 
           {/* Mobile Navigation Menu */}
           {isOpen && (
-            <div className="lg:hidden bg-white border-t border-gray-200 py-4">
+            <div className="lg:hidden bg-primary-700 border-t border-primary-500 py-4">
               <div className="space-y-1">
                 <Link 
                   to="/" 
-                  className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
+                  className="block px-4 py-3 text-white hover:bg-primary-500 rounded transition-colors"
                   onClick={() => {
                     setIsOpen(false);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -158,14 +162,14 @@ const Header = () => {
                 </Link>
                 <a 
                   href="/#about" 
-                  className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
+                  className="block px-4 py-3 text-white hover:bg-primary-500 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   About
                 </a>
                 <Link 
                   to="/contact-us" 
-                  className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
+                  className="block px-4 py-3 text-white hover:bg-primary-500 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Contact
@@ -175,7 +179,7 @@ const Header = () => {
                 <div>
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
-                    className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors flex items-center justify-between"
+                    className="w-full text-left px-4 py-3 text-white hover:bg-primary-500 rounded transition-colors flex items-center justify-between"
                   >
                     Services
                     <FiChevronDown className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
@@ -186,7 +190,7 @@ const Header = () => {
                         <Link
                           key={index}
                           to={service.href}
-                          className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded"
+                          className="block px-4 py-2 text-sm text-white/90 hover:bg-primary-500 rounded"
                           onClick={() => setIsOpen(false)}
                         >
                           {service.name}
@@ -198,63 +202,46 @@ const Header = () => {
 
                 <Link 
                   to="/gallery" 
-                  className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
+                  className="block px-4 py-3 text-white hover:bg-primary-500 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Gallery
                 </Link>
                 <a 
                   href="/#faq" 
-                  className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
+                  className="block px-4 py-3 text-white hover:bg-primary-500 rounded transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   FAQs
                 </a>
-                <a 
-                  href="/#testimonials" 
-                  className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Testimonials
-                </a>
+                
+                {/* Mobile Contact Info */}
+                <div className="px-4 py-3 border-t border-primary-500 mt-2 pt-4 space-y-2">
+                  <a href="tel:+18458793864" className="flex items-center gap-2 text-white">
+                    <FiPhone size={16} />
+                    <span>+1 (845) 879-3864</span>
+                  </a>
+                  <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-2 text-white">
+                    <FiMail size={16} />
+                    <span>cfgutters02@gmail.com</span>
+                  </a>
+                  <a href="/#service-area" className="flex items-center gap-2 text-white" onClick={() => setIsOpen(false)}>
+                    <FiMapPin size={16} />
+                    <span>Mahopac NY to Westport CT</span>
+                  </a>
+                </div>
                 
                 {/* Mobile Phone Button */}
                 <a 
                   href="tel:+18458793864" 
-                  className="block mx-4 mt-4 bg-primary-600 hover:bg-primary-700 text-white px-4 py-3 rounded-full font-semibold text-center transition-colors"
+                  className="block mx-4 mt-4 bg-white hover:bg-gray-100 text-primary-600 px-4 py-3 rounded-full font-semibold text-center transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
-                  <FiPhone className="inline mr-2" />
                   Get Started
                 </a>
               </div>
             </div>
           )}
-        </div>
-      </div>
-
-      {/* Information Bar */}
-      <div className="bg-primary-600 text-white py-3">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-6 text-sm">
-            <a href="tel:+18458793864" className="flex items-center gap-2 hover:text-gray-200 transition-colors">
-              <FiPhone className="text-white" size={18} />
-              <span className="font-semibold">+1 (845) 879-3864</span>
-            </a>
-            <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-2 hover:text-gray-200 transition-colors">
-              <FiMail className="text-white" size={18} />
-              <span>cfgutters02@gmail.com</span>
-            </a>
-            <a href="/#service-area" className="flex items-center gap-2 hover:text-gray-200 transition-colors cursor-pointer">
-              <FiMapPin className="text-white" size={18} />
-              <span>Mahopac NY to Westport CT</span>
-            </a>
-            <div className="hidden lg:flex items-center gap-2">
-              <FiClock className="text-white" size={18} />
-              <span className="font-semibold">Business Hours:</span>
-              <span>Monday-Saturday 8 AM to 6 PM</span>
-            </div>
-          </div>
         </div>
       </div>
     </header>
