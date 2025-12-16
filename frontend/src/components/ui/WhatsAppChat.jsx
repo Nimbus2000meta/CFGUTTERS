@@ -92,7 +92,7 @@ const WhatsAppChat = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="absolute bottom-20 left-0 w-80 bg-white rounded-2xl shadow-xl overflow-hidden"
+            className="absolute bottom-20 right-0 w-80 bg-white rounded-2xl shadow-xl overflow-hidden"
             variants={chatVariants}
             initial="hidden"
             animate="visible"
