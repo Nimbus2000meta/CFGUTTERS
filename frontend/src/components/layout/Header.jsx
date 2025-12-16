@@ -44,7 +44,7 @@ const Header = () => {
       {/* Combined White Header */}
       <div className="bg-white shadow-md">
         <div className="container mx-auto px-4">
-          {/* Top Info Bar */}
+          {/* Top Info Bar - Desktop */}
           <div className="hidden lg:flex justify-between items-center py-2 border-b border-gray-200 text-sm">
             <div className="flex items-center gap-6">
               <a href="tel:+18458793864" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition-colors">
@@ -66,6 +66,24 @@ const Header = () => {
                 <span>Mon-Sat 8 AM - 6 PM</span>
               </div>
             </div>
+          </div>
+
+          {/* Top Info Bar - Mobile */}
+          <div className="lg:hidden flex flex-wrap justify-center items-center gap-3 py-2 border-b border-gray-200 text-xs">
+            <a href="tel:+18458793864" className="flex items-center gap-1 text-gray-700">
+              <FiPhone className="text-primary-600" size={14} />
+              <span>(845) 879-3864</span>
+            </a>
+            <span className="text-gray-300">|</span>
+            <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-1 text-gray-700">
+              <FiMail className="text-primary-600" size={14} />
+              <span>cfgutters02@gmail.com</span>
+            </a>
+            <span className="text-gray-300">|</span>
+            <a href="/#service-area" className="flex items-center gap-1 text-gray-700">
+              <FiMapPin className="text-primary-600" size={14} />
+              <span>Mahopac NY - Westport CT</span>
+            </a>
           </div>
 
           {/* Main Navigation */}
