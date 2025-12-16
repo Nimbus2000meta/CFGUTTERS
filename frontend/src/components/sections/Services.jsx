@@ -142,7 +142,7 @@ const Services = () => {
         {/* Gutter Guard Installation */}
         <div id="gutter-guards" className="mb-20 bg-white p-8 rounded-xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 text-center lg:text-left">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 Gutter Guard Installation
               </h3>
