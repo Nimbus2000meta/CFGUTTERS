@@ -158,10 +158,14 @@ const Services = () => {
             </div>
             <div className="order-1 lg:order-2">
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_easy-customer-form/artifacts/213p48zl_240_F_917377453_7y0wnaaGltFVwy6CPbiZVFYQY0R1jENe.jpg" 
+                <video 
+                  src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/ki49q1ee_4603568939917450955.mov"
                   alt="Gutter Guard Installation"
                   className="w-full h-96 object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               </div>
             </div>
