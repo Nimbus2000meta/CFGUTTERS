@@ -1,10 +1,32 @@
 import React from 'react';
-import { FiFacebook } from 'react-icons/fi';
+import { FiFacebook, FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
+      {/* Mobile Contact Info Bar */}
+      <div className="lg:hidden bg-gray-800 py-4">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-3 text-sm">
+            <a href="tel:+18458793864" className="flex items-center gap-2 text-gray-300 hover:text-white">
+              <FiPhone className="text-primary-400" size={16} />
+              <span>(845) 879-3864</span>
+            </a>
+            <span className="text-gray-600">|</span>
+            <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-white">
+              <FiMail className="text-primary-400" size={16} />
+              <span>cfgutters02@gmail.com</span>
+            </a>
+            <span className="text-gray-600">|</span>
+            <a href="/#service-area" className="flex items-center gap-2 text-gray-300 hover:text-white">
+              <FiMapPin className="text-primary-400" size={16} />
+              <span>Mahopac NY - Westport CT</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Services Column */}
