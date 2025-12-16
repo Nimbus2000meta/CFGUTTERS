@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowUp } from 'react-icons/fi';
 import { useLocation } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
+  const scrollTimeoutRef = useRef(null);
 
   // Scroll to top on route change
   useEffect(() => {
@@ -16,10 +17,20 @@ const ScrollToTop = () => {
     });
   }, [location.pathname]);
 
-  // Show button when scrolled down 300px
-  const toggleVisibility = () => {
+  // Show button only while scrolling and past 300px
+  const handleScroll = () => {
     if (window.pageYOffset > 300) {
       setIsVisible(true);
+      
+      // Clear existing timeout
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      
+      // Hide button after 1.5 seconds of no scrolling
+      scrollTimeoutRef.current = setTimeout(() => {
+        setIsVisible(false);
+      }, 1500);
     } else {
       setIsVisible(false);
     }
@@ -35,10 +46,14 @@ const ScrollToTop = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
-    toggleVisibility(); // Check initial visibility
+    window.addEventListener('scroll', handleScroll);
     
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
   }, []);
 
   // Animation variants
