@@ -35,8 +35,8 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <span className="text-white">Professional</span>{' '}
-            <span className="text-cyan-300">Gutter & Roof</span>{' '}
-            <span className="text-white">Cleaning Services –</span>{' '}
+            <span className="text-cyan-300">Gutter Services</span>{' '}
+            <span className="text-white">–</span>{' '}
             <span className="text-cyan-300">CF Gutters</span>
           </motion.h1>
 
@@ -46,9 +46,15 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.5 }}
           >
-            <span className="font-semibold text-white">Protect Your Home with Expert Gutter Cleaning</span>
+            <span className="font-semibold text-white">Protect Your Home with Expert Gutter Installation & Cleaning</span>
             <br /><br />
-            Your <strong>roof</strong> and <strong>gutters</strong> are essential in protecting your home from water damage and structural issues. Over time, they accumulate moss, algae, debris, and dirt which can lead to costly repairs if left unchecked. At CF Gutters we specialize in professional roof cleaning, <strong>gutter maintenance</strong>, <strong>Gutter Repair</strong>, <strong>Gutter Guard Installation</strong> and Soft washing services to keep your home in excellent condition.
+            Your <strong>gutters</strong> play a critical role in protecting your home from water damage, foundation issues, and exterior wear. Over time, gutters can become clogged, damaged, or inefficient—leading to costly problems if not properly maintained.
+            <br /><br />
+            At CF Gutters, we specialize in professional <strong>gutter installation</strong>, <strong>gutter cleaning</strong>, and <strong>gutter guard systems</strong>, ensuring your home stays protected year-round. We also provide <strong>gutter and downspout repairs</strong> to address leaks, sagging, or drainage issues.
+            <br /><br />
+            In addition, we offer <strong>roof soft washing</strong> as an optional service to safely remove algae and buildup without damaging your roofing materials.
+            <br /><br />
+            With quality workmanship, reliable service, and attention to detail, CF Gutters is your trusted choice for protecting your home.
           </motion.p>
 
           <motion.div
