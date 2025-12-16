@@ -181,13 +181,26 @@ const Services = () => {
         <div id="gutter-repairs" className="mb-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
-                src="/images/gutter-repairs.png" 
-                alt="Gutter & Downspout Repairs"
-                className="w-full h-96 object-cover rounded-xl"
-              />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden shadow-xl">
+                  <div className="bg-gray-600 text-white text-center py-2 font-bold text-lg">BEFORE</div>
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/blhxh4s0_Screenshot%202025-12-16%20at%201.51.36%E2%80%AFAM.png" 
+                    alt="Gutter Before Repair"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-xl">
+                  <div className="bg-green-600 text-white text-center py-2 font-bold text-lg">AFTER</div>
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/carh94nk_Screenshot%202025-12-16%20at%201.51.54%E2%80%AFAM.png" 
+                    alt="Gutter After Repair"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
             </div>
-            <div>
+            <div className="text-center lg:text-left">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 Gutter & Downspout Repairs
               </h3>
