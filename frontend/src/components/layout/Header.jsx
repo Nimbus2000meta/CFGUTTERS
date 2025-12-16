@@ -79,7 +79,7 @@ const Header = () => {
             </a>
             <span className="text-gray-300">|</span>
             <a href="/#service-area" className="text-gray-600 hover:text-primary-600">
-              Mahopac - Westport
+              Mahopac NY - Westport CT
             </a>
           </div>
 
