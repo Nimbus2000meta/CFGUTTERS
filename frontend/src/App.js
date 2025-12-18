@@ -23,7 +23,6 @@ import Gallery from "./pages/Gallery";
 // UI Components
 import PageTransition from "./components/ui/PageTransition";
 import ScrollToTop from "./components/ui/ScrollToTop";
-import WhatsAppChat from "./components/ui/WhatsAppChat";
 
 function App() {
   return (
@@ -31,7 +30,6 @@ function App() {
       <PageTransition>
         <div className="App">
           <ScrollToTop />
-          <WhatsAppChat />
           <Header />
           <main>
             <Routes>
@@ -57,7 +55,3 @@ function App() {
 }
 
 export default App;
-// Trigger deploy
-// Trigger deploy
-
-// Trigger deploy
