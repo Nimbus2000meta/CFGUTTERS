@@ -6,7 +6,7 @@ const ServiceArea = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Serving homes and businesses throughout <span className="text-primary-600">Mahopac NY, Kent CT, Warren CT, Westport CT</span>, and everywhere in between!
+            Proudly serving homeowners and businesses in <span className="text-primary-600">Putnam County NY, Warren CT</span>, and surrounding areas throughout the Hudson Valley and Western Connecticut.
           </h2>
         </div>
 
