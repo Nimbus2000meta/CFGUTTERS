@@ -55,8 +55,8 @@ const ServiceArea = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600 mb-1">Email</p>
-                  <a href="mailto:cfgutters02@gmail.com" className="text-lg font-semibold text-secondary-600 hover:text-secondary-700">
-                    cfgutters02@gmail.com
+                  <a href="mailto:connor@cfgutters.com" className="text-lg font-semibold text-secondary-600 hover:text-secondary-700">
+                    connor@cfgutters.com
                   </a>
                 </div>
               </div>

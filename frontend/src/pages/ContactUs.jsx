@@ -43,8 +43,8 @@ const ContactUs = () => {
               </svg>
             </div>
             <h3 className="text-sm font-bold text-gray-900 mb-1">Email</h3>
-            <a href="mailto:cfgutters02@gmail.com" className="text-secondary-600 hover:text-secondary-700 text-xs sm:text-sm font-semibold break-all">
-              cfgutters02@gmail.com
+            <a href="mailto:connor@cfgutters.com" className="text-secondary-600 hover:text-secondary-700 text-xs sm:text-sm font-semibold break-all">
+              connor@cfgutters.com
             </a>
           </div>
 

@@ -14,9 +14,9 @@ const Footer = () => {
               <span>(845) 879-3864</span>
             </a>
             <span className="text-gray-600">|</span>
-            <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-white">
+            <a href="mailto:connor@cfgutters.com" className="flex items-center gap-2 text-gray-300 hover:text-white">
               <FiMail className="text-primary-400" size={16} />
-              <span>cfgutters02@gmail.com</span>
+              <span>connor@cfgutters.com</span>
             </a>
             <span className="text-gray-600">|</span>
             <a href="/#service-area" className="flex items-center gap-2 text-gray-300 hover:text-white">
@@ -81,7 +81,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:cfgutters02@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                <a href="mailto:connor@cfgutters.com" className="text-gray-400 hover:text-white transition-colors">
                   Email
                 </a>
               </li>

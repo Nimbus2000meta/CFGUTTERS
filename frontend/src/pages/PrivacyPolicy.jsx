@@ -108,7 +108,7 @@ const PrivacyPolicy = () => {
               </p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Phone: <a href="tel:+18458793864" className="text-primary-600 hover:underline">(845) 879-3864</a></li>
-                <li>Email: <a href="mailto:cfgutters02@gmail.com" className="text-primary-600 hover:underline">cfgutters02@gmail.com</a></li>
+                <li>Email: <a href="mailto:connor@cfgutters.com" className="text-primary-600 hover:underline">connor@cfgutters.com</a></li>
               </ul>
             </section>
           </div>

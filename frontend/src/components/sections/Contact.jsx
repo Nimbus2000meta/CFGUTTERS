@@ -184,7 +184,7 @@ Additional Concerns: ${formData.additionalConcerns}
             <p className="mb-2">Please contact us using one of these methods:</p>
             <div className="space-y-2">
               <a 
-                href={`mailto:cfgutters02@gmail.com?subject=${subject}&body=${body}`}
+                href={`mailto:connor@cfgutters.com?subject=${subject}&body=${body}`}
                 className="block text-blue-600 hover:text-blue-800 underline font-semibold"
               >
                 📧 Click to email us your quote request
@@ -241,9 +241,9 @@ Additional Concerns: ${formData.additionalConcerns}
               <FiPhone className="w-5 h-5" />
               845-879-3864
             </a>
-            <a href="mailto:cfgutters02@gmail.com" className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg border-2 border-gray-200">
+            <a href="mailto:connor@cfgutters.com" className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg border-2 border-gray-200">
               <FiMail className="w-5 h-5 text-secondary-600" />
-              cfgutters02@gmail.com
+              connor@cfgutters.com
             </a>
           </div>
         </div>

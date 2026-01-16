@@ -51,9 +51,9 @@ const Header = () => {
                 <FiPhone className="text-primary-600" size={16} />
                 <span className="font-semibold">+1 (845) 879-3864</span>
               </a>
-              <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition-colors">
+              <a href="mailto:connor@cfgutters.com" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition-colors">
                 <FiMail className="text-primary-600" size={16} />
-                <span>cfgutters02@gmail.com</span>
+                <span>connor@cfgutters.com</span>
               </a>
             </div>
             <div className="flex items-center gap-6">
@@ -74,8 +74,8 @@ const Header = () => {
               (845) 879-3864
             </a>
             <span className="text-gray-300">|</span>
-            <a href="mailto:cfgutters02@gmail.com" className="text-gray-600 hover:text-primary-600 truncate max-w-[130px]">
-              cfgutters02@gmail.com
+            <a href="mailto:connor@cfgutters.com" className="text-gray-600 hover:text-primary-600 truncate max-w-[130px]">
+              connor@cfgutters.com
             </a>
             <span className="text-gray-300">|</span>
             <a href="/#service-area" className="text-gray-600 hover:text-primary-600">
@@ -264,9 +264,9 @@ const Header = () => {
                     <FiPhone className="text-primary-600" size={16} />
                     <span>+1 (845) 879-3864</span>
                   </a>
-                  <a href="mailto:cfgutters02@gmail.com" className="flex items-center gap-2 text-gray-700">
+                  <a href="mailto:connor@cfgutters.com" className="flex items-center gap-2 text-gray-700">
                     <FiMail className="text-primary-600" size={16} />
-                    <span>cfgutters02@gmail.com</span>
+                    <span>connor@cfgutters.com</span>
                   </a>
                   <a href="/#service-area" className="flex items-center gap-2 text-gray-700" onClick={() => setIsOpen(false)}>
                     <FiMapPin className="text-primary-600" size={16} />

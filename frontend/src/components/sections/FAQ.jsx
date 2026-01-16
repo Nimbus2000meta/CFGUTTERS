@@ -150,7 +150,7 @@ const FAQ = () => {
                 Call (845) 879-3864
               </a>
               <a
-                href="mailto:cfgutters02@gmail.com"
+                href="mailto:connor@cfgutters.com"
                 className="btn bg-white text-primary-600 hover:bg-gray-100 border-2 border-white flex items-center justify-center gap-2"
               >
                 Email Us
