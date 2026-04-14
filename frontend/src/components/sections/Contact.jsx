@@ -476,6 +476,7 @@ Additional Concerns: ${formData.additionalConcerns}
               >
                 <option value="">Select a service...</option>
                 <option value="Gutter Cleaning">🍂 Gutter Cleaning</option>
+                <option value="Gutter Installation">🔨 Gutter Installation</option>
                 <option value="Gutter Guard Installations">🛡️ Gutter Guard Installations</option>
                 <option value="Gutter & Downspout Repairs">🔧 Gutter & Downspout Repairs</option>
                 <option value="Basic Roof Cleaning & Moss Treatment">🏠 Basic Roof Cleaning & Moss Treatment</option>
