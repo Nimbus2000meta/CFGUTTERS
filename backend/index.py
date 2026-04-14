@@ -136,6 +136,7 @@ async def submit_contact_form(form_data: ContactFormSubmission):
         email_sent = False
         resend_api_key = os.environ.get('RESEND_API_KEY')
         
+        email_error_detail = None
         if resend_api_key:
             try:
                 additional_concerns_html = f"""<div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -211,6 +212,7 @@ async def submit_contact_form(form_data: ContactFormSubmission):
                     else:
                         logger.error(f"Resend API error (status {response.status_code}): {response.text}")
             except Exception as email_error:
+                email_error_detail = str(email_error)
                 logger.error(f"Failed to send email for {form_data.fullName}: {str(email_error)}")
         else:
             logger.warning("RESEND_API_KEY not found. Form data saved but email not sent.")
@@ -218,7 +220,12 @@ async def submit_contact_form(form_data: ContactFormSubmission):
         return {
             "success": True, 
             "message": "Form submitted successfully! We'll get back to you shortly.",
-            "email_sent": email_sent
+            "email_sent": email_sent,
+            "debug": {
+                "api_key_found": bool(resend_api_key),
+                "api_key_prefix": resend_api_key[:10] + "..." if resend_api_key else None,
+                "error": email_error_detail
+            }
         }
         
     except Exception as e:

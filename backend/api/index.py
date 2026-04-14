@@ -124,7 +124,13 @@ async def submit_contact_form(request: Request):
         return {
             "success": True, 
             "message": "Form submitted successfully",
-            "email_sent": email_status["success"]
+            "email_sent": email_status["success"],
+            "debug": {
+                "api_key_found": bool(resend_api_key),
+                "api_key_prefix": resend_api_key[:10] + "..." if resend_api_key else None,
+                "attempted": email_status["attempted"],
+                "error": email_status["error"]
+            }
         }
     except Exception as e:
         return {"success": False, "message": str(e)}
