@@ -120,96 +120,107 @@ async def submit_contact_form(form_data: ContactFormSubmission):
     try:
         logger.info(f"Received contact form submission from {form_data.fullName}")
         
-        # Get Resend API key from environment
-        resend_api_key = os.environ.get('RESEND_API_KEY')
-        logger.info(f"RESEND_API_KEY present: {bool(resend_api_key)}")
-        
-        if not resend_api_key:
-            # If no API key, just log and return success (fallback mode)
-            logger.warning("RESEND_API_KEY not found. Form data logged but email not sent.")
-            logger.info(f"Contact form submission: {form_data.dict()}")
-            return {"success": True, "message": "Form submitted successfully"}
-        
-        # Prepare email content
-        additional_concerns_html = f"""<div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                <h3 style="color: #92400e; margin-top: 0;">Additional Concerns</h3>
-                <p>{form_data.additionalConcerns}</p>
-            </div>""" if form_data.additionalConcerns else ""
-        
-        email_html = f"""
-        <html>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-            <h2 style="color: #2563eb;">New Contact Form Submission - CF Gutters</h2>
-            
-            <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                <h3 style="color: #1f2937; margin-top: 0;">Customer Information</h3>
-                <p><strong>Name:</strong> {form_data.fullName}</p>
-                <p><strong>Phone:</strong> {form_data.phone}</p>
-                <p><strong>Email:</strong> {form_data.email}</p>
-                <p><strong>Preferred Appointment Date:</strong> {form_data.appointmentDate}</p>
-            </div>
-            
-            <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                <h3 style="color: #1f2937; margin-top: 0;">Property Details</h3>
-                <p><strong>Street Address:</strong> {form_data.streetAddress}</p>
-                <p><strong>City:</strong> {form_data.city or 'Not provided'}</p>
-                <p><strong>State:</strong> {form_data.state or 'Not provided'}</p>
-                <p><strong>Property Type:</strong> {form_data.propertyType}</p>
-            </div>
-            
-            <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                <h3 style="color: #1f2937; margin-top: 0;">Service Details</h3>
-                <p><strong>Service Needed:</strong> {form_data.serviceNeeded or 'Not specified'}</p>
-                <p><strong>Has Solar Panels:</strong> {'Yes' if form_data.hasSolarPanels else 'No'}</p>
-                <p><strong>Has Gutter Guards:</strong> {'Yes' if form_data.hasGutterGuards else 'No'}</p>
-            </div>
-            
-            {additional_concerns_html}
-            
-            <p style="color: #6b7280; font-size: 0.875rem; margin-top: 30px;">
-                This email was sent from the CF Gutters contact form at {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC
-            </p>
-        </body>
-        </html>
-        """
-        
-        # Send email via Resend API
-        async with httpx.AsyncClient() as client:
-            response = await client.post(
-                "https://api.resend.com/emails",
-                headers={
-                    "Authorization": f"Bearer {resend_api_key}",
-                    "Content-Type": "application/json",
-                },
-                json={
-                    "from": "CF Gutters <onboarding@resend.dev>",
-                    "to": ["louis@cfgutters.com", "connor@cfgutters.com", "connorfogarty52@gmail.com", "cfgutters02@gmail.com"],
-                    "subject": f"New Quote Request from {form_data.fullName}",
-                    "html": email_html,
-                },
-            )
-            
-            if response.status_code != 200:
-                logger.error(f"Resend API error (status {response.status_code}): {response.text}")
-                raise HTTPException(status_code=500, detail=f"Failed to send email: {response.text}")
-        
-        # Store in database for records
+        # 1. Store in database FIRST
         try:
             db = get_database()
             form_dict = form_data.dict()
             form_dict['id'] = str(uuid.uuid4())
-            form_dict['submitted_at'] = datetime.utcnow()
+            form_dict['submitted_at'] = datetime.utcnow().isoformat()
+            form_dict['email_sent'] = False
             await db.contact_submissions.insert_one(form_dict)
             logger.info(f"Form saved to database for {form_data.fullName}")
         except Exception as db_error:
-            # Log but don't fail if database storage fails
             logger.error(f"Database storage error (non-critical): {str(db_error)}")
         
-        logger.info(f"Contact form submitted and email sent for {form_data.fullName}")
-        return {"success": True, "message": "Form submitted successfully"}
+        # 2. Try to send email via Resend (non-critical)
+        email_sent = False
+        resend_api_key = os.environ.get('RESEND_API_KEY')
         
-    except HTTPException:
-        raise
+        if resend_api_key:
+            try:
+                additional_concerns_html = f"""<div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #92400e; margin-top: 0;">Additional Concerns</h3>
+                        <p>{form_data.additionalConcerns}</p>
+                    </div>""" if form_data.additionalConcerns else ""
+                
+                email_html = f"""
+                <html>
+                <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                    <h2 style="color: #2563eb;">New Contact Form Submission - CF Gutters</h2>
+                    
+                    <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #1f2937; margin-top: 0;">Customer Information</h3>
+                        <p><strong>Name:</strong> {form_data.fullName}</p>
+                        <p><strong>Phone:</strong> {form_data.phone}</p>
+                        <p><strong>Email:</strong> {form_data.email}</p>
+                        <p><strong>Preferred Appointment Date:</strong> {form_data.appointmentDate}</p>
+                    </div>
+                    
+                    <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #1f2937; margin-top: 0;">Property Details</h3>
+                        <p><strong>Street Address:</strong> {form_data.streetAddress}</p>
+                        <p><strong>City:</strong> {form_data.city or 'Not provided'}</p>
+                        <p><strong>State:</strong> {form_data.state or 'Not provided'}</p>
+                        <p><strong>Property Type:</strong> {form_data.propertyType}</p>
+                    </div>
+                    
+                    <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #1f2937; margin-top: 0;">Service Details</h3>
+                        <p><strong>Service Needed:</strong> {form_data.serviceNeeded or 'Not specified'}</p>
+                        <p><strong>Has Solar Panels:</strong> {'Yes' if form_data.hasSolarPanels else 'No'}</p>
+                        <p><strong>Has Gutter Guards:</strong> {'Yes' if form_data.hasGutterGuards else 'No'}</p>
+                    </div>
+                    
+                    {additional_concerns_html}
+                    
+                    <p style="color: #6b7280; font-size: 0.875rem; margin-top: 30px;">
+                        This email was sent from the CF Gutters contact form at {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC
+                    </p>
+                </body>
+                </html>
+                """
+                
+                # Send only to account owner until domain is verified in Resend
+                async with httpx.AsyncClient() as http_client:
+                    response = await http_client.post(
+                        "https://api.resend.com/emails",
+                        headers={
+                            "Authorization": f"Bearer {resend_api_key}",
+                            "Content-Type": "application/json",
+                        },
+                        json={
+                            "from": "CF Gutters <onboarding@resend.dev>",
+                            "to": ["louis@cfgutters.com"],
+                            "subject": f"New Quote Request from {form_data.fullName}",
+                            "html": email_html,
+                        },
+                    )
+                    
+                    if response.status_code == 200:
+                        email_sent = True
+                        logger.info(f"Email sent successfully for {form_data.fullName}")
+                        # Update DB record
+                        try:
+                            db = get_database()
+                            await db.contact_submissions.update_one(
+                                {"id": form_dict['id']},
+                                {"$set": {"email_sent": True}}
+                            )
+                        except Exception:
+                            pass
+                    else:
+                        logger.error(f"Resend API error (status {response.status_code}): {response.text}")
+            except Exception as email_error:
+                logger.error(f"Failed to send email for {form_data.fullName}: {str(email_error)}")
+        else:
+            logger.warning("RESEND_API_KEY not found. Form data saved but email not sent.")
+        
+        return {
+            "success": True, 
+            "message": "Form submitted successfully! We'll get back to you shortly.",
+            "email_sent": email_sent
+        }
+        
     except Exception as e:
         logger.error(f"Error processing contact form: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
