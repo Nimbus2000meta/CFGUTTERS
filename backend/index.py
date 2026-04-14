@@ -220,12 +220,7 @@ async def submit_contact_form(form_data: ContactFormSubmission):
         return {
             "success": True, 
             "message": "Form submitted successfully! We'll get back to you shortly.",
-            "email_sent": email_sent,
-            "debug": {
-                "api_key_found": bool(resend_api_key),
-                "api_key_prefix": resend_api_key[:10] + "..." if resend_api_key else None,
-                "error": email_error_detail
-            }
+            "email_sent": email_sent
         }
         
     except Exception as e:
