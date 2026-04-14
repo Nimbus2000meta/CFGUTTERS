@@ -94,9 +94,10 @@ async def submit_contact_form(request: Request):
                 """
                 
                 # Send email via Resend API using urllib
+                # Using onboarding@resend.dev and sending only to account owner until domain is verified
                 email_payload = json.dumps({
-                    "from": "CF Gutters <louis@cfgutters.com>",
-                    "to": ["louis@cfgutters.com", "connor@cfgutters.com", "connorfogarty52@gmail.com", "cfgutters02@gmail.com"],
+                    "from": "CF Gutters <onboarding@resend.dev>",
+                    "to": ["louis@cfgutters.com"],
                     "subject": f"New Quote Request from {data.get('fullName', 'Unknown')}",
                     "html": email_html
                 }).encode('utf-8')
@@ -114,17 +115,16 @@ async def submit_contact_form(request: Request):
                 with urllib.request.urlopen(req, timeout=10) as response:
                     if response.status == 200:
                         email_status["success"] = True
-                        return {"success": True, "message": "Form submitted successfully", "email": "sent"}
                     else:
                         email_status["error"] = f"HTTP {response.status}"
             except Exception as email_error:
                 email_status["error"] = str(email_error)
         
-        # Return success even if email failed, but include email status for debugging
+        # Always return success - form data reached the server
         return {
             "success": True, 
             "message": "Form submitted successfully",
-            "email_debug": email_status
+            "email_sent": email_status["success"]
         }
     except Exception as e:
         return {"success": False, "message": str(e)}
