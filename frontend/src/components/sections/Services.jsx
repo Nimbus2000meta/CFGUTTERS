@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiCheckCircle } from 'react-icons/fi';
+import { FiCheckCircle, FiTool } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
@@ -134,6 +134,96 @@ const Services = () => {
                     className="w-full h-auto object-contain"
                   />
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Gutter Installation */}
+        <div id="gutter-installation" className="mb-20 bg-white p-8 rounded-xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="order-2 lg:order-1 text-center lg:text-left">
+              <h3 className="text-3xl font-bold text-gray-900 mb-6" data-testid="gutter-installation-title">
+                Gutter Installation
+              </h3>
+              <p className="text-xl text-gray-700 mb-6">
+                Professional gutter installation services to protect your home from water damage
+              </p>
+
+              <div className="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h4 className="font-bold text-xl text-gray-900 mb-4">Professional Gutter Installation</h4>
+                <p className="text-gray-700 leading-relaxed">
+                  Our expert team provides top-quality gutter installation services for residential and commercial properties. We use premium materials and proven techniques to ensure your gutters effectively channel water away from your foundation, protecting your home for years to come.
+                </p>
+              </div>
+
+              <div className="bg-secondary-50 p-6 rounded-lg mb-6 text-left">
+                <h4 className="font-bold text-lg text-gray-900 mb-4">Benefits:</h4>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <FiTool className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                    <div>
+                      <strong className="text-gray-900">Custom Fit</strong>
+                      <p className="text-gray-700 mt-1">Gutters precisely measured and cut for your home's exact specifications.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <FiTool className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                    <div>
+                      <strong className="text-gray-900">Premium Materials</strong>
+                      <p className="text-gray-700 mt-1">High-quality aluminum, copper, or steel gutters built to last.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <FiTool className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                    <div>
+                      <strong className="text-gray-900">Foundation Protection</strong>
+                      <p className="text-gray-700 mt-1">Properly installed gutters prevent water damage to your foundation.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <FiTool className="text-green-600 text-2xl mt-1 flex-shrink-0" />
+                    <div>
+                      <strong className="text-gray-900">Expert Installation</strong>
+                      <p className="text-gray-700 mt-1">Professional installation with proper slope and secure mounting.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-primary-50 p-6 rounded-lg mb-6">
+                <h4 className="font-bold text-lg text-gray-900 mb-2">Best For:</h4>
+                <p className="text-gray-700">
+                  New construction, home renovations, replacing old or damaged gutters, or upgrading to seamless gutters for better performance and curb appeal.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  to="/Gutter-Installation" 
+                  className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+                  data-testid="gutter-installation-learn-more"
+                >
+                  Learn More
+                </Link>
+                <Link 
+                  to="/contact-us" 
+                  className="inline-block bg-secondary-600 hover:bg-secondary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+                  data-testid="gutter-installation-quote"
+                >
+                  Request a Quote
+                </Link>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <div className="rounded-xl overflow-hidden shadow-xl">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/7e7rbveo_Screenshot%202025-12-15%20at%203.03.07%E2%80%AFAM.png" 
+                  alt="Gutter Installation"
+                  className="w-full h-auto object-contain"
+                  data-testid="gutter-installation-image"
+                />
               </div>
             </div>
           </div>
