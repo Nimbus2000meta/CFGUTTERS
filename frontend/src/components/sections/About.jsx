@@ -19,7 +19,7 @@ const About = () => {
             {/* Owner Photo */}
             <div className="mb-8">
               <img 
-                src="https://customer-assets.emergentagent.com/job_gutter-pro-2/artifacts/wovmrn0q_Screenshot%202025-12-15%20at%204.13.39%E2%80%AFAM.png" 
+                src="https://customer-assets.emergentagent.com/job_gutter-forms-qa/artifacts/i5cvcx1o_IMG_0389.jpeg" 
                 alt="CF Gutters Owner"
                 className="w-48 h-48 rounded-full object-cover shadow-lg mx-auto"
               />
